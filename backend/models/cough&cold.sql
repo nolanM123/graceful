@@ -1,3 +1,6 @@
+INSERT INTO ailments VALUES 
+    (1, 'Cough & Cold');
+
 INSERT INTO questions VALUES
     (1, 1, 1, 'Are you diabetic?'),
     (1, 2, 1, 'Do you have hypertension (uncontrolled), glaucoma, hyperthyroidism and/or seizures?'),

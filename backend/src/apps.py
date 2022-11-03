@@ -26,6 +26,25 @@ def script(response):
     return response.render("frontend/scripts/app.js")
 
 
+@app.route("get", "/ailments/")
+def ailments():
+
+    result = []
+
+    with sqlite3.connect("backend/models/db.sqlite3") as db:
+        cursor = db.cursor()
+
+        result.append(
+            {
+                aid: ailment for aid, ailment in cursor.execute("SELECT aid, ailment FROM ailments;")
+            }
+        )
+
+        cursor.close()
+    
+    return result
+
+
 @app.route("get", "/questions/{aid}/")
 def questions(aid):
     result = list()
@@ -34,7 +53,7 @@ def questions(aid):
         cursor = db.cursor()
 
         for qid, sid, question in cursor.execute(
-            "SELECT qid, sid, question FROM questions WHERE aid == ?", aid
+            "SELECT qid, sid, question FROM questions WHERE aid == ?;", aid
         ):
             result.append({"qid": qid, "sid": sid, "question": question})
 
@@ -54,18 +73,18 @@ def products(aid, request):
         formulas = {
             cid: eval(formula.format(**request.query), dict())
             for cid, formula in cursor1.execute(
-                "SELECT cid, formula FROM criteria WHERE aid == ?", aid
+                "SELECT cid, formula FROM criteria WHERE aid == ?;", aid
             )
         }
 
         for pid, name, link, description, image in cursor1.execute(
-            "SELECT pid, name, link, description, image FROM products WHERE aid == ?",
+            "SELECT pid, name, link, description, image FROM products WHERE aid == ?;",
             aid,
         ):
             if all(
                 formulas.get(cid, False)
                 for cid in cursor2.execute(
-                    "SELECT cid FROM productCriteria WHERE aid == ? && pid == ?",
+                    "SELECT cid FROM productCriteria WHERE aid == ? && pid == ?;",
                     (aid, pid),
                 )
             ):

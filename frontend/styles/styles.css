@@ -1,20 +1,152 @@
-p {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 12px;
-	line-height: 29px;
-
-	color: #FFFFFF;
+body {
+	background: #f0f0f0;
 }
 
-.frame {
+h1 {
 	position: absolute;
-	width: 390px;
-	height: 844px;
-	top: 50%;
-	left: 50%;
-	margin: -422px 0 0 -190px;
 	
-	background: #1A1A1B;
+	font-family:'Segoe UI';
+	font-style: oblique;
+	font-weight: 800;
+	font-size: 68px;
+
+	color: #ffffff;
+}
+
+h2 {
+	position: absolute;
+	
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	
+	color: #AA8EB7;
+}
+
+h3 {
+	padding-left: 10px;
+	padding-right: 10px;
+
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 22px;
+	
+	color: #1E1E1E;
+}
+
+p {
+	position: absolute;
+	
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	
+	color: #AA8EB7;
+}
+
+img {
+	position: absolute;
+
+	overflow: hidden;
+	mix-blend-mode: overlay;
+}
+
+.arrow-button {
+	width: 20px;
+	height: 20px;
+
+	margin-top: 12px;
+
+	cursor: default;
+
+	background: url(images/arrow1.png);
+	object-fit: cover;
+}
+
+.arrow-button:hover {
+	background: url(images/arrow2.png);
+}
+
+.arrow-button:active {
+	background: url(images/arrow3.png);
+}
+
+.button {
+	position: absolute;
+	width: 200px;
+	height: 60px;
+
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+
+	color: #1E1E1E;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-color: transparent;
+	border-radius: 28px;
+}
+
+.button:hover {
+	background: #F7E4FF;
+}
+
+.button:active {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.smallbutton {
+	width: fit-content;
+	min-width: 112;
+	height: 45px;
+
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 80%;
+
+	color: #CFCFCF;
+	background: transparent;
+	border-color: transparent;
+	border-radius: 12px;
+}
+
+.smallbutton:hover {
+	color: #787878;
+	background: #CFCFCF;
+}
+
+.smallbutton:active {
+	color: #FFA800;
+	background-color: #FFF2D8;
+}
+
+.tinybutton {
+	position: absolute;
+	width: 70px;
+	height: 30px;
+
+	font-family:'Segoe UI';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 10px;
+
+	color: #CFCFCF;
+	background: transparent;
+	border-color: transparent;
+	border-radius: 16px;
+}
+
+.tinybutton:hover {
+	color: #787878;
+	background: #CFCFCF;
+}
+
+.tinybutton:active {
+	color: #AA8EB7;
+	background: #F7E4FF;
 }

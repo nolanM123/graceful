@@ -1,7 +1,13 @@
+DROP TABLE IF EXISTS ailments;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS criteria;
 DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS product_criteria;
+DROP TABLE IF EXISTS productCriteria;
+
+CREATE TABLE ailments (
+    aid int(100),
+    ailment varchar(255)
+);
 
 CREATE TABLE questions (
     aid int(100),
