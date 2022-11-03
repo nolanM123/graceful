@@ -16,14 +16,9 @@ def favicon(response):
     response.reason = "No Content"
 
 
-@app.route("get", "/styles.css")
-def style(response):
-    return response.render("frontend/styles/styles.css")
-
-
-@app.route("get", "/app.js")
-def script(response):
-    return response.render("frontend/scripts/app.js")
+@app.route("get", "/frontend/{:path}")
+def frontend(path, response):
+    return response.render("frontend/" + path)
 
 
 @app.route("get", "/ailments/")
@@ -34,11 +29,15 @@ def ailments():
     with sqlite3.connect("backend/models/db.sqlite3") as db:
         cursor = db.cursor()
 
-        result.append(
-            {
-                aid: ailment for aid, ailment in cursor.execute("SELECT aid, ailment FROM ailments;")
-            }
-        )
+        for aid, name, description, disclaimer in cursor.execute("SELECT aid, name, description, disclaimer FROM ailments;"):
+            result.append(
+                {
+                    "aid": aid,
+                    "name": name,
+                    "description": description,
+                    "disclaimer": disclaimer,
+                }
+            )
 
         cursor.close()
     

@@ -262,8 +262,8 @@ class Graceful:
 
         for url, app in self.apps[request.method].items():
             dir_ids = dict()
-            app_url = url.strip("/").split("/")
-            req_url = request.url.strip("/").split("/")
+            app_url = url.split("/")
+            req_url = request.url.split("/")
 
             # get / match ids and path
             while app_url and req_url:
@@ -272,16 +272,16 @@ class Graceful:
                 req_dir = req_url.pop(0)
 
                 if app_dir.startswith("{") and app_dir.endswith("}"):
-                    app_dir, *paths = app_dir[1:-1].split(":")
+                    app_dir, *path = app_dir[1:-1].split(":", 1)
 
                     if app_dir:
                         dir_ids[app_dir] = req_dir
 
-                    for i, path in enumerate(paths):
-                        dir_ids[path] = "/".join(app_url[i:])
+                    if path:
+                        dir_ids[path[0]] = "/".join((req_dir, *req_url))
 
-                    if paths and not req_dir:
-                        app_url.clear()
+                        if not app_url:
+                            req_url.clear()
 
                 elif app_dir != req_dir:
                     app_url.append("__failed__")

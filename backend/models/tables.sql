@@ -6,7 +6,9 @@ DROP TABLE IF EXISTS productCriteria;
 
 CREATE TABLE ailments (
     aid int(100),
-    ailment varchar(255)
+    name varchar(255),
+    description text(500),
+    disclaimer text(500)
 );
 
 CREATE TABLE questions (
@@ -28,7 +30,7 @@ CREATE TABLE products (
     pid int(100),
     name varchar(255),
     link varchar(255),
-    description text(1000),
+    description text(500),
     image binary(255)
 );
 

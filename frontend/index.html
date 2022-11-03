@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>Graceful</title>
-			<link rel="stylesheet", href="styles/styles.css">
-			<script src="scripts/app.js"></script>
-		</head>
+<html>
+	<head>
+		<title>MediHelp</title>
+		<link rel="stylesheet", href="frontend/styles/styles.css">
+		<script src="frontend/scripts/app.js"></script>
+	</head>
 	<body>
-		<div style="position: absolute; left: 0%; right: 0%; top: 0%; bottom: 0%; background: #ffffff; border-radius: 24px;">
-			<a href=""><h2 style="left: 2%; top: 10px;">MediHelp</h2></a>
-			<div id="ailment-bar" style="display: flex; justify-content: space-between; position: absolute; width: 50%; left: 25%; top: 35px;">
-				<div id="back-arrow" class="arrow-button" src="images/arrow-1.png"></div>
-				<button class="smallbutton">Placeholder</button>
-				<button class="smallbutton">Placeholder</button>
-				<button class="smallbutton">Placeholder</button>
-				<button class="smallbutton">Placeholder</button>
-				<div id="next-arrow" class="arrow-button" src="images/arrow-1.png" style="transform: scaleX(-1);"></div>
+		<div style="position: absolute; left: 4%; right: 4%; top: 4%; bottom: 4%; background: #ffffff; border-radius: 48px;">
+			<a href=""><h2 style="left: 4%; top: 10px;">MediHelp</h2></a>
+			<div id="ailment-nav" style="display: flex; justify-content: space-between; position: absolute; width: 50%; left: 25%; top: 36px;">
+				<input id="left-arrow" class="arrow-button" type="image" src="frontend/images/arrow-1.png"/>
+				<button id="ailment-b1" class="smallbutton"></button>
+				<button id="ailment-b2" class="smallbutton"></button>
+				<button id="ailment-b3" class="smallbutton"></button>
+				<button id="ailment-b4" class="smallbutton"></button>
+				<input id="left-arrow" class="arrow-button" type="image" src="frontend/images/arrow-1.png" style="transform: scaleX(-1);"/>
 			</div>
-			<div style="position: absolute; width: 98%; height: 80%; left: 1%; top: 18%; background: #F7E4FF; border-radius: 16px;">
-				<img src="images/medical-background.png" style="height: 100%; right: 0%; object-fit: cover; object-position: 0% 0%;">
+			<div style="position: absolute; width: 96%; height: 80%; left: 2%; top: 16%; background: #F7E4FF; border-radius: 28px;">
+				<img src="frontend/images/medical-background-1.png" style="width: 540px; height: 100%; right: 0%; object-fit: cover; object-position: 0% 0%;">
 				<h1 id="ailment-title" style="left: 8%; top: 40px">Title</h1>
 				<p id="ailment-description" style="width: 30%; left: 8%; top: 180px">Placeholder - This section is intended for details related to the selected illness / ailment the user has selected.</p>
-				<p id="ailment-disclaimer" style="width: 20%; left: 8%; bottom: 40px; font-size: 8px;">This section is intended for notes, legal information, warnings, and any disclamars related to the illness / ailment the user has selected.</p>
-				<div class="question-box" style="display: flex; align-items: center; position: absolute; width: 400px; height: 220px; right: 18%; top: 112px; text-align: center; background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+				<p id="ailment-disclaimer" style="width: 20%; left: 8%; bottom: 40px; font-size: 10px;">This section is intended for notes, legal information, warnings, and any disclamars related to the illness / ailment the user has selected.</p>
+				<div class="question-box" style="display: flex; align-items: center; position: absolute; width: 500px; height: 260px; right: 18%; top: 112px; text-align: center; background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 16px;">
 					<button id="previous-button" class="tinybutton" style="left: 10px; top: 10px;">Previous</button>
 					<h3 id="ailment-question">Placeholder - This section is intended for a question from the illness / ailment the user selected.</h3>
 				</div>
-				<button id="true-button" class="button" style="right: calc(18% + 400px / 2 - 100px); top: 372px;">Yes</button>
-				<button id="false-button" class="button" style="right: calc(18% + 400px / 2 - 100px); top: 472px;">No</button>
+				<button id="true-button" class="button" style="right: calc(18% + 500px / 2 - 100px); top: 412px;">Yes</button>
+				<button id="false-button" class="button" style="right: calc(18% + 500px / 2 - 100px); top: 512px;">No</button>
 			</div>
 		</div>
 	</body>

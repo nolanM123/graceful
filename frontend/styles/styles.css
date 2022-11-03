@@ -55,23 +55,10 @@ img {
 }
 
 .arrow-button {
-	width: 20px;
-	height: 20px;
+	width: 35px;
+	height: 35px;
 
-	margin-top: 12px;
-
-	cursor: default;
-
-	background: url(images/arrow1.png);
-	object-fit: cover;
-}
-
-.arrow-button:hover {
-	background: url(images/arrow2.png);
-}
-
-.arrow-button:active {
-	background: url(images/arrow3.png);
+	margin-top: 5px;
 }
 
 .button {
@@ -101,28 +88,28 @@ img {
 
 .smallbutton {
 	width: fit-content;
-	min-width: 112;
+	min-width: 112px;
 	height: 45px;
 
 	font-family:'Segoe UI';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 80%;
-
-	color: #CFCFCF;
-	background: transparent;
+	
+	color: var(--color);
+	background: var(--background-color);
 	border-color: transparent;
 	border-radius: 12px;
 }
 
 .smallbutton:hover {
-	color: #787878;
-	background: #CFCFCF;
+	color: #FFA800;
+	background: #FFF2D8;
 }
 
 .smallbutton:active {
-	color: #FFA800;
-	background-color: #FFF2D8;
+	color: #787878;
+	background-color: #CFCFCF;
 }
 
 .tinybutton {
