@@ -211,7 +211,7 @@ class Response:
 class Graceful:
 
     BUFSIZE = 2**10
-    TIMEOUT = 120.0
+    TIMEOUT = 30.0
 
     def __init__(self, host: str = "localhost", port: int = 8080):
 
