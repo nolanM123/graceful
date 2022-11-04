@@ -11,6 +11,8 @@ var ailmentButtons = [];
 var title;
 var description;
 var disclaimer;
+var bgImage1;
+var bgImage2;
 
 // questionaire attributes
 var questionIndex = 0;
@@ -22,6 +24,8 @@ var previousButton;
 var trueButton;
 var falseButton;
 
+//products attributes
+var products = [];
 // product elements
 var productsContainer;
 
@@ -80,7 +84,6 @@ function getQuestion() {
             params.push(`qid${questions[i]["qid"]}=${questions[i]["isTrue"]}`);
         };
 
-        console.log();
         products = requestJSON("GET", "/products/" + ailments[ailmentSelected]["aid"] + "/?" + params.join("&"));
         showProducts();
     };
@@ -90,6 +93,8 @@ function getQuestion() {
 
 
 function showQuestionaire() {
+    bgImage1.style.display = "block";
+    bgImage2.style.display = "none";
     questionsContainer.style.display = "block";
     productsContainer.style.display = "none";
 
@@ -104,15 +109,31 @@ function showQuestionaire() {
 
 
 function showProducts() {
+    bgImage1.style.display = "none";
+    bgImage2.style.display = "block";
     productsContainer.style.display = "block";
     questionsContainer.style.display = "none";
 
     // set description elements
     title.innerHTML += " Products";
-    description.innerHTML = "A modern and minimalist solution to your pharasutical needs - Here are the relevant products from you diagnosis!";
+    description.innerHTML = "A modern and minimalist solution to your pharasutical needs - Here are the relevant products from your diagnosis!";
 
     // set product elements
+    for (let i = 0; i < products.length; i++) {
+        let productContainer = document.createElement("div");
 
+        let iconContainer = document.createElement("div");
+
+        let productName = document.createElement("p");
+        let productDescription = document.createElement("p");
+        let productLink = document.createElement("p");
+    
+        productContainer.appendChild(iconContainer);
+        productContainer.appendChild(productName);
+        productContainer.appendChild(productDescription);
+        productContainer.appendChild(productLink);
+        productsContainer.appendChild(productContainer);
+    };
 };
 
 
@@ -136,6 +157,7 @@ window.onload = function () {
         ailmentIndex += 1;
         setAilmentButtons();
     };
+    rightArrow
 
     let ailmentBar = document.getElementById("ailment-bar");
     for (let i = 0; i < 4; i++) {
@@ -149,6 +171,7 @@ window.onload = function () {
                 ailmentSelected = selected;
                 questions = requestJSON("GET", `/questions/${ailments[ailmentSelected]["aid"]}/`);
                 showSelectedAilments();
+                questionIndex = 0;
             }
 
             showQuestionaire();
@@ -161,6 +184,8 @@ window.onload = function () {
     title = document.getElementById("ailment-title");
     description = document.getElementById("ailment-description");
     disclaimer = document.getElementById("ailment-disclaimer");
+    bgImage1 = document.getElementById("image-1");
+    bgImage2 = document.getElementById("image-2");
 
     // get questionaire attributes
     questions = requestJSON("GET", `/questions/${ailments[ailmentSelected]["aid"]}/`);

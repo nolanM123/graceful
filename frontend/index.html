@@ -4,7 +4,6 @@
 <head>
   <!-- Meta Data -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
   <title>MediHelp</title>
   <!-- CSS -->
   <link rel="stylesheet" , href="frontend/styles/styles.css" />
@@ -16,10 +15,10 @@
   <!-- Main Body -->
   <div style="
         position: absolute;
-        left: 4%;
-        right: 4%;
-        top: 4%;
-        bottom: 4%;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
         background: #ffffff;
         border-radius: 48px;
       ">
@@ -49,12 +48,20 @@
           background: #f7e4ff;
           border-radius: 28px;
         ">
-      <img src="frontend/images/medical-background-1.png" style="
-            width: 460px;
+      <img id="image-1" src="frontend/images/medical-background-1.png" style="
+            width: 360px;
             height: 100%;
             right: 0%;
             object-fit: cover;
             object-position: 0% 0%;
+          " />
+      <img id="image-2" src="frontend/images/medical-background-2.png" style="
+            display: none;
+            width: 360px;
+            height: 100%;
+            left: 0%;
+            object-fit: cover;
+            object-position: 100% 0%;
           " />
       <!-- Information Body -->
       <div style="position: absolute; width: 48%; height: 100%; left: 2%">
