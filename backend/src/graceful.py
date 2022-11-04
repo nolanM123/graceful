@@ -155,10 +155,14 @@ class Response:
         if not isinstance(content, bytes):
             content = bytes(str(content).replace("'", '"'), encoding, errors)
 
-        self.set("content-length", str(len(content)), True)
-
         # headers
         headers = ""
+
+        if "Content-Type" not in self._headers:
+            headers += "Content-Type: text/plain\r\n"
+
+        if "Content-Length" not in self._headers:
+            headers += "Content-Length: {}\r\n".format(len(content))
 
         for key, item in self._headers.items():
             headers += "{}: {}\r\n".format(
@@ -198,6 +202,9 @@ class Response:
 
     @content.setter
     def content(self, content):
+
+        if not isinstance(content, (str, bytes, tuple, list, dict)):
+            return
 
         if isinstance(content, (str, bytes)):
             self.set("content-type", "text/plain", True)
@@ -309,15 +316,8 @@ class Graceful:
                     pool.get(var)
                     for var in app.__code__.co_varnames[: app.__code__.co_argcount]
                 )
-                result = app(*params)
+                response.content = app(*params)
 
-                if isinstance(result, Response):
-                    response = result
-
-                elif result:
-                    response.content = result
-
-                # send
                 break
 
         return response

@@ -11,7 +11,7 @@ INSERT INTO questions VALUES
     (1, 2, 1, 'Do you have hypertension (uncontrolled), glaucoma, hyperthyroidism and/or seizures?'),
     (1, 3, 1, 'Are you taking an SSRI, SNRI, CYP2D6 inhibitor and/or Triptan?'),
     (1, 4, 1, 'Are you Pregnant and/or Breast Feeding?'),
-    (1, 5, 1, 'Are you an adult ≥ 12 yrs old?'),
+    (1, 5, 1, 'Are you an adult (12 yrs old or older)?'),
     (1, 6, 1, 'Are you taking an MAOI (within last 2 weeks)?'),
     (1, 7, 1, 'Are you taking any anticholinergics or CNS depressants?'),
     (1, 8, 1, 'Do you have treated or untreated upset stomach or ulcers?'),
@@ -25,16 +25,16 @@ INSERT INTO questions VALUES
     (1, 16, 2, 'Do you have a fever?'),
     (1, 17, 2, 'Do you have aches and pain?'),
     (1, 18, 2, 'Do you have a sore throat?'),
-    (1, 19, 2, 'syrup (liquid)'),
-    (1, 20, 2, 'oral tablet, gel or lozenge'),
-    (1, 21, 2, 'topical product');
+    (1, 19, 2, 'show syrups and liquids?'),
+    (1, 20, 2, 'show oral tablets, gels and lozenge?'),
+    (1, 21, 2, 'show topical products?');
 
 INSERT INTO criteria VALUES
     (1, 1, 'adult', '{qid5}'),
     (1, 2, 'child', 'not {qid5}'),
-    (1, 3, 'liquid', '{qid19} or (not {qid19} and not {qid20} and not {qid21})'),
-    (1, 4, 'tablet', '{qid20} or (not {qid19} and not {qid20} and not {qid21})'),
-    (1, 5, 'topical', '{qid21} or (not {qid19} and not {qid20} and not {qid21})'),
+    (1, 3, 'liquid', '{qid19}'),
+    (1, 4, 'tablet', '{qid20}'),
+    (1, 5, 'topical', '{qid21}'),
     (1, 6, 'cough suppressant', 'not {qid3} and not {qid4} and not {qid6} and {qid12}'),
     (1, 7, 'anti-histamine', 'not {qid7} and not {qid9} and ({qid12} or {qid13})'),
     (1, 8, 'decongestant', 'not {qid1} and not {qid2} and not {qid4} and not {qid6} and {qid14}'),

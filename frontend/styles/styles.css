@@ -1,152 +1,196 @@
 body {
-	background: #f0f0f0;
+  /* background */
+  background: #f0f0f0;
 }
 
 h1 {
-	position: absolute;
-	
-	font-family:'Segoe UI';
-	font-style: oblique;
-	font-weight: 800;
-	font-size: 68px;
+  /* position and layout */
+  position: absolute;
 
-	color: #ffffff;
+  /* typography */
+  font-size: 52px;
+  font-family: "Segoe UI";
+  font-weight: 800;
+  font-style: oblique;
+  color: #ffffff;
 }
 
 h2 {
-	position: absolute;
-	
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 32px;
-	
-	color: #AA8EB7;
+  /* position and layout */
+  position: absolute;
+
+  /* typography */
+  font-size: 32px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-style: normal;
+  color: #aa8eb7;
 }
 
 h3 {
-	position: absolute;
+  /* position and layout */
+  position: absolute;
 
-	left: 0%;
-	right: 0%;
-	padding-left: 10px;
-	padding-right: 10px;
+  /* box model */
+  padding-left: 12px;
+  padding-right: 12px;
 
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 22px;
-	
-	color: #1E1E1E;
+  /* typography */
+  font-size: 30px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-style: normal;
+  color: #1e1e1e;
 }
 
 p {
-	position: absolute;
-	
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	
-	color: #AA8EB7;
+  /* position and layout */
+  position: absolute;
+
+  /* typography */
+  font-size: 28px;
+  font-family: "Segoe UI";
+  font-weight: 400;
+  font-style: normal;
+  color: #aa8eb7;
 }
 
 img {
-	user-select: none;
-	-webkit-user-drag: none;
+  /* behaviour */
+  user-select: none;
+  -webkit-user-drag: none;
 
-	position: absolute;
+  /* position and layout */
+  position: absolute;
 
-	overflow: hidden;
-	mix-blend-mode: overlay;
+  /* display and visibility */
+  mix-blend-mode: overlay;
+
+  /* clipping */
+  overflow: hidden;
 }
 
 .button {
-	position: absolute;
-	width: 200px;
-	height: 60px;
+  /* position and layout */
+  position: absolute;
 
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 22px;
+  /* box model */
+  width: 240px;
+  height: 76px;
 
-	color: #1E1E1E;
-	background: #FFFFFF;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-color: transparent;
-	border-radius: 28px;
+  /* box model */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  border-radius: 38px;
+
+  /* background */
+  background: #ffffff;
+
+  /* typography */
+  font-size: 30px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-style: normal;
+  color: #1e1e1e;
 }
 
 .button:hover {
-	background: #CFCFCF;
+  /* background */
+  background: #cfcfcf;
 }
 
 .button:active {
-	color: #AA8EB7;
-	background: #F7E4FF;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  /* box model */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+  /* background */
+  background: #f7e4ff;
+
+  /* typography */
+  color: #aa8eb7;
 }
 
 .arrow-button {
-	cursor: default;
+  /* box model */
+  margin-top: 5px;
+  width: 35px;
+  height: 35px;
 
-	width: 35px;
-	height: 35px;
-
-	margin-top: 5px;
+  /* background */
+  background: transparent;
+  cursor: default;
 }
 
 .small-button {
-	width: fit-content;
-	min-width: 112px;
-	height: 45px;
+  /* box model */
+  border-color: transparent;
+  border-radius: 12px;
+  width: fit-content;
+  min-width: 112px;
+  height: 45px;
 
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 80%;
-	
-	color: #CFCFCF;
-	color: var(--color);
-	background: transparent;
-	background: var(--background-color);
-	border-color: transparent;
-	border-radius: 12px;
+  /* background */
+  background: transparent;
+  background: var(--background-color);
+
+  /* typography */
+  font-size: 12px;
+  font-family: "Segoe UI";
+  font-weight: 400;
+  font-style: normal;
+  color: #cfcfcf;
+  color: var(--color);
 }
 
 .small-button:hover {
-	color: #FFA800;
-	background: #FFF2D8;
+  /* background */
+  background: #fff2d8;
+
+  /* typography */
+  color: #ffa800;
 }
 
 .small-button:active {
-	color: #787878;
-	background-color: #CFCFCF;
+  /* background */
+  background-color: #cfcfcf;
+
+  /* typography */
+  color: #787878;
 }
 
 .tiny-button {
-	position: absolute;
-	width: 70px;
-	height: 30px;
+  /* position and layout */
+  position: absolute;
 
-	font-family:'Segoe UI';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 10px;
+  /* box model */
+  border-color: transparent;
+  border-radius: 16px;
+  width: 70px;
+  height: 30px;
 
-	color: #CFCFCF;
-	background: transparent;
-	border-color: transparent;
-	border-radius: 16px;
+  /* background */
+  background: transparent;
+
+  /* typography */
+  font-size: 10px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-style: normal;
+  color: #cfcfcf;
 }
 
 .tiny-button:hover {
-	color: #787878;
-	background: #CFCFCF;
+  /* background */
+  background: #cfcfcf;
+
+  /* typography */
+  color: #787878;
 }
 
 .tiny-button:active {
-	color: #AA8EB7;
-	background: #F7E4FF;
+  /* background */
+  background: #f7e4ff;
+
+  /* typography */
+  color: #aa8eb7;
 }
