@@ -7,7 +7,6 @@ DROP TABLE IF EXISTS productCriteria;
 CREATE TABLE ailments (
     aid int(100),
     name varchar(255),
-    description text(500),
     disclaimer text(500)
 );
 

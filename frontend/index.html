@@ -1,102 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Data -->
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediHelp</title>
-    <!-- CSS -->
-    <link rel="stylesheet" , href="frontend/styles/styles.css" />
-    <!-- Java Script -->
-    <script src="frontend/scripts/app.js"></script>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/scripts/app.js"></script>
   </head>
 
   <body>
-    <!-- Main Body -->
-    <div class="main-body">
+    <div id="main" class="main">
+      <!-- header -->
       <a href="">
-        <h2 style="left: 4%; top: 10px">MediHelp</h2>
+        <h2 id="title" class="title">MediHelp</h2>
       </a>
-      <!-- Ailment Navbar -->
-      <div id="ailment-bar" class="ailment-body">
+      <!-- nav-bar -->
+      <div id="navbar" class="navbar">
         <input
-          id="left-arrow"
-          class="arrow-button"
+          id="back-button"
+          class="navbar-button"
           type="image"
-          src="frontend/images/arrow-1.png"
+          src="/images/navbar-button.png"
         />
         <input
-          id="right-arrow"
-          class="arrow-button"
+          id="next-button"
+          class="navbar-button"
           type="image"
-          src="frontend/images/arrow-1.png"
+          src="/images/navbar-button.png"
           style="transform: scaleX(-1)"
         />
       </div>
-      <!-- Ailment Body -->
-      <div
-        style="
-          position: absolute;
-          left: 18px;
-          right: 18px;
-          top: 144px;
-          bottom: 18px;
-          background: #f7e4ff;
-          border-radius: 28px;
-        "
-      >
-        <img
-          id="bg-image-1"
-          class="background-image"
-          src="frontend/images/medical-background-1.png"
-          style="right: 0%; object-position: 0% 0%;"
-        />
-        <img
-          id="bg-image-2"
-          class="background-image"
-          src="frontend/images/medical-background-2.png"
-          style="left: 0%; object-position: 100% 0%;"
-        />
-        <!-- Information Body -->
-        <div class="information-body">
-          <h1 id="ailment-title" style="left: 6%; top: 80px"></h1>
-          <p
-            id="ailment-description"
-            style="width: 72%; left: 6%; top: 200px"
-          ></p>
-          <p
-            id="ailment-disclaimer"
-            style="width: 50%; left: 6%; bottom: 40px; font-size: 10px"
-          ></p>
+      <!-- body -->
+      <div id="body" class="body">
+        <!-- left side -->
+        <div id="view-1" class="view-1">
+          <h1 id="ailment-label"></h1>
+          <p id="ailment-description"></p>
+          <p id="ailment-disclaimer" class="disclaimer"></p>
         </div>
-        <!-- Questionaire Body -->
-        <div id="questions-container" class="questionaire-body">
-          <div class="question-body">
-            <button
-              id="previous-button"
-              class="tiny-button"
-              style="left: 10px; top: 10px"
-            >
-              Previous
+        <!-- right side -->
+        <div id="view-2" class="view-2">
+          <div id="textbox" class="textbox">
+            <button id="previous-button" class="previous-button">
+              previous
             </button>
-            <h3 id="ailment-question" style="left: 0%; right: 0%"></h3>
+            <h3 id="textbox-label" class="textbox-label"></h3>
           </div>
-          <button
-            id="true-button"
-            class="button"
-            style="left: calc(40% - 120px); top: calc(18% + 280px)"
-          >
-            Yes
-          </button>
-          <button
-            id="false-button"
-            class="button"
-            style="left: calc(40% - 120px); top: calc(18% + 396px)"
-          >
-            No
-          </button>
+          <button id="true-button" class="true-button">yes</button>
+          <button id="false-button" class="false-button">no</button>
         </div>
-        <!-- Products Body -->
-        <div id="products-container" class="products-body"></div>
+        <div id="view-3" class="view-3">
+          <p id="results-label" class="results-label"></p>
+        </div>
       </div>
     </div>
   </body>

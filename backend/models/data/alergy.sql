@@ -2,7 +2,6 @@ INSERT INTO ailments VALUES
     (
         2, 
         'Allergy', 
-        'A modern and minimalist solution to your pharmaceutical needs - Take this short 24 question survey to receive a comprehensive diagnosis of your allergy needs.', 
         'Consult your physician or emergency assistance in the presence of severe allergic symptoms. Patients with history of anaphylaxis reaction should carry or have access to an Epipen at all times. Consult your physician for patients younger than 2 years old or for individuals with complications or comorbid illness such as sinusitis, otitis and/or asthma. Allergen avoidance is recommended for patients with allergies.'
     );
 

@@ -1,238 +1,213 @@
-// ailment attributes
-var ailmentIndex = 0;
+var navbar = null;
+var backButton = null;
+var nextButton = null;
+var ailmentButtons = new Array();
+
+var view1 = null;
+var ailmentLabel = null;
+var ailmentDescription = null;
+var ailmentDisclaimer = null;
+
+var view2 = null;
+var previousButton = null;
+var textboxLabel = null;
+var trueButton = null;
+var falseButton = null;
+
+var view3 = null;
+var resultsLabel = null;
+
+var ailments = new Array();
+var ailmentPointer = 0;
 var ailmentSelected = 0;
-var ailments = [];
-// ailment elements
-var leftArrow;
-var rightArrow;
-var ailmentButtons = [];
 
-//description elements
-var title;
-var description;
-var disclaimer;
-var bgImage1;
-var bgImage2;
+var questions = new Array();
+var questionPointer = -1;
 
-// questionaire attributes
-var questionIndex = 0;
-var questions = [];
-// questionaire elements
-var questionsContainer;
-var questionLabel;
-var previousButton;
-var trueButton;
-var falseButton;
+var products = new Array();
 
-//products attributes
-var products = [];
-// product elements
-var productsContainer;
 
 function request(method, url, body = "", async = false) {
-  let xml = new XMLHttpRequest();
-  xml.open(method, url, async);
-  xml.send(body);
+    let request = new XMLHttpRequest()
+    request.open(method, url, async);
+    request.send(body);
 
-  return xml;
+    return request;
 }
 
 function requestJSON(method, url, body = "", async = false) {
-  return JSON.parse(request(method, url, body, async).responseText);
+    return JSON.parse(request(method, url, body, async).responseText);
 }
 
-function showSelectedAilments() {
-  let i = ailmentIndex;
+function setNavbar() {
+    let ailmentIndex = ailmentPointer;
 
-  for (let j = 0; j < ailmentButtons.length; j++) {
-    if (i >= ailments.length) i = 0;
+    for (let i = 0; i < ailmentButtons.length; i++) {
+        if (ailmentIndex >= ailments.length) ailmentIndex = 0;
 
-    if (i == ailmentSelected) {
-      ailmentButtons[j].style.setProperty("--color", "#FFA800");
-      ailmentButtons[j].style.setProperty("--background-color", "#FFF2D8");
-    } else {
-      ailmentButtons[j].style.setProperty("--color", "#CFCFCF");
-      ailmentButtons[j].style.setProperty("--background-color", "transparent");
+        if (ailmentIndex == ailmentSelected) {
+            ailmentButtons[i].style.setProperty("--c", "#aa8eb7");
+            ailmentButtons[i].style.setProperty("--bg", "#f7e4ff");
+        } else {
+            ailmentButtons[i].style.setProperty("--c", "#c7c7c7");
+            ailmentButtons[i].style.setProperty("--bg", "transparent");
+        }
+
+        ailmentButtons[i].innerHTML = ailments[ailmentIndex]["name"];
+        ailmentIndex++;
     }
-
-    i++;
-  }
 }
 
-function setAilmentButtons() {
-  let i = ailmentIndex;
+function setQuestionaire() {
+    view2.style.display = "block";
+    view3.style.display = "none";
 
-  for (let j = 0; j < ailmentButtons.length; j++) {
-    if (i >= ailments.length) i = 0;
+    ailmentLabel.innerHTML = ailments[ailmentSelected]["name"];
+    ailmentDescription.innerHTML = `A modern and minimalist solution to your pharmaceutical needs - Take this short ${questions.length} question survey to receive a comprehensive diagnosis of your ${ailments[ailmentSelected]["name"].toLowerCase()} needs.`
+    ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
 
-    ailmentButtons[j].innerHTML = ailments[i]["name"];
-    i++;
-  }
-
-  showSelectedAilments();
+    questionPointer = -1;
+    getQuestion();
 }
 
 function getQuestion() {
-  questionIndex++;
+    questionPointer++;
 
-  if (questionIndex == questions.length) {
-    questionIndex = 0;
-    let params = [];
+    if (questionPointer >= questions.length) {
+        let params = [];
+        for (let i = 0; i < questions.length; i++)
+            params.push(`qid${questions[i]["qid"]}=${questions[i]["answer"]}`);
 
-    for (let i = 0; i < questions.length; i++)
-      params.push(`qid${questions[i]["qid"]}=${questions[i]["isTrue"]}`);
+        products = requestJSON("GET", `/products/${ailments[ailmentSelected]["aid"]}/?${params.join("&")}`);
 
-    products = requestJSON(
-      "GET",
-      "/products/" + ailments[ailmentSelected]["aid"] + "/?" + params.join("&")
-    );
+        view3.innerHTML = "";
+        view3.appendChild(resultsLabel);
+        resultsLabel.innerHTML = `${products.length} Results`;
 
-    productsContainer.innerHTML = "";
-    for (let i = 0; i < products.length; i++) {
-      let productContainer = document.createElement("div");
-      productContainer.style.className = "product-body";
+        for (let i = 0; i < products.length; i++) {
+            let productContainer = document.createElement("div");
+            productContainer.className = "product-container";
+            view3.appendChild(productContainer);
 
-      let iconContainer = document.createElement("div");
-      iconContainer.style.className = "product-icon";
+            let shareButton = document.createElement("input");
+            shareButton.className = "share-button";
+            shareButton.type = "image";
+            shareButton.src = "/images/share-icon.png";
+            shareButton.onclick = function () {
+            }
+            productContainer.appendChild(shareButton);
 
-      let productName = document.createElement("h3");
-      productName.style.fontSize = "12px";
-      productName.innerHTML = products[i]["name"];
+            let productIcon = document.createElement("div");
+            productIcon.className = "product-icon";
+            productContainer.appendChild(productIcon);
 
-      let productDescription = document.createElement("p");
-      productDescription.style.fontSize = "12px";
-      productName.innerHTML = products[i]["description"];
+            let productLink = document.createElement("a");
+            productLink.className = "product-link";
+            productLink.href = products[i]["link"];
+            productLink.innerHTML = "Vist Page";
+            productContainer.appendChild(productLink);
 
-      let productLink = document.createElement("a");
-      productLink.innerHTML = "Vist Page";
-      productLink.href = products[i]["link"];
+            let productLabel = document.createElement("p");
+            productLabel.className = "product-label";
+            productLabel.innerHTML = products[i]["name"];
+            productContainer.appendChild(productLabel);
 
-      productContainer.appendChild(iconContainer);
-      productContainer.appendChild(productName);
-      productContainer.appendChild(productDescription);
-      productContainer.appendChild(productLink);
-      productsContainer.appendChild(productContainer);
+            let productDescription = document.createElement("p");
+            productDescription.className = "product-description";
+            productDescription.innerHTML = products[i]["description"];
+            productContainer.appendChild(productDescription);
+        }
+
+        questionPointer = -1;
+        setProducts();
+    } else {
+        textboxLabel.innerHTML = questions[questionPointer]["question"];
     }
-
-    showProducts();
-  }
-
-  questionLabel.innerHTML = questions[questionIndex]["question"];
 }
 
-function showQuestionaire() {
-  bgImage1.style.display = "block";
-  bgImage2.style.display = "none";
-  questionsContainer.style.display = "block";
-  productsContainer.style.display = "none";
+function setProducts() {
+    view2.style.display = "none";
+    view3.style.display = "block";
 
-  // set description elements
-  title.innerHTML = ailments[ailmentSelected]["name"];
-  description.innerHTML = ailments[ailmentSelected]["description"];
-  disclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
-}
-
-function showProducts() {
-  bgImage1.style.display = "none";
-  bgImage2.style.display = "block";
-  productsContainer.style.display = "block";
-  questionsContainer.style.display = "none";
-
-  // set description elements
-  title.innerHTML += " Products";
-  description.innerHTML =
-    "A modern and minimalist solution to your pharasutical needs - Here are the relevant products from your diagnosis!";
+    ailmentLabel.innerHTML += " Products";
+    ailmentDescription.innerHTML = `There are ${products.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
+    ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
 }
 
 window.onload = function () {
-  // get ailment attributes
-  ailments = requestJSON("GET", "/ailments/");
+    navbar = document.getElementById("navbar");
+    backButton = document.getElementById("back-button");
+    nextButton = document.getElementById("next-button");
 
-  // get ailment elements
-  leftArrow = document.getElementById("left-arrow");
-  leftArrow.onclick = function () {
-    if (ailmentIndex == 0) ailmentIndex = ailments.length;
+    view1 = document.getElementById("view-1");
+    ailmentLabel = document.getElementById("ailment-label");
+    ailmentDescription = document.getElementById("ailment-description");
+    ailmentDisclaimer = document.getElementById("ailment-disclaimer");
 
-    ailmentIndex -= 1;
-    setAilmentButtons();
-  };
+    view2 = document.getElementById("view-2");
+    previousButton = document.getElementById("previous-button");
+    textboxLabel = document.getElementById("textbox-label");
+    trueButton = document.getElementById("true-button");
+    falseButton = document.getElementById("false-button");
 
-  rightArrow = document.getElementById("right-arrow");
-  rightArrow.onclick = function () {
-    if (ailmentIndex == ailments.length - 1) ailmentIndex = -1;
+    view3 = document.getElementById("view-3");
+    resultsLabel = document.getElementById("results-label");
 
-    ailmentIndex += 1;
-    setAilmentButtons();
-  };
-  rightArrow;
+    ailments = requestJSON("GET", "/ailments/");
 
-  let ailmentBar = document.getElementById("ailment-bar");
-  for (let i = 0; i < 4; i++) {
-    ailmentButtons.push(document.createElement("button"));
-    ailmentButtons[i].className = "small-button";
-    ailmentButtons[i].onclick = function () {
-      // get ailment
-      let selected = (i + ailmentIndex) % ailments.length;
+    questions = requestJSON("GET", `/questions/${ailments[ailmentSelected]["aid"]}/`);
 
-      if (selected != ailmentSelected) {
-        ailmentSelected = selected;
-        questions = requestJSON(
-          "GET",
-          `/questions/${ailments[ailmentSelected]["aid"]}/`
-        );
-        showSelectedAilments();
-      }
+    backButton.onclick = function () {
+        ailmentPointer++;
 
-      questionIndex = 0;
-      questionLabel.innerHTML = questions[questionIndex]["question"];
-      showQuestionaire();
-    };
+        if (ailmentPointer >= ailments.length) ailmentPointer = 0;
 
-    ailmentBar.insertBefore(ailmentButtons[i], rightArrow);
-  }
-
-  // get description elements
-  title = document.getElementById("ailment-title");
-  description = document.getElementById("ailment-description");
-  disclaimer = document.getElementById("ailment-disclaimer");
-  bgImage1 = document.getElementById("bg-image-1");
-  bgImage2 = document.getElementById("bg-image-2");
-
-  // get questionaire attributes
-  questions = requestJSON(
-    "GET",
-    `/questions/${ailments[ailmentSelected]["aid"]}/`
-  );
-
-  // get quetionaire elements
-  questionsContainer = document.getElementById("questions-container");
-  questionLabel = document.getElementById("ailment-question");
-  questionLabel.innerHTML = questions[questionIndex]["question"];
-  previousButton = document.getElementById("previous-button");
-  previousButton.onclick = function () {
-    if (questionIndex > 0) {
-      questionIndex -= 1;
-      questionLabel.innerHTML = questions[questionIndex]["question"];
+        setNavbar();
     }
-  };
 
-  trueButton = document.getElementById("true-button");
-  trueButton.onclick = function () {
-    questions[questionIndex]["isTrue"] = "True";
-    getQuestion();
-  };
+    nextButton.onclick = function () {
+        ailmentPointer--;
 
-  falseButton = document.getElementById("false-button");
-  falseButton.onclick = function () {
-    questions[questionIndex]["isTrue"] = "False";
-    getQuestion();
-  };
+        if (ailmentPointer <= -1) ailmentPointer = ailments.length - 1;
 
-  // get products elements
-  productsContainer = document.getElementById("products-container");
+        setNavbar();
+    }
 
-  // start
-  setAilmentButtons();
-  showSelectedAilments();
-  showQuestionaire();
-};
+    for (let i = 0; i < 4; i++) {
+        ailmentButtons.push(document.createElement("button"));
+        ailmentButtons[i].className = "ailment-button";
+        ailmentButtons[i].onclick = function () {
+            let selected = (i + ailmentPointer) % ailments.length;;
+
+            if (selected != ailmentSelected) {
+                ailmentSelected = selected;
+                questions = requestJSON("GET", `/questions/${ailments[ailmentSelected]["aid"]}/`);
+                setNavbar();
+            }
+
+            setQuestionaire();
+        }
+        navbar.insertBefore(ailmentButtons[i], nextButton);
+    }
+
+    previousButton.onclick = function () {
+        questionPointer--;
+
+        if (questionPointer <= -1) questionPointer = 0;
+
+        textboxLabel.innerHTML = questions[questionPointer]["question"];
+    }
+
+    trueButton.onclick = function () {
+        questions[questionPointer]["answer"] = "True";
+        getQuestion();
+    }
+
+    falseButton.onclick = function () {
+        questions[questionPointer]["answer"] = "False";
+        getQuestion();
+    }
+
+    setNavbar();
+    setQuestionaire();
+}

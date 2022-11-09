@@ -131,14 +131,17 @@ class Response:
         )
 
     def render(self, path: str):
-
-        with open(path, "rb") as document:
-            mimetype, charset = mimetypes.guess_type(path)
-            self.set(
-                "content-type",
-                "{}; charset={}".format(mimetype, charset) if charset else mimetype,
-            )
-            self.content = document.read()
+        try:
+            with open(path, "rb") as document:
+                mimetype, charset = mimetypes.guess_type(path)
+                self.set(
+                    "content-type",
+                    "{}; charset={}".format(mimetype, charset) if charset else mimetype,
+                )
+                self.content = document.read()
+        
+        except FileNotFoundError:
+            return
 
     def encode(self, encoding: str = "UTF-8", errors: str = "strict"):
 

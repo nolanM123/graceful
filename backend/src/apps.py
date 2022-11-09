@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from graceful import Graceful
 
@@ -5,41 +6,21 @@ from graceful import Graceful
 app = Graceful()
 
 
-@app.route("get", "/")
-def root(response):
-
-    return response.render("frontend/index.html")
-
-
-@app.route("get", "/favicon.ico")
-def favicon(response):
-
-    response.status = 204
-    response.reason = "No Content"
-
-
-@app.route("get", "/frontend/{:path}")
-def frontend(path, response):
-
-    return response.render("frontend/" + path)
-
-
 @app.route("get", "/ailments/")
 def ailments():
 
     result = []
 
-    with sqlite3.connect("backend/models/db.sqlite3") as db:
+    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
         cursor = db.cursor()
 
-        for aid, name, description, disclaimer in cursor.execute(
-            "SELECT aid, name, description, disclaimer FROM ailments;"
+        for aid, name, disclaimer in cursor.execute(
+            "SELECT aid, name, disclaimer FROM ailments;"
         ):
             result.append(
                 {
                     "aid": aid,
                     "name": name,
-                    "description": description,
                     "disclaimer": disclaimer,
                 }
             )
@@ -54,7 +35,7 @@ def questions(aid):
 
     result = list()
 
-    with sqlite3.connect("backend/models/db.sqlite3") as db:
+    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
         cursor = db.cursor()
 
         for qid, sid, question in cursor.execute(
@@ -72,7 +53,7 @@ def products(aid, request):
 
     result = list()
 
-    with sqlite3.connect("backend/models/db.sqlite3") as db:
+    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
         cursor1 = db.cursor()
         cursor2 = db.cursor()
 
@@ -96,7 +77,7 @@ def products(aid, request):
             ):
                 result.append(
                     {
-                        "name": name if name else "null",
+                        "name": name,
                         "link": link if link else "null",
                         "description": description if description else "null",
                         "image": image if image else "null",
@@ -107,3 +88,13 @@ def products(aid, request):
         cursor2.close()
 
     return result
+
+
+@app.route("get", "/{:path}")
+def index(path, response):
+    if not path:
+        path = "index.html"
+    
+    path = os.path.abspath(os.path.join("frontend/", path))
+
+    return response.render(path)

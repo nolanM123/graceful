@@ -2,8 +2,7 @@ INSERT INTO ailments VALUES
     (
         1, 
         'Cough & Cold', 
-        'A modern and minimalist solution to your pharmaceutical needs - Take this short 21 question survey to receive a comprehensive diagnosis of your cough & cold needs.', 
-        'Consult your phyisician in presence of severe cold and flu symptoms, COVID-19 symptoms or for patients with significantly decreased food or fluid intake. Consult your physician if a child has symptoms of croup, ear infection, excessive lethargy, excessive irritability, skin rash, or cough associated with vomitting.\n Individuals with chronic medical conditions, nursing home residents, seniors over 65 years old, conditions compromissing management of respiratory secretions, pregnant women, children less than 2 years old and children on aspirin are at higher risk of cold and flu complications.'
+        'Consult your phyisician in presence of severe cold and flu symptoms, COVID-19 symptoms or for patients with significantly decreased food or fluid intake. Consult your physician if a child has symptoms of croup, ear infection, excessive lethargy, excessive irritability, skin rash, or cough associated with vomitting. Individuals with chronic medical conditions, nursing home residents, seniors over 65 years old, conditions compromissing management of respiratory secretions, pregnant women, children less than 2 years old and children on aspirin are at higher risk of cold and flu complications.'
     );
 
 INSERT INTO questions VALUES
@@ -32,7 +31,7 @@ INSERT INTO questions VALUES
 INSERT INTO criteria VALUES
     (1, 1, 'adult', '{qid5}'),
     (1, 2, 'child', 'not {qid5}'),
-    (1, 3, 'liquid', '{qid19}'),
+    (1, 3, 'liquid', '{qid9}'),
     (1, 4, 'tablet', '{qid20}'),
     (1, 5, 'topical', '{qid21}'),
     (1, 6, 'cough suppressant', 'not {qid3} and not {qid4} and not {qid6} and {qid12}'),
