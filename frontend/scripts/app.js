@@ -102,7 +102,7 @@ function getQuestion() {
             productLink.className = "product-link";
             productLink.href = products[i]["link"];
             productLink.innerHTML = "Vist Page";
-            productContainer.appendChild(productLink);
+            productIcon.appendChild(productLink);
 
             let productHeader = document.createElement("p");
             productHeader.className = "product-header";

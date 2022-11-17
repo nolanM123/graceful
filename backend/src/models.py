@@ -9,8 +9,9 @@ with open("backend/models/tables.sql", "r") as document:
 
 for directory, directories, files in os.walk("backend/models/data"):
 	for file in files:
-		with open(os.path.join(directory, file)) as document:
-			db.executescript(document.read())
+		if file.endswith(".sql"):
+			with open(os.path.join(directory, file)) as document:
+				db.executescript(document.read())
 
 db.commit()
 db.close()

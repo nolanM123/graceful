@@ -78,9 +78,9 @@ def products(aid, request):
                 result.append(
                     {
                         "name": name,
-                        "link": link if link else "null",
-                        "description": description if description else "null",
-                        "image": image if image else "null",
+                        "link": link,
+                        "description": description,
+                        "image": image,
                     }
                 )
 
