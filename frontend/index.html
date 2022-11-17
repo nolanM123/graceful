@@ -10,49 +10,42 @@
   </head>
 
   <body>
-    <div id="main" class="main">
-      <!-- header -->
-      <a href="">
+    <div class="main-container">
+      <a href>
         <h2 id="title" class="title">MediHelp</h2>
       </a>
-      <!-- nav-bar -->
       <div id="navbar" class="navbar">
         <input
           id="back-button"
-          class="navbar-button"
+          class="navbar-nav-button"
           type="image"
           src="/images/navbar-button.png"
         />
         <input
           id="next-button"
-          class="navbar-button"
+          class="navbar-nav-button"
           type="image"
           src="/images/navbar-button.png"
           style="transform: scaleX(-1)"
         />
       </div>
-      <!-- body -->
-      <div id="body" class="body">
-        <!-- left side -->
-        <div id="view-1" class="view-1">
-          <h1 id="ailment-label"></h1>
-          <p id="ailment-description"></p>
-          <p id="ailment-disclaimer" class="disclaimer"></p>
+      <div class="content-container">
+        <div id="ailment-container" class="ailment-container">
+          <h1 id="ailment-header" class="ailment-header"></h1>
+          <p id="ailment-body" class="ailment-body"></p>
+          <p id="ailment-footer" class="ailment-footer"></p>
         </div>
-        <!-- right side -->
-        <div id="view-2" class="view-2">
-          <div id="textbox" class="textbox">
+        <div id="questions-container" class="questions-container">
+          <div id="question-container" class="question-container">
             <button id="previous-button" class="previous-button">
               previous
             </button>
-            <h3 id="textbox-label" class="textbox-label"></h3>
+            <h3 id="question-text" class="question-text"></h3>
           </div>
-          <button id="true-button" class="true-button">yes</button>
-          <button id="false-button" class="false-button">no</button>
+          <button id="true-button" class="answer-button">yes</button>
+          <button id="false-button" class="answer-button">no</button>
         </div>
-        <div id="view-3" class="view-3">
-          <p id="results-label" class="results-label"></p>
-        </div>
+        <div id="products-container" class="products-container"></div>
       </div>
     </div>
   </body>

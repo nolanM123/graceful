@@ -1,21 +1,20 @@
 var navbar = null;
 var backButton = null;
 var nextButton = null;
-var ailmentButtons = new Array();
+var navbarButtons = new Array();
 
-var view1 = null;
-var ailmentLabel = null;
-var ailmentDescription = null;
-var ailmentDisclaimer = null;
+var ailmentContainer = null;
+var ailmentHeader = null;
+var ailmentBody = null;
+var ailmentFooter = null;
 
-var view2 = null;
+var questionsContainer = null;
 var previousButton = null;
-var textboxLabel = null;
+var questionText = null;
 var trueButton = null;
 var falseButton = null;
 
-var view3 = null;
-var resultsLabel = null;
+var productsContainer = null;
 
 var ailments = new Array();
 var ailmentPointer = 0;
@@ -42,29 +41,29 @@ function requestJSON(method, url, body = "", async = false) {
 function setNavbar() {
     let ailmentIndex = ailmentPointer;
 
-    for (let i = 0; i < ailmentButtons.length; i++) {
+    for (let i = 0; i < navbarButtons.length; i++) {
         if (ailmentIndex >= ailments.length) ailmentIndex = 0;
 
         if (ailmentIndex == ailmentSelected) {
-            ailmentButtons[i].style.setProperty("--c", "#aa8eb7");
-            ailmentButtons[i].style.setProperty("--bg", "#f7e4ff");
+            navbarButtons[i].style.setProperty("--background-color", "var(--primary)");
+            navbarButtons[i].style.setProperty("--color", "var(--flat)");
         } else {
-            ailmentButtons[i].style.setProperty("--c", "#c7c7c7");
-            ailmentButtons[i].style.setProperty("--bg", "transparent");
+            navbarButtons[i].style.setProperty("--background-color", "transparent");
+            navbarButtons[i].style.setProperty("--color", "var(--tertiary)");
         }
 
-        ailmentButtons[i].innerHTML = ailments[ailmentIndex]["name"];
+        navbarButtons[i].innerHTML = ailments[ailmentIndex]["name"];
         ailmentIndex++;
     }
 }
 
 function setQuestionaire() {
-    view2.style.display = "block";
-    view3.style.display = "none";
+    questionsContainer.style.display = "block";
+    productsContainer.style.display = "none";
 
-    ailmentLabel.innerHTML = ailments[ailmentSelected]["name"];
-    ailmentDescription.innerHTML = `A modern and minimalist solution to your pharmaceutical needs - Take this short ${questions.length} question survey to receive a comprehensive diagnosis of your ${ailments[ailmentSelected]["name"].toLowerCase()} needs.`
-    ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
+    ailmentHeader.innerHTML = ailments[ailmentSelected]["name"];
+    ailmentBody.innerHTML = `A modern and minimalist solution to your pharmaceutical needs - Take this short ${questions.length} question survey to receive a comprehensive diagnosis of your ${ailments[ailmentSelected]["name"].toLowerCase()} needs.`
+    ailmentFooter.innerHTML = ailments[ailmentSelected]["disclaimer"];
 
     questionPointer = -1;
     getQuestion();
@@ -80,17 +79,15 @@ function getQuestion() {
 
         products = requestJSON("GET", `/products/${ailments[ailmentSelected]["aid"]}/?${params.join("&")}`);
 
-        view3.innerHTML = "";
-        view3.appendChild(resultsLabel);
-        resultsLabel.innerHTML = `${products.length} Results`;
-
+        productsContainer.scrollTop = 0;
+        productsContainer.innerHTML = "";
         for (let i = 0; i < products.length; i++) {
             let productContainer = document.createElement("div");
             productContainer.className = "product-container";
-            view3.appendChild(productContainer);
+            productsContainer.appendChild(productContainer);
 
             let shareButton = document.createElement("input");
-            shareButton.className = "share-button";
+            shareButton.className = "product-share-button";
             shareButton.type = "image";
             shareButton.src = "/images/share-icon.png";
             shareButton.onclick = function () {
@@ -107,31 +104,31 @@ function getQuestion() {
             productLink.innerHTML = "Vist Page";
             productContainer.appendChild(productLink);
 
-            let productLabel = document.createElement("p");
-            productLabel.className = "product-label";
-            productLabel.innerHTML = products[i]["name"];
-            productContainer.appendChild(productLabel);
+            let productHeader = document.createElement("p");
+            productHeader.className = "product-header";
+            productHeader.innerHTML = products[i]["name"];
+            productContainer.appendChild(productHeader);
 
-            let productDescription = document.createElement("p");
-            productDescription.className = "product-description";
-            productDescription.innerHTML = products[i]["description"];
-            productContainer.appendChild(productDescription);
+            let productBody = document.createElement("p");
+            productBody.className = "product-body";
+            productBody.innerHTML = products[i]["description"];
+            productContainer.appendChild(productBody);
         }
 
         questionPointer = -1;
         setProducts();
     } else {
-        textboxLabel.innerHTML = questions[questionPointer]["question"];
+        questionText.innerHTML = questions[questionPointer]["question"];
     }
 }
 
 function setProducts() {
-    view2.style.display = "none";
-    view3.style.display = "block";
+    questionsContainer.style.display = "none";
+    productsContainer.style.display = "block";
 
-    ailmentLabel.innerHTML += " Products";
-    ailmentDescription.innerHTML = `There are ${products.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
-    ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
+    ailmentHeader.innerHTML += " Products";
+    ailmentBody.innerHTML = `There are ${products.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
+    ailmentFooter.innerHTML = ailments[ailmentSelected]["disclaimer"];
 }
 
 window.onload = function () {
@@ -139,19 +136,18 @@ window.onload = function () {
     backButton = document.getElementById("back-button");
     nextButton = document.getElementById("next-button");
 
-    view1 = document.getElementById("view-1");
-    ailmentLabel = document.getElementById("ailment-label");
-    ailmentDescription = document.getElementById("ailment-description");
-    ailmentDisclaimer = document.getElementById("ailment-disclaimer");
+    ailmentContainer = document.getElementById("ailment-container");
+    ailmentHeader = document.getElementById("ailment-header");
+    ailmentBody = document.getElementById("ailment-body");
+    ailmentFooter = document.getElementById("ailment-footer");
 
-    view2 = document.getElementById("view-2");
+    questionsContainer = document.getElementById("questions-container");
     previousButton = document.getElementById("previous-button");
-    textboxLabel = document.getElementById("textbox-label");
+    questionText = document.getElementById("question-text");
     trueButton = document.getElementById("true-button");
     falseButton = document.getElementById("false-button");
 
-    view3 = document.getElementById("view-3");
-    resultsLabel = document.getElementById("results-label");
+    productsContainer = document.getElementById("products-container");
 
     ailments = requestJSON("GET", "/ailments/");
 
@@ -174,9 +170,9 @@ window.onload = function () {
     }
 
     for (let i = 0; i < 4; i++) {
-        ailmentButtons.push(document.createElement("button"));
-        ailmentButtons[i].className = "ailment-button";
-        ailmentButtons[i].onclick = function () {
+        navbarButtons.push(document.createElement("button"));
+        navbarButtons[i].className = "navbar-ailment-button";
+        navbarButtons[i].onclick = function () {
             let selected = (i + ailmentPointer) % ailments.length;;
 
             if (selected != ailmentSelected) {
@@ -187,7 +183,7 @@ window.onload = function () {
 
             setQuestionaire();
         }
-        navbar.insertBefore(ailmentButtons[i], nextButton);
+        navbar.insertBefore(navbarButtons[i], nextButton);
     }
 
     previousButton.onclick = function () {
@@ -195,7 +191,7 @@ window.onload = function () {
 
         if (questionPointer <= -1) questionPointer = 0;
 
-        textboxLabel.innerHTML = questions[questionPointer]["question"];
+        questionText.innerHTML = questions[questionPointer]["question"];
     }
 
     trueButton.onclick = function () {
