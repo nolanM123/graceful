@@ -154,17 +154,17 @@ window.onload = function () {
     questions = requestJSON("GET", `/questions/${ailments[ailmentSelected]["aid"]}/`);
 
     backButton.onclick = function () {
-        ailmentPointer++;
+        ailmentPointer--;
 
-        if (ailmentPointer >= ailments.length) ailmentPointer = 0;
+        if (ailmentPointer <= -1) ailmentPointer = ailments.length - 1;
 
         setNavbar();
     }
 
     nextButton.onclick = function () {
-        ailmentPointer--;
+        ailmentPointer++;
 
-        if (ailmentPointer <= -1) ailmentPointer = ailments.length - 1;
+        if (ailmentPointer >= ailments.length) ailmentPointer = 0;
 
         setNavbar();
     }

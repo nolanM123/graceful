@@ -57,8 +57,8 @@ def products(aid, request):
         cursor1 = db.cursor()
         cursor2 = db.cursor()
 
-        formulas = {
-            cid: eval(formula.format(**request.query), dict())
+        criteria_formulas = {
+            f"cid{cid}": eval(formula.format(**request.query), dict())
             for cid, formula in cursor1.execute(
                 "SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,)
             )
@@ -68,21 +68,19 @@ def products(aid, request):
             "SELECT pid, name, link, description, image FROM products WHERE aid == ?;",
             (aid,),
         ):
-            if all(
-                formulas.get(cid[0], False)
-                for cid in cursor2.execute(
-                    "SELECT cid FROM productCriteria WHERE aid == ? AND pid == ?;",
-                    (aid, pid),
-                )
+            for product_formulas in cursor2.execute(
+                "SELECT formula FROM productCriteria WHERE aid == ? AND pid == ?;",
+                (aid, pid),
             ):
-                result.append(
-                    {
-                        "name": name,
-                        "link": link,
-                        "description": description,
-                        "image": image,
-                    }
-                )
+                if eval(product_formulas[0].format(**criteria_formulas), dict()):
+                    result.append(
+                        {
+                            "name": name,
+                            "link": link,
+                            "description": description,
+                            "image": image,
+                        }
+                    )
 
         cursor1.close()
         cursor2.close()
@@ -94,7 +92,7 @@ def products(aid, request):
 def index(path, response):
     if not path:
         path = "index.html"
-    
+
     path = os.path.abspath(os.path.join("frontend/", path))
 
     return response.render(path)

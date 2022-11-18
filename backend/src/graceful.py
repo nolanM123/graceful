@@ -1,3 +1,4 @@
+import json
 import socket
 import asyncio
 import threading
@@ -156,7 +157,7 @@ class Response:
         content = self.content
 
         if not isinstance(content, bytes):
-            content = bytes(str(content).replace("'", '"'), encoding, errors)
+            content = bytes(str(content), encoding, errors)
 
         # headers
         headers = ""
@@ -213,6 +214,7 @@ class Response:
             self.set("content-type", "text/plain", True)
 
         elif isinstance(content, (tuple, list, dict)):
+            content = json.dumps(content)
             self.set("content-type", "application/json", True)
 
         self._content = content

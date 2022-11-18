@@ -1,0 +1,71 @@
+INSERT INTO ailments VALUES (13, 'Anti-Infection Skin', '');
+
+INSERT INTO questions VALUES 
+	(13, 1, 1, 'Are you trying to prevent a bacterial skin infection'), 
+	(13, 2, 1, 'Would you like pain relief'), 
+	(13, 3, 1, 'Are you sensitive or allergic to anesthetics'), 
+	(13, 4, 1, 'Do you have a fungal skin infection'), 
+	(13, 5, 1, 'Do you have a fungal nail infection'), 
+	(13, 6, 1, 'Are you diabetic or immunocompromised'), 
+	(13, 7, 1, 'Do you prefer a cream, lotion or ointment '), 
+	(13, 8, 1, 'Do you prefer a spray or powder'), 
+	(13, 9, 1, 'Do you prefer an azole antifungal'), 
+	(13, 10, 1, 'Do you prefer a tolnaftate or acid antifungal');
+
+INSERT INTO criteria VALUES 
+	(13, 1, 'Azole', ''), 
+	(13, 2, 'Toln-skin', ''), 
+	(13, 3, 'Toln-nail', ''), 
+	(13, 4, 'Undecylenic/lactic acid', ''), 
+	(13, 5, 'Antibiotic', ''), 
+	(13, 6, 'Anesthetic', ''), 
+	(13, 7, 'Antiseptic', ''), 
+	(13, 8, 'Pramoxine', ''), 
+	(13, 9, 'Cream/Ointment', ''), 
+	(13, 10, 'Spray/Powder', '');
+
+INSERT INTO products VALUES 
+	(13, 1, 'Tinactin® Athlete''s Foot Cream', '', '', ''), 
+	(13, 2, 'Tinactin® Athlete''s Foot Liquid Spray', '', '', ''), 
+	(13, 3, 'Tinactin® Athlete''s Foot Powder Spray', '', '', ''), 
+	(13, 4, 'Tinactin® Athlete''s Foot Deodorant Powder Spray', '', '', ''), 
+	(13, 5, 'Tinactin®Athlete''s Foot Super Absorbent Powder', '', '', ''), 
+	(13, 6, 'Tinactin® Jock Itch Cream', '', '', ''), 
+	(13, 7, 'Tinactin® Jock Itch Powder Spray', '', '', ''), 
+	(13, 8, 'Micatin Antifungal Cream', '', '', ''), 
+	(13, 9, 'Micatin Antifungal Spray', '', '', ''), 
+	(13, 10, 'Polysporin® Complete Ointment', '', '', ''), 
+	(13, 11, 'Polysporin® Triple Antibiotic Ointment', '', '', ''), 
+	(13, 12, 'Polysporin® Plus Pain Relief Cream', '', '', ''), 
+	(13, 13, 'Polysporin® Kids Cream', '', '', ''), 
+	(13, 14, 'Polysporin® Original Antibiotic Ointment', '', '', ''), 
+	(13, 15, 'Polysporin® Original Antibiotic Cream', '', '', ''), 
+	(13, 16, 'Poly To Go® First Aid Antiseptic / Pain Relieving Spray', '', '', ''), 
+	(13, 17, 'Emtrix®', '', '', ''), 
+	(13, 18, 'Fungi Nail® Pen', '', '', ''), 
+	(13, 19, 'Fungi Nail® Liquid', '', '', ''), 
+	(13, 20, 'Fungi Nail® Ointment', '', '', ''), 
+	(13, 21, 'Bactine® Max Pain Relieving Cleansing Spray', '', '', '');
+
+INSERT INTO productCriteria VALUES 
+	(13, 1, 'all([{cid2}, {cid9}])'), 
+	(13, 2, 'all([{cid2}, {cid10}])'), 
+	(13, 3, 'all([{cid2}, {cid10}])'), 
+	(13, 4, 'all([{cid2}, {cid10}])'), 
+	(13, 5, 'all([{cid2}, {cid10}])'), 
+	(13, 6, 'all([{cid2}, {cid9}])'), 
+	(13, 7, 'all([{cid2}, {cid10}])'), 
+	(13, 8, 'all([{cid1}, {cid9}])'), 
+	(13, 9, 'all([{cid1}, {cid10}])'), 
+	(13, 10, 'all([{cid5}, {cid6}, {cid9}])'), 
+	(13, 11, 'all([{cid5}, {cid9}])'), 
+	(13, 12, 'all([{cid5}, {cid6}, {cid9}])'), 
+	(13, 13, 'all([{cid5}, {cid6}, {cid9}])'), 
+	(13, 14, 'all([{cid5}, {cid9}])'), 
+	(13, 15, 'all([{cid5}, {cid9}])'), 
+	(13, 16, 'all([{cid7}, {cid8}, {cid10}])'), 
+	(13, 17, 'all([{cid4}])'), 
+	(13, 18, 'all([{cid4}])'), 
+	(13, 19, 'all([{cid3}])'), 
+	(13, 20, 'all([{cid3}, {cid9}])'), 
+	(13, 21, 'all([{cid6}, {cid7}])');

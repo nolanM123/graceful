@@ -36,5 +36,5 @@ CREATE TABLE products (
 CREATE TABLE productCriteria (
     aid int(100),
     pid int(100),
-    cid int(100)
+    formula varchar(255)
 );
