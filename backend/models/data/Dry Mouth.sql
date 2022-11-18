@@ -1,17 +1,17 @@
 INSERT INTO ailments VALUES (1, 'Dry Mouth', '');
 
 INSERT INTO questions VALUES 
-	(1, 1, 1, 'Would you like a saliva substitute'), 
-	(1, 2, 1, 'Would you like a saliva stimulator'), 
-	(1, 3, 1, 'Would you like an mucous thinner'), 
-	(1, 4, 1, 'Are you sensitive/allergic to parabens'), 
-	(1, 5, 1, 'Do you prefer a product for "as needed use"'), 
-	(1, 6, 1, 'Do you prefer a long-acting or overnight product'), 
-	(1, 7, 1, 'Do you prefer a spray'), 
-	(1, 8, 1, 'Do you prefer a mouth wash'), 
-	(1, 9, 1, 'Do you prefer a gel'), 
-	(1, 10, 1, 'Do you prefer lozenges or gum'), 
-	(1, 11, 1, 'Do you prefer an oral patch');
+	(1, 1, 1, 'Would you like a saliva substitute', ''), 
+	(1, 2, 1, 'Would you like a saliva stimulator', ''), 
+	(1, 3, 1, 'Would you like an mucous thinner', ''), 
+	(1, 4, 1, 'Are you sensitive/allergic to parabens', ''), 
+	(1, 5, 1, 'Do you prefer a product for "as needed use"', ''), 
+	(1, 6, 1, 'Do you prefer a long-acting or overnight product', ''), 
+	(1, 7, 1, 'Do you prefer a spray', ''), 
+	(1, 8, 1, 'Do you prefer a mouth wash', ''), 
+	(1, 9, 1, 'Do you prefer a gel', ''), 
+	(1, 10, 1, 'Do you prefer lozenges or gum', ''), 
+	(1, 11, 1, 'Do you prefer an oral patch', '');
 
 INSERT INTO criteria VALUES 
 	(1, 1, 'Xylitol', ''), 

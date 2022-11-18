@@ -1,23 +1,23 @@
 INSERT INTO ailments VALUES (16, 'Sun Screen', '');
 
 INSERT INTO questions VALUES 
-	(16, 1, 1, 'Would you like a tanning or low SPF product'), 
-	(16, 2, 1, 'Would you like a medium SPF product'), 
-	(16, 3, 1, 'Would you like a high SPF product'), 
-	(16, 4, 1, 'Do you prefer a lotion or cream'), 
-	(16, 5, 1, 'Do you prefer a stick'), 
-	(16, 6, 1, 'Do you prefer a spray'), 
-	(16, 7, 1, 'Do you prefer a waterpoof/resistant product'), 
-	(16, 8, 1, 'Are you sensitive to PABA, oxybenzone or avobenzone'), 
-	(16, 9, 1, 'Do you prefer a physical block or mineral sunscreen'), 
-	(16, 10, 1, 'Do you have acne or prefer non-comedogenic product'), 
-	(16, 11, 1, 'Do you need a product for your face or lips'), 
-	(16, 12, 1, 'Do you need a product for your body'), 
-	(16, 13, 1, 'Do you prefer a hypoallergenic product'), 
-	(16, 14, 1, 'Do you prefer a fragrance-free product'), 
-	(16, 15, 1, 'Do you prefer an oil-free product'), 
-	(16, 16, 1, 'Would you like a product for baby or kids'), 
-	(16, 17, 1, 'Would you like broad spectrum sun protection');
+	(16, 1, 1, 'Would you like a tanning or low SPF product', ''), 
+	(16, 2, 1, 'Would you like a medium SPF product', ''), 
+	(16, 3, 1, 'Would you like a high SPF product', ''), 
+	(16, 4, 1, 'Do you prefer a lotion or cream', ''), 
+	(16, 5, 1, 'Do you prefer a stick', ''), 
+	(16, 6, 1, 'Do you prefer a spray', ''), 
+	(16, 7, 1, 'Do you prefer a waterpoof/resistant product', ''), 
+	(16, 8, 1, 'Are you sensitive to PABA, oxybenzone or avobenzone', ''), 
+	(16, 9, 1, 'Do you prefer a physical block or mineral sunscreen', ''), 
+	(16, 10, 1, 'Do you have acne or prefer non-comedogenic product', ''), 
+	(16, 11, 1, 'Do you need a product for your face or lips', ''), 
+	(16, 12, 1, 'Do you need a product for your body', ''), 
+	(16, 13, 1, 'Do you prefer a hypoallergenic product', ''), 
+	(16, 14, 1, 'Do you prefer a fragrance-free product', ''), 
+	(16, 15, 1, 'Do you prefer an oil-free product', ''), 
+	(16, 16, 1, 'Would you like a product for baby or kids', ''), 
+	(16, 17, 1, 'Would you like broad spectrum sun protection', '');
 
 INSERT INTO criteria VALUES 
 	(16, 1, 'Low SPF', ''), 

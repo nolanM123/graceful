@@ -98,6 +98,14 @@ function getQuestion() {
             productIcon.className = "product-icon";
             productContainer.appendChild(productIcon);
 
+            let productImage = document.createElement("img");
+            productImage.className = "product-url";
+            productImage.src = products[i]["url"];
+            productImage.onerror = function () {
+                productImage.style.display = "none";
+            }
+            productIcon.appendChild(productImage);
+
             let productLink = document.createElement("a");
             productLink.className = "product-link";
             productLink.href = products[i]["link"];

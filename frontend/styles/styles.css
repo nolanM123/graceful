@@ -102,7 +102,7 @@ input {
 
   border-radius: 1rem;
 
-  background: linear-gradient(250deg, var(--tertiary) -10%, var(--primary) 10%, var(--primary) 90%, var(--tertiary) 110%);
+  background: linear-gradient(60deg, var(--tertiary) -40%, var(--primary) 20%, var(--primary) 80%, var(--tertiary) 140%);
 }
 
 .ailment-container {
@@ -286,6 +286,16 @@ input {
   background: linear-gradient(40deg, var(--primary) 60%, var(--tertiary) 120%);
 }
 
+.product-url {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+
+  border-radius: 99rem;
+  width: 90%;
+  height: 90%;
+}
+
 .product-link {
   position: relative;
   top: 104%;
@@ -297,10 +307,6 @@ input {
 }
 
 .product-header {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
   margin-top: 0%;
   margin-bottom: 0%;
   margin-left: 24%;
@@ -310,12 +316,6 @@ input {
   font-size: var(--medium);
   font-weight: bold;
   color: var(--primary);
-}
-
-.product-header:hover {
-  overflow: auto;
-  white-space: normal;
-  text-overflow: "-";
 }
 
 .product-body {
@@ -342,4 +342,8 @@ input {
   border-radius: 1rem;
 
   background-color: var(--tertiary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
 }

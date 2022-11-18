@@ -64,8 +64,8 @@ def products(aid, request):
             )
         }
 
-        for pid, name, link, description, image in cursor1.execute(
-            "SELECT pid, name, link, description, image FROM products WHERE aid == ?;",
+        for pid, name, link, description, url in cursor1.execute(
+            "SELECT pid, name, link, description, url FROM products WHERE aid == ?;",
             (aid,),
         ):
             for product_formulas in cursor2.execute(
@@ -78,7 +78,7 @@ def products(aid, request):
                             "name": name,
                             "link": link,
                             "description": description,
-                            "image": image,
+                            "url": url,
                         }
                     )
 

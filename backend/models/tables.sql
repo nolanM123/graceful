@@ -14,7 +14,8 @@ CREATE TABLE questions (
     aid int(100),
     qid int(100),
     sid int(100),
-    question varchar(255)
+    question varchar(255),
+    description text(500)
 );
 
 CREATE TABLE criteria (
@@ -30,7 +31,7 @@ CREATE TABLE products (
     name varchar(255),
     link varchar(255),
     description text(500),
-    image binary(255)
+    url varchar(255)
 );
 
 CREATE TABLE productCriteria (

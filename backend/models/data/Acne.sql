@@ -1,37 +1,37 @@
-INSERT INTO ailments VALUES (14, 'Acne', '');
+INSERT INTO ailments VALUES (14, 'Acne', 'Consult your phyisician for potential drug-induced or endocrine-disease induced acne. Consult your physician for moderate to severe acne or for acne non-responsive to 8-12 week over-the-counter therapy. Refer to your physician if acne is causing moderate to severe scarring. Avoid acne triggers, exacerbating factors, moisturizers, oil-based cosmetics and manipulating lesions. Wash areas no more than twice daily with mild nonalkaline soap, control/reduce stress and favor a healthy diet.');
 
 INSERT INTO questions VALUES 
-	(14, 1, 1, 'Would you prefer a cream'), 
-	(14, 2, 1, 'Would you prefer a gel'), 
-	(14, 3, 1, 'Would you prefer a lotion'), 
-	(14, 4, 1, 'Would you prefer a solution'), 
-	(14, 5, 1, 'Would you prefer a cleanser'), 
-	(14, 6, 1, 'Would you prefer a spot treatment'), 
-	(14, 7, 2, 'Would you prefer benzoyl peroxide'), 
-	(14, 8, 2, 'Would you prefer salicylic acid'), 
-	(14, 9, 2, 'Are you using retinoic acid or dapsone');
+	(14, 1, 1, 'Would you prefer a cream', ''), 
+	(14, 2, 1, 'Would you prefer a gel', ''), 
+	(14, 3, 1, 'Would you prefer a lotion', ''), 
+	(14, 4, 1, 'Would you prefer a solution', ''), 
+	(14, 5, 1, 'Would you prefer a cleanser', ''), 
+	(14, 6, 1, 'Would you prefer a spot treatment', ''), 
+	(14, 7, 2, 'Would you prefer benzoyl peroxide', ''), 
+	(14, 8, 2, 'Would you prefer salicylic acid', ''), 
+	(14, 9, 2, 'Are you using retinoic acid or dapsone', '');
 
 INSERT INTO criteria VALUES 
-	(14, 1, 'Salicylic Acid', ''), 
-	(14, 2, 'Peroxide', ''), 
-	(14, 3, 'Cream', ''), 
-	(14, 4, 'Lotion', ''), 
-	(14, 5, 'Gel', ''), 
-	(14, 6, 'Solution', ''), 
-	(14, 7, 'Cleanser', ''), 
-	(14, 8, 'Spot Treatment', '');
+	(14, 1, 'Salicylic Acid', '{qid8} and not {qid7}'), 
+	(14, 2, 'Peroxide', '{qid7} and not {qid8}'), 
+	(14, 3, 'Cream', '{qid1} and not any(({qid2}, {qid3}, {qid4}))'), 
+	(14, 4, 'Lotion', '{qid3} and not any(({qid1}, {qid2}))'), 
+	(14, 5, 'Gel', '{qid2} and not {qid1}'), 
+	(14, 6, 'Solution', '{qid4} and not any(({qid1}, {qid2}, {qid3}))'), 
+	(14, 7, 'Cleanser', '{qid5} and not {qid6}'), 
+	(14, 8, 'Spot Treatment', '{qid6} and not {qid5}');
 
 INSERT INTO products VALUES 
-	(14, 1, 'Oxy® Total Care™ Creamy Facial Cleanser', '', '', ''), 
-	(14, 2, 'Oxy® Total Care™ Vitamin C Serum', '', '', ''), 
-	(14, 3, 'Oxy® Total Care™ Clarifying Moisturizer', '', '', ''), 
-	(14, 4, 'Oxy Acne Cleanser', '', '', ''), 
-	(14, 5, 'Oxy 3-In-1 Acne Pads', '', '', ''), 
-	(14, 6, 'Oxy Sensitive Face Wash', '', '', ''), 
-	(14, 7, 'Oxy Rapid Spot Treatment', '', '', ''), 
-	(14, 8, 'Oxy On-The-Go Acne Stick', '', '', ''), 
-	(14, 9, 'Oxy Deep Pore Cleansing Pads', '', '', ''), 
-	(14, 10, 'Oxy Overnight Acne Reducing Patches', '', '', ''), 
+	(14, 1, 'Oxy® Total Care™ Creamy Facial Cleanser', 'https://oxyskincare.com/pages/oxy%C2%AE-total-care%C2%AE-creamy-facial-cleanser', 'OXY® Total Care™ Creamy Facial Cleanser is designed to deep-clean and moisturize all skin types. The soothing, creamy cleanser nourishes and moisturizes your skin with hydrating Hyaluronic Acid as a gentle level of a clinically proven acne medication clears your skin and helps prevent future breakouts. The light and luxuriously foaming cleanser has a fresh scent that helps awaken your senses and will leave your face feeling clean and refreshed without stripping or over-drying your face. Perfect for daily control of mild-to-moderate acne at any age.', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 2, 'Oxy® Total Care™ Vitamin C Serum', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 3, 'Oxy® Total Care™ Clarifying Moisturizer', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 4, 'Oxy Acne Cleanser', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 5, 'Oxy 3-In-1 Acne Pads', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 6, 'Oxy Sensitive Face Wash', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 7, 'Oxy Rapid Spot Treatment', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 8, 'Oxy On-The-Go Acne Stick', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 9, 'Oxy Deep Pore Cleansing Pads', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
+	(14, 10, 'Oxy Overnight Acne Reducing Patches', '', '', 'https://m.media-amazon.com/images/S/gladiator-image-upload-prod/5/ATVPDKIKX0DER/da2166fe156ba6268b5dad6d3bc4096a.jpg'), 
 	(14, 11, 'Clearasil Rapid Rescue Spot Treatment Cream', '', '', ''), 
 	(14, 12, 'Clearasil Rapid Rescue Spot Treatment Gel', '', '', ''), 
 	(14, 13, 'Clearasil Stubborn Acne Control 5In1 Exfoliating Wash', '', '', ''), 

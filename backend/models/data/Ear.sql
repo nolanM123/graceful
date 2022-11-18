@@ -1,14 +1,14 @@
 INSERT INTO ailments VALUES (15, 'Ear Product', '');
 
 INSERT INTO questions VALUES 
-	(15, 1, 1, 'Do you have minor ear pain'), 
-	(15, 2, 1, 'Do you have swimmer''s ear (outer ear) infection'), 
-	(15, 3, 1, 'Do you have excess ear wax'), 
-	(15, 4, 1, 'Do you have water-clogged ears'), 
-	(15, 5, 1, 'Are you an adult ≥ 12 years old'), 
-	(15, 6, 1, 'Are you allergic to anesthetics (i.e lidocaine, benzocaine)'), 
-	(15, 7, 1, 'Are you sensitive to benzalkonium chloride (preservative)'), 
-	(15, 8, 1, 'Are you severely allergic to peanuts');
+	(15, 1, 1, 'Do you have minor ear pain', ''), 
+	(15, 2, 1, 'Do you have swimmer''s ear (outer ear) infection', ''), 
+	(15, 3, 1, 'Do you have excess ear wax', ''), 
+	(15, 4, 1, 'Do you have water-clogged ears', ''), 
+	(15, 5, 1, 'Are you an adult ≥ 12 years old', ''), 
+	(15, 6, 1, 'Are you allergic to anesthetics (i.e lidocaine, benzocaine)', ''), 
+	(15, 7, 1, 'Are you sensitive to benzalkonium chloride (preservative)', ''), 
+	(15, 8, 1, 'Are you severely allergic to peanuts', '');
 
 INSERT INTO criteria VALUES 
 	(15, 1, 'Antibiotic', ''), 

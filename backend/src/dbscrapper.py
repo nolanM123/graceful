@@ -92,7 +92,8 @@ for sheet_name in xl.sheet_names:
         # save data
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
 
-        with open(f"backend/models/data/{name}.sql", "w", encoding='utf-8') as data:
-            data.write(ailments + questions + criteria + products + product_criteria)
+        if name == "Legal":
+            with open(f"backend/models/data/{name}.sql", "w", encoding='utf-8') as data:
+                data.write(ailments + questions + criteria + products + product_criteria)
 
         aid += 1

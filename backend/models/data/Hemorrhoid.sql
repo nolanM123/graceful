@@ -1,21 +1,21 @@
 INSERT INTO ailments VALUES (2, 'Hemorrhoid', '');
 
 INSERT INTO questions VALUES 
-	(2, 1, 1, 'Are you experiencing itch'), 
-	(2, 2, 1, 'Are you experiencing inflammation'), 
-	(2, 3, 1, 'Are you experiencing pain'), 
-	(2, 4, 1, 'Do you prefer a cream/gel'), 
-	(2, 5, 1, 'Do you prefer an ointment'), 
-	(2, 6, 1, 'Do you prefer a suppository'), 
-	(2, 7, 1, 'Would you prefer a wipes'), 
-	(2, 8, 1, 'Would you prefer an oral product'), 
-	(2, 9, 1, 'Would you like an astringent'), 
-	(2, 10, 1, 'Would you like an anesthetic'), 
-	(2, 11, 1, 'Would you like a protectant/lubricant'), 
-	(2, 12, 1, 'Would you like a steroid'), 
-	(2, 13, 1, 'Would you like a vasoconstrictor'), 
-	(2, 14, 1, 'Are you allergic/sensitive to wool'), 
-	(2, 15, 1, 'Are you allergic/sensitive to parabens or anesthetics');
+	(2, 1, 1, 'Are you experiencing itch', ''), 
+	(2, 2, 1, 'Are you experiencing inflammation', ''), 
+	(2, 3, 1, 'Are you experiencing pain', ''), 
+	(2, 4, 1, 'Do you prefer a cream/gel', ''), 
+	(2, 5, 1, 'Do you prefer an ointment', ''), 
+	(2, 6, 1, 'Do you prefer a suppository', ''), 
+	(2, 7, 1, 'Would you prefer a wipes', ''), 
+	(2, 8, 1, 'Would you prefer an oral product', ''), 
+	(2, 9, 1, 'Would you like an astringent', ''), 
+	(2, 10, 1, 'Would you like an anesthetic', ''), 
+	(2, 11, 1, 'Would you like a protectant/lubricant', ''), 
+	(2, 12, 1, 'Would you like a steroid', ''), 
+	(2, 13, 1, 'Would you like a vasoconstrictor', ''), 
+	(2, 14, 1, 'Are you allergic/sensitive to wool', ''), 
+	(2, 15, 1, 'Are you allergic/sensitive to parabens or anesthetics', '');
 
 INSERT INTO criteria VALUES 
 	(2, 1, 'Pramoxine/Lidocaine', ''), 

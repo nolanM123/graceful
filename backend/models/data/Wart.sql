@@ -1,13 +1,13 @@
 INSERT INTO ailments VALUES (12, 'Wart', '');
 
 INSERT INTO questions VALUES 
-	(12, 1, 1, 'Do you have diabetes, immunosuppression or poor/reduced circulation'), 
-	(12, 2, 1, 'Are you sensitive/allergic to rubber or wool '), 
-	(12, 3, 1, 'Would you prefer cryotherapy system'), 
-	(12, 4, 1, 'Would you prefer a topical liquid or gel'), 
-	(12, 5, 1, 'Would you prefer a topical pad, patch or strip'), 
-	(12, 6, 1, 'Would you like to treat a common wart'), 
-	(12, 7, 1, 'Would you like to treat a plantar wart');
+	(12, 1, 1, 'Do you have diabetes, immunosuppression or poor/reduced circulation', ''), 
+	(12, 2, 1, 'Are you sensitive/allergic to rubber or wool', ''), 
+	(12, 3, 1, 'Would you prefer cryotherapy system', ''), 
+	(12, 4, 1, 'Would you prefer a topical liquid or gel', ''), 
+	(12, 5, 1, 'Would you prefer a topical pad, patch or strip', ''), 
+	(12, 6, 1, 'Would you like to treat a common wart', ''), 
+	(12, 7, 1, 'Would you like to treat a plantar wart', '');
 
 INSERT INTO criteria VALUES 
 	(12, 1, 'Salicylic Acid', ''), 

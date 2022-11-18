@@ -1,19 +1,19 @@
 INSERT INTO ailments VALUES (3, 'Diabetes Meter', '');
 
 INSERT INTO questions VALUES 
-	(3, 1, 1, 'Would you like a meter with quasi lab level accuracy'), 
-	(3, 2, 1, 'Would you like an easy to use meter'), 
-	(3, 3, 1, 'Would you like a meter with color coded readings'), 
-	(3, 4, 1, 'Do you have issues drawing sufficient blood'), 
-	(3, 5, 1, 'Would you like a large display'), 
-	(3, 6, 1, 'Would you like a backlighted meter'), 
-	(3, 7, 1, 'Are you computer savvy'), 
-	(3, 8, 1, 'Would you like a talking device'), 
-	(3, 9, 1, 'Would you like to measure ketones'), 
-	(3, 10, 1, 'Would you prefer an implanted sensor instead of strips'), 
-	(3, 11, 1, 'Would you like assistance with insulin dosing'), 
-	(3, 12, 1, 'Would you like a meter designed around insulin pump'), 
-	(3, 13, 1, 'Would you like a discrete or small sized meter');
+	(3, 1, 1, 'Would you like a meter with quasi lab level accuracy', ''), 
+	(3, 2, 1, 'Would you like an easy to use meter', ''), 
+	(3, 3, 1, 'Would you like a meter with color coded readings', ''), 
+	(3, 4, 1, 'Do you have issues drawing sufficient blood', ''), 
+	(3, 5, 1, 'Would you like a large display', ''), 
+	(3, 6, 1, 'Would you like a backlighted meter', ''), 
+	(3, 7, 1, 'Are you computer savvy', ''), 
+	(3, 8, 1, 'Would you like a talking device', ''), 
+	(3, 9, 1, 'Would you like to measure ketones', ''), 
+	(3, 10, 1, 'Would you prefer an implanted sensor instead of strips', ''), 
+	(3, 11, 1, 'Would you like assistance with insulin dosing', ''), 
+	(3, 12, 1, 'Would you like a meter designed around insulin pump', ''), 
+	(3, 13, 1, 'Would you like a discrete or small sized meter', '');
 
 INSERT INTO criteria VALUES 
 	(3, 1, 'Accurate', ''), 

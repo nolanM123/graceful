@@ -1,20 +1,20 @@
 INSERT INTO ailments VALUES (19, 'Lice Product', '');
 
 INSERT INTO questions VALUES 
-	(19, 1, 1, 'Are you pregnant or nursing'), 
-	(19, 2, 1, 'Are you using product on adult or child ≥ 2 yrs old'), 
-	(19, 3, 1, 'Are you sensitive/allergic to ragweed or chrysanthemum'), 
-	(19, 4, 1, 'Do you have a sensitivity/allergy to mineral oil'), 
-	(19, 5, 1, 'Would you like a product with ovocidal & pediculicide activity'), 
-	(19, 6, 1, 'Would you like a product with pediculicide activity'), 
-	(19, 7, 1, 'Would you like a pesticide containing product'), 
-	(19, 8, 1, 'Would you like a pesticide-free product'), 
-	(19, 9, 1, 'Is there significant pesticide resistance in your area'), 
-	(19, 10, 1, 'Would you prefer a product with 10min application'), 
-	(19, 11, 1, 'Would you prefer a product with overnight application'), 
-	(19, 12, 1, 'Would you prefer to apply to damp hair'), 
-	(19, 13, 1, 'Would you prefer to apply to dry hair'), 
-	(19, 14, 1, 'Can you avoid use of a hair conditioner');
+	(19, 1, 1, 'Are you pregnant or nursing', ''), 
+	(19, 2, 1, 'Are you using product on adult or child ≥ 2 yrs old', ''), 
+	(19, 3, 1, 'Are you sensitive/allergic to ragweed or chrysanthemum', ''), 
+	(19, 4, 1, 'Do you have a sensitivity/allergy to mineral oil', ''), 
+	(19, 5, 1, 'Would you like a product with ovocidal & pediculicide activity', ''), 
+	(19, 6, 1, 'Would you like a product with pediculicide activity', ''), 
+	(19, 7, 1, 'Would you like a pesticide containing product', ''), 
+	(19, 8, 1, 'Would you like a pesticide-free product', ''), 
+	(19, 9, 1, 'Is there significant pesticide resistance in your area', ''), 
+	(19, 10, 1, 'Would you prefer a product with 10min application', ''), 
+	(19, 11, 1, 'Would you prefer a product with overnight application', ''), 
+	(19, 12, 1, 'Would you prefer to apply to damp hair', ''), 
+	(19, 13, 1, 'Would you prefer to apply to dry hair', ''), 
+	(19, 14, 1, 'Can you avoid use of a hair conditioner', '');
 
 INSERT INTO criteria VALUES 
 	(19, 1, 'Preg/Nurse', ''), 

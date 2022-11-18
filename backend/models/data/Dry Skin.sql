@@ -1,22 +1,22 @@
 INSERT INTO ailments VALUES (11, 'Dry Skin', '');
 
 INSERT INTO questions VALUES 
-	(11, 1, 1, 'Do you have itchy skin'), 
-	(11, 2, 1, 'Do you have mild dry skin'), 
-	(11, 3, 1, 'Do you have severe dry skin'), 
-	(11, 4, 1, 'Do you have acne or acne-prone skin'), 
-	(11, 5, 1, 'Do you have sensitive skin'), 
-	(11, 6, 1, 'Are you allergic or sensitive to fragrances'), 
-	(11, 7, 1, 'Are you allergic or sensitive to lanolin'), 
-	(11, 8, 1, 'Are you allergic or sensitive to parabens'), 
-	(11, 9, 1, 'Do you need an emollient'), 
-	(11, 10, 1, 'Do you need a humectant'), 
-	(11, 11, 1, 'Do you need an occlusive'), 
-	(11, 12, 1, 'Do you need a bath oil'), 
-	(11, 13, 1, 'Would you like a colloidal oat product'), 
-	(11, 14, 1, 'Would you prefer a cream'), 
-	(11, 15, 1, 'Would you prefer an ointment/balm'), 
-	(11, 16, 1, 'Would you prefer a lotion');
+	(11, 1, 1, 'Do you have itchy skin', ''), 
+	(11, 2, 1, 'Do you have mild dry skin', ''), 
+	(11, 3, 1, 'Do you have severe dry skin', ''), 
+	(11, 4, 1, 'Do you have acne or acne-prone skin', ''), 
+	(11, 5, 1, 'Do you have sensitive skin', ''), 
+	(11, 6, 1, 'Are you allergic or sensitive to fragrances', ''), 
+	(11, 7, 1, 'Are you allergic or sensitive to lanolin', ''), 
+	(11, 8, 1, 'Are you allergic or sensitive to parabens', ''), 
+	(11, 9, 1, 'Do you need an emollient', ''), 
+	(11, 10, 1, 'Do you need a humectant', ''), 
+	(11, 11, 1, 'Do you need an occlusive', ''), 
+	(11, 12, 1, 'Do you need a bath oil', ''), 
+	(11, 13, 1, 'Would you like a colloidal oat product', ''), 
+	(11, 14, 1, 'Would you prefer a cream', ''), 
+	(11, 15, 1, 'Would you prefer an ointment/balm', ''), 
+	(11, 16, 1, 'Would you prefer a lotion', '');
 
 INSERT INTO criteria VALUES 
 	(11, 1, 'Occlusive', ''), 

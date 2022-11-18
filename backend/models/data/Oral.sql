@@ -1,16 +1,16 @@
 INSERT INTO ailments VALUES (24, 'Oral', '');
 
 INSERT INTO questions VALUES 
-	(24, 1, 1, 'Are you an adult > 12 years old'), 
-	(24, 2, 1, 'Would you like a product for cold sores'), 
-	(24, 3, 1, 'Would you like a product to relieve oral or canker pain'), 
-	(24, 4, 1, 'Are you allergic or sensitive to anethetics'), 
-	(24, 5, 1, 'Are you allergic or sensitive to preservatives (benzalkonium chloride or parabens)'), 
-	(24, 6, 1, 'Would you like a homeopathic  product'), 
-	(24, 7, 1, 'Would you prefer a product with an astringent'), 
-	(24, 8, 1, 'Would you prefer a product with menthol'), 
-	(24, 9, 1, 'Would you like a product with antiviral'), 
-	(24, 10, 1, 'Would you like a product with Lysine');
+	(24, 1, 1, 'Are you an adult > 12 years old', ''), 
+	(24, 2, 1, 'Would you like a product for cold sores', ''), 
+	(24, 3, 1, 'Would you like a product to relieve oral or canker pain', ''), 
+	(24, 4, 1, 'Are you allergic or sensitive to anethetics', ''), 
+	(24, 5, 1, 'Are you allergic or sensitive to preservatives (benzalkonium chloride or parabens)', ''), 
+	(24, 6, 1, 'Would you like a homeopathic  product', ''), 
+	(24, 7, 1, 'Would you prefer a product with an astringent', ''), 
+	(24, 8, 1, 'Would you prefer a product with menthol', ''), 
+	(24, 9, 1, 'Would you like a product with antiviral', ''), 
+	(24, 10, 1, 'Would you like a product with Lysine', '');
 
 INSERT INTO criteria VALUES 
 	(24, 1, 'Kids', ''), 

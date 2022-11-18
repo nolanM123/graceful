@@ -1,19 +1,19 @@
 INSERT INTO ailments VALUES (17, 'Family Planning', '');
 
 INSERT INTO questions VALUES 
-	(17, 1, 1, 'Would you like to test for pregnancy'), 
-	(17, 2, 1, 'Would you prefer a digital display'), 
-	(17, 3, 1, 'Would you prefer a "line" display'), 
-	(17, 4, 1, 'Would you like to test for pregnancy before a missed period'), 
-	(17, 5, 1, 'Would you like an indication of conception date'), 
-	(17, 6, 1, 'Would you like the fastest result'), 
-	(17, 7, 1, 'Are you taking hCG containing fertility drugs, corticosteroids or hormones'), 
-	(17, 8, 1, 'Would you like a pregnancy test combo'), 
-	(17, 9, 2, 'Would you like to test for fertility'), 
-	(17, 10, 2, 'Would you like to determine 2 most fertile days'), 
-	(17, 11, 2, 'Would you like to determine 4 most fertile days'), 
-	(17, 12, 2, 'Are you taking hormones or fertility medications'), 
-	(17, 13, 2, 'Would you like an ovulation/pregnancy test combo');
+	(17, 1, 1, 'Would you like to test for pregnancy', ''), 
+	(17, 2, 1, 'Would you prefer a digital display', ''), 
+	(17, 3, 1, 'Would you prefer a "line" display', ''), 
+	(17, 4, 1, 'Would you like to test for pregnancy before a missed period', ''), 
+	(17, 5, 1, 'Would you like an indication of conception date', ''), 
+	(17, 6, 1, 'Would you like the fastest result', ''), 
+	(17, 7, 1, 'Are you taking hCG containing fertility drugs, corticosteroids or hormones', ''), 
+	(17, 8, 1, 'Would you like a pregnancy test combo', ''), 
+	(17, 9, 2, 'Would you like to test for fertility', ''), 
+	(17, 10, 2, 'Would you like to determine 2 most fertile days', ''), 
+	(17, 11, 2, 'Would you like to determine 4 most fertile days', ''), 
+	(17, 12, 2, 'Are you taking hormones or fertility medications', ''), 
+	(17, 13, 2, 'Would you like an ovulation/pregnancy test combo', '');
 
 INSERT INTO criteria VALUES 
 	(17, 1, 'Pregnancy', ''), 

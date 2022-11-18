@@ -1,19 +1,19 @@
 INSERT INTO ailments VALUES (8, 'Vaginal', '');
 
 INSERT INTO questions VALUES 
-	(8, 1, 1, 'Are you Pregnant and/or Diabetic'), 
-	(8, 2, 1, 'Are you an adult ≥ 12 yrs old'), 
-	(8, 3, 1, 'Are you on warfarin therapy'), 
-	(8, 4, 1, 'Would you like a genital hygiene product'), 
-	(8, 5, 1, 'Would you like a vaginal lubricant'), 
-	(8, 6, 1, 'Would you like a vaginal moisturizer'), 
-	(8, 7, 1, 'Do you have a yeast infection'), 
-	(8, 8, 1, 'Do you have bacterial vaginosis'), 
-	(8, 9, 1, 'Would you like to prevent yeast/bacterial infection'), 
-	(8, 10, 1, 'Do you have cystitis (bladder inflammation)'), 
-	(8, 11, 1, 'Would you like an oral product'), 
-	(8, 12, 1, 'Would you like a cream/gel'), 
-	(8, 13, 1, 'Would you like a vaginal tablet');
+	(8, 1, 1, 'Are you Pregnant and/or Diabetic', ''), 
+	(8, 2, 1, 'Are you an adult ≥ 12 yrs old', ''), 
+	(8, 3, 1, 'Are you on warfarin therapy', ''), 
+	(8, 4, 1, 'Would you like a genital hygiene product', ''), 
+	(8, 5, 1, 'Would you like a vaginal lubricant', ''), 
+	(8, 6, 1, 'Would you like a vaginal moisturizer', ''), 
+	(8, 7, 1, 'Do you have a yeast infection', ''), 
+	(8, 8, 1, 'Do you have bacterial vaginosis', ''), 
+	(8, 9, 1, 'Would you like to prevent yeast/bacterial infection', ''), 
+	(8, 10, 1, 'Do you have cystitis (bladder inflammation)', ''), 
+	(8, 11, 1, 'Would you like an oral product', ''), 
+	(8, 12, 1, 'Would you like a cream/gel', ''), 
+	(8, 13, 1, 'Would you like a vaginal tablet', '');
 
 INSERT INTO criteria VALUES 
 	(8, 1, 'Oral', ''), 

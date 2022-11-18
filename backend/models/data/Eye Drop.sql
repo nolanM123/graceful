@@ -1,21 +1,21 @@
 INSERT INTO ailments VALUES (10, 'Eye Drop', '');
 
 INSERT INTO questions VALUES 
-	(10, 1, 1, 'Do you have mild dry eye'), 
-	(10, 2, 1, 'Do you have severe dry eye'), 
-	(10, 3, 1, 'Do you have pink eye'), 
-	(10, 4, 1, 'Would you like a decongestant'), 
-	(10, 5, 1, 'Do you wear contacts'), 
-	(10, 6, 1, 'Would you like a fast acting product for "as need" use'), 
-	(10, 7, 1, 'Would you like a long-lasting  or nighttime product'), 
-	(10, 8, 1, 'Did you have laser eye surgery (LASIK)'), 
-	(10, 9, 1, 'Are you sensitive to wool'), 
-	(10, 10, 1, 'Can you use decongestants'), 
-	(10, 11, 1, 'Are you sensitive to preservatives'), 
-	(10, 12, 1, 'Do you have a lipid layer deficiency of the eye'), 
-	(10, 13, 1, 'Do you prefer eye drops'), 
-	(10, 14, 1, 'Do you prefer eye gel drops'), 
-	(10, 15, 1, 'Do you prefer an eye ointment');
+	(10, 1, 1, 'Do you have mild dry eye', ''), 
+	(10, 2, 1, 'Do you have severe dry eye', ''), 
+	(10, 3, 1, 'Do you have pink eye', ''), 
+	(10, 4, 1, 'Would you like a decongestant', ''), 
+	(10, 5, 1, 'Do you wear contacts', ''), 
+	(10, 6, 1, 'Would you like a fast acting product for "as need" use', ''), 
+	(10, 7, 1, 'Would you like a long-lasting  or nighttime product', ''), 
+	(10, 8, 1, 'Did you have laser eye surgery (LASIK)', ''), 
+	(10, 9, 1, 'Are you sensitive to wool', ''), 
+	(10, 10, 1, 'Can you use decongestants', ''), 
+	(10, 11, 1, 'Are you sensitive to preservatives', ''), 
+	(10, 12, 1, 'Do you have a lipid layer deficiency of the eye', ''), 
+	(10, 13, 1, 'Do you prefer eye drops', ''), 
+	(10, 14, 1, 'Do you prefer eye gel drops', ''), 
+	(10, 15, 1, 'Do you prefer an eye ointment', '');
 
 INSERT INTO criteria VALUES 
 	(10, 1, 'Preservative', ''), 

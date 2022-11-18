@@ -1,19 +1,18 @@
 INSERT INTO ailments VALUES (18, 'Smoking Cessation', '');
 
 INSERT INTO questions VALUES 
-	(18, 1, 1, 'Are you a regular light smoker'), 
-	(18, 2, 1, 'Are you a regular heavy smoker'), 
-	(18, 3, 1, 'Do you have heart disease'), 
-	(18, 4, 1, 'Are you pregnant or nursing'), 
-	(18, 5, 1, 'Do you have chronic upset stomach or ulcers'), 
-	(18, 6, 1, 'Would you like a spray product'), 
-	(18, 7, 1, 'Would you like a chewing gum product'), 
-	(18, 8, 1, 'Would you like a lozenge product'), 
-	(18, 9, 1, 'Would you like a patch product'), 
-	(18, 10, 1, 'Would you like an inhaler product'), 
-	(18, 11, 1, 'Would you prefer a mint flavoured product'), 
-	(18, 12, 1, 'Would you prefer other flavour options'), 
-	(18, 13, 1, ' ');
+	(18, 1, 1, 'Are you a regular light smoker', ''), 
+	(18, 2, 1, 'Are you a regular heavy smoker', ''), 
+	(18, 3, 1, 'Do you have heart disease', ''), 
+	(18, 4, 1, 'Are you pregnant or nursing', ''), 
+	(18, 5, 1, 'Do you have chronic upset stomach or ulcers', ''), 
+	(18, 6, 1, 'Would you like a spray product', ''), 
+	(18, 7, 1, 'Would you like a chewing gum product', ''), 
+	(18, 8, 1, 'Would you like a lozenge product', ''), 
+	(18, 9, 1, 'Would you like a patch product', ''), 
+	(18, 10, 1, 'Would you like an inhaler product', ''), 
+	(18, 11, 1, 'Would you prefer a mint flavoured product', ''), 
+	(18, 12, 1, 'Would you prefer other flavour options', '');
 
 INSERT INTO criteria VALUES 
 	(18, 1, 'NRT', ''), 

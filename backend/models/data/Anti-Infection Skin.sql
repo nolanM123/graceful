@@ -1,16 +1,16 @@
 INSERT INTO ailments VALUES (13, 'Anti-Infection Skin', '');
 
 INSERT INTO questions VALUES 
-	(13, 1, 1, 'Are you trying to prevent a bacterial skin infection'), 
-	(13, 2, 1, 'Would you like pain relief'), 
-	(13, 3, 1, 'Are you sensitive or allergic to anesthetics'), 
-	(13, 4, 1, 'Do you have a fungal skin infection'), 
-	(13, 5, 1, 'Do you have a fungal nail infection'), 
-	(13, 6, 1, 'Are you diabetic or immunocompromised'), 
-	(13, 7, 1, 'Do you prefer a cream, lotion or ointment '), 
-	(13, 8, 1, 'Do you prefer a spray or powder'), 
-	(13, 9, 1, 'Do you prefer an azole antifungal'), 
-	(13, 10, 1, 'Do you prefer a tolnaftate or acid antifungal');
+	(13, 1, 1, 'Are you trying to prevent a bacterial skin infection', ''), 
+	(13, 2, 1, 'Would you like pain relief', ''), 
+	(13, 3, 1, 'Are you sensitive or allergic to anesthetics', ''), 
+	(13, 4, 1, 'Do you have a fungal skin infection', ''), 
+	(13, 5, 1, 'Do you have a fungal nail infection', ''), 
+	(13, 6, 1, 'Are you diabetic or immunocompromised', ''), 
+	(13, 7, 1, 'Do you prefer a cream, lotion or ointment', ''), 
+	(13, 8, 1, 'Do you prefer a spray or powder', ''), 
+	(13, 9, 1, 'Do you prefer an azole antifungal', ''), 
+	(13, 10, 1, 'Do you prefer a tolnaftate or acid antifungal', '');
 
 INSERT INTO criteria VALUES 
 	(13, 1, 'Azole', ''), 
