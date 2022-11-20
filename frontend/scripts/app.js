@@ -126,6 +126,7 @@ function getQuestion() {
         questionPointer = -1;
         setProducts();
     } else {
+        questionText.title = questions[questionPointer]["description"];
         questionText.innerHTML = questions[questionPointer]["question"];
     }
 }
@@ -177,7 +178,7 @@ window.onload = function () {
         setNavbar();
     }
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         navbarButtons.push(document.createElement("button"));
         navbarButtons[i].className = "navbar-ailment-button";
         navbarButtons[i].onclick = function () {

@@ -7,6 +7,8 @@ xl = pd.ExcelFile("backend/models/data/PharmBot_v1.xlsx")
 
 aid = 1
 
+cdf = None
+
 ailments = ""
 questions = ""
 criteria = ""
@@ -20,6 +22,8 @@ for sheet_name in xl.sheet_names:
     df = xl.parse(sheet_name)
 
     if sheet_name.endswith("Criteria"):
+        cdf = df
+
         # ailments
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
         description = ""
@@ -30,6 +34,7 @@ for sheet_name in xl.sheet_names:
         questions = "INSERT INTO questions VALUES \n"
         qid = 1
         sid = 1
+        description = ""
 
         for question in df.get("Question Set 1"):
             if not pd.isna(question):
@@ -37,7 +42,7 @@ for sheet_name in xl.sheet_names:
                     sid += 1
                 
                 else:
-                    questions += "\t({}, {}, {}, '{}'), \n".format(aid, qid, sid, question)
+                    questions += "\t({}, {}, {}, '{}', '{}'), \n".format(aid, qid, sid, question, description)
                     qid += 1
         
         questions = questions[:-3] + ";\n\n"
@@ -84,7 +89,7 @@ for sheet_name in xl.sheet_names:
                     cid += 1
             
             if not pd.isna(df[df.columns[-1]][row]):
-                product_criteria += "\t({}, {}, 'all([{}])'), \n".format(aid, pid, ", ".join(formula))
+                product_criteria += "\t({}, {}, '{}'), \n".format(aid, pid, " and ".join(formula))
                 pid += 1
 
         product_criteria = product_criteria[:-3] + ";\n"
@@ -92,8 +97,10 @@ for sheet_name in xl.sheet_names:
         # save data
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
 
-        if name == "Legal":
-            with open(f"backend/models/data/{name}.sql", "w", encoding='utf-8') as data:
-                data.write(ailments + questions + criteria + products + product_criteria)
+        if name == "Diabetes Meter":
+            print(product_criteria)
+
+        #with open(f"backend/models/data/{name}.sql", "w+", encoding='utf-8') as data:
+        #    data.write(doc + product_criteria)
 
         aid += 1

@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (19, 'Lice Product', '');
+INSERT INTO ailments VALUES (
+	19, 
+	'Lice Product', 
+	'Consult your heath care provider for recurrent head lice or lice unresponsive to non-prescription therapy. Treatment with head lice products should be repeated after 7 days. Avoid close contact and sharing personal items (clothing, combs, bedding) with an infected individual.'
+);
 
 INSERT INTO questions VALUES 
 	(19, 1, 1, 'Are you pregnant or nursing', ''), 
@@ -38,8 +42,8 @@ INSERT INTO products VALUES
 	(19, 5, 'R&C® 2In1 Shampoo + Conditioner', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(19, 1, 'all([{cid1}, {cid2}, {cid5}, {cid7}, {cid8}, {cid10}, {cid12}])'), 
-	(19, 2, 'all([{cid1}, {cid3}, {cid4}, {cid6}, {cid7}, {cid8}, {cid10}, {cid12}])'), 
-	(19, 3, 'all([{cid1}, {cid3}, {cid6}, {cid7}, {cid8}, {cid11}, {cid12}])'), 
-	(19, 4, 'all([{cid1}, {cid3}, {cid6}, {cid7}, {cid9}, {cid10}, {cid12}])'), 
-	(19, 5, 'all([{cid1}, {cid2}, {cid6}, {cid7}, {cid8}, {cid10}, {cid12}])');
+	(19, 1, '{cid1} and {cid2} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12}'), 
+	(19, 2, '{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12}'), 
+	(19, 3, '{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid11} and {cid12}'), 
+	(19, 4, '{cid1} and {cid3} and {cid6} and {cid7} and {cid9} and {cid10} and {cid12}'), 
+	(19, 5, '{cid1} and {cid2} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12}');

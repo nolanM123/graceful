@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (15, 'Ear Product', '');
+INSERT INTO ailments VALUES (
+	15, 
+	'Ear Product', 
+	'Consult your phyisician if you have had ear surgery in past 6 weeks, have a ruptured tympanic membrane, tympanostomy tubes, dizziness, vertigo or tinnitus. Consult your physician for hearing loss of unknown cause, associated with pain and/or upper respiratory tract infection. Consult your physician for ear pain associated with ear drainage, flying, scuba diving, otitis symptoms (debris, itching, tenderness), presence of foreign body or symptoms persisting more than 2-3 days.'
+);
 
 INSERT INTO questions VALUES 
 	(15, 1, 1, 'Do you have minor ear pain', ''), 
@@ -27,10 +31,10 @@ INSERT INTO products VALUES
 	(15, 7, 'Auro-Dri Swimmer''s Ears Water Drying Aid', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(15, 1, 'all([{cid1}, {cid2}, {cid3}])'), 
-	(15, 2, 'all([{cid1}, {cid3}])'), 
-	(15, 3, 'all([{cid2}, {cid3}])'), 
-	(15, 4, 'all([{cid1}, {cid3}])'), 
-	(15, 5, 'all([{cid3}, {cid5}])'), 
-	(15, 6, 'all([{cid3}, {cid5}])'), 
-	(15, 7, 'all([{cid3}, {cid4}])');
+	(15, 1, '{cid1} and {cid2} and {cid3}'), 
+	(15, 2, '{cid1} and {cid3}'), 
+	(15, 3, '{cid2} and {cid3}'), 
+	(15, 4, '{cid1} and {cid3}'), 
+	(15, 5, '{cid3} and {cid5}'), 
+	(15, 6, '{cid3} and {cid5}'), 
+	(15, 7, '{cid3} and {cid4}');

@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (24, 'Oral', '');
+INSERT INTO ailments VALUES (
+	24, 
+	'Oral', 
+	'Consult your healthcare provider for oral lesions that are excessively red, swollen, contain pus, persist for more than 14 days, reoccur more than 6 times a year or appear in an immunocompromised individual. Patients that present with coexisting systemic illness (fever, swollen glands) should consult their physician. Oral lesions that cause severe pain limiting nutrition, large lesions or clusters of lesions should be assessed by a healthcare professional. Oral lesions occuring in young children or of unknown ethiology should also be assessed.'
+);
 
 INSERT INTO questions VALUES 
 	(24, 1, 1, 'Are you an adult > 12 years old', ''), 
@@ -52,27 +56,27 @@ INSERT INTO products VALUES
 	(24, 24, 'Blistex Lip Ointment', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(24, 1, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 2, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 3, 'all([{cid2}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 4, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 5, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 6, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 7, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 8, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 9, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 10, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 11, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 12, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 13, 'all([{cid1}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 14, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 15, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 16, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 17, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 18, 'all([{cid2}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 19, 'all([{cid1}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 20, 'all([{cid1}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 21, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 22, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 23, 'all([{cid1}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])'), 
-	(24, 24, 'all([{cid1}, {cid3}, {cid5}, {cid6}, {cid7}, {cid8}, {cid9}, {cid10}, {cid11}])');
+	(24, 1, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 2, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 3, '{cid2} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 4, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 5, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 6, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 7, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 8, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 9, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 10, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 11, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 12, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 13, '{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 14, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 15, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 16, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 17, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 18, '{cid2} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 19, '{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 20, '{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 21, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 22, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 23, '{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'), 
+	(24, 24, '{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}');

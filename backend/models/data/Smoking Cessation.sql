@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (18, 'Smoking Cessation', '');
+INSERT INTO ailments VALUES (
+	18, 
+	'Smoking Cessation', 
+	'Consult your heath care provider if you wish to stop smoking and are less than 18 years old, pregnant, nursing, have high blood pressure, heart disease, insulin-dependent diabetes, chronic upset stomach or peptic ulcers. Avoid use of nicotine replacement products if you are allergic or sensitive to any of the ingredients. Consult your physician if you require prescription therapy options. Combination of patch with an as needed product (mist, lozenge, gum) may work best for some heavier smokers.'
+);
 
 INSERT INTO questions VALUES 
 	(18, 1, 1, 'Are you a regular light smoker', ''), 
@@ -47,21 +51,21 @@ INSERT INTO products VALUES
 	(18, 18, 'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 3 (7 Mg)', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(18, 1, 'all([{cid1}, {cid2}, {cid3}, {cid8}, {cid9}, {cid10}])'), 
-	(18, 2, 'all([{cid1}, {cid2}, {cid7}, {cid9}, {cid10}])'), 
-	(18, 3, 'all([{cid1}, {cid3}, {cid7}, {cid9}, {cid10}])'), 
-	(18, 4, 'all([{cid1}, {cid2}, {cid6}, {cid9}])'), 
-	(18, 5, 'all([{cid1}, {cid3}, {cid6}, {cid9}])'), 
-	(18, 6, 'all([{cid1}, {cid5}])'), 
-	(18, 7, 'all([{cid1}, {cid3}, {cid4}])'), 
-	(18, 8, 'all([{cid1}, {cid2}, {cid4}])'), 
-	(18, 9, 'all([{cid1}, {cid2}, {cid4}])'), 
-	(18, 10, 'all([{cid1}, {cid2}, {cid7}, {cid9}])'), 
-	(18, 11, 'all([{cid1}, {cid3}, {cid7}, {cid9}])'), 
-	(18, 12, 'all([{cid1}, {cid2}, {cid6}, {cid9}])'), 
-	(18, 13, 'all([{cid1}, {cid3}, {cid6}, {cid9}])'), 
-	(18, 14, 'all([{cid1}, {cid2}, {cid7}, {cid9}, {cid10}])'), 
-	(18, 15, 'all([{cid1}, {cid3}, {cid7}, {cid9}, {cid10}])'), 
-	(18, 16, 'all([{cid1}, {cid3}, {cid4}])'), 
-	(18, 17, 'all([{cid1}, {cid2}, {cid4}])'), 
-	(18, 18, 'all([{cid1}, {cid2}, {cid4}])');
+	(18, 1, '{cid1} and {cid2} and {cid3} and {cid8} and {cid9} and {cid10}'), 
+	(18, 2, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'), 
+	(18, 3, '{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'), 
+	(18, 4, '{cid1} and {cid2} and {cid6} and {cid9}'), 
+	(18, 5, '{cid1} and {cid3} and {cid6} and {cid9}'), 
+	(18, 6, '{cid1} and {cid5}'), 
+	(18, 7, '{cid1} and {cid3} and {cid4}'), 
+	(18, 8, '{cid1} and {cid2} and {cid4}'), 
+	(18, 9, '{cid1} and {cid2} and {cid4}'), 
+	(18, 10, '{cid1} and {cid2} and {cid7} and {cid9}'), 
+	(18, 11, '{cid1} and {cid3} and {cid7} and {cid9}'), 
+	(18, 12, '{cid1} and {cid2} and {cid6} and {cid9}'), 
+	(18, 13, '{cid1} and {cid3} and {cid6} and {cid9}'), 
+	(18, 14, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'), 
+	(18, 15, '{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'), 
+	(18, 16, '{cid1} and {cid3} and {cid4}'), 
+	(18, 17, '{cid1} and {cid2} and {cid4}'), 
+	(18, 18, '{cid1} and {cid2} and {cid4}');

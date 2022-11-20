@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (7, 'Insomnia', '');
+INSERT INTO ailments VALUES (
+	7, 
+	'Insomnia', 
+	'Consult your phyisician for insomnia lasting longer than 14 days, occuring more than 3 days a week, associated with an illness, resulting from medication (drug-induced) or refractory to sleep hygiene and/or non-prescription sedative. Consult a physician if you have contraindications to non-prescription sedatives. Sedatives should be used at the lowest effective dose and for the shortest duration possible.'
+);
 
 INSERT INTO questions VALUES 
 	(7, 1, 1, 'Are you Pregnant and/or Breast Feeding', ''), 
@@ -40,16 +44,16 @@ INSERT INTO products VALUES
 	(7, 13, 'Webber Melatonin Maximum Strength 10 Mg Quick Dissolve', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(7, 1, 'all([{cid1}, {cid6}, {cid8}])'), 
-	(7, 2, 'all([{cid1}, {cid6}, {cid8}])'), 
-	(7, 3, 'all([{cid2}, {cid3}, {cid6}, {cid8}])'), 
-	(7, 4, 'all([{cid1}, {cid6}, {cid8}])'), 
-	(7, 5, 'all([{cid1}, {cid6}, {cid8}])'), 
-	(7, 6, 'all([{cid1}, {cid5}, {cid6}, {cid8}])'), 
-	(7, 7, 'all([{cid1}, {cid4}, {cid6}, {cid8}])'), 
-	(7, 8, 'all([{cid2}, {cid7}, {cid8}])'), 
-	(7, 9, 'all([{cid2}, {cid6}, {cid8}])'), 
-	(7, 10, 'all([{cid2}, {cid3}, {cid6}, {cid8}])'), 
-	(7, 11, 'all([{cid2}, {cid6}, {cid7}, {cid8}])'), 
-	(7, 12, 'all([{cid2}, {cid6}, {cid8}])'), 
-	(7, 13, 'all([{cid2}, {cid6}, {cid8}])');
+	(7, 1, '{cid1} and {cid6} and {cid8}'), 
+	(7, 2, '{cid1} and {cid6} and {cid8}'), 
+	(7, 3, '{cid2} and {cid3} and {cid6} and {cid8}'), 
+	(7, 4, '{cid1} and {cid6} and {cid8}'), 
+	(7, 5, '{cid1} and {cid6} and {cid8}'), 
+	(7, 6, '{cid1} and {cid5} and {cid6} and {cid8}'), 
+	(7, 7, '{cid1} and {cid4} and {cid6} and {cid8}'), 
+	(7, 8, '{cid2} and {cid7} and {cid8}'), 
+	(7, 9, '{cid2} and {cid6} and {cid8}'), 
+	(7, 10, '{cid2} and {cid3} and {cid6} and {cid8}'), 
+	(7, 11, '{cid2} and {cid6} and {cid7} and {cid8}'), 
+	(7, 12, '{cid2} and {cid6} and {cid8}'), 
+	(7, 13, '{cid2} and {cid6} and {cid8}');

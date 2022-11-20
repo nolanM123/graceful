@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (17, 'Family Planning', '');
+INSERT INTO ailments VALUES (
+	17, 
+	'Family Planning', 
+	'Some medications such as corticosteroids, fertility drugs as well as hormones including chorionic gonadotropin, estrogen and luteinizing hormone may alter the accuracy of pregnancy and ovulation tests. Consult your physician if you are taking these medications. Consult your physican for post conception and maternity care. Consult your physician following failure to conceive after repeated attemps.'
+);
 
 INSERT INTO questions VALUES 
 	(17, 1, 1, 'Would you like to test for pregnancy', ''), 
@@ -49,20 +53,20 @@ INSERT INTO products VALUES
 	(17, 17, 'Pregmate Pregnancy Midstream Tests', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(17, 1, 'all([{cid1}, {cid4}, {cid7}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 2, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 3, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 4, 'all([{cid1}, {cid4}, {cid9}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 5, 'all([{cid2}, {cid6}, {cid7}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 6, 'all([{cid2}, {cid5}, {cid7}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 7, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 8, 'all([{cid1}, {cid4}, {cid9}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 9, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 10, 'all([{cid1}, {cid4}, {cid9}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 11, 'all([{cid1}, {cid4}, {cid7}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 12, 'all([{cid3}, {cid5}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 13, 'all([{cid2}, {cid5}, {cid7}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 14, 'all([{cid2}, {cid5}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 15, 'all([])'), 
-	(17, 16, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])'), 
-	(17, 17, 'all([{cid1}, {cid4}, {cid8}, {cid10}, {cid11}, {cid12}])');
+	(17, 1, '{cid1} and {cid4} and {cid7} and {cid10} and {cid11} and {cid12}'), 
+	(17, 2, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 3, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 4, '{cid1} and {cid4} and {cid9} and {cid10} and {cid11} and {cid12}'), 
+	(17, 5, '{cid2} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12}'), 
+	(17, 6, '{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'), 
+	(17, 7, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 8, '{cid1} and {cid4} and {cid9} and {cid10} and {cid11} and {cid12}'), 
+	(17, 9, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 10, '{cid1} and {cid4} and {cid9} and {cid10} and {cid11} and {cid12}'), 
+	(17, 11, '{cid1} and {cid4} and {cid7} and {cid10} and {cid11} and {cid12}'), 
+	(17, 12, '{cid3} and {cid5} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 13, '{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'), 
+	(17, 14, '{cid2} and {cid5} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 15, ''), 
+	(17, 16, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}'), 
+	(17, 17, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11} and {cid12}');

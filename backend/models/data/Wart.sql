@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (12, 'Wart', '');
+INSERT INTO ailments VALUES (
+	12, 
+	'Wart', 
+	'Consult your phyisician if uncertain a lesion is a wart. Consult your physician should a wart lesion show a change in colour, appearance or pain. Consult your physician prior to treating a lesion that appears inflamed, irritated, infected or hairy. Consult your physician for warts located on the face, genitals or muscous membranes. Over-the-counter wart treatments should not be applied to moles or birth marks.'
+);
 
 INSERT INTO questions VALUES 
 	(12, 1, 1, 'Do you have diabetes, immunosuppression or poor/reduced circulation', ''), 
@@ -37,18 +41,18 @@ INSERT INTO products VALUES
 	(12, 15, 'Dr. Scholl''s® Clear Away® Wart Remover Fast Acting Liquid', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(12, 1, 'all([{cid2}, {cid7}, {cid8}])'), 
-	(12, 2, 'all([{cid2}, {cid7}, {cid8}])'), 
-	(12, 3, 'all([{cid2}, {cid7}, {cid8}])'), 
-	(12, 4, 'all([{cid1}, {cid2}, {cid6}, {cid7}, {cid8}])'), 
-	(12, 5, 'all([{cid2}, {cid8}])'), 
-	(12, 6, 'all([{cid2}, {cid7}, {cid8}])'), 
-	(12, 7, 'all([{cid1}, {cid3}, {cid4}, {cid5}, {cid7}, {cid8}])'), 
-	(12, 8, 'all([{cid1}, {cid3}, {cid4}, {cid5}, {cid7}, {cid8}])'), 
-	(12, 9, 'all([{cid1}, {cid3}, {cid4}, {cid5}, {cid8}])'), 
-	(12, 10, 'all([{cid1}, {cid3}, {cid4}, {cid5}, {cid7}, {cid8}])'), 
-	(12, 11, 'all([{cid1}, {cid6}, {cid7}, {cid8}])'), 
-	(12, 12, 'all([{cid1}, {cid6}, {cid7}, {cid8}])'), 
-	(12, 13, 'all([{cid1}, {cid2}, {cid6}, {cid7}, {cid8}])'), 
-	(12, 14, 'all([{cid1}, {cid5}, {cid8}])'), 
-	(12, 15, 'all([{cid1}, {cid6}, {cid7}, {cid8}])');
+	(12, 1, '{cid2} and {cid7} and {cid8}'), 
+	(12, 2, '{cid2} and {cid7} and {cid8}'), 
+	(12, 3, '{cid2} and {cid7} and {cid8}'), 
+	(12, 4, '{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'), 
+	(12, 5, '{cid2} and {cid8}'), 
+	(12, 6, '{cid2} and {cid7} and {cid8}'), 
+	(12, 7, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
+	(12, 8, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
+	(12, 9, '{cid1} and {cid3} and {cid4} and {cid5} and {cid8}'), 
+	(12, 10, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
+	(12, 11, '{cid1} and {cid6} and {cid7} and {cid8}'), 
+	(12, 12, '{cid1} and {cid6} and {cid7} and {cid8}'), 
+	(12, 13, '{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'), 
+	(12, 14, '{cid1} and {cid5} and {cid8}'), 
+	(12, 15, '{cid1} and {cid6} and {cid7} and {cid8}');

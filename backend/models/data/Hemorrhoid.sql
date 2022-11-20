@@ -1,4 +1,8 @@
-INSERT INTO ailments VALUES (2, 'Hemorrhoid', '');
+INSERT INTO ailments VALUES (
+	2, 
+	'Hemorrhoid', 
+	'Consult your physician if hemorrhoids associated with rectal bleeding, painful defecation, dark blood, profuse bleeding or recurrent bleeding. Individuals at high risk of colorectal cancer, individuals under the age of 12 or individuals with a prolapse that must be manually replaced should consult their health care provider immediately. Seek medical attention for symptoms that persist more than 7 days. Daily fibre, avoiding straining and Sitz baths may help relieve symptoms.'
+);
 
 INSERT INTO questions VALUES 
 	(2, 1, 1, 'Are you experiencing itch', ''), 
@@ -54,23 +58,23 @@ INSERT INTO products VALUES
 	(2, 20, 'Venixxa', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(2, 1, 'all([{cid1}, {cid2}, {cid5}, {cid6}, {cid7}, {cid10}])'), 
-	(2, 2, 'all([{cid2}, {cid5}, {cid6}, {cid7}, {cid10}])'), 
-	(2, 3, 'all([{cid2}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 4, 'all([{cid1}, {cid2}, {cid5}, {cid6}, {cid7}, {cid9}])'), 
-	(2, 5, 'all([{cid2}, {cid5}, {cid6}, {cid7}, {cid9}])'), 
-	(2, 6, 'all([{cid2}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 7, 'all([{cid3}, {cid5}, {cid6}, {cid7}, {cid11}])'), 
-	(2, 8, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid11}])'), 
-	(2, 9, 'all([{cid1}, {cid4}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 10, 'all([{cid4}, {cid5}, {cid6}, {cid7}, {cid10}])'), 
-	(2, 11, 'all([{cid1}, {cid4}, {cid5}, {cid6}, {cid7}, {cid11}])'), 
-	(2, 12, 'all([{cid2}, {cid4}, {cid5}, {cid6}, {cid7}, {cid11}])'), 
-	(2, 13, 'all([{cid3}, {cid5}, {cid6}, {cid7}, {cid11}])'), 
-	(2, 14, 'all([{cid4}, {cid5}, {cid6}, {cid7}, {cid9}])'), 
-	(2, 15, 'all([{cid2}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 16, 'all([{cid2}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 17, 'all([{cid2}, {cid6}, {cid7}, {cid12}])'), 
-	(2, 18, 'all([{cid2}, {cid6}, {cid7}])'), 
-	(2, 19, 'all([{cid6}, {cid7}, {cid8}])'), 
-	(2, 20, 'all([{cid6}, {cid7}, {cid8}])');
+	(2, 1, '{cid1} and {cid2} and {cid5} and {cid6} and {cid7} and {cid10}'), 
+	(2, 2, '{cid2} and {cid5} and {cid6} and {cid7} and {cid10}'), 
+	(2, 3, '{cid2} and {cid6} and {cid7} and {cid12}'), 
+	(2, 4, '{cid1} and {cid2} and {cid5} and {cid6} and {cid7} and {cid9}'), 
+	(2, 5, '{cid2} and {cid5} and {cid6} and {cid7} and {cid9}'), 
+	(2, 6, '{cid2} and {cid6} and {cid7} and {cid12}'), 
+	(2, 7, '{cid3} and {cid5} and {cid6} and {cid7} and {cid11}'), 
+	(2, 8, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid11}'), 
+	(2, 9, '{cid1} and {cid4} and {cid6} and {cid7} and {cid12}'), 
+	(2, 10, '{cid4} and {cid5} and {cid6} and {cid7} and {cid10}'), 
+	(2, 11, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid11}'), 
+	(2, 12, '{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid11}'), 
+	(2, 13, '{cid3} and {cid5} and {cid6} and {cid7} and {cid11}'), 
+	(2, 14, '{cid4} and {cid5} and {cid6} and {cid7} and {cid9}'), 
+	(2, 15, '{cid2} and {cid6} and {cid7} and {cid12}'), 
+	(2, 16, '{cid2} and {cid6} and {cid7} and {cid12}'), 
+	(2, 17, '{cid2} and {cid6} and {cid7} and {cid12}'), 
+	(2, 18, '{cid2} and {cid6} and {cid7}'), 
+	(2, 19, '{cid6} and {cid7} and {cid8}'), 
+	(2, 20, '{cid6} and {cid7} and {cid8}');

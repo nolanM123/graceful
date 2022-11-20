@@ -38,10 +38,18 @@ def questions(aid):
     with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
         cursor = db.cursor()
 
-        for qid, sid, question in cursor.execute(
-            "SELECT qid, sid, question FROM questions WHERE aid == ?;", (aid,)
+        for qid, sid, question, description in cursor.execute(
+            "SELECT qid, sid, question, description FROM questions WHERE aid == ?;",
+            (aid,),
         ):
-            result.append({"qid": qid, "sid": sid, "question": question})
+            result.append(
+                {
+                    "qid": qid,
+                    "sid": sid,
+                    "question": question,
+                    "description": description,
+                }
+            )
 
         cursor.close()
 
@@ -63,6 +71,8 @@ def products(aid, request):
                 "SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,)
             )
         }
+
+        print(criteria_formulas)
 
         for pid, name, link, description, url in cursor1.execute(
             "SELECT pid, name, link, description, url FROM products WHERE aid == ?;",
