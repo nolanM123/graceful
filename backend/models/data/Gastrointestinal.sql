@@ -5,60 +5,198 @@ INSERT INTO ailments VALUES (
 );
 
 INSERT INTO questions VALUES 
-	(9, 1, 1, 'Are you Pregnant and/or Breast Feeding', ''), 
-	(9, 2, 1, 'Are you an adult ≥ 12 yrs old', ''), 
-	(9, 3, 1, 'Do you drink alcohol frequently', ''), 
-	(9, 4, 1, 'Are you taking any anticholinergics or CNS depressants ', ''), 
-	(9, 5, 1, 'Are you taking any blood thinners', ''), 
-	(9, 6, 1, 'Are you taking opioids or have a gastrointestinal obstruction', ''), 
-	(9, 7, 1, 'Do you have hypertension (uncontrolled), glaucoma, hyperthyroidism and/or seizures', ''), 
-	(9, 8, 1, 'Are you taking an MAOI (within last 2 weeks)', ''), 
-	(9, 9, 1, 'Do you have kidney disease, gall stones, dehydration or salt restrictions', ''), 
-	(9, 10, 1, 'Are you immunocompromised or immunosupressed', ''), 
-	(9, 11, 1, 'Are you lactose intolerant', ''), 
-	(9, 12, 1, 'Do you have type I or type II diabetes', ''), 
-	(9, 13, 2, 'Do you have diarrhea', ''), 
-	(9, 14, 2, 'Do you have constipation', ''), 
-	(9, 15, 2, 'Do you have nausea', ''), 
-	(9, 16, 2, 'Do you have heartburn, indigestion and/or upset stomach', ''), 
-	(9, 17, 2, 'Would you like to prevent dehydration', ''), 
-	(9, 18, 2, 'Do you have gas or bloating', ''), 
-	(9, 19, 3, 'Do you prefer an oral tablet or capsule', ''), 
-	(9, 20, 3, 'Do you prefer a liquid', ''), 
-	(9, 21, 3, 'Would you like fast relief', ''), 
-	(9, 22, 3, 'Would you like long acting or overnight relief', ''), 
-	(9, 23, 3, 'Would you like a suppository or rectal product', '');
+	(
+		9, 
+		1, 
+		1, 
+		'Are you Pregnant and/or Breast Feeding', 
+		'Use of antacids containing magnesium trisilicate and/or famotidine should be avoided in pregnancy.'
+	), 
+	(
+		9, 
+		2, 
+		1, 
+		'Are you an adult ≥ 12 yrs old', 
+		'Children with flu like symptoms or chicken pox should avoid pepto-bismol due to risk of Reye syndrome.'
+	), 
+	(
+		9, 
+		3, 
+		1, 
+		'Do you drink alcohol frequently', 
+		'Alcohol may enhance the sedative effects of some medications.'
+	), 
+	(
+		9, 
+		4, 
+		1, 
+		'Are you taking any anticholinergics or CNS depressants ', 
+		'Anticholinergic and CNS depressants are medications that cause or enhance drowsiness. Avoid use with dimenhydrinate. Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		5, 
+		1, 
+		'Are you taking any blood thinners', 
+		'Blood thinners include warfarin, aspirin, clopidogrel, dipyridamole, ticlopidine, ticagrelor, dabigatran, apixaban, rivaroxaban, dalteparin, etc. Bismuth may increase risk of bleeding. Counsult your pharmacist for further information.'
+	), 
+	(
+		9, 
+		6, 
+		1, 
+		'Are you taking opioids or have a gastrointestinal obstruction', 
+		'Avoid use of bulk forming agents if taking opioids, have GI obstruction or inadequate hydration due to increased risk of fecal impaction.'
+	), 
+	(
+		9, 
+		7, 
+		1, 
+		'Do you have hypertension (uncontrolled), glaucoma, hyperthyroidism and/or seizures', 
+		'Some medications may worsen hypertension, glaucoma, hyperthyroidism and seizures. Avoid use if you have these conditions. Gravol may worsen glaucoma and prostatic hypertrophy.'
+	), 
+	(
+		9, 
+		8, 
+		1, 
+		'Are you taking an MAOI (within last 2 weeks)', 
+		'MAOIs include safinamide, linezolid, procarbazine, amphetamines (ADHD meds), methylene blue, rasagiline, moclobemide, selegiline, phenelzine and tranylcypromine. Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		9, 
+		1, 
+		'Do you have kidney disease, gall stones, dehydration or salt restrictions', 
+		'Avoid use of magnesium or aluminum salts due to toxicity risk in presence of kidney disease.'
+	), 
+	(
+		9, 
+		10, 
+		1, 
+		'Are you immunocompromised or immunosupressed', 
+		'Some products should be avoided if you have immune supression or are taking immunosuppressive medications.'
+	), 
+	(
+		9, 
+		11, 
+		1, 
+		'Are you lactose intolerant', 
+		'Some products may help digest lactose and reduce lactose intolerance symptoms.'
+	), 
+	(
+		9, 
+		12, 
+		1, 
+		'Do you have type I or type II diabetes', 
+		'Some products may contain sugar or worsen blood glucose and should be avoided by diabetics.'
+	), 
+	(
+		9, 
+		13, 
+		2, 
+		'Do you have diarrhea', 
+		'Consult your physician for worsening/persistent/chronic diarrhea or severe diarrhea (more than 6 times/day for more than 48 hrs). Consult your physician for diarrhea in a child less than 2 yrs old.'
+	), 
+	(
+		9, 
+		14, 
+		2, 
+		'Do you have constipation', 
+		'Consult a physician for child < 2 yrs old, constipation > 2 weeks, absence of bowel movement > 7 days. Constipation treatments may reduce/slow absorption/bioavailability of some medications.'
+	), 
+	(
+		9, 
+		15, 
+		2, 
+		'Do you have nausea', 
+		'Consult a physician for nausea/vomitting lasting more than 3 days, of unknown cause, lasting more than 6hrs in a child, significant weight loss, dehydration symptoms, fever or abdominal pain, head trauma, altered consciousness or blood in vomitus.'
+	), 
+	(
+		9, 
+		16, 
+		2, 
+		'Do you have heartburn, indigestion and/or upset stomach', 
+		'Consult your physician in presence of chest pain, choking or difficult/painful swallowing. Consult your physician for moderate to severe, frequent or persistent heartburn (remain after 14 days or incompletely relieved by medication).'
+	), 
+	(
+		9, 
+		17, 
+		2, 
+		'Would you like to prevent dehydration', 
+		'Dehydration symptoms include increased thirst, decreased urination, weakness, light-headedness, dry mouth/tongue/skin, few/no tears when crying, sunken eyes, grayish skin, sunken frontanel in enfants and/or decreased skin turgor. Consult a physician.'
+	), 
+	(
+		9, 
+		18, 
+		2, 
+		'Do you have gas or bloating', 
+		'Consult your physician for sudden change in flatulence with moderate to severe abdominal pain, nausea, vomitting, fever or chills. Patients with diabetes, celiac, severe symptoms of gastrointestinal disease should consult their physician.'
+	), 
+	(
+		9, 
+		19, 
+		3, 
+		'Do you prefer an oral tablet or capsule', 
+		'Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		20, 
+		3, 
+		'Do you prefer a liquid', 
+		'Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		21, 
+		3, 
+		'Would you like fast relief', 
+		'Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		22, 
+		3, 
+		'Would you like long acting or overnight relief', 
+		'Consult your pharmacist if unsure.'
+	), 
+	(
+		9, 
+		23, 
+		3, 
+		'Would you like a suppository or rectal product', 
+		'Consult your pharmacist if unsure.'
+	);
 
 INSERT INTO criteria VALUES 
-	(9, 1, 'Pregnant', ''), 
-	(9, 2, 'Non-Preg', ''), 
-	(9, 3, 'Adult', ''), 
-	(9, 4, 'Kids', ''), 
-	(9, 5, 'Tab', ''), 
-	(9, 6, 'Liquid', ''), 
-	(9, 7, 'Rectal', ''), 
-	(9, 8, 'Fast-Acting', ''), 
-	(9, 9, 'Long-Acting', ''), 
-	(9, 10, 'PEG', ''), 
-	(9, 11, 'Fiber', ''), 
-	(9, 12, 'Glycerin', ''), 
-	(9, 13, 'Docusate', ''), 
-	(9, 14, 'Senna', ''), 
-	(9, 15, 'Ginger', ''), 
-	(9, 16, 'Dimenhydrinate', ''), 
-	(9, 17, 'Laxative-Salt', ''), 
-	(9, 18, 'Electrolytes', ''), 
-	(9, 19, 'Antacid-Salt', ''), 
-	(9, 20, 'Loperamide', ''), 
-	(9, 21, 'Calcium', ''), 
-	(9, 22, 'H2RA', ''), 
-	(9, 23, 'PPI', ''), 
-	(9, 24, 'Simeticone', ''), 
-	(9, 25, 'Enzyme', ''), 
-	(9, 26, 'Mineral Oil', ''), 
-	(9, 27, 'Bisacodyl', ''), 
-	(9, 28, 'Probiotic', ''), 
-	(9, 29, 'Bismuth', '');
+	(9, 1, 'Pregnant', 'True'), 
+	(9, 2, 'Non-Preg', 'not {qid1}'), 
+	(9, 3, 'Adult', '{qid2}'), 
+	(9, 4, 'Kids', 'True'), 
+	(9, 5, 'Tab', '{qid19} and not ({qid20} or {qid23})'), 
+	(9, 6, 'Liquid', '{qid20} and not ({qid19} or {qid23})'), 
+	(9, 7, 'Rectal', '{qid23} and not ({qid19} or {qid20})'), 
+	(9, 8, 'Fast-Acting', '{qid21} and not {qid22}'), 
+	(9, 9, 'Long-Acting', '{qid22} and not {qid21}'), 
+	(9, 10, 'PEG', '{qid13} and not ({qid9} or {qid13} or {qid15} or {qid17})'), 
+	(9, 11, 'Fiber', 'not ({qid6} or {qid15} or {qid16} or {qid17}) and ({qid13} or {qid14})'), 
+	(9, 12, 'Glycerin', '{qid14} and not ({qid13} or {qid15} or {qid16} or {qid17})'), 
+	(9, 13, 'Docusate', '{qid14} and not ({qid13} or {qid15} or {qid16} or {qid17})'), 
+	(9, 14, 'Senna', '{qid14} and not ({qid13} or {qid15} or {qid16} or {qid17})'), 
+	(9, 15, 'Ginger', '{qid15} and not ({qid9} or {qid13} or {qid14} or {qid16} or {qid17})'), 
+	(9, 16, 'Dimenhydrinate', '{qid15} and not ({qid3} or {qid4} or {qid7} or {qid13} or {qid14} or {qid16} or {qid17})'), 
+	(9, 17, 'Laxative-Salt', '{qid14} and not ({qid9} or {qid13} or {qid15} or {qid16} or {qid17})'), 
+	(9, 18, 'Electrolytes', '{qid17} and not ({qid9} or {qid14} or {qid16})'), 
+	(9, 19, 'Antacid-Salt', '{qid16} and not ({qid9} or {qid14} or {qid17})'), 
+	(9, 20, 'Loperamide', '{qid13} and not {qid14}'), 
+	(9, 21, 'Calcium', '{qid16} and not ({qid9} or {qid14} or {qid17})'), 
+	(9, 22, 'H2RA', '{qid16} and not ({qid14} or {qid17})'), 
+	(9, 23, 'PPI', '{qid16} and not ({qid14} or {qid17})'), 
+	(9, 24, 'Simeticone', '{qid18} and not {qid17}'), 
+	(9, 25, 'Enzyme', '{qid11} and ({qid13} or {qid16} or {qid18})'), 
+	(9, 26, 'Mineral Oil', '{qid14} and {qid13} and not ({qid15} or {qid16} or {qid17})'), 
+	(9, 27, 'Bisacodyl', '{qid14} and {qid13} and not ({qid15} or {qid16} or {qid17})'), 
+	(9, 28, 'Probiotic', 'not ({qid10} or {qid14} or {qid17}) and ({qid13} or {qid18} )'), 
+	(9, 29, 'Bismuth', 'not ({qid5} or {qid14}) and ({qid13} or {qid15} or {qid16})');
 
 INSERT INTO products VALUES 
 	(9, 1, 'Imodium®Liqui-Gels®', '', '', ''), 

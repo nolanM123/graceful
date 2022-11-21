@@ -5,41 +5,131 @@ INSERT INTO ailments VALUES (
 );
 
 INSERT INTO questions VALUES 
-	(10, 1, 1, 'Do you have mild dry eye', ''), 
-	(10, 2, 1, 'Do you have severe dry eye', ''), 
-	(10, 3, 1, 'Do you have pink eye', ''), 
-	(10, 4, 1, 'Would you like a decongestant', ''), 
-	(10, 5, 1, 'Do you wear contacts', ''), 
-	(10, 6, 1, 'Would you like a fast acting product for "as need" use', ''), 
-	(10, 7, 1, 'Would you like a long-lasting  or nighttime product', ''), 
-	(10, 8, 1, 'Did you have laser eye surgery (LASIK)', ''), 
-	(10, 9, 1, 'Are you sensitive to wool', ''), 
-	(10, 10, 1, 'Can you use decongestants', ''), 
-	(10, 11, 1, 'Are you sensitive to preservatives', ''), 
-	(10, 12, 1, 'Do you have a lipid layer deficiency of the eye', ''), 
-	(10, 13, 1, 'Do you prefer eye drops', ''), 
-	(10, 14, 1, 'Do you prefer eye gel drops', ''), 
-	(10, 15, 1, 'Do you prefer an eye ointment', '');
+	(
+		10, 
+		1, 
+		1, 
+		'Do you have mild dry eye', 
+		'Symptoms include a gritty sandy feeling, eye redness and/or irritation in absence of foreign bodies. Consult your physician if possibly caused by medication, undiagnosed condition or if symptoms worsen or persist more than 5 days.'
+	), 
+	(
+		10, 
+		2, 
+		1, 
+		'Do you have severe dry eye', 
+		'Symptoms include a gritty sandy feeling, eye redness and/or irritation in absence of foreign bodies. Consult your physician if possibly caused by medication, undiagnosed condition or if symptoms worsen or persist more than 5 days.'
+	), 
+	(
+		10, 
+		3, 
+		1, 
+		'Do you have pink eye', 
+		'Symptoms include eye redness and purulent discharge. Consult your physician if present in a child, severe symptoms or unimproving symptoms after 48 hours in an adult.'
+	), 
+	(
+		10, 
+		4, 
+		1, 
+		'Would you like a decongestant', 
+		'Consult your physician if bleeding in the eye, severe symptoms, trauma, or foreign body/chemical exposure. Some products have decongestants to reduce redness cosmetically.'
+	), 
+	(
+		10, 
+		5, 
+		1, 
+		'Do you wear contacts', 
+		'Some eye drop products are not compatible with contact lens use and should be avoided.'
+	), 
+	(
+		10, 
+		6, 
+		1, 
+		'Would you like a fast acting product for "as need" use', 
+		'Thick gels or ointments may blur vision and be unacceptable for day use for some patients. Such products require less frequent application and may be more suitable for nighttime use.'
+	), 
+	(
+		10, 
+		7, 
+		1, 
+		'Would you like a long-lasting  or nighttime product', 
+		'Thick gels or ointments may blur vision and be unacceptable for day use for some patients. Such products require less frequent application and may be more suitable for nighttime use.'
+	), 
+	(
+		10, 
+		8, 
+		1, 
+		'Did you have laser eye surgery (LASIK)', 
+		'Some products, especaily with preservatives, may cause further irritation after recent eye surgery and should be avoided.'
+	), 
+	(
+		10, 
+		9, 
+		1, 
+		'Are you sensitive to wool', 
+		'Some eye products may contain lanolin which may cause irritation or discomfort in those with sensitivity to wool.'
+	), 
+	(
+		10, 
+		10, 
+		1, 
+		'Can you use decongestants', 
+		'Decongestants may worsen glaucoma, increase blood glucose levels, worsen hypertension and interact with some mood or migraine medications. Decongestants should be avoided in these circumstances.'
+	), 
+	(
+		10, 
+		11, 
+		1, 
+		'Are you sensitive to preservatives', 
+		'Those with moderate-severe dry eye should avoid preservatives (especially benzalkonium chloride) since this may worsen irritation. Those with mild dry eye requiring more than 4 applications daily should consider preservative-free product. '
+	), 
+	(
+		10, 
+		12, 
+		1, 
+		'Do you have a lipid layer deficiency of the eye', 
+		'Some products can restore the oily layer of the eye and help prevent water loss and dry eye.'
+	), 
+	(
+		10, 
+		13, 
+		1, 
+		'Do you prefer eye drops', 
+		'Eye drops are easiest to apply and provide fast symptom relief. Generally require more frequent application throughout the day than other products.'
+	), 
+	(
+		10, 
+		14, 
+		1, 
+		'Do you prefer eye gel drops', 
+		'Gel drops provide a longer lasting benefit than eye drops but less greasy than eye ointments. Can be used throughout the day or night.'
+	), 
+	(
+		10, 
+		15, 
+		1, 
+		'Do you prefer an eye ointment', 
+		'Eye ointments provide the most long lasting benefit but are more greasy and may temporarily blur vision. Best when used overnight.'
+	);
 
 INSERT INTO criteria VALUES 
-	(10, 1, 'Preservative', ''), 
-	(10, 2, 'BAC-Free', ''), 
-	(10, 3, 'Soft Preservative', ''), 
-	(10, 4, 'Preser-free', ''), 
-	(10, 5, 'Ointment', ''), 
-	(10, 6, 'Gel', ''), 
-	(10, 7, 'Drops', ''), 
-	(10, 8, 'Contact Compatible', ''), 
-	(10, 9, 'X Contacts', ''), 
-	(10, 10, 'Lanolin', ''), 
-	(10, 11, 'Lanolin-free', ''), 
-	(10, 12, 'Decongestant', ''), 
-	(10, 13, 'Decon-free', ''), 
-	(10, 14, 'Antibiotic', ''), 
-	(10, 15, 'Lasik', ''), 
-	(10, 16, 'Non-Lasik', ''), 
-	(10, 17, 'Lipid Layer', ''), 
-	(10, 18, 'Non-Lipid', '');
+	(10, 1, 'Preservative', 'not {qid11}'), 
+	(10, 2, 'BAC-Free', 'True'), 
+	(10, 3, 'Soft Preservative', 'True'), 
+	(10, 4, 'Preser-free', 'True'), 
+	(10, 5, 'Ointment', '{qid15} and not ({qid13} or {qid14} or {qid6}) and ({qid2} or {qid7})'), 
+	(10, 6, 'Gel', '{qid14} and not ({qid13} or {qid15}) and ({qid1} or {qid2} or {qid6} or {qid7})'), 
+	(10, 7, 'Drops', '{qid13} and not ({qid14} or {qid15} or {qid7} or {qid3}) and ({qid1} or {qid6})'), 
+	(10, 8, 'Contact Compatible', 'True'), 
+	(10, 9, 'X Contacts', '{qid5}'), 
+	(10, 10, 'Lanolin', 'not {qid9}'), 
+	(10, 11, 'Lanolin-free', 'True'), 
+	(10, 12, 'Decongestant', '{qid4} and {qid10}'), 
+	(10, 13, 'Decon-free', 'not {qid4}'), 
+	(10, 14, 'Antibiotic', '{qid3} and not ({qid1} or {qid2})'), 
+	(10, 15, 'Lasik', 'True'), 
+	(10, 16, 'Non-Lasik', 'not {qid8}'), 
+	(10, 17, 'Lipid Layer', 'True'), 
+	(10, 18, 'Non-Lipid', 'not {qid12}');
 
 INSERT INTO products VALUES 
 	(10, 1, 'Visine® Environmental Relief (6+Yrs)', '', '', ''), 

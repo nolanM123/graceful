@@ -5,64 +5,232 @@ INSERT INTO ailments VALUES (
 );
 
 INSERT INTO questions VALUES 
-	(22, 1, 1, 'Would you like a product for weight loss', ''), 
-	(22, 2, 1, 'Would you like a product for weight gain/maintenance', ''), 
-	(22, 3, 1, 'Would you like a product for men (specifically)', ''), 
-	(22, 4, 1, 'Would you like a product for women (specifically)', ''), 
-	(22, 5, 1, 'Would you like a product for children', ''), 
-	(22, 6, 1, 'Would you like a product for adults (general)', ''), 
-	(22, 7, 1, 'Would you like a poduct with multiple flavour options', ''), 
-	(22, 8, 1, 'Would you like a product promoting bone/muscle strength', ''), 
-	(22, 9, 1, 'Woul you like a product for diabetics (low sugar)', ''), 
-	(22, 10, 1, 'Would you like a product for fluid-restricted or low sodium diet', ''), 
-	(22, 11, 1, 'Would you like a high protein product', ''), 
-	(22, 12, 1, 'Would you like a high fiber product', ''), 
-	(22, 13, 1, 'Would you like a soy-free product', ''), 
-	(22, 14, 1, 'Would you like a gluten-free product', ''), 
-	(22, 15, 1, 'Would you like a product free of colouring agents', ''), 
-	(22, 16, 1, 'Would you like a sweetner-free product', ''), 
-	(22, 17, 1, 'Would you like a lactose-free product', ''), 
-	(22, 18, 1, 'Would you like a product with prebiotics', ''), 
-	(22, 19, 1, 'Would you like a product with antioxidants', ''), 
-	(22, 20, 1, 'Would you like a keto product', ''), 
-	(22, 21, 1, 'Would you like a kosher product', ''), 
-	(22, 22, 1, 'Would you like a halal product', ''), 
-	(22, 23, 1, 'Do you prefer a shake/drink product', ''), 
-	(22, 24, 1, 'Do you prefer a shake mix/powder product', ''), 
-	(22, 25, 1, 'Do you prefer a bar/candy or snack product', ''), 
-	(22, 26, 1, 'Do you prefer a pudding product', ''), 
-	(22, 27, 1, 'Would you like a soothing product (mouth pain)', ''), 
-	(22, 28, 1, 'Would you like a clear product', '');
+	(
+		22, 
+		1, 
+		1, 
+		'Would you like a product for weight loss', 
+		'Some meal replacement products are specifically designed to assist individuals with weight loss and weight management.'
+	), 
+	(
+		22, 
+		2, 
+		1, 
+		'Would you like a product for weight gain/maintenance', 
+		'Some meal replacement products are specifically designed to assist individuals with maintaining and/or increasing current body mass. These products can be helpful for individuals on liquid diets or individuals with mastication challenges.'
+	), 
+	(
+		22, 
+		3, 
+		1, 
+		'Would you like a product for men (specifically)', 
+		'Some products are marketed to provide or meet the specific nutritional needs of men.'
+	), 
+	(
+		22, 
+		4, 
+		1, 
+		'Would you like a product for women (specifically)', 
+		'Some products are marketed to provide or meet the specific nutritional needs of women.'
+	), 
+	(
+		22, 
+		5, 
+		1, 
+		'Would you like a product for children', 
+		'Some products are marketed to provide or meet the specific nutritional needs of children.'
+	), 
+	(
+		22, 
+		6, 
+		1, 
+		'Would you like a product for adults (general)', 
+		'Some products are marketed to provide or meet the specific nutritional needs of adults in general.'
+	), 
+	(
+		22, 
+		7, 
+		1, 
+		'Would you like a poduct with multiple flavour options', 
+		'Some products are available in multiple flavour options providing the consumer with a variety of options. Most products are available in multiple flavour options.'
+	), 
+	(
+		22, 
+		8, 
+		1, 
+		'Would you like a product promoting bone/muscle strength', 
+		'Some products are formulated and fortified with nutrients to enhance or maintain bone and muscle tone.'
+	), 
+	(
+		22, 
+		9, 
+		1, 
+		'Woul you like a product for diabetics (low sugar)', 
+		'Some products are specifically formulated for diabetics and are less likely to lead to sugar spikes when consumed.'
+	), 
+	(
+		22, 
+		10, 
+		1, 
+		'Would you like a product for fluid-restricted or low sodium diet', 
+		'Some products are formulated for fluid-restricted or low salt diets.'
+	), 
+	(
+		22, 
+		11, 
+		1, 
+		'Would you like a high protein product', 
+		'Some products are enriched with protein to promote muscle tone or growth.'
+	), 
+	(
+		22, 
+		12, 
+		1, 
+		'Would you like a high fiber product', 
+		'Some products are enriched with fiber to promote bowel and gastrointestinal tract health.'
+	), 
+	(
+		22, 
+		13, 
+		1, 
+		'Would you like a soy-free product', 
+		'Some products are formulated with alternatives to soy. Ideal for individuals with soy sensitivity or allergy.'
+	), 
+	(
+		22, 
+		14, 
+		1, 
+		'Would you like a gluten-free product', 
+		'Some products are formulated with alternatives to gluten. Ideal for individuals with gluten sensitivity or allergy.'
+	), 
+	(
+		22, 
+		15, 
+		1, 
+		'Would you like a product free of colouring agents', 
+		'Some products are formulated without colouring agents and dyes. Ideal for individuals with colouring/dye sensitivities or allergies.'
+	), 
+	(
+		22, 
+		16, 
+		1, 
+		'Would you like a sweetner-free product', 
+		'Some products are formulated without atificial sweetners.'
+	), 
+	(
+		22, 
+		17, 
+		1, 
+		'Would you like a lactose-free product', 
+		'Some products are formulated without lactose. Ideal for individuals with lactose sensitivity or allergy.'
+	), 
+	(
+		22, 
+		18, 
+		1, 
+		'Would you like a product with prebiotics', 
+		'Some products are formulated with prebiotics to promote gastrointestinal health.'
+	), 
+	(
+		22, 
+		19, 
+		1, 
+		'Would you like a product with antioxidants', 
+		'Some products are formulated with antioxidants to promote general health.'
+	), 
+	(
+		22, 
+		20, 
+		1, 
+		'Would you like a keto product', 
+		'Some products are formulated with high fat and protein but with low carbohydrates. Ideal for individuals which prefer a keto diet.'
+	), 
+	(
+		22, 
+		21, 
+		1, 
+		'Would you like a kosher product', 
+		'Some products are formulated to qualify as kosher and meet the food preparation requirements of the jewish faith and law.'
+	), 
+	(
+		22, 
+		22, 
+		1, 
+		'Would you like a halal product', 
+		'Some products are formulated to qualify as halal and meet the food preparation requirements of the Muslim or Islamic faith and law.'
+	), 
+	(
+		22, 
+		23, 
+		1, 
+		'Do you prefer a shake/drink product', 
+		'Some products are available as ready to drink shake or smoothie. Ideal as an on-the-go meal replacement or when product need is unpredictable.'
+	), 
+	(
+		22, 
+		24, 
+		1, 
+		'Do you prefer a shake mix/powder product', 
+		'Some products are available as a powder mix for shakes & smoothies. Requires time to prepare prior to use but may provide a cost savings as well as more flexibilty for custom drink mixes or pudding.'
+	), 
+	(
+		22, 
+		25, 
+		1, 
+		'Do you prefer a bar/candy or snack product', 
+		'Some products available as ready to eat bars or snacks. Ideal as on-the-go meal replacement. Highly mobile and easy to carry. Great when product need or use is unpredictable but may require liquids or mastication for consumption.'
+	), 
+	(
+		22, 
+		26, 
+		1, 
+		'Do you prefer a pudding product', 
+		'Some products are available as ready to eat pudding. Ideal as an on-the-go meal replacement or when product need is unpredictable or for individuals with fluid restrictions or aspiration risk.'
+	), 
+	(
+		22, 
+		27, 
+		1, 
+		'Would you like a soothing product (mouth pain)', 
+		'Some products are available as ready to eat pudding. Ideal as an on-the-go meal replacement or when product need is unpredictable or for individuals with fluid restrictions or aspiration risk.'
+	), 
+	(
+		22, 
+		28, 
+		1, 
+		'Would you like a clear product', 
+		'Some products are available as a clear formulation. Ideal for individuals who do not appreciate the mouth feel of a smootie or milkshake.'
+	);
 
 INSERT INTO criteria VALUES 
-	(22, 1, 'Flavours', ''), 
-	(22, 2, 'Adult', ''), 
-	(22, 3, 'Women', ''), 
-	(22, 4, 'Men', ''), 
-	(22, 5, 'Kids', ''), 
-	(22, 6, 'Weight Loss', ''), 
-	(22, 7, 'Gain/Maintain Weight', ''), 
-	(22, 8, 'Bone/Mobility', ''), 
-	(22, 9, 'Diabetic', ''), 
-	(22, 10, 'Fiber', ''), 
-	(22, 11, 'High Protein', ''), 
-	(22, 12, 'Soy-Free', ''), 
-	(22, 13, 'Gluten-Free', ''), 
-	(22, 14, 'Color-Free', ''), 
-	(22, 15, 'Sweeter-Free', ''), 
-	(22, 16, 'Lactose-free', ''), 
-	(22, 17, 'Prebiotic', ''), 
-	(22, 18, 'Antioxidants', ''), 
-	(22, 19, 'Keto', ''), 
-	(22, 20, 'Kosher', ''), 
-	(22, 21, 'Halal', ''), 
-	(22, 22, 'Fluid Restricted', ''), 
-	(22, 23, 'Drink', ''), 
-	(22, 24, 'Powder', ''), 
-	(22, 25, 'Bar/Snack', ''), 
-	(22, 26, 'Pudding', ''), 
-	(22, 27, 'Clear', ''), 
-	(22, 28, 'Soothe', '');
+	(22, 1, 'Flavours', 'not {qid7}'), 
+	(22, 2, 'Adult', '{qid6} and not ({qid3} or {qid4} or {qid5})'), 
+	(22, 3, 'Women', '{qid4} and not ({qid3} or {qid5} or {qid6})'), 
+	(22, 4, 'Men', '{qid3} and not ({qid4} or {qid5} or {qid6})'), 
+	(22, 5, 'Kids', '{qid5} and not ({qid3} or {qid4} or {qid6})'), 
+	(22, 6, 'Weight Loss', '{qid1} and not {qid2}'), 
+	(22, 7, 'Gain/Maintain Weight', '{qid2} and not {qid1}'), 
+	(22, 8, 'Bone/Mobility', 'not {qid8}'), 
+	(22, 9, 'Diabetic', 'not {qid9}'), 
+	(22, 10, 'Fiber', 'not {qid12}'), 
+	(22, 11, 'High Protein', 'not {qid11}'), 
+	(22, 12, 'Soy-Free', 'not {qid13}'), 
+	(22, 13, 'Gluten-Free', 'not {qid14}'), 
+	(22, 14, 'Color-Free', 'not {qid15}'), 
+	(22, 15, 'Sweeter-Free', 'not {qid16}'), 
+	(22, 16, 'Lactose-free', 'not {qid17}'), 
+	(22, 17, 'Prebiotic', 'not {qid18}'), 
+	(22, 18, 'Antioxidants', 'not {qid19}'), 
+	(22, 19, 'Keto', 'not {qid20}'), 
+	(22, 20, 'Kosher', 'not {qid21}'), 
+	(22, 21, 'Halal', 'not {qid22}'), 
+	(22, 22, 'Fluid Restricted', 'not {qid10}'), 
+	(22, 23, 'Drink', '{qid23} and not ({qid24} or {qid25} or {qid26})'), 
+	(22, 24, 'Powder', '{qid24} and not ({qid23} or {qid25} or {qid26})'), 
+	(22, 25, 'Bar/Snack', '{qid25} and not ({qid23} or {qid24} or {qid26})'), 
+	(22, 26, 'Pudding', '{qid26} and not ({qid23} or {qid24} or {qid25})'), 
+	(22, 27, 'Clear', 'not {qid28}'), 
+	(22, 28, 'Soothe', 'not {qid27}');
 
 INSERT INTO products VALUES 
 	(22, 1, 'Boost® Original', '', '', ''), 
@@ -98,34 +266,34 @@ INSERT INTO products VALUES
 	(22, 31, 'Pediasure Complete®', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(22, 1, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 2, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 3, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 4, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 5, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 6, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 7, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 8, '{cid1} and {cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 9, '{cid1} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 10, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 11, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 12, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'), 
-	(22, 13, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid26} and {cid27} and {cid28}'), 
-	(22, 14, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 15, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 16, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 17, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 18, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 19, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 20, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 21, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 22, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'), 
-	(22, 23, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 24, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'), 
-	(22, 25, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-	(22, 26, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'), 
-	(22, 27, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'), 
-	(22, 28, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'), 
-	(22, 29, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'), 
-	(22, 30, '{cid1} and {cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'), 
-	(22, 31, '{cid1} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}');
+    (22, 1, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 2, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 3, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 4, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid23} and {cid27} and {cid28}'), 
+    (22, 5, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid15} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 6, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 7, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 8, '{cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
+    (22, 9, '{cid1} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 10, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid23} and {cid28}'),
+    (22, 11, '{cid2} and {cid7} and {cid8} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 12, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
+    (22, 13, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid26} and {cid27} and {cid28}'),
+    (22, 14, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23}'),
+    (22, 15, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 16, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 17, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 18, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 19, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 20, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 21, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 22, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
+    (22, 23, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 24, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
+    (22, 25, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
+    (22, 26, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
+    (22, 27, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
+    (22, 28, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
+    (22, 29, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
+    (22, 30, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
+    (22, 31, '{cid1} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}');

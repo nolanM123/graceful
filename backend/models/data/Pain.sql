@@ -5,47 +5,161 @@ INSERT INTO ailments VALUES (
 );
 
 INSERT INTO questions VALUES 
-	(6, 1, 1, 'Are you Pregnant and/or Breast Feeding', ''), 
-	(6, 2, 1, 'Are you an adult ≥ 12 yrs old', ''), 
-	(6, 3, 1, 'Do you frequently drink alcohol', ''), 
-	(6, 4, 1, 'Are you taking any anticholinergics or CNS depressants', ''), 
-	(6, 5, 1, 'Do you have treated/untreated acid reflux or hypertension', ''), 
-	(6, 6, 1, 'Are you taking any blood thinners', ''), 
-	(6, 7, 2, 'Do you have mild to moderate pain', ''), 
-	(6, 8, 2, 'Do you have any inflammation or swelling', ''), 
-	(6, 9, 2, 'Do you have muscle tension or back/neck pain', ''), 
-	(6, 10, 2, 'Is your skin irritated, scratched or cut', ''), 
-	(6, 11, 2, 'Would you like fast pain relief', ''), 
-	(6, 12, 2, 'Would you prefer long acting pain relief', ''), 
-	(6, 13, 2, 'Do you prefer an oral medication', ''), 
-	(6, 14, 2, 'Do you prefer a topical medication', ''), 
-	(6, 15, 2, 'Would you like pain relief at bedtime', ''), 
-	(6, 16, 2, 'Do you also have a fever', ''), 
-	(6, 17, 2, 'Do you have a headache/migraine', ''), 
-	(6, 18, 2, 'Do you have menstrual cramping/pain', ''), 
-	(6, 19, 2, 'Would you like a natural product', '');
+	(
+		6, 
+		1, 
+		1, 
+		'Are you Pregnant and/or Breast Feeding', 
+		'Anti-inflammatory pain medications are not recommended in pregnancy and should be avoided.'
+	), 
+	(
+		6, 
+		2, 
+		1, 
+		'Are you an adult ≥ 12 yrs old', 
+		'Some pain medications are not appropriate for children and should be avoided.'
+	), 
+	(
+		6, 
+		3, 
+		1, 
+		'Do you frequently drink alcohol', 
+		'Acetaminophen is not recommended with alcohol use due to increased risk of liver injury.'
+	), 
+	(
+		6, 
+		4, 
+		1, 
+		'Are you taking any anticholinergics or CNS depressants', 
+		'Anticholinergic and CNS depressants are medications that cause or enhance drowsiness. Avoid use with alcohol. Consult your pharmacist if unsure.'
+	), 
+	(
+		6, 
+		5, 
+		1, 
+		'Do you have treated/untreated acid reflux or hypertension', 
+		'Anti-inflammatories may worsen upset stomach, peptic ulcers and may also worsen high blood pressure. Avoid use if you have these medical conditions.'
+	), 
+	(
+		6, 
+		6, 
+		1, 
+		'Are you taking any blood thinners', 
+		'Blood thinners include warfarin, aspirin, clopidogrel, dipyridamole, ticlopidine, ticagrelor, dabigatran, apixaban, rivaroxaban, dalteparin, etc. Anti-inflammatories may increase risk of bleeding. Counsult your pharmacist for further information.'
+	), 
+	(
+		6, 
+		7, 
+		2, 
+		'Do you have mild to moderate pain', 
+		'Severe pain may require prescription therapy. Consult your physician.'
+	), 
+	(
+		6, 
+		8, 
+		2, 
+		'Do you have any inflammation or swelling', 
+		'Consult your physician for pain not associated with activity, pain associated with infection or infection risk factors. Consider application of ice (first 24-48hrs) or heat (after 48hrs). Consult your pharmacist for further information.'
+	), 
+	(
+		6, 
+		9, 
+		2, 
+		'Do you have muscle tension or back/neck pain', 
+		'Muscle relaxants and/or heat may be benificial for back or neck pain.'
+	), 
+	(
+		6, 
+		10, 
+		2, 
+		'Is your skin irritated, scratched or cut', 
+		'Topical pain medications may further irritate sensitive or damaged skin and should be avoided. Areas of minor skin trauma should be cleaned with mild soap and water to reduce infection risk. Consult your physician for foreign bodies embedded in a wound.'
+	), 
+	(
+		6, 
+		11, 
+		2, 
+		'Would you like fast pain relief', 
+		'Liquid, quick dissolve or topical medications may provide near immediate pain relief.'
+	), 
+	(
+		6, 
+		12, 
+		2, 
+		'Would you prefer long acting pain relief', 
+		'Some pain medications have long duration of action or are formulated to provide pain relief over extended time periods.'
+	), 
+	(
+		6, 
+		13, 
+		2, 
+		'Do you prefer an oral medication', 
+		'Oral medications may work best for deeper tissue pain, more extensive pain or more intense pain.'
+	), 
+	(
+		6, 
+		14, 
+		2, 
+		'Do you prefer a topical medication', 
+		'Topical medications provide localized pain relief and may reduce medication side effects (i.e. drowsiness, upset stomach). Consult your pharmacist for further information.'
+	), 
+	(
+		6, 
+		15, 
+		2, 
+		'Would you like pain relief at bedtime', 
+		'Consult your physician in presence of severe nighttime pain or worsened pain in supine position.'
+	), 
+	(
+		6, 
+		16, 
+		2, 
+		'Do you also have a fever', 
+		'Consult your physician if fever higher than 38°C in a child or lasting more than 3 days in an adult. Avoid aspirin for fever in a child.'
+	), 
+	(
+		6, 
+		17, 
+		2, 
+		'Do you have a headache/migraine', 
+		'Additives such as caffeine may help with headache and migraine pain.'
+	), 
+	(
+		6, 
+		18, 
+		2, 
+		'Do you have menstrual cramping/pain', 
+		'Some additives may help with menstrual cramping and pain.'
+	), 
+	(
+		6, 
+		19, 
+		2, 
+		'Would you like a natural product', 
+		'Some herbal products may help with pain relief.'
+	);
 
 INSERT INTO criteria VALUES 
-	(6, 1, 'Adult', ''), 
-	(6, 2, 'Kids', ''), 
-	(6, 3, 'Fast', ''), 
-	(6, 4, 'Long', ''), 
-	(6, 5, 'Oral', ''), 
-	(6, 6, 'Topical', ''), 
-	(6, 7, 'APAP', ''), 
-	(6, 8, 'Ibuprofen', ''), 
-	(6, 9, 'Napoxen', ''), 
-	(6, 10, 'Methocarbamol', ''), 
-	(6, 11, 'Diclofenac', ''), 
-	(6, 12, 'ASA/Salicylate', ''), 
-	(6, 13, 'Capsaicin', ''), 
-	(6, 14, 'Caffeine', ''), 
-	(6, 15, 'Pyrilamine', ''), 
-	(6, 16, 'Pamabrom', ''), 
-	(6, 17, 'Menthol', ''), 
-	(6, 18, 'AntiHistamine', ''), 
-	(6, 19, 'Arnica', ''), 
-	(6, 20, 'Heat', '');
+	(6, 1, 'Adult', '{qid2}'), 
+	(6, 2, 'Kids', 'not {qid2}'), 
+	(6, 3, 'Fast', '{qid11} and not {qid12}'), 
+	(6, 4, 'Long', '{qid12} and not {qid11}'), 
+	(6, 5, 'Oral', '{qid13} and not {qid14}'), 
+	(6, 6, 'Topical', '{qid14} and not {qid13}'), 
+	(6, 7, 'APAP', 'not {qid3} and ({qid16} or {qid17} or {qid18} or {qid7})'), 
+	(6, 8, 'Ibuprofen', 'not ({qid1} or {qid5} or {qid6}) and ({qid7} or {qid8} or {qid16} or {qid17} or {qid18})'), 
+	(6, 9, 'Napoxen', 'not ({qid1} or {qid5} or {qid6}) and ({qid7} or {qid8} or {qid17} or {qid18})'), 
+	(6, 10, 'Methocarbamol', '{qid7} and {qid9} and not ({qid3} or {qid4} or {qid1})'), 
+	(6, 11, 'Diclofenac', 'not ({qid1} or {qid10}) and ({qid7} or {qid8} or {qid9})'), 
+	(6, 12, 'ASA/Salicylate', 'not ({qid1} or {qid5} or {qid6}) and ({qid7} or {qid8} or {qid9} or {qid17} or {qid18})'), 
+	(6, 13, 'Capsaicin', 'not {qid10} and {qid7}'), 
+	(6, 14, 'Caffeine', '{qid18}'), 
+	(6, 15, 'Pyrilamine', '{qid18}'), 
+	(6, 16, 'Pamabrom', '{qid18}'), 
+	(6, 17, 'Menthol', 'not {qid10} and ({qid7} or {qid8} or {qid9})'), 
+	(6, 18, 'AntiHistamine', '{qid15} and not ({qid3} or {qid4})'), 
+	(6, 19, 'Arnica', '{qid19} and not ({qid10} or {qid1}) and ({qid7} or {qid8} or {qid9})'), 
+	(6, 20, 'Heat', 'not {qid10} and ({qid7} or {qid8} or {qid9})');
 
 INSERT INTO products VALUES 
 	(6, 1, 'Tylenol® Rapid Release Gels', '', '', ''), 

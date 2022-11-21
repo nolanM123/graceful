@@ -1,65 +1,221 @@
 INSERT INTO ailments VALUES (
 	23, 
 	'Incontinence', 
-	'Consult your phyisician for insomnia lasting longer than 14 days, occuring more than 3 days a week, associated with an illness, resulting from medication (drug-induced) or refractory to sleep hygiene and/or non-prescription sedative. Consult a physician if you have contraindications to non-prescription sedatives. Sedatives should be used at the lowest effective dose and for the shortest duration possible.'
+	'Inividuals should consult their physician for urinary or bowel incontienence of unknown ethiology, presence of blood in urine or bowel movements as well as signs of severe dehydration. Patients with suspected urinary tract infection, gastrointestinal infection, systemic symptoms, recent trauma, poor renal function or recent pelvic surgery should be assessed by a healthcare practionner.'
 );
 
 INSERT INTO questions VALUES 
-	(23, 1, 1, 'Would you like a product specifically for men', ''), 
-	(23, 2, 1, 'Would you like a product specifically for women', ''), 
-	(23, 3, 1, 'Would you like a unisex product', ''), 
-	(23, 4, 1, 'Would you like a product for daily wear', ''), 
-	(23, 5, 1, 'Would you like a product for use at night or extended time', ''), 
-	(23, 6, 1, 'Would you like a product post partum incontinence', ''), 
-	(23, 7, 1, 'Would you like a more flexible product for active wear', ''), 
-	(23, 8, 1, 'Would you like a latex-free product', ''), 
-	(23, 9, 1, 'Do you prefer an underwear product', ''), 
-	(23, 10, 1, 'Do you prefer a pad product', ''), 
-	(23, 11, 1, 'Do you prefer a panty liner product', ''), 
-	(23, 12, 1, 'Do you prefer a guard or shield product', ''), 
-	(23, 13, 1, 'Do you prefer briefs', ''), 
-	(23, 14, 1, 'Would you like a product for very light incontinence', ''), 
-	(23, 15, 1, 'Would you like a product for light incontinence', ''), 
-	(23, 16, 1, 'Would you like a product for moderate incontinence', ''), 
-	(23, 17, 1, 'Would you like a product for heavy incontinence', ''), 
-	(23, 18, 1, 'Would you like a product for super heavy incontinence', ''), 
-	(23, 19, 1, 'Would you prefer a regular length product', ''), 
-	(23, 20, 1, 'Would you prefer a long length product', ''), 
-	(23, 21, 1, 'Would you prefer a product for size small', ''), 
-	(23, 22, 1, 'Would you prefer a product for size medium', ''), 
-	(23, 23, 1, 'Would you prefer a product for size large', ''), 
-	(23, 24, 1, 'Would you prefer a product for size extra large', ''), 
-	(23, 25, 1, 'Would you prefer a product for size double extra large', ''), 
-	(23, 26, 1, 'Would you prefer a product for bariatric use', '');
+	(
+		23, 
+		1, 
+		1, 
+		'Would you like a product specifically for men', 
+		'Some products are specifically designed to fit men comfortably.'
+	), 
+	(
+		23, 
+		2, 
+		1, 
+		'Would you like a product specifically for women', 
+		'Some products are specifically designed to fit women comfortably.'
+	), 
+	(
+		23, 
+		3, 
+		1, 
+		'Would you like a unisex product', 
+		'Some products are specifically designed to fit women comfortably'
+	), 
+	(
+		23, 
+		4, 
+		1, 
+		'Would you like a product for daily wear', 
+		'Some products are best worn for a few hours or during the day when item can be replaced if it becomes saturated.'
+	), 
+	(
+		23, 
+		5, 
+		1, 
+		'Would you like a product for use at night or extended time', 
+		'Some products may be worn for extended periods of time including overnight as they are less likely to become saturated.'
+	), 
+	(
+		23, 
+		6, 
+		1, 
+		'Would you like a product post partum incontinence', 
+		'Some products are recommended for post-partum incontinence. Only some Tena pads fit this criteria.'
+	), 
+	(
+		23, 
+		7, 
+		1, 
+		'Would you like a more flexible product for active wear', 
+		'Some products are made to be more flexible or have wings to reduce the risk of leaks with movement and motion. These products are ideal for more active users.'
+	), 
+	(
+		23, 
+		8, 
+		1, 
+		'Would you like a latex-free product', 
+		'Individuals with latex sensitivities or allergies may react negatively to products which may contain latex or rubber. Such individuals should select products that are latex-free. Only some Tena pads and underwear meet this criteria.'
+	), 
+	(
+		23, 
+		9, 
+		1, 
+		'Do you prefer an underwear product', 
+		'Underwear provide greater incontinence protection than pads, panty liners, guards or shields. Mimic the feel and/or look of traditional underwear and can provide discretion. Some products look like lace or real fabric.'
+	), 
+	(
+		23, 
+		10, 
+		1, 
+		'Do you prefer a pad product', 
+		'Provide greater urinary incontinence protection than panty liners but generally thicker and less discrete. Can be used to protect undergarments.'
+	), 
+	(
+		23, 
+		11, 
+		1, 
+		'Do you prefer a panty liner product', 
+		'Panty liners provide lightest urinary incontinence protection. Can be used to protect undergarments.'
+	), 
+	(
+		23, 
+		12, 
+		1, 
+		'Do you prefer a guard or shield product', 
+		'The male equivalent to panty liner or pad product. Can be worn beneath underwear, provides protection for mild urinary incontinence.'
+	), 
+	(
+		23, 
+		13, 
+		1, 
+		'Do you prefer briefs', 
+		'Briefs can be easily removed or changed with side fasteners. Ideal for individuals requiring assistance with daily care. Provide highest level or absorption and can be used for both urinary or bowel incontinence.'
+	), 
+	(
+		23, 
+		14, 
+		1, 
+		'Would you like a product for very light incontinence', 
+		'Designed for infrequent and very light urinary incontinence.'
+	), 
+	(
+		23, 
+		15, 
+		1, 
+		'Would you like a product for light incontinence', 
+		'Designed for infrequent light urinary incontinence.'
+	), 
+	(
+		23, 
+		16, 
+		1, 
+		'Would you like a product for moderate incontinence', 
+		'Designed for moderate urinary incontinence.'
+	), 
+	(
+		23, 
+		17, 
+		1, 
+		'Would you like a product for heavy incontinence', 
+		'Designed for heavy urinary incontinence. May also be appropriate for bowel incontinence.'
+	), 
+	(
+		23, 
+		18, 
+		1, 
+		'Would you like a product for super heavy incontinence', 
+		'Designed for heavy urinary or bowel incontinence.'
+	), 
+	(
+		23, 
+		19, 
+		1, 
+		'Would you prefer a regular length product', 
+		'For women for which a regular sized pad or panty liner provides sufficient protection.'
+	), 
+	(
+		23, 
+		20, 
+		1, 
+		'Would you prefer a long length product', 
+		'For women for which a regular sized pad or panty liner does not provide sufficient protection.'
+	), 
+	(
+		23, 
+		21, 
+		1, 
+		'Would you prefer a product for size small', 
+		'size small (-) inches. Applies to briefs and underwear.'
+	), 
+	(
+		23, 
+		22, 
+		1, 
+		'Would you prefer a product for size medium', 
+		'size medium (-) inches. Applies to briefs and underwear.'
+	), 
+	(
+		23, 
+		23, 
+		1, 
+		'Would you prefer a product for size large', 
+		'size large (-) inches. Applies to briefs and underwear.'
+	), 
+	(
+		23, 
+		24, 
+		1, 
+		'Would you prefer a product for size extra large', 
+		'size extra large (-) inches. Applies to briefs and underwear.'
+	), 
+	(
+		23, 
+		25, 
+		1, 
+		'Would you prefer a product for size double extra large', 
+		'size double extra large (-) inches. Applies to briefs and underwear.'
+	), 
+	(
+		23, 
+		26, 
+		1, 
+		'Would you prefer a product for bariatric use', 
+		'Specifical designed for individuals with weight and/or obesity challenges. Applies to briefs and underwear.'
+	);
 
 INSERT INTO criteria VALUES 
-	(23, 1, 'Unisex', ''), 
-	(23, 2, 'Men''s', ''), 
-	(23, 3, 'Women''s', ''), 
-	(23, 4, 'Daily', ''), 
-	(23, 5, 'Nightly', ''), 
-	(23, 6, 'Post Partum', ''), 
-	(23, 7, 'Flex/Active', ''), 
-	(23, 8, 'Latex-Free', ''), 
-	(23, 9, 'Underwear', ''), 
-	(23, 10, 'Pads', ''), 
-	(23, 11, 'Panty Liners', ''), 
-	(23, 12, 'Shield', ''), 
-	(23, 13, 'Guards', ''), 
-	(23, 14, 'Briefs', ''), 
-	(23, 15, 'V-Light 0-1/7', ''), 
-	(23, 16, 'Light 2-3/7', ''), 
-	(23, 17, 'Moderate 4-5/7', ''), 
-	(23, 18, 'Heavy 6-7/7', ''), 
-	(23, 19, 'Super 8/8', ''), 
-	(23, 20, 'Long', ''), 
-	(23, 21, 'Regular', ''), 
-	(23, 22, 'Small', ''), 
-	(23, 23, 'Medium', ''), 
-	(23, 24, 'Large', ''), 
-	(23, 25, 'Xlarge', ''), 
-	(23, 26, 'XXL', ''), 
-	(23, 27, 'Bariatric (XXXL)', '');
+	(23, 1, 'Unisex', '{qid3} and not ({qid1} or {qid2})'), 
+	(23, 2, 'Men''s', '{qid1} and not ({qid2} or {qid3})'), 
+	(23, 3, 'Women''s', '{qid2} and not ({qid1} or {qid3})'), 
+	(23, 4, 'Daily', '{qid4} and not {qid5}'), 
+	(23, 5, 'Nightly', '{qid5} and not {qid4}'), 
+	(23, 6, 'Post Partum', 'not {qid6}'), 
+	(23, 7, 'Flex/Active', 'not {qid7}'), 
+	(23, 8, 'Latex-Free', 'not {qid8}'), 
+	(23, 9, 'Underwear', '{qid9} and not ({qid10} or {qid11} or {qid12} or {qid13})'), 
+	(23, 10, 'Pads', '{qid10} and not ({qid9} or {qid11} or {qid12} or {qid13})'), 
+	(23, 11, 'Panty Liners', '{qid11} and not ({qid9} or {qid10} or {qid12} or {qid13})'), 
+	(23, 12, 'Shield', '{qid12} and not ({qid9} or {qid10} or {qid11} or {qid13})'), 
+	(23, 13, 'Guards', '{qid12} and not ({qid9} or {qid10} or {qid11} or {qid13})'), 
+	(23, 14, 'Briefs', '{qid13} and not ({qid9} or {qid10} or {qid11} or {qid12})'), 
+	(23, 15, 'V-Light 0-1/7', '{qid14} and not ({qid15} or {qid16} or {qid17} or {qid18})'), 
+	(23, 16, 'Light 2-3/7', '{qid15} and not ({qid14} or {qid16} or {qid17} or {qid18})'), 
+	(23, 17, 'Moderate 4-5/7', '{qid16} and not ({qid14} or {qid15} or {qid17} or {qid18})'), 
+	(23, 18, 'Heavy 6-7/7', '{qid17} and not ({qid14} or {qid15} or {qid16} or {qid18})'), 
+	(23, 19, 'Super 8/8', '{qid18} and not ({qid14} or {qid15} or {qid16} or {qid17})'), 
+	(23, 20, 'Long', '{qid20} and not {qid19}'), 
+	(23, 21, 'Regular', '{qid19} and not {qid20}'), 
+	(23, 22, 'Small', '{qid21}'), 
+	(23, 23, 'Medium', '{qid22}'), 
+	(23, 24, 'Large', '{qid23}'), 
+	(23, 25, 'Xlarge', '{qid24}'), 
+	(23, 26, 'XXL', '{qid25}'), 
+	(23, 27, 'Bariatric (XXXL)', '{qid26}');
 
 INSERT INTO products VALUES 
 	(23, 1, 'Tena Very Light Liners Long', '', '', ''), 
@@ -190,19 +346,19 @@ INSERT INTO productCriteria VALUES
 	(23, 3, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid16} and {cid21}'), 
 	(23, 4, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid16} and {cid20}'), 
 	(23, 5, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
-	(23, 6, '{cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid18}'), 
+	(23, 6, '{cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid18}'), 
 	(23, 7, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid21}'), 
 	(23, 8, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
-	(23, 9, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid18} and {cid21}'), 
-	(23, 10, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
-	(23, 11, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid16} and {cid20}'), 
+	(23, 9, '{cid3} and {cid4} and {cid7} and {cid8} and {cid10} and {cid18} and {cid21}'), 
+	(23, 10, '{cid3} and {cid4} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
+	(23, 11, '{cid3} and {cid4} and {cid6} and {cid7} and and {cid10} and {cid16} and {cid20}'), 
 	(23, 12, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid15}'), 
 	(23, 13, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid16}'), 
 	(23, 14, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid16}'), 
 	(23, 15, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid17}'), 
 	(23, 16, '{cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18}'), 
 	(23, 17, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18}'), 
-	(23, 18, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid16}'), 
+	(23, 18, '{cid3} and {cid4} and {cid6} and {cid7} and {cid9} and {cid16}'), 
 	(23, 19, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17}'), 
 	(23, 20, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17}'), 
 	(23, 21, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18}'), 
@@ -215,26 +371,26 @@ INSERT INTO productCriteria VALUES
 	(23, 28, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid19} and {cid23} and {cid24} and {cid25}'), 
 	(23, 29, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid27}'), 
 	(23, 30, '{cid1} and {cid5} and {cid6} and {cid7} and {cid8} and {cid14} and {cid19} and {cid23} and {cid24} and {cid25}'), 
-	(23, 31, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
+	(23, 31, '{cid3} and {cid4} and {cid6} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 32, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 33, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 34, '{cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 35, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid12} and {cid16}'), 
 	(23, 36, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid17}'), 
 	(23, 37, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
-	(23, 38, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
+	(23, 38, '{cid2} and {cid4} and {cid6} and {cid8} and {cid9} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 39, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid22} and {cid23} and {cid24}'), 
 	(23, 40, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid11} and {cid15} and {cid20} and {cid21}'), 
 	(23, 41, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid11} and {cid16} and {cid20} and {cid21}'), 
-	(23, 42, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid11} and {cid16} and {cid20}'), 
+	(23, 42, '{cid3} and {cid4} and {cid6} and {cid8} and {cid11} and {cid16} and {cid20}'), 
 	(23, 43, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid16} and {cid21}'), 
 	(23, 44, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid16} and {cid20} and {cid21}'), 
 	(23, 45, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid21}'), 
 	(23, 46, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20} and {cid21}'), 
-	(23, 47, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid21}'), 
+	(23, 47, '{cid3} and {cid4} and {cid6} and {cid8} and {cid10} and {cid17} and {cid21}'), 
 	(23, 48, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid21}'), 
 	(23, 49, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20} and {cid21}'), 
-	(23, 50, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid21}'), 
+	(23, 50, '{cid3} and {cid4} and {cid6} and {cid8} and {cid10} and {cid17} and {cid21}'), 
 	(23, 51, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid18} and {cid20}'), 
 	(23, 52, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid18} and {cid20} and {cid21}'), 
 	(23, 53, '{cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid18} and {cid21}'), 
@@ -270,16 +426,16 @@ INSERT INTO productCriteria VALUES
 	(23, 83, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 84, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid23} and {cid24} and {cid25}'), 
 	(23, 85, '{cid1} and {cid5} and {cid6} and {cid7} and {cid8} and {cid14} and {cid19} and {cid23} and {cid24} and {cid25}'), 
-	(23, 86, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid22} and {cid23} and {cid25}'), 
+	(23, 86, '{cid1} and {cid4} and {cid6} and {cid8} and {cid14} and {cid18} and {cid22} and {cid23} and {cid25}'), 
 	(23, 87, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid18} and {cid22}'), 
-	(23, 88, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17} and {cid22} and {cid23} and {cid24} and {cid25}'), 
+	(23, 88, '{cid1} and {cid4} and {cid6} and {cid8} and {cid9} and {cid17} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 89, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid18} and {cid26} and {cid27}'), 
 	(23, 90, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17}'), 
-	(23, 91, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17} and {cid22} and {cid23} and {cid24} and {cid25}'), 
-	(23, 92, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17} and {cid23} and {cid24} and {cid25}'), 
+	(23, 91, '{cid2} and {cid4} and {cid6} and {cid8} and {cid9} and {cid17} and {cid22} and {cid23} and {cid24} and {cid25}'), 
+	(23, 92, '{cid3} and {cid4} and {cid6} and {cid8} and {cid9} and {cid17} and {cid23} and {cid24} and {cid25}'), 
 	(23, 93, '{cid1} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid19} and {cid23} and {cid24} and {cid25}'), 
 	(23, 94, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid19} and {cid23} and {cid24} and {cid25}'), 
-	(23, 95, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid17} and {cid23} and {cid24} and {cid25}'), 
+	(23, 95, '{cid1} and {cid4} and {cid6} and {cid8} and {cid9} and {cid17} and {cid23} and {cid24} and {cid25}'), 
 	(23, 96, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid16}'), 
 	(23, 97, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid17}'), 
 	(23, 98, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid12} and {cid15}'), 
@@ -302,7 +458,7 @@ INSERT INTO productCriteria VALUES
 	(23, 115, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 116, '{cid2} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid22} and {cid23} and {cid24} and {cid25}'), 
 	(23, 117, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid23} and {cid24} and {cid25}'), 
-	(23, 118, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid23} and {cid24} and {cid25}'), 
+	(23, 118, '{cid1} and {cid4} and {cid6} and {cid8} and {cid14} and {cid23} and {cid24} and {cid25}'), 
 	(23, 119, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid23} and {cid24} and {cid25}'), 
 	(23, 120, '{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid14} and {cid26} and {cid27}'), 
 	(23, 121, '{cid1} and {cid5} and {cid6} and {cid7} and {cid8} and {cid14} and {cid23} and {cid24} and {cid25}');

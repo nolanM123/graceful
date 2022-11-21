@@ -5,28 +5,99 @@ INSERT INTO ailments VALUES (
 );
 
 INSERT INTO questions VALUES 
-	(7, 1, 1, 'Are you Pregnant and/or Breast Feeding', ''), 
-	(7, 2, 1, 'Are you an adult ≥ 12 yrs old', ''), 
-	(7, 3, 1, 'Do you regularily drink alcohol', ''), 
-	(7, 4, 1, 'Are you taking any anticholinergics or CNS depressants', ''), 
-	(7, 5, 1, 'Have you have infrequent insomnia', ''), 
-	(7, 6, 1, 'Are you on blood thinners', ''), 
-	(7, 7, 1, 'Do you have treated or untreated acid reflux', ''), 
-	(7, 8, 1, 'Do you have uncontrolled hypertension', ''), 
-	(7, 9, 1, 'Are you also in pain', ''), 
-	(7, 10, 1, 'Would you prefer a more natural option', ''), 
-	(7, 11, 1, 'Would you prefer a fast acting product', ''), 
-	(7, 12, 1, 'Would you prefer a long acting product', '');
+	(
+		7, 
+		1, 
+		1, 
+		'Are you Pregnant and/or Breast Feeding', 
+		'Valerian and ibuprofen is not recommended in pregnancy and should be avoided.'
+	), 
+	(
+		7, 
+		2, 
+		1, 
+		'Are you an adult ≥ 12 yrs old', 
+		'Consult your physician for children with insomnia.'
+	), 
+	(
+		7, 
+		3, 
+		1, 
+		'Do you regularily drink alcohol', 
+		'Avoid use of alcohol with insomnia medication due to increased risk of sedation.'
+	), 
+	(
+		7, 
+		4, 
+		1, 
+		'Are you taking any anticholinergics or CNS depressants', 
+		'Anticholinergic and CNS depressants are medications that cause or enhance drowsiness. Avoid use with alcohol and/or insomnia medications. Consult your pharmacist if unsure.'
+	), 
+	(
+		7, 
+		5, 
+		1, 
+		'Have you have infrequent insomnia', 
+		'Consult your physician for persistent or frequent insomnia.'
+	), 
+	(
+		7, 
+		6, 
+		1, 
+		'Are you on blood thinners', 
+		'Blood thinners include warfarin, aspirin, clopidogrel, dipyridamole, ticlopidine, ticagrelor, dabigatran, apixaban, rivaroxaban, dalteparin, etc. Ibuprofen may increase risk of bleeding. Counsult your pharmacist for further information.'
+	), 
+	(
+		7, 
+		7, 
+		1, 
+		'Do you have treated or untreated acid reflux', 
+		'Ibuprofen and valerian may worsen upset stomach and peptic ulcers. Avoid use if you have these medical conditions. Consult your pharmacist for further information.'
+	), 
+	(
+		7, 
+		8, 
+		1, 
+		'Do you have uncontrolled hypertension', 
+		'Ibuprofen may aggravate hypertension. Avoid use if you have uncontrolled hypertension. Consult your pharmacist for further information.'
+	), 
+	(
+		7, 
+		9, 
+		1, 
+		'Are you also in pain', 
+		'Some insomnia medications are available in combination with acetaminophen or ibuprofen.'
+	), 
+	(
+		7, 
+		10, 
+		1, 
+		'Would you prefer a more natural option', 
+		'Some natural health products and naturalling occuring hormones act as sedatives.'
+	), 
+	(
+		7, 
+		11, 
+		1, 
+		'Would you prefer a fast acting product', 
+		'Some sedatives are formulated as fast acting products.'
+	), 
+	(
+		7, 
+		12, 
+		1, 
+		'Would you prefer a long acting product', 
+		'Some sedatives are formulated as long acting products. Some products are formulated as both (dual) fast and long-acting products.'
+	);
 
 INSERT INTO criteria VALUES 
-	(7, 1, 'Diphenhydramine', ''), 
-	(7, 2, 'Melatonin', ''), 
-	(7, 3, 'Valerian', ''), 
-	(7, 4, 'APAP', ''), 
-	(7, 5, 'Ibuprofen', ''), 
-	(7, 6, 'Fast Acting', ''), 
-	(7, 7, 'Long Acting', ''), 
-	(7, 8, 'column', '');
+	(7, 1, 'Diphenhydramine', '{qid2} and {qid5} and not ({qid1} or {qid3} or {qid4} or {qid10})'), 
+	(7, 2, 'Melatonin', '{qid2} and {qid5} and {qid10} and not ({qid1} or {qid3} or {qid4})'), 
+	(7, 3, 'Valerian', '{qid2} and {qid10} not ({qid1} or {qid3} or {qid4} or {qid5} or {qid7})'), 
+	(7, 4, 'APAP', '{qid9} and not {qid3}'), 
+	(7, 5, 'Ibuprofen', '{qid9} and not ({qid8} or {qid1} or {qid6} or {qid7})'), 
+	(7, 6, 'Fast Acting', '{qid11} and not {qid12}'), 
+	(7, 7, 'Long Acting', '{qid12} and not {qid11}');
 
 INSERT INTO products VALUES 
 	(7, 1, 'Unisom® Sleepgels® Extra Strength - Soft Gel Capsules', '', '', ''), 
@@ -44,16 +115,16 @@ INSERT INTO products VALUES
 	(7, 13, 'Webber Melatonin Maximum Strength 10 Mg Quick Dissolve', '', '', '');
 
 INSERT INTO productCriteria VALUES 
-	(7, 1, '{cid1} and {cid6} and {cid8}'), 
-	(7, 2, '{cid1} and {cid6} and {cid8}'), 
-	(7, 3, '{cid2} and {cid3} and {cid6} and {cid8}'), 
-	(7, 4, '{cid1} and {cid6} and {cid8}'), 
-	(7, 5, '{cid1} and {cid6} and {cid8}'), 
-	(7, 6, '{cid1} and {cid5} and {cid6} and {cid8}'), 
-	(7, 7, '{cid1} and {cid4} and {cid6} and {cid8}'), 
-	(7, 8, '{cid2} and {cid7} and {cid8}'), 
-	(7, 9, '{cid2} and {cid6} and {cid8}'), 
-	(7, 10, '{cid2} and {cid3} and {cid6} and {cid8}'), 
-	(7, 11, '{cid2} and {cid6} and {cid7} and {cid8}'), 
-	(7, 12, '{cid2} and {cid6} and {cid8}'), 
-	(7, 13, '{cid2} and {cid6} and {cid8}');
+	(7, 1, '{cid1} and {cid6}'), 
+	(7, 2, '{cid1} and {cid6}'), 
+	(7, 3, '{cid2} and {cid3} and {cid6}'), 
+	(7, 4, '{cid1} and {cid6}'), 
+	(7, 5, '{cid1} and {cid6}'), 
+	(7, 6, '{cid1} and {cid5} and {cid6}'), 
+	(7, 7, '{cid1} and {cid4} and {cid6}'), 
+	(7, 8, '{cid2} and {cid7}'), 
+	(7, 9, '{cid2} and {cid6}'), 
+	(7, 10, '{cid2} and {cid3} and {cid6}'), 
+	(7, 11, '{cid2} and {cid6} and {cid7}'), 
+	(7, 12, '{cid2} and {cid6}'), 
+	(7, 13, '{cid2} and {cid6}');
