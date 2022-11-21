@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	4, 
-	'Cough & Cold', 
-	'Consult your phyisician in presence of severe cold and flu symptoms, COVID-19 symptoms or for patients with significantly decreased food or fluid intake. Consult your physician if a child has symptoms of croup, ear infection, excessive lethargy, excessive irritability, skin rash, or cough associated with vomitting. Individuals with chronic medical conditions, nursing home residents, seniors over 65 years old, conditions compromissing management of respiratory secretions, pregnant women, children less than 2 years old and children on aspirin are at higher risk of cold and flu complications.'
-);
+INSERT INTO ailments VALUES 
+	(
+		4, 
+		'Cough & Cold', 
+		'Consult your phyisician in presence of severe cold and flu symptoms, COVID-19 symptoms or for patients with significantly decreased food or fluid intake. Consult your physician if a child has symptoms of croup, ear infection, excessive lethargy, excessive irritability, skin rash, or cough associated with vomitting. Individuals with chronic medical conditions, nursing home residents, seniors over 65 years old, conditions compromissing management of respiratory secretions, pregnant women, children less than 2 years old and children on aspirin are at higher risk of cold and flu complications.'
+	);
 
 INSERT INTO questions VALUES 
 	(

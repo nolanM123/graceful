@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	7, 
-	'Insomnia', 
-	'Consult your phyisician for insomnia lasting longer than 14 days, occuring more than 3 days a week, associated with an illness, resulting from medication (drug-induced) or refractory to sleep hygiene and/or non-prescription sedative. Consult a physician if you have contraindications to non-prescription sedatives. Sedatives should be used at the lowest effective dose and for the shortest duration possible.'
-);
+INSERT INTO ailments VALUES 
+	(
+		7, 
+		'Insomnia', 
+		'Consult your phyisician for insomnia lasting longer than 14 days, occuring more than 3 days a week, associated with an illness, resulting from medication (drug-induced) or refractory to sleep hygiene and/or non-prescription sedative. Consult a physician if you have contraindications to non-prescription sedatives. Sedatives should be used at the lowest effective dose and for the shortest duration possible.'
+	);
 
 INSERT INTO questions VALUES 
 	(
@@ -93,7 +94,7 @@ INSERT INTO questions VALUES
 INSERT INTO criteria VALUES 
 	(7, 1, 'Diphenhydramine', '{qid2} and {qid5} and not ({qid1} or {qid3} or {qid4} or {qid10})'), 
 	(7, 2, 'Melatonin', '{qid2} and {qid5} and {qid10} and not ({qid1} or {qid3} or {qid4})'), 
-	(7, 3, 'Valerian', '{qid2} and {qid10} not ({qid1} or {qid3} or {qid4} or {qid5} or {qid7})'), 
+	(7, 3, 'Valerian', '{qid2} and {qid10} and not ({qid1} or {qid3} or {qid4} or {qid5} or {qid7})'), 
 	(7, 4, 'APAP', '{qid9} and not {qid3}'), 
 	(7, 5, 'Ibuprofen', '{qid9} and not ({qid8} or {qid1} or {qid6} or {qid7})'), 
 	(7, 6, 'Fast Acting', '{qid11} and not {qid12}'), 

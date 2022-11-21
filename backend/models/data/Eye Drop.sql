@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	10, 
-	'Eye Drop', 
-	'Consult your phyisician or emergency care provider if experiencing eye pain, disturbances of vision, light sensitivity, trauma, chemical exposure, imbedded foreign body, eye protrusion or regularly wear contact lens. Refer to your physician for worsening symptoms or symptoms persisting more than 48 hours. Eye drops are highly complex susbstances with individual efficacy depending on product composition and concentration of specific electrolytes (potassium and bicarbonate) , solvents, viscosity agents, preservatives and cytotoxic additives. Effective therapy may require a trial and error approach. Products should be used for 1-2 wk trials assessing subjective efficacy including symptom improvement and patient comfort.'
-);
+INSERT INTO ailments VALUES 
+	(
+		10, 
+		'Eye Drop', 
+		'Consult your phyisician or emergency care provider if experiencing eye pain, disturbances of vision, light sensitivity, trauma, chemical exposure, imbedded foreign body, eye protrusion or regularly wear contact lens. Refer to your physician for worsening symptoms or symptoms persisting more than 48 hours. Eye drops are highly complex susbstances with individual efficacy depending on product composition and concentration of specific electrolytes (potassium and bicarbonate) , solvents, viscosity agents, preservatives and cytotoxic additives. Effective therapy may require a trial and error approach. Products should be used for 1-2 wk trials assessing subjective efficacy including symptom improvement and patient comfort.'
+	);
 
 INSERT INTO questions VALUES 
 	(

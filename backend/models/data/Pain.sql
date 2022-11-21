@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	6, 
-	'Pain', 
-	'Consult your physician or emergency assistance in presence of severe pain symptoms, injury or trauma. Older individuals on corticosteriod therapy who have experienced a minor trauma should consult their physician due to fracture risk. Consult your physician for pain lasting ≥2 weeks or unresponsive to conservative therapy. Consult your physician if history of cancer or additional symptoms such as fever, rash, hot swollen joint, weight loss, chills, bladder dysfunction, bowel dysfunction, neurogenic pain (burning, tingling, numbness), morning stiffness lasting more than 1 hour, sciatica symptoms, joint deformity, obvious fracture, inability to bear weight on injured limb or motor weakness. Patients with chronic liver disease, history of inflammatory arthritis, fibromyalgia or gout should consult their physician.'
-);
+INSERT INTO ailments VALUES 
+	(
+		6, 
+		'Pain', 
+		'Consult your physician or emergency assistance in presence of severe pain symptoms, injury or trauma. Older individuals on corticosteriod therapy who have experienced a minor trauma should consult their physician due to fracture risk. Consult your physician for pain lasting ≥2 weeks or unresponsive to conservative therapy. Consult your physician if history of cancer or additional symptoms such as fever, rash, hot swollen joint, weight loss, chills, bladder dysfunction, bowel dysfunction, neurogenic pain (burning, tingling, numbness), morning stiffness lasting more than 1 hour, sciatica symptoms, joint deformity, obvious fracture, inability to bear weight on injured limb or motor weakness. Patients with chronic liver disease, history of inflammatory arthritis, fibromyalgia or gout should consult their physician.'
+	);
 
 INSERT INTO questions VALUES 
 	(

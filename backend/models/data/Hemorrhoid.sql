@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	2, 
-	'Hemorrhoid', 
-	'Consult your physician if hemorrhoids associated with rectal bleeding, painful defecation, dark blood, profuse bleeding or recurrent bleeding. Individuals at high risk of colorectal cancer, individuals under the age of 12 or individuals with a prolapse that must be manually replaced should consult their health care provider immediately. Seek medical attention for symptoms that persist more than 7 days. Daily fibre, avoiding straining and Sitz baths may help relieve symptoms.'
-);
+INSERT INTO ailments VALUES 
+	(
+		2, 
+		'Hemorrhoid', 
+		'Consult your physician if hemorrhoids associated with rectal bleeding, painful defecation, dark blood, profuse bleeding or recurrent bleeding. Individuals at high risk of colorectal cancer, individuals under the age of 12 or individuals with a prolapse that must be manually replaced should consult their health care provider immediately. Seek medical attention for symptoms that persist more than 7 days. Daily fibre, avoiding straining and Sitz baths may help relieve symptoms.'
+	);
 
 INSERT INTO questions VALUES 
 	(

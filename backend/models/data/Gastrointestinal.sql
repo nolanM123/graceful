@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	9, 
-	'GastroIntestinal', 
-	'Consult your phyisician if experiencing abdominal pain in addition to difficulty swallowing, weight loss (>3kg over 6 months), persistent vomitting, bleeding, bloody vomit, dark or bloody stools, fever, chills, anemia, dramatic symptom change or worsening symptoms, localized moderate/severe pain with tenderness, abdominal or rectal mass, drug-induced causes, recent abdominal surgery, alternating diarrhea and constipation or comorbid disease including advanced age, diabetes, heart failure, immunosuppression, eating disorder or renal insufficiency.'
-);
+INSERT INTO ailments VALUES 
+	(
+		9, 
+		'GastroIntestinal', 
+		'Consult your phyisician if experiencing abdominal pain in addition to difficulty swallowing, weight loss (>3kg over 6 months), persistent vomitting, bleeding, bloody vomit, dark or bloody stools, fever, chills, anemia, dramatic symptom change or worsening symptoms, localized moderate/severe pain with tenderness, abdominal or rectal mass, drug-induced causes, recent abdominal surgery, alternating diarrhea and constipation or comorbid disease including advanced age, diabetes, heart failure, immunosuppression, eating disorder or renal insufficiency.'
+	);
 
 INSERT INTO questions VALUES 
 	(

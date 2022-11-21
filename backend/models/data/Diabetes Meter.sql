@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	3, 
-	'Diabetes Meter', 
-	'Consult immediate medical attention for hypoglycemia symptoms including irregular/fast heartbeat, fatigue, pale skin, shakiness, anxiety, sweating, hunger, irritability, tingling in a non-diabetic individual. Consult emergency medical attention for diabetics experiencing severe hypoglycemia symptoms including confusion, abnormal behaviour, visual disturbances, seizures or loss of consciousness. Consult immediate medical attention if hypoglycemia is unresponsive to glucose administration.'
-);
+INSERT INTO ailments VALUES 
+	(
+		3, 
+		'Diabetes Meter', 
+		'Consult immediate medical attention for hypoglycemia symptoms including irregular/fast heartbeat, fatigue, pale skin, shakiness, anxiety, sweating, hunger, irritability, tingling in a non-diabetic individual. Consult emergency medical attention for diabetics experiencing severe hypoglycemia symptoms including confusion, abnormal behaviour, visual disturbances, seizures or loss of consciousness. Consult immediate medical attention if hypoglycemia is unresponsive to glucose administration.'
+	);
 
 INSERT INTO questions VALUES 
 	(

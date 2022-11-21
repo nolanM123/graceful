@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	11, 
-	'Dry Skin', 
-	'Consult your phyisician if suspect dry skin/xeroderma resulting from medication or medical condition. Consult your physician if severe itching and inflammation are present and when flexural areas, neck, feet or large surface areas are involved. Consult your physician if signs of infection present or dry skin affecting a child less than 2 years old. Consult your physician if less than 50% improvement or worsening dry skin following 7-10 days of non-prescription therapy.'
-);
+INSERT INTO ailments VALUES 
+	(
+		11, 
+		'Dry Skin', 
+		'Consult your phyisician if suspect dry skin/xeroderma resulting from medication or medical condition. Consult your physician if severe itching and inflammation are present and when flexural areas, neck, feet or large surface areas are involved. Consult your physician if signs of infection present or dry skin affecting a child less than 2 years old. Consult your physician if less than 50% improvement or worsening dry skin following 7-10 days of non-prescription therapy.'
+	);
 
 INSERT INTO questions VALUES 
 	(
@@ -135,7 +136,7 @@ INSERT INTO criteria VALUES
 	(11, 14, 'Balm', '{qid15} and not ({qid14} or {qid16})'), 
 	(11, 15, 'Hypoallergic', 'not {qid5}'), 
 	(11, 16, 'Fragrancy-Free', 'not {qid6}'), 
-	(11, 17, 'Non-comedogenic', 'not {cid4}'),
+	(11, 17, 'Non-comedogenic', 'not {qid4}'),
 	(11, 18, 'Colloidal Oat', 'not {qid13}'),
 	(11, 19, 'Urea', 'not {qid3}'),
 	(11, 20, 'Steroid', 'not {qid3}');
@@ -303,5 +304,5 @@ INSERT INTO productCriteria VALUES
 	(11, 77, '{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid19} and {cid20} and {cid11} and {cid15} and {cid16} and {cid17}'), 
 	(11, 78, '{cid1} and {cid3} and {cid18} and {cid19} and {cid20} and {cid10} and {cid14} and {cid15} and {cid16} and {cid17}'), 
 	(11, 79, '{cid1} and {cid2} and {cid3} and {cid18} and {cid19} and {cid8} and {cid20} and {cid11} and {cid15} and {cid16} and {cid17}'), 
-	(11, 80, '{cid1} and {cid2} and {cid3} and {cid18} and {cid19} and {cid8} and {cid20} and {cid11} and {cid15}and {cid17}'), 
+	(11, 80, '{cid1} and {cid2} and {cid3} and {cid18} and {cid19} and {cid8} and {cid20} and {cid11} and {cid15} and {cid17}'), 
 	(11, 81, '{cid1} and {cid2} and {cid3} and {cid18} and {cid19} and {cid8} and {cid20} and {cid11} and {cid15} and {cid16} and {cid17}');

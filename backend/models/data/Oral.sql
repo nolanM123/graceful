@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	24, 
-	'Oral', 
-	'Consult your healthcare provider for oral lesions that are excessively red, swollen, contain pus, persist for more than 14 days, reoccur more than 6 times a year or appear in an immunocompromised individual. Patients that present with coexisting systemic illness (fever, swollen glands) should consult their physician. Oral lesions that cause severe pain limiting nutrition, large lesions or clusters of lesions should be assessed by a healthcare professional. Oral lesions occuring in young children or of unknown ethiology should also be assessed.'
-);
+INSERT INTO ailments VALUES 
+	(
+		24, 
+		'Oral', 
+		'Consult your healthcare provider for oral lesions that are excessively red, swollen, contain pus, persist for more than 14 days, reoccur more than 6 times a year or appear in an immunocompromised individual. Patients that present with coexisting systemic illness (fever, swollen glands) should consult their physician. Oral lesions that cause severe pain limiting nutrition, large lesions or clusters of lesions should be assessed by a healthcare professional. Oral lesions occuring in young children or of unknown ethiology should also be assessed.'
+	);
 
 INSERT INTO questions VALUES 
 	(

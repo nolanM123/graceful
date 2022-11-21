@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	23, 
-	'Incontinence', 
-	'Inividuals should consult their physician for urinary or bowel incontienence of unknown ethiology, presence of blood in urine or bowel movements as well as signs of severe dehydration. Patients with suspected urinary tract infection, gastrointestinal infection, systemic symptoms, recent trauma, poor renal function or recent pelvic surgery should be assessed by a healthcare practionner.'
-);
+INSERT INTO ailments VALUES 
+	(
+		23, 
+		'Incontinence', 
+		'Inividuals should consult their physician for urinary or bowel incontienence of unknown ethiology, presence of blood in urine or bowel movements as well as signs of severe dehydration. Patients with suspected urinary tract infection, gastrointestinal infection, systemic symptoms, recent trauma, poor renal function or recent pelvic surgery should be assessed by a healthcare practionner.'
+	);
 
 INSERT INTO questions VALUES 
 	(
@@ -351,7 +352,7 @@ INSERT INTO productCriteria VALUES
 	(23, 8, '{cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
 	(23, 9, '{cid3} and {cid4} and {cid7} and {cid8} and {cid10} and {cid18} and {cid21}'), 
 	(23, 10, '{cid3} and {cid4} and {cid7} and {cid8} and {cid10} and {cid17} and {cid20}'), 
-	(23, 11, '{cid3} and {cid4} and {cid6} and {cid7} and and {cid10} and {cid16} and {cid20}'), 
+	(23, 11, '{cid3} and {cid4} and {cid6} and {cid7} and {cid10} and {cid16} and {cid20}'), 
 	(23, 12, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid15}'), 
 	(23, 13, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid16}'), 
 	(23, 14, '{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid13} and {cid16}'), 

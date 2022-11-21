@@ -72,8 +72,6 @@ def products(aid, request):
             )
         }
 
-        print(criteria_formulas)
-
         for pid, name, link, description, url in cursor1.execute(
             "SELECT pid, name, link, description, url FROM products WHERE aid == ?;",
             (aid,),

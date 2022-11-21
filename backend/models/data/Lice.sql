@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	19, 
-	'Lice Product', 
-	'Consult your heath care provider for recurrent head lice or lice unresponsive to non-prescription therapy. Treatment with head lice products should be repeated after 7 days. Avoid close contact and sharing personal items (clothing, combs, bedding) with an infected individual.'
-);
+INSERT INTO ailments VALUES 
+	(
+		19, 
+		'Lice Product', 
+		'Consult your heath care provider for recurrent head lice or lice unresponsive to non-prescription therapy. Treatment with head lice products should be repeated after 7 days. Avoid close contact and sharing personal items (clothing, combs, bedding) with an infected individual.'
+	);
 
 INSERT INTO questions VALUES 
 	(

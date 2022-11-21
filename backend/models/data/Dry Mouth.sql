@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	1, 
-	'Dry Mouth', 
-	'Consult your physician if dry mouth is severe, ulcerative or painful. Patients with advanced age, depression, Sjogren syndrome, hyperlipidemia, hypertension or uncontrolled diabetes should consult their physician for dry mouth symptoms. Some medications and cancer therapies can lead to dry mouth and should be assessed by a medical professional. Untreated dry mouth may lead to complications including infections, dental cavities and difficulties with speach, taste or nutrition. Frequent water sips, chewing sugarless gum and sucking on ice chips or sugarless hard candies may help alleviate symptoms.'
-);
+INSERT INTO ailments VALUES 
+	(
+		1, 
+		'Dry Mouth', 
+		'Consult your physician if dry mouth is severe, ulcerative or painful. Patients with advanced age, depression, Sjogren syndrome, hyperlipidemia, hypertension or uncontrolled diabetes should consult their physician for dry mouth symptoms. Some medications and cancer therapies can lead to dry mouth and should be assessed by a medical professional. Untreated dry mouth may lead to complications including infections, dental cavities and difficulties with speach, taste or nutrition. Frequent water sips, chewing sugarless gum and sucking on ice chips or sugarless hard candies may help alleviate symptoms.'
+	);
 
 INSERT INTO questions VALUES 
 	(

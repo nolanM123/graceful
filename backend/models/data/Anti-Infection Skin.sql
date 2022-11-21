@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	13, 
-	'Anti-Infection Skin', 
-	'Consult your phyisician if experiencing an infection of unknown or unclear cause. Immunocompromised individuals or those requiring systemic or oral therapy should consult their physician. Consult your physician if you respond poorly or are intolerant of topical therapy.  Consult your physician if experiencing severe, extensive, dissabilitating or inflammatory skin disease. Topical non-prescription antifungal therapy may require 2-4 weeks for benefits while treatment of nail fungal infections may require 6-12 weeks. Non-prescription topical therapy for bacterial infections should be limited to only a few days.'
-);
+INSERT INTO ailments VALUES 
+	(
+		13, 
+		'Anti-Infection Skin', 
+		'Consult your phyisician if experiencing an infection of unknown or unclear cause. Immunocompromised individuals or those requiring systemic or oral therapy should consult their physician. Consult your physician if you respond poorly or are intolerant of topical therapy.  Consult your physician if experiencing severe, extensive, dissabilitating or inflammatory skin disease. Topical non-prescription antifungal therapy may require 2-4 weeks for benefits while treatment of nail fungal infections may require 6-12 weeks. Non-prescription topical therapy for bacterial infections should be limited to only a few days.'
+	);
 
 INSERT INTO questions VALUES 
 	(

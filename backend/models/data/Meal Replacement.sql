@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	22, 
-	'Meal Replacement', 
-	'Consult your physician for unexplained weight loss, failure to thrive, significant weight loss in the presence of illness, signs of dehydration, refusal or inability to feed and/or systemic signs of under or malnourishment. Some individuals may require parenteral administration of nutrition in severe cases. Patients should consult their physician prior to initiating a weight loss regimen.'
-);
+INSERT INTO ailments VALUES 
+	(
+		22, 
+		'Meal Replacement', 
+		'Consult your physician for unexplained weight loss, failure to thrive, significant weight loss in the presence of illness, signs of dehydration, refusal or inability to feed and/or systemic signs of under or malnourishment. Some individuals may require parenteral administration of nutrition in severe cases. Patients should consult their physician prior to initiating a weight loss regimen.'
+	);
 
 INSERT INTO questions VALUES 
 	(

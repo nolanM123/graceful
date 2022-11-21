@@ -1,4 +1,5 @@
-INSERT INTO ailments VALUES (
+INSERT INTO ailments VALUES 
+	(
 		14, 
 		'Acne', 
 		'Consult your phyisician for potential drug-induced or endocrine-disease induced acne. Consult your physician for moderate to severe acne or for acne non-responsive to 8-12 week over-the-counter therapy. Refer to your physician if acne is causing moderate to severe scarring. Avoid acne triggers, exacerbating factors, moisturizers, oil-based cosmetics and manipulating lesions. Wash areas no more than twice daily with mild nonalkaline soap, control/reduce stress and favor a healthy diet.'

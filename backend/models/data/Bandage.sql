@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	20, 
-	'Bandage Product', 
-	'Consult your heath care provider for traumatic injuries, deep wounds, profuse or uncontrolled bleeding, suspected infections, animal/human bite wounds and deep burns. Wounds that are very painful, large (more 2cm), gaping, embedded with foreign material or expose muscle/bone/fat should be assessed by a physician. Consult a physician for wounds that require stitches or do not heal within 3 weeks. Wounds should be properly cleansed, bleeding controlled and protected/covered with a dressing. Topical antibiotics recommended for wounds with high infetion risk '
-);
+INSERT INTO ailments VALUES 
+	(
+		20, 
+		'Bandage Product', 
+		'Consult your heath care provider for traumatic injuries, deep wounds, profuse or uncontrolled bleeding, suspected infections, animal/human bite wounds and deep burns. Wounds that are very painful, large (more 2cm), gaping, embedded with foreign material or expose muscle/bone/fat should be assessed by a physician. Consult a physician for wounds that require stitches or do not heal within 3 weeks. Wounds should be properly cleansed, bleeding controlled and protected/covered with a dressing. Topical antibiotics recommended for wounds with high infetion risk '
+	);
 
 INSERT INTO questions VALUES 
 	(
@@ -230,11 +231,11 @@ INSERT INTO criteria VALUES
 	(20, 11, 'Water-resistant', '{qid2} and not ({qid1} or {qid3})'), 
 	(20, 12, 'Non-Stick Pad', 'not {qid4}'), 
 	(20, 13, 'Multi-Day', '{qid27} and not {qid26}'), 
-	(20, 14, 'Single-Day', '{qid26} and not (qid27)'), 
+	(20, 14, 'Single-Day', '{qid26} and not {qid27}'), 
 	(20, 15, 'Flexible', 'not {qid10}'), 
 	(20, 16, 'Tough', 'not {qid11}'), 
 	(20, 17, 'Specific', '{qid29} and not {qid28}'), 
-	(20, 18, 'General', '{qid28} and not (qid29)'), 
+	(20, 18, 'General', '{qid28} and not {qid29}'), 
 	(20, 19, 'Hydrocolloid', 'not {qid18}'), 
 	(20, 20, 'Assorted', '{qid5} and not ({qid6} or {qid7} or {qid8} or {qid9})'), 
 	(20, 21, 'Small', '{qid6} and not ({qid5} or {qid7} or {qid8} or {qid9})'), 

@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	17, 
-	'Family Planning', 
-	'Some medications such as corticosteroids, fertility drugs as well as hormones including chorionic gonadotropin, estrogen and luteinizing hormone may alter the accuracy of pregnancy and ovulation tests. Consult your physician if you are taking these medications. Consult your physican for post conception and maternity care. Consult your physician following failure to conceive after repeated attemps.'
-);
+INSERT INTO ailments VALUES 
+	(
+		17, 
+		'Family Planning', 
+		'Some medications such as corticosteroids, fertility drugs as well as hormones including chorionic gonadotropin, estrogen and luteinizing hormone may alter the accuracy of pregnancy and ovulation tests. Consult your physician if you are taking these medications. Consult your physican for post conception and maternity care. Consult your physician following failure to conceive after repeated attemps.'
+	);
 
 INSERT INTO questions VALUES 
 	(

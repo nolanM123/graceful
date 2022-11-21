@@ -15,6 +15,7 @@ criteria = ""
 products = ""
 product_criteria = ""
 
+
 for sheet_name in xl.sheet_names:
     if sheet_name in ["Legal", "random"]:
         continue
@@ -97,10 +98,8 @@ for sheet_name in xl.sheet_names:
         # save data
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
 
-        if name == "Oral":
-            print(product_criteria)
-
-        #with open(f"backend/models/data/{name}.sql", "w+", encoding='utf-8') as data:
-        #    data.write(doc + product_criteria)
+        if sheet_name == "Blood Pressure Monitor Products":
+            with open(f"backend/models/data/Blood Pressure.sql", "w", encoding='utf-8') as data:
+                data.write(ailments + questions + criteria + products + product_criteria)
 
         aid += 1

@@ -1,8 +1,9 @@
-INSERT INTO ailments VALUES (
-	21, 
-	'Infant Formula', 
-	'Health Canada, the Canadian Paediatric Society, and the Dietitians of Canada recommend that you exclusively breastfeed your baby for the first 6 months and that you continue to breastfeed for up to 2 years or longer along with complementary foods. Infant formulas may not be an ideal alternative or substitute for a mother''s natural breast milk. Finding the right formula for your child may require a trial and error approach.'
-);
+INSERT INTO ailments VALUES 
+	(
+		21, 
+		'Infant Formula', 
+		'Health Canada, the Canadian Paediatric Society, and the Dietitians of Canada recommend that you exclusively breastfeed your baby for the first 6 months and that you continue to breastfeed for up to 2 years or longer along with complementary foods. Infant formulas may not be an ideal alternative or substitute for a mother''s natural breast milk. Finding the right formula for your child may require a trial and error approach.'
+	);
 
 INSERT INTO questions VALUES 
 	(
