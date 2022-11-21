@@ -10,6 +10,7 @@ var ailmentFooter = null;
 
 var questionsContainer = null;
 var previousButton = null;
+var hintIcon = null;
 var questionText = null;
 var trueButton = null;
 var falseButton = null;
@@ -89,7 +90,7 @@ function getQuestion() {
             let shareButton = document.createElement("input");
             shareButton.className = "product-share-button";
             shareButton.type = "image";
-            shareButton.src = "/images/share-icon.png";
+            shareButton.src = "/frontend/images/share-icon.png";
             shareButton.onclick = function () {
             }
             productContainer.appendChild(shareButton);
@@ -109,6 +110,7 @@ function getQuestion() {
             let productLink = document.createElement("a");
             productLink.className = "product-link";
             productLink.href = products[i]["link"];
+            productLink.title = products[i]["link"];
             productLink.innerHTML = "Vist Page";
             productIcon.appendChild(productLink);
 
@@ -126,7 +128,7 @@ function getQuestion() {
         questionPointer = -1;
         setProducts();
     } else {
-        questionText.title = questions[questionPointer]["description"];
+        hintIcon.title = questions[questionPointer]["description"];
         questionText.innerHTML = questions[questionPointer]["question"];
     }
 }
@@ -152,6 +154,7 @@ window.onload = function () {
 
     questionsContainer = document.getElementById("questions-container");
     previousButton = document.getElementById("previous-button");
+    hintIcon = document.getElementById("hint-icon");
     questionText = document.getElementById("question-text");
     trueButton = document.getElementById("true-button");
     falseButton = document.getElementById("false-button");
@@ -178,7 +181,7 @@ window.onload = function () {
         setNavbar();
     }
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         navbarButtons.push(document.createElement("button"));
         navbarButtons[i].className = "navbar-ailment-button";
         navbarButtons[i].onclick = function () {

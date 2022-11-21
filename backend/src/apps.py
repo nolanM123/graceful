@@ -96,11 +96,18 @@ def products(aid, request):
     return result
 
 
-@app.route("get", "/{:path}")
-def index(path, response):
-    if not path:
-        path = "index.html"
+@app.route("get", "")
+def index_view(response):
+    return response.render(os.path.abspath("frontend/views/index.html"))
 
-    path = os.path.abspath(os.path.join("frontend/", path))
+@app.route("get", "/login/")
+def login_view(response):
+    return response.render(os.path.abspath("frontend/views/login.html"))
 
-    return response.render(path)
+@app.route("get", "/admin/")
+def admin_view():
+    return
+
+@app.route("get", "/frontend/{:path}")
+def filepath(request, response):
+    return response.render(os.path.abspath(request.url.lstrip("/")))

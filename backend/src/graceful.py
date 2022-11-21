@@ -274,12 +274,11 @@ class Graceful:
 
         for url, app in self.apps[request.method].items():
             dir_ids = dict()
-            app_url = url.split("/")
-            req_url = request.url.split("/")
+            app_url = url.strip("/").split("/")
+            req_url = request.url.strip("/").split("/")
 
             # get / match ids and path
             while app_url and req_url:
-
                 app_dir = app_url.pop(0)
                 req_dir = req_url.pop(0)
 

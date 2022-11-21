@@ -57,6 +57,8 @@ input {
 }
 
 .navbar-nav-button {
+  cursor: default;
+
   filter: invert(74%) sepia(18%) saturate(294%) hue-rotate(179deg) brightness(92%) contrast(89%);
 }
 
@@ -158,14 +160,15 @@ input {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   aspect-ratio: 16/9;
 
-  margin-top: 14%;
-  margin-left: 18%;
+  margin-top: 16%;
+  margin-left: 14%;
   border-radius: 1.4rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  width: 60%;
+  width: 68%;
 
   background-color: var(--flat);
 }
@@ -173,7 +176,7 @@ input {
 .previous-button {
   position: absolute;
   top: 4%;
-  left: 2%;
+  left: 2.25%;
 
   aspect-ratio: 3;
 
@@ -196,8 +199,34 @@ input {
   background-color: var(--tertiary);
 }
 
+.hint-icon {
+  user-select: none;
+
+  position: absolute;
+  bottom: 4%;
+  right: 2.25%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1;
+
+  border-radius: 99rem;
+  width: 8%;
+
+  background-color: var(--secondary);
+
+  font-size: var(--small);
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.hint-icon:hover {
+  background-color: var(--tertiary);
+}
+
 .question-text {
-  flex: 1;
   text-align: center;
 
   margin-top: 12%;
@@ -212,7 +241,7 @@ input {
   aspect-ratio: 7/2;
 
   margin-top: 4%;
-  margin-left: 34%;
+  margin-left: 35%;
   margin-right: auto;
   border-radius: 4rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -259,6 +288,8 @@ input {
 }
 
 .product-share-button {
+  cursor: default;
+
   position: absolute;
 
   aspect-ratio: 2;
