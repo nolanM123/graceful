@@ -5,48 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediHelp</title>
-    <link rel="stylesheet" href="/frontend/styles/styles.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/frontend/styles/index.css" />
     <script src="/frontend/scripts/app.js"></script>
   </head>
   <body>
     <div class="main-container">
-      <a href>
-        <h2 id="title" class="title">MediHelp</h2>
-      </a>
-      <div id="navbar" class="navbar">
-        <input
-          id="back-button"
-          class="navbar-nav-button"
-          type="image"
-          src="/frontend/images/navbar-button.png"
-        />
-        <input
-          id="next-button"
-          class="navbar-nav-button"
-          type="image"
-          src="/frontend/images/navbar-button.png"
-          style="transform: scaleX(-1)"
-        />
+      <div id="ailment-container" class="ailment-container">
+        <a href style="text-decoration: none;">
+          <h1 id="title" class="title">MediHelp</h1>
+        </a>
+        <div id="navbar" class="navbar"></div>
+        <p id="ailment-description" class="ailment-description"></p>
+        <p id="ailment-disclaimer" class="ailment-disclaimer"></p>
       </div>
-      <div class="content-container">
-        <div id="ailment-container" class="ailment-container">
-          <h1 id="ailment-header" class="ailment-header"></h1>
-          <p id="ailment-body" class="ailment-body"></p>
-          <p id="ailment-footer" class="ailment-footer"></p>
-        </div>
-        <div id="questions-container" class="questions-container">
-          <div id="question-container" class="question-container">
-            <button id="previous-button" class="previous-button">
-              previous
-            </button>
-            <div id="hint-icon" class="hint-icon">i</div>
-            <h3 id="question-text" class="question-text"></h3>
-          </div>
-          <button id="true-button" class="answer-button">yes</button>
-          <button id="false-button" class="answer-button">no</button>
-        </div>
-        <div id="products-container" class="products-container"></div>
+      <div id="questions-container" class="questions-container">
+        <h2 id="question" class="question"></h2>
+        <button id="true-button" class="true-button">Yes</button>
+        <button id="false-button" class="false-button">No</button>
+        <button id="previous-button" class="previous-button">Previous</button>
       </div>
+      <div id="products-container" class="products-container"></div>
     </div>
   </body>
 </html>

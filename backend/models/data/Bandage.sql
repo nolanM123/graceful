@@ -1,7 +1,7 @@
 INSERT INTO ailments VALUES 
 	(
 		20, 
-		'Bandage Product', 
+		'Bandage', 
 		'Consult your heath care provider for traumatic injuries, deep wounds, profuse or uncontrolled bleeding, suspected infections, animal/human bite wounds and deep burns. Wounds that are very painful, large (more 2cm), gaping, embedded with foreign material or expose muscle/bone/fat should be assessed by a physician. Consult a physician for wounds that require stitches or do not heal within 3 weeks. Wounds should be properly cleansed, bleeding controlled and protected/covered with a dressing. Topical antibiotics recommended for wounds with high infetion risk '
 	);
 
