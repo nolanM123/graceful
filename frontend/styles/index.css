@@ -5,12 +5,30 @@
   --flat: #ffffff;
 
   --tiny: min(0.75vw, 1rem);
-  --small: min(0.8vw, 1.05rem);
+  --small: min(1vw, 1.25rem);
   --medium: min(1.75vw, 2rem);
   --large: min(2vw, 2.25rem);
-  --extra-large: min(3.5vw, 3.75rem);
+  --extra-large: min(2.75vw, 3rem);
 
   --default-font: 'Lato', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 99em;
+
+  background-color: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--flat);
 }
 
 body {
@@ -19,7 +37,7 @@ body {
   font-family: Tahoma;
 }
 
-.main-container {
+#main-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,7 +53,7 @@ body {
   background-color: transparent;
 }
 
-.ailment-container {
+#ailment-container {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -46,7 +64,9 @@ body {
   background-color: var(--flat);
 }
 
-.title {
+#title {
+  display: inline-block;
+
   margin-top: 14%;
   margin-left: 8%;
 
@@ -56,11 +76,13 @@ body {
   color: black;
 }
 
-.navbar {
+#navbar {
   display: flex;
 
-  margin-top: 12%;
+  margin-top: 8%;
   margin-left: 8%;
+
+  white-space: nowrap;
 }
 
 .nav-option {
@@ -89,8 +111,7 @@ body {
   color: var(--primary);
 }
 
-.ailment-description {
-
+#ailment-description {
   margin-top: 2%;
   margin-left: 8%;
   margin-right: 8%;
@@ -101,7 +122,7 @@ body {
   color: black;
 }
 
-.ailment-disclaimer {
+#ailment-disclaimer {
   position: absolute;
   bottom: 4%;
   left: 8%;
@@ -114,7 +135,7 @@ body {
   color: black;
 }
 
-.questions-container {
+#questions-container {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -127,18 +148,38 @@ body {
   background: linear-gradient(320deg, var(--primary) 50%, var(--tertiary) 100%);
 }
 
-.question {
+#progress-container {
+  position: absolute;
+  top: 6%;
+  left: 20%;
+
+  border-radius: 1em;
+  width: 60%;
+  height: 0.75em;
+
+  background-color: var(--tertiary);
+}
+
+#progress-bar {
+  border-radius: 1em;
+  width: 0%;
+  height: 100%;
+
+  background-color: var(--flat);
+}
+
+#question {
   margin-top: 38%;
   margin-left: 4%;
   margin-right: 4%;
 
-  font-size: var(--large);
+  font-size: var(--extra-large);
   font-family: var(--default-font);
   font-weight: bolder;
   color: white;
 }
 
-.true-button {
+#true-button {
   margin-top: 6%;
   margin-right: 3%;
   border: 1px solid white;
@@ -154,15 +195,15 @@ body {
   color: white;
 }
 
-.true-button:hover {
+#true-button:hover {
   background-color: var(--tertiary);
 }
 
-.true-button:active {
+#true-button:active {
   background-color: var(--secondary);
 }
 
-.false-button {
+#false-button {
   margin-top: 6%;
   margin-left: 3%;
   border: 1px solid white;
@@ -178,25 +219,135 @@ body {
   color: white;
 }
 
-.false-button:hover {
+#false-button:hover {
   background-color: var(--tertiary);
 }
 
-.false-button:active {
+#false-button:active {
   background-color: var(--secondary);
 }
 
-.previous-button {
+#products-container {
   position: absolute;
+  top: 0%;
   left: 50%;
+
+  display: none;
+
+  overflow-y: auto;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(320deg, var(--primary) 50%, var(--tertiary) 100%);
+}
+
+.product-occlusion {
+  position: fixed;
+  bottom: 0%;
+  left: 54%;
+
+  width: 42%;
+  height: 20%;
+
+  background: linear-gradient(0deg, var(--primary) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+.product-container {
+  position: relative;
+
+  margin-top: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
+  min-height: 12em;
+}
+
+.product-icon {
+  position: absolute;
+  left: 2%;
+
+  margin-top: 1%;
+  border: 2px solid var(--flat);
+  border-radius: 99em;
+  aspect-ratio: 1;
+  width: 20%;
+  max-width: 12em;
+}
+
+.product-image {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+
+  border-radius: 99rem;
+  width: 96%;
+  height: 96%;
+}
+
+.product-link {
+  cursor: default;
+
+  position: absolute;
+  left: 12%;
+
+  transform: translateX(-50%);
+
+  margin-top: 24%;
+  border: 1px solid var(--flat);
+  border-radius: 99em;
+  padding: 0.4em 1.4em;
+
+  text-decoration: none;
+  font-size: var(--tiny);
+  font-family: var(--default-font);
+  font-weight: bold;
+  color: white;
+}
+
+.product-link:hover {
+  background-color: var(--tertiary);
+}
+
+.product-link:active {
+  background-color: var(--secondary);
+}
+
+.product-title {
+  margin-top: 2%;
+  margin-left: 28%;
+  margin-right: 0%;
+
+  color: var(--flat);
+}
+
+.product-description {
+  margin-left: 28%;
+  padding-bottom: 1em;
+
+  color: var(--flat);
+}
+
+.product-seperator {
+  position: absolute;
+  bottom: 0%;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--tertiary);
+}
+
+#back-button {
+  cursor: pointer;
+
+  position: absolute;
+  left: 75%;
   bottom: 4%;
 
   transform: translateX(-50%);
 
   border-radius: 99em;
   border-color: transparent;
-  aspect-ratio: 5/2;
-  width: 16%;
 
   background-color: transparent;
 
@@ -204,8 +355,4 @@ body {
   font-family: var(--default-font);
   font-weight: bold;
   color: white;
-}
-
-.previous-button:hover {
-  cursor: pointer;
 }

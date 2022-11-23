@@ -10,22 +10,23 @@
     <script src="/frontend/scripts/app.js"></script>
   </head>
   <body>
-    <div class="main-container">
-      <div id="ailment-container" class="ailment-container">
-        <a href style="text-decoration: none;">
-          <h1 id="title" class="title">MediHelp</h1>
-        </a>
-        <div id="navbar" class="navbar"></div>
-        <p id="ailment-description" class="ailment-description"></p>
-        <p id="ailment-disclaimer" class="ailment-disclaimer"></p>
+    <div id="main-container">
+      <div id="ailment-container">
+        <a id="title" href style="text-decoration: none;">MediHelp</a>
+        <div id="navbar" ></div>
+        <p id="ailment-description"></p>
+        <p id="ailment-disclaimer"></p>
       </div>
-      <div id="questions-container" class="questions-container">
-        <h2 id="question" class="question"></h2>
-        <button id="true-button" class="true-button">Yes</button>
-        <button id="false-button" class="false-button">No</button>
-        <button id="previous-button" class="previous-button">Previous</button>
+      <div id="questions-container">
+        <div id="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+        <h2 id="question"></h2>
+        <button id="true-button">Yes</button>
+        <button id="false-button">No</button>
       </div>
-      <div id="products-container" class="products-container"></div>
+      <div id="products-container"></div>
+      <button id="back-button">back</button>
     </div>
   </body>
 </html>
