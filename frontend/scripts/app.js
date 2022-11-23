@@ -33,10 +33,10 @@ function requestJSON(method, url, body = "", async = false) {
 }
 
 function animateProgressBar() {
-    let id = setInterval(frame, 1);
+    let id = setInterval(frame, 10);
     let current = parseFloat(progressBar.style.width);
     let target = questionPointer / questions.length * 100;
-    let delta = 0.25
+    let delta = 0.4;
     let step = delta * Math.sign(target - current);
 
     function frame() {
