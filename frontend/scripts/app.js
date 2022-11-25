@@ -8,6 +8,8 @@ let question;
 let trueButton;
 let falseButton;
 
+let resultsContainer;
+
 let productsContainer;
 
 let backButton;
@@ -17,6 +19,8 @@ let ailmentSelected = 0;
 
 let questions = new Array();
 let questionPointer = -1;
+
+let results = new Array();
 
 let products = new Array();
 
@@ -62,7 +66,7 @@ function setNavbar() {
 function setQuestionaire(pointer) {
     if (pointer == null) pointer = -1;
     questionsContainer.style.display = "block";
-    productsContainer.style.display = "none";
+    resultsContainer.style.display = "none";
     ailmentDescription.innerHTML = `A modern and minimalist solution to your pharmaceutical needs - Take this short ${questions.length} question survey to receive a comprehensive diagnosis of your ${ailments[ailmentSelected]["name"].toLowerCase()} needs.`
     ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
     questionPointer = pointer;
@@ -77,58 +81,66 @@ function setQuestion() {
         for (let i = 0; i < questions.length; i++)
             params.push(`qid${questions[i]["qid"]}=${questions[i]["answer"]}`);
 
-        products = requestJSON("GET", `/products/${ailments[ailmentSelected]["aid"]}/?${params.join("&")}`);
+        results = requestJSON("GET", `/products/${ailments[ailmentSelected]["aid"]}/?${params.join("&")}`);
 
         questionsContainer.style.display = "none";
-        productsContainer.style.display = "block";
-        productsContainer.innerHTML = "";
-        ailmentDescription.innerHTML = `There are ${products.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
+        resultsContainer.style.display = "block";
+        resultsContainer.innerHTML = "";
+        ailmentDescription.innerHTML = `There are ${results.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
         ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
 
-        for (let i = 0; i < products.length; i++) {
-            let productContainer = document.createElement("div");
-            productContainer.className = "product-container";
-            productsContainer.appendChild(productContainer);
+        for (let i = 0; i < results.length; i++) {
+            let resultContainer = document.createElement("div");
+            resultContainer.className = "result-container";
+            resultsContainer.appendChild(resultContainer);
 
-            let productIcon = document.createElement("div");
-            productIcon.className = "product-icon";
-            productContainer.appendChild(productIcon);
+            let resultIcon = document.createElement("div");
+            resultIcon.className = "result-icon";
+            resultContainer.appendChild(resultIcon);
 
-            let productImage = document.createElement("img");
-            productImage.className = "product-image";
-            productImage.src = products[i]["url"];
-            productImage.onerror = function () {productImage.style.display = "none";}
-            productIcon.appendChild(productImage);
+            let resultImage = document.createElement("img");
+            resultImage.className = "result-image";
+            resultImage.src = results[i]["url"];
+            resultImage.onerror = function () {resultImage.style.display = "none";}
+            resultIcon.appendChild(resultImage);
 
-            let productLink = document.createElement("a");
-            productLink.className = "product-link";
-            productLink.href = products[i]["link"];
-            productLink.title = products[i]["link"];
-            productLink.target = "_blank";
-            productLink.innerHTML = "Vist Page";
-            productContainer.appendChild(productLink);
+            let link = document.createElement("a");
+            link.href = results[i]["link"];
+            link.target = "_blank";
+            let resultLink = document.createElement("button");
+            resultLink.id = "result-link"
+            resultLink.className = "result-button";
+            resultLink.innerHTML = "Vist Page";
+            link.appendChild(resultLink);
+            resultContainer.appendChild(link);
 
-            let productTitle = document.createElement("h2");
-            productTitle.className = "product-title";
-            productTitle.innerHTML = products[i]["name"];
-            productContainer.appendChild(productTitle);
+            let resultAddButton = document.createElement("button");
+            resultAddButton.id = "result-add";
+            resultAddButton.className = "result-button";
+            resultAddButton.innerHTML = "Add";
+            resultContainer.appendChild(resultAddButton);
 
-            let productDescription = document.createElement("p");
-            productDescription.className = "product-description";
-            productDescription.innerHTML = products[i]["description"];
-            productContainer.appendChild(productDescription);
+            let resultTitle = document.createElement("h2");
+            resultTitle.className = "result-title";
+            resultTitle.innerHTML = results[i]["name"];
+            resultContainer.appendChild(resultTitle);
 
-            let productSeperator = document.createElement("div");
-            productSeperator.className = "product-seperator";
-            productContainer.appendChild(productSeperator);
+            let resultDescription = document.createElement("p");
+            resultDescription.className = "result-description";
+            resultDescription.innerHTML = results[i]["description"];
+            resultContainer.appendChild(resultDescription);
+
+            let resultSeperator = document.createElement("div");
+            resultSeperator.className = "result-seperator";
+            resultContainer.appendChild(resultSeperator);
         }
 
-        let productOcclusion = document.createElement("div");
-        productOcclusion.className = "product-occlusion";
-        productsContainer.appendChild(productOcclusion);
+        let resultOcclusion = document.createElement("div");
+        resultOcclusion.className = "result-occlusion";
+        resultsContainer.appendChild(resultOcclusion);
     } else {
-        question.title = questions[questionPointer]["description"];
-        question.innerHTML = questions[questionPointer]["question"];
+        let tooltip = `*<span id="tooltip-text">${questions[questionPointer]["description"]}</span>`
+        question.innerHTML = questions[questionPointer]["question"] + tooltip;
         animateProgressBar();
     }
 }
@@ -171,7 +183,7 @@ window.onload = function () {
         setQuestion();
     }
 
-    productsContainer = document.getElementById("products-container");
+    resultsContainer = document.getElementById("results-container");
 
     backButton = document.getElementById("back-button");
     backButton.onclick = function () {
