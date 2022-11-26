@@ -10,8 +10,6 @@ let falseButton;
 
 let resultsContainer;
 
-let productsContainer;
-
 let backButton;
 
 let ailments = new Array();

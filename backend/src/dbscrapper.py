@@ -70,7 +70,7 @@ for sheet_name in xl.sheet_names:
 
         for product_name in df[df.columns[-1]]:
             if not pd.isna(product_name):
-                products += "\t({}, {}, '{}', '{}', '{}', '{}'), \n".format(aid, pid, product_name.title(), link, description, image)
+                products += "    (\n\t{}, \n\t{}, \n\t'{}', \n\t'{}', \n\t'{}', \n\t'{}'\n    ), \n".format(aid, pid, product_name.title(), link, description, image)
                 pid += 1
         
         products = products[:-3] + ";\n\n"
@@ -98,8 +98,7 @@ for sheet_name in xl.sheet_names:
         # save data
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
 
-        if sheet_name == "Blood Pressure Monitor Products":
-            with open(f"backend/models/data/Blood Pressure.sql", "w", encoding='utf-8') as data:
-                data.write(ailments + questions + criteria + products + product_criteria)
+        if name == "Allergy":
+            print(products)
 
         aid += 1

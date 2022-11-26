@@ -122,24 +122,150 @@ INSERT INTO criteria VALUES
 	(25, 14, 'Reading Reminder', 'not {qid14}');
 
 INSERT INTO products VALUES 
-	(25, 1, 'Lifesource Premium Blood Pressure Monitor ', '', '', ''), 
-	(25, 2, 'Lifesource Blood Pressure Monitor With Large Cuff ', '', '', ''), 
-	(25, 3, 'Lifesource Blood Pressure Monitor', '', '', ''), 
-	(25, 4, 'Lifesourece Premium Wireless Blood Pressure Monitor', '', '', ''), 
-	(25, 5, 'Lifesource Premium Blood Pressure Monitor With Verbal Assistance', '', '', ''), 
-	(25, 6, 'Lifesource Premium Blood Pressure Monitor With Pre-Formed Cuff', '', '', ''), 
-	(25, 7, 'Lifesource Premium Blood Pressure Monitor With Extra Large Cuff', '', '', ''), 
-	(25, 8, 'Lifesource Ultraconnect Premium Wireless Blood Pressure Monitor', '', '', ''), 
-	(25, 9, 'Lifesource Blood Pressure Monitor With Small Cuff', '', '', ''), 
-	(25, 10, 'Omron Bronze Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 11, 'Omron 3 Series Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 12, 'Omron Silver Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 13, 'Omron 5 Series Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 14, 'Omron Gold Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 15, 'Omron Platinum Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 16, 'Omron 7 Series Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 17, 'Omron 10 Series Wireless Upper Arm Blood Pressure Monitor', '', '', ''), 
-	(25, 18, 'Panasonic Portable Blood Pressure Monitor ', '', '', '');
+	(
+		25, 
+		1, 
+		'Lifesource Premium Blood Pressure Monitor', 
+		'https://lifesourcecanada.com/product/premium-blood-pressure-monitor/', 
+		'Advanced, multi-user blood pressure monitor that provides trusted accuracy and reliable measurements every time.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		2, 
+		'Lifesource Blood Pressure Monitor With Large Cuff', 
+		'https://lifesourcecanada.com/product/blood-pressure-monitor-large-cuff/', 
+		'Advanced Premium, 90 memory blood pressure monitor that provides trusted accuracy and reliable measurements every time.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		3, 
+		'Lifesource Blood Pressure Monitor', 
+		'https://lifesourcecanada.com/product/blood-pressure-monitor/', 
+		'A classic blood pressure monitor with the benefits of speed and accuracy at a touch of a button.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		4, 
+		'Lifesourece Premium Wireless Blood Pressure Monitor', 
+		'https://lifesourcecanada.com/product/premium-wireless-blood-pressure-monitor/', 
+		'A wireless blood pressure monitor that automatically records and tracks measurements via mobile app to enable trending and sharing.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		5, 
+		'Lifesource Premium Blood Pressure Monitor With Verbal Assistance', 
+		'https://lifesourcecanada.com/product/premium-blood-pressure-monitor-with-verbal-assistance/', 
+		'A premium talking blood pressure monitor with advanced inflation technology that provides audible readings and instructions in multiple languages.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		6, 
+		'Lifesource Premium Blood Pressure Monitor With Pre-Formed Cuff', 
+		'https://lifesourcecanada.com/product/premium-blood-pressure-monitor-with-pre-formed-cuff/', 
+		'Quick response blood pressure monitor with advanced technology and an easy to use wide range pre-formed cuff.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		7, 
+		'Lifesource Premium Blood Pressure Monitor With Extra Large Cuff', 
+		'https://lifesourcecanada.com/product/premium-blood-pressure-monitor-with-extra-large-cuff/', 
+		'The only home blood pressure monitor designed to provide accurate readings for people with larger arms.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		8, 
+		'Lifesource Ultraconnect Premium Wireless Blood Pressure Monitor', 
+		'https://lifesourcecanada.com/product/ultraconnect-premium-wireless-blood-pressure-monitor/', 
+		'The next generation of blood pressure monitoring, providing the ultimate user experience and accuracy.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		9, 
+		'Lifesource Blood Pressure Monitor With Small Cuff', 
+		'https://lifesourcecanada.com/product/blood-pressure-monitor-with-small-cuff/', 
+		'Advanced Premium, 90 memory blood pressure monitor that provides trusted accuracy and reliable measurements every time.', 
+		'https://lifesourcecanada.com/wp-content/uploads/2020/06/New-LS-logo-white_159.png'
+	), 
+	(
+		25, 
+		10, 
+		'Omron Bronze Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/bronze-upper-arm-blood-pressure-monitor-bp5100/', 
+		'The OMRON Bronze Upper Arm home blood pressure monitor is designed for accuracy and stores 14 blood pressure readings for one user, and includes a wide-range D-ring cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		11, 
+		'Omron 3 Series Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/3-series-upper-arm-blood-pressure-monitor-bp7100can/', 
+		'The OMRON 3 Series Upper Arm home blood pressure monitor is designed for accuracy and stores 14 blood pressure readings for one user, and includes a wide-range D-ring cuff.', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		12, 
+		'Omron Silver Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/silver-wireless-upper-arm-blood-pressure-monitor-bp5250/', 
+		'The OMRON Silver Wireless Bluetooth® Upper Arm home blood pressure monitor will measure, store and let you review 80 readings for one user, and includes a pre-formed Comfit cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		13, 
+		'Omron 5 Series Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/5-series-wireless-upper-arm-blood-pressure-monitor-bp7250can/', 
+		'The OMRON 5 Series Wireless Bluetooth® Upper Arm home blood pressure monitor will measure, store and let you review 60 readings for one user, and includes a wide-range D-ring cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		14, 
+		'Omron Gold Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/gold-wireless-upper-arm-blood-pressure-monitor-bp5350/', 
+		'The OMRON Gold Wireless Bluetooth® Upper Arm home blood pressure monitor is a horizontally designed, dual-display monitor, that stores up to 120 readings for two users (60 readings each) and features a Morning Hypertension Indicator and Averaging feature; includes a wide-range D-ring cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		15, 
+		'Omron Platinum Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/platinum-wireless-upper-arm-blood-pressure-monitor-bp5450/', 
+		'The OMRON Platinum Wireless Bluetooth® Upper Arm home blood pressure monitor has a horizontally designed, dual-display monitor, stores up to 200 readings for two users (100 readings each) and TruRead technology plus a Morning Hypertension Indicator and Averaging feature; includes a wide-range D-ring cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		16, 
+		'Omron 7 Series Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/7-series-wireless-upper-arm-blood-pressure-monitor-bp7350can/', 
+		'The OMRON 7 Series Wireless Bluetooth® Upper Arm home blood pressure monitor has a horizontally designed dual-display monitor and stores up to 120 readings (60 readings per each of two users), and includes a pre-formed Easy-Wrap ComFit Cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		17, 
+		'Omron 10 Series Wireless Upper Arm Blood Pressure Monitor', 
+		'https://www.omronhealthcare.ca/products/10-series-wireless-upper-arm-blood-pressure-monitor-bp7450can/', 
+		'The OMRON 10 Series Wireless Bluetooth® Upper Arm home blood pressure monitor has a horizontally designed dual-display monitor and stores up to 200 readings for two users (100 per user), and includes a pre-formed Easy-Wrap Comfit Cuff (fits arms 9″ to 17″ (22-42 cm) in circumference).', 
+		'https://www.omronhealthcare.ca/wp-content/uploads/omron-logo_r.svg'
+	), 
+	(
+		25, 
+		18, 
+		'Panasonic Portable Blood Pressure Monitor', 
+		'https://shop.panasonic.com/', 
+		'', 
+		'https://shop.panasonic.com/themes/custom/pna2018/logo.svg'
+	);
 
 INSERT INTO productCriteria VALUES 
 	(25, 1, '{cid2} and {cid4} and {cid5} and {cid7} and {cid10} and {cid12} and {cid13} and {cid14}'), 

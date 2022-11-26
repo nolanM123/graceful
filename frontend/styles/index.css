@@ -209,7 +209,7 @@ body {
 
 #question {
   position: absolute;
-  top: 25%;
+  bottom: 50%;
   left: 50%;
 
   transform: translateX(-50%);
@@ -344,21 +344,26 @@ body {
   position: absolute;
   left: 2%;
 
+  clip-path: circle(100%);
+
   margin-top: 1%;
-  border: 2px solid var(--flat);
+  border: 1px solid var(--flat);
   border-radius: 99em;
   aspect-ratio: 1;
   width: 20%;
+
+  background-color: var(--tertiary);
 }
 
 .result-image {
   position: absolute;
-  top: 2%;
-  left: 2%;
+  top: 50%;
+  left: 10%;
 
-  border-radius: 99rem;
-  width: 96%;
-  height: 96%;
+  transform: translateY(-50%);
+
+  width: 80%;
+  height: auto;
 }
 
 .result-button {
