@@ -97,26 +97,95 @@ INSERT INTO criteria VALUES
 	(1, 10, 'Lozenge/Gum', '{qid10} and not ({qid7} or {qid8} or {qid9} or {qid11})'), 
 	(1, 11, 'Patch', '{qid11} and not ({qid7} or {qid8} or {qid9} or {qid10})');
 
-INSERT INTO products VALUES 
-	(1, 1, 'Biotène Dry Mouthmoisturizing Mouthwash', '', '', ''), 
-	(1, 2, 'Biotène Dry Mouthmoisturizing Spray', '', '', ''), 
-	(1, 3, 'Biotène Dry Mouth Oralbalance Moisturizing Gel', '', '', ''), 
-	(1, 4, 'Biotène® Dry Mouth Lozenges', '', '', ''), 
-	(1, 5, 'Moi-Stir Spray', '', '', ''), 
-	(1, 6, 'Mouth Kote Dry Mouth Spray', '', '', ''), 
-	(1, 7, 'Xylimelts', '', '', ''), 
-	(1, 8, 'X-Pur Gum', '', '', ''), 
-	(1, 9, 'X-Pur Pastille', '', '', ''), 
-	(1, 10, 'Dentek™ Oramoist® Dry Mouth Relief Patch', '', '', '');
 
-INSERT INTO productCriteria VALUES 
-	(1, 1, '{cid1} and not {cid2} and {cid3} and not {cid5} and not {cid6} and {cid8}'), 
-	(1, 2, '{cid1} and not {cid2} and {cid3} and not {cid5} and not {cid6} and {cid7}'), 
-	(1, 3, '{cid1} and {cid2} and {cid4} and {cid5} and not {cid6} and {cid9}'), 
-	(1, 4, '{cid1} and not {cid2} and {cid3} and {cid5} and not {cid6} and {cid10}'), 
-	(1, 5, 'not {cid1} and {cid2} and {cid3} and not {cid5} and not {cid6} and {cid7}'), 
-	(1, 6, '{cid1} and not {cid2} and {cid3} and {cid5} and {cid6} and {cid7}'), 
-	(1, 7, '{cid1} and not {cid2} and {cid4} and {cid5} and not {cid6} and {cid11}'), 
-	(1, 8, '{cid1} and not {cid2} and {cid3} and {cid5} and not {cid6} and {cid10}'), 
-	(1, 9, '{cid1} and not {cid2} and {cid3} and {cid5} and not {cid6} and {cid10}'), 
-	(1, 10, '{cid1} and not {cid2} and {cid4} and {cid5} and not {cid6} and {cid11}');
+INSERT INTO products VALUES 
+	(
+		1,
+		1,
+		'Biot ne Dry Mouthmoisturizing Mouthwash',
+		'https://www.biotene.ca/dry-mouth-products/mouthwash/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/biotene-master/WhatIsDryMouth/B_What-Is-Dry-Mouth_logo.png?auto=format',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid6} and {cid8}'
+	),
+	(
+		1,
+		2,
+		'Biot ne Dry Mouthmoisturizing Spray',
+		'https://www.biotene.ca/dry-mouth-products/moisturizing-mouth-spray/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/biotene-master/WhatIsDryMouth/B_What-Is-Dry-Mouth_logo.png?auto=format',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid6} and {cid7}'
+	),
+	(
+		1,
+		3,
+		'Biot ne Dry Mouth Oralbalance Moisturizing Gel',
+		'https://www.biotene.ca/dry-mouth-products/moisturizing-gel/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/biotene-master/WhatIsDryMouth/B_What-Is-Dry-Mouth_logo.png?auto=format',
+		'{cid1} and {cid2} and {cid4} and {cid6} and {cid9}'
+	),
+	(
+		1,
+		4,
+		'Biot ne  Dry Mouth Lozenges',
+		'https://www.biotene.com/dry-mouth-products/lozenges/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/biotene-master/WhatIsDryMouth/B_What-Is-Dry-Mouth_logo.png?auto=format',
+		'{cid1} and {cid2} and {cid3} and {cid6} and {cid10}'
+	),
+	(
+		1,
+		5,
+		'Moi-Stir Spray',
+		'https://pendopharm.com/product/moi-stir/',
+		'',
+		'https://www.norwellcanada.ca/sites/norwell/files/banners/others/logo-blue.png',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid6} and {cid7}'
+	),
+	(
+		1,
+		6,
+		'Mouth Kote Dry Mouth Spray',
+		'https://www.parnellpharm.com/mouth-kote-oral-moisturizer',
+		'',
+		'https://www.parnellpharm.com/sites/default/files/styles/logo_custom_user_all_1x/public/media/logo-light-green.png?itok=jT1j39ZI&timestamp=1503943622',
+		'{cid1} and {cid2} and {cid3} and {cid6} and {cid7}'
+	),
+	(
+		1,
+		7,
+		'Xylimelts',
+		'https://oralscience.com/en/products/xylimelts/',
+		'',
+		'https://oralscience.com/en/',
+		'{cid1} and {cid2} and {cid4} and {cid6} and {cid11}'
+	),
+	(
+		1,
+		8,
+		'X-Pur Gum',
+		'https://oralscience.com/en/products/gum_pastilles/',
+		'',
+		'https://oralscience.com/en/',
+		'{cid1} and {cid2} and {cid3} and {cid6} and {cid10}'
+	),
+	(
+		1,
+		9,
+		'X-Pur Pastille',
+		'https://oralscience.com/en/products/gum_pastilles/',
+		'',
+		'https://oralscience.com/en/',
+		'{cid1} and {cid2} and {cid3} and {cid6} and {cid10}'
+	),
+	(
+		1,
+		10,
+		'Dentek  Oramoist  Dry Mouth Relief Patch',
+		'https://www.dentek.com/oral-pain-relief-and-dental-repair-products/oramoist-dry-mouth-treatment',
+		'',
+		'https://www.dentek.com/sites/dentek/themes/custom/dentek_theme/images/dentek-logo-tm.png',
+		'{cid1} and {cid2} and {cid4} and {cid6} and {cid11}'
+	);

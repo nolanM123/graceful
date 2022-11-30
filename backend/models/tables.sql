@@ -29,13 +29,8 @@ CREATE TABLE products (
     aid int(100),
     pid int(100),
     name varchar(255),
-    link varchar(255),
+    url varchar(255),
     description text(500),
-    url varchar(255)
-);
-
-CREATE TABLE productCriteria (
-    aid int(100),
-    pid int(100),
+    image varchar(255),
     formula varchar(255)
 );

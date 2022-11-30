@@ -91,235 +91,191 @@ INSERT INTO criteria VALUES
 
 INSERT INTO products VALUES 
 	(
-		13, 
-		1, 
-		'Tinactin® Athlete''s Foot Cream', 
-		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-cream', 
-		'This odorless cream is clinically proven to cure most athlete''s foot and prevent it from recurring when used daily.', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		1,
+		'Tinactin Athlete''s Foot Cream',
+		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-cream',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid9}'
+	),
 	(
-		13, 
-		2, 
-		'Tinactin® Athlete''s Foot Liquid Spray', 
-		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-liquid-spray', 
-		'A formula clinically proven to cure most athlete''s foot and prevent it from recurring when used daily in a quick, convenient, no-touch application.', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		2,
+		'Tinactin Athlete''s Foot Liquid Spray',
+		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-liquid-spray',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid10}'
+	),
 	(
-		13, 
-		3, 
-		'Tinactin® Athlete''s Foot Powder Spray', 
-		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-powder-spray', 
-		'A formula clinically proven to cure most athlete''s foot and prevent it from recurring when used daily in a quick, convenient, no-touch application.', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		3,
+		'Tinactin Athlete''s Foot Powder Spray',
+		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-powder-spray',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid10}'
+	),
 	(
-		13, 
-		4, 
-		'Tinactin® Athlete''s Foot Deodorant Powder Spray', 
-		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-deodrant-spray', 
-		'An odor-fighting formula clinically proven to cure most athlete''s foot and prevent it from recurring when used daily in a quick, convenient, no-touch application.', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		4,
+		'Tinactin Athlete''s Foot Deodorant Powder Spray',
+		'https://www.tinactin.com/tinactin-products/tinactin-athlete-foot-deodrant-spray',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid10}'
+	),
 	(
-		13, 
-		5, 
-		'Tinactin®Athlete''s Foot Super Absorbent Powder', 
-		'https://www.tinactin.com/', 
-		'', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		5,
+		'Tinactin Athlete''s Foot Super Absorbent Powder',
+		'https://www.tinactin.com/tinactin-products/athletes-foot-super-absorbent-powder/',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid10}'
+	),
 	(
-		13, 
-		6, 
-		'Tinactin® Jock Itch Cream', 
-		'', 
-		'', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		6,
+		'Tinactin Jock Itch Cream',
+		'https://www.tinactin.com/tinactin-products/tinactin-jock-itch-cream',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid9}'
+	),
 	(
-		13, 
-		7, 
-		'Tinactin® Jock Itch Powder Spray', 
-		'https://www.tinactin.com/tinactin-products/tinactin-jock-itch-cream', 
-		'An odorless cream clinically proven to cure most jock itch when used as directed.', 
-		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png'
-	), 
+		13,
+		7,
+		'Tinactin  Jock Itch Powder Spray',
+		'https://www.tinactin.com/tinactin-products/jock-itch-powder-spray/',
+		'',
+		'https://www.tinactin.com/sites/g/files/vrxlpx39616/files/tinactin-logo_1.png',
+		'{cid2} and {cid10}'
+	),
 	(
-		13, 
-		8, 
-		'Micatin Antifungal Cream', 
-		'https://micatin.ca/en/products.php', 
-		'With a proven combination of antifungal and antibacterial agents, Micatin antifungal cream not only kills the tinea fungus, but also helps prevent the growth of secondary skin infections.', 
-		'https://micatin.ca/en/images/logo.png'
-	), 
+		13,
+		8,
+		'Micatin Antifungal Cream',
+		'https://micatin.ca/en/products.php',
+		'',
+		'https://micatin.com/themes/micatin/images/logo-site.png',
+		'{cid1} and {cid9}'
+	),
 	(
-		13, 
-		9, 
-		'Micatin Antifungal Spray', 
-		'https://micatin.ca/en/products.php', 
-		'Available in a convenient spray, Micatin cures while it cools. Apply twice daily to the affected area for quick relief and effective ongoing treatment.', 
-		'https://micatin.ca/en/images/logo.png'
-	), 
+		13,
+		9,
+		'Micatin Antifungal Spray',
+		'https://micatin.ca/en/products.php',
+		'',
+		'https://micatin.com/themes/micatin/images/logo-site.png',
+		'{cid1} and {cid10}'
+	),
 	(
-		13, 
-		10, 
-		'Polysporin® Complete Ointment', 
-		'https://www.polysporin.ca/products/complete-antibiotic-ointment', 
-		'Our most advanced antibiotic ointment
-HEAL-FAST® Formula provides infection protection to speed healing
-Contains lidocaine hydrochloride for fast-acting pain relief
-Best suited for minor cuts, scrapes and burns
-Soothing antibiotic ointment forms a protective coating
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Non-staining & odourless
-3 antibiotics plus lidocaine hydrochloride
-Available in 15 g and 30 g tubes', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		10,
+		'Polysporin Complete Ointment',
+		'https://www.polysporin.ca/products/complete-antibiotic-ointment',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid6} and {cid9}'
+	),
 	(
-		13, 
-		11, 
-		'Polysporin® Triple Antibiotic Ointment', 
-		'https://www.polysporin.ca/products/triple-antibiotic-ointment', 
-		'HEAL-FAST® Formula provides infection protection to speed healing
-Best suited for minor cuts, scrapes and burns
-Soothing ointment forms protective coating
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Non-stinging & odourless
-3 antibiotics
-Available in 15 g and 30 g tubes
-Appropriate for all ages', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		11,
+		'Polysporin Triple Antibiotic Ointment',
+		'https://www.polysporin.ca/products/triple-antibiotic-ointment',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid9}'
+	),
 	(
-		13, 
-		12, 
-		'Polysporin® Plus Pain Relief Cream', 
-		'https://www.polysporin.ca/products/plus-pain-relief-cream', 
-		'HEAL-FAST® Formula provides infection protection to speed healing
-Contains lidocaine hydrochloride for fast-acting topical pain relief
-Best suited for minor cuts, scrapes and burns
-Non-greasy cream absorbs quickly to allow drying
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Odourless
-2 Antibiotics plus lidocaine hydrochloride
-Available in 15 g and 30 g tubes', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		12,
+		'Polysporin Plus Pain Relief Cream',
+		'https://www.polysporin.ca/products/plus-pain-relief-cream',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid6} and {cid9}'
+	),
 	(
-		13, 
-		13, 
-		'Polysporin® Kids Cream', 
-		'https://www.polysporin.ca/products/antibiotic-cream-for-kids', 
-		'HEAL-FAST® Formula provides infection protection to speed healing
-Contains lidocaine hydrochloride for fast-acting pain relief
-Best suited for minor cuts, scrapes and burns
-Non-greasy cream absorbs quickly to allow drying
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Non-staining & odourless
-2 Antibiotics plus lidocaine hydrochloride
-Available in 15 g and 30 g tubes
-Appropriate for all ages', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		13,
+		'Polysporin  Kids Cream',
+		'https://www.polysporin.ca/products/antibiotic-cream-for-kids',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid6} and {cid9}'
+	),
 	(
-		13, 
-		14, 
-		'Polysporin® Original Antibiotic Ointment', 
-		'https://www.polysporin.ca/products/antibiotic-original-ointment', 
-		'HEAL-FAST® Formula provides infection protection to speed healing
-Best suited for minor cuts, scrapes and burns
-Soothing antibiotic ointment forms protective coating
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Non-stinging & odourless
-2 Antibiotics
-Available in 15 g and 30 g tubes', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		14,
+		'Polysporin  Original Antibiotic Ointment',
+		'https://www.polysporin.ca/products/antibiotic-original-ointment',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid9}'
+	),
 	(
-		13, 
-		15, 
-		'Polysporin® Original Antibiotic Cream', 
-		'https://www.polysporin.ca/products/antibiotic-cream', 
-		'HEAL-FAST® Formula provides infection protection to speed healing
-Best suited for minor cuts, scrapes and burns
-Non-greasy antibiotic cream absorbs quickly to allow drying
-#1 Doctor and Pharmacist Recommended anti-infective brand†
-Non-stinging & odourless
-2 antibiotics
-Available in 15 g and 30 g tubes', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		15,
+		'Polysporin  Original Antibiotic Cream',
+		'https://www.polysporin.ca/products/antibiotic-cream',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid5} and {cid9}'
+	),
 	(
-		13, 
-		16, 
-		'Poly To Go® First Aid Antiseptic / Pain Relieving Spray', 
-		'https://www.polysporin.ca/', 
-		'', 
-		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png'
-	), 
+		13,
+		16,
+		'Poly To Go First Aid Antiseptic / Pain Relieving Spray',
+		'https://www.polysporin.ca/products/poly-to-go-antiseptic-pain-relief-spray',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid7} and {cid8} and {cid10}'
+	),
 	(
-		13, 
-		17, 
-		'Emtrix®', 
-		'https://emtrix.ca/en', 
-		'', 
-		'https://emtrix.ca/img/emtrix.svg'
-	), 
+		13,
+		17,
+		'Emtrix',
+		'https://emtrix.ca/en',
+		'',
+		'https://emtrix.ca/img/emtrix.svg',
+		'{cid4}'
+	),
 	(
-		13, 
-		18, 
-		'Fungi Nail® Pen', 
-		'https://funginail.com/products/fungi-nail-toe-pen/', 
-		'Fungi-Nail® Pen goes to work on your toe fungus, eliminating fungal infections on cuticles, around nail edges and tips, and between the toes where if left unchecked it can spread. Fungi-Nail® Pen is formulated with Tolnaftate 1%, a clinically proven antifungal ingredient that cures and prevents fungal infections on the skin around your nail. Plus, it has aloe and tea tree oil to help restore skin health.', 
-		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg'
-	), 
+		13,
+		18,
+		'Fungi Nail  Pen',
+		'https://funginail.com/products/fungi-nail-toe-pen/',
+		'',
+		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg',
+		'{cid4}'
+	),
 	(
-		13, 
-		19, 
-		'Fungi Nail® Liquid', 
-		'https://funginail.com/products/fungi-nail-toe-solution/', 
-		'Fungi-Nail® Anti-Fungal Liquid is a topical anti-fungal treatment that is ideal for treating toe and foot fungus. It eliminates fungal infections on the skin around cuticles, nail edges, nail tips, and between the toes.', 
-		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg'
-	), 
+		13,
+		19,
+		'Fungi Nail  Liquid',
+		'https://funginail.com/products/fungi-nail-toe-solution/',
+		'',
+		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg',
+		'{cid3}'
+	),
 	(
-		13, 
-		20, 
-		'Fungi Nail® Ointment', 
-		'https://funginail.com/products/fungi-nail-toe-ointment/', 
-		'Fungi-Nail® Ointment is a unique product formulated with tolnaftate, an active ingredient clinically proven to cure and prevent fungal infections. It is formulated with 5 natural oils to help the skin around your toes feel and look better in a non-alcohol formula so you don''t have to worry about alcohol stinging. Fungi-Nail® Ointment eliminates fungal infections on skin around cuticles, nail edges, nail tips, and between the toes and stops it from spreading. This product contains the maximum strength available over-the-counter.  It provides lasting protection as it moisturizes and heals irritated skin while relieving the burning, itching, and cracking associated with athlete''s foot and toe fungus.', 
-		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg'
-	), 
+		13,
+		20,
+		'Fungi Nail  Ointment',
+		'https://funginail.com/products/fungi-nail-toe-ointment/',
+		'',
+		'https://funginail.com/wp-content/uploads/2019/05/funginail-logo.jpg',
+		'{cid3} and {cid9}'
+	),
 	(
-		13, 
-		21, 
-		'Bactine® Max Pain Relieving Cleansing Spray', 
-		'https://bactine.com/product/bactine-max-pain-relieving-cleansing-spray-liquid/', 
-		'Bactine® MAX Pain Relieving Cleansing Spray & Liquid takes the "ouch" out of cuts, scrapes and minor burns and kills 99.9% of germs* at the same time. Bactine® MAX Pain Relieving Cleansing Spray and Liquid have 4% Lidocaine plus a max strength antiseptic. This easy-to-use spray is America''s #1 selling antiseptic plus pain reliever. And it does''t sting.', 
-		'https://bactine.com/wp-content/uploads/2021/05/bactine-logo-positive.svg'
+		13,
+		21,
+		'Bactine  Max Pain Relieving Cleansing Spray',
+		'https://bactine.com/',
+		'',
+		'https://bactine.com/wp-content/uploads/2021/05/bactine-logo-positive.svg',
+		'{cid6} and {cid7}'
 	);
-
-INSERT INTO productCriteria VALUES 
-	(13, 1, '{cid2} and {cid9}'), 
-	(13, 2, '{cid2} and {cid10}'), 
-	(13, 3, '{cid2} and {cid10}'), 
-	(13, 4, '{cid2} and {cid10}'), 
-	(13, 5, '{cid2} and {cid10}'), 
-	(13, 6, '{cid2} and {cid9}'), 
-	(13, 7, '{cid2} and {cid10}'), 
-	(13, 8, '{cid1} and {cid9}'), 
-	(13, 9, '{cid1} and {cid10}'), 
-	(13, 10, '{cid5} and {cid6} and {cid9}'), 
-	(13, 11, '{cid5} and {cid9}'), 
-	(13, 12, '{cid5} and {cid6} and {cid9}'), 
-	(13, 13, '{cid5} and {cid6} and {cid9}'), 
-	(13, 14, '{cid5} and {cid9}'), 
-	(13, 15, '{cid5} and {cid9}'), 
-	(13, 16, '{cid7} and {cid8} and {cid10}'), 
-	(13, 17, '{cid4}'), 
-	(13, 18, '{cid4}'), 
-	(13, 19, '{cid3}'), 
-	(13, 20, '{cid3} and {cid9}'), 
-	(13, 21, '{cid6} and {cid7}');

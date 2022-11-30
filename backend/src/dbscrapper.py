@@ -43,7 +43,7 @@ for sheet_name in xl.sheet_names:
                     sid += 1
                 
                 else:
-                    questions += "\t({}, {}, {}, '{}', '{}'), \n".format(aid, qid, sid, question, description)
+                    questions += "    ({}, {}, {}, '{}', '{}'), \n".format(aid, qid, sid, question, description)
                     qid += 1
         
         questions = questions[:-3] + ";\n\n"
@@ -56,7 +56,7 @@ for sheet_name in xl.sheet_names:
 
         for col_name in df:
             if not col_name.startswith(("Product", "Column", "Total")):
-                criteria += "\t({}, {}, '{}', '{}'), \n".format(aid, cid, col_name, formula)
+                criteria += "    ({}, {}, '{}', '{}'), \n".format(aid, cid, col_name, formula)
                 cid += 1
         
         criteria = criteria[:-3] + ";\n\n"
@@ -68,37 +68,35 @@ for sheet_name in xl.sheet_names:
         description = ""
         image = ""
 
-        for product_name in df[df.columns[-1]]:
+        for row, product_name in enumerate(df[df.columns[-1]]):
             if not pd.isna(product_name):
-                products += "    (\n\t{}, \n\t{}, \n\t'{}', \n\t'{}', \n\t'{}', \n\t'{}'\n    ), \n".format(aid, pid, product_name.title(), link, description, image)
+                cid = 1
+                formula = list()
+
+                for col_name in df.dropna():
+                    if not col_name.startswith(("Product", "Column", "Total")):
+                        if not pd.isna(df.iloc[row][col_name]):
+                            formula.append("{cid" + str(cid) + "}")
+
+                        cid += 1
+                
+                if not pd.isna(df[df.columns[-1]][row]):
+                    formula = " and ".join(formula)
+
+                products += "\t(\n\t\t{},\n\t\t{},\n\t\t'{}',\n\t\t'{}',\n\t\t'{}',\n\t\t'{}',\n\t\t'{}'\n\t),\n".format(aid, pid, product_name.title(), link, description, image, formula)
                 pid += 1
         
-        products = products[:-3] + ";\n\n"
-
-        # product criteria
-        product_criteria = "INSERT INTO productCriteria VALUES \n"
-        pid = 1
-        for row in range(len(df.index)):
-            cid = 1
-            formula = list()
-
-            for col_name in df.dropna():
-                if not col_name.startswith(("Product", "Column", "Total")):
-                    if not pd.isna(df.iloc[row][col_name]):
-                        formula.append("{cid" + str(cid) + "}")
-
-                    cid += 1
-            
-            if not pd.isna(df[df.columns[-1]][row]):
-                product_criteria += "\t({}, {}, '{}'), \n".format(aid, pid, " and ".join(formula))
-                pid += 1
-
-        product_criteria = product_criteria[:-3] + ";\n"
+        products = products[:-3] + ";\n"
 
         # save data
         name = sheet_name.replace("Criteria", "").replace("Products", "").strip()
 
-        if name == "Allergy":
-            print(products)
+        print(name)
+        file = open(f"backend/models/data/{name}.sql", "r")
+        text = file.read()
+        file.close()
+
+        with open(f"backend/models/data/{name}.sql", "w", errors="ignore") as file:
+            file.write(text + "\n" + products)
 
         aid += 1

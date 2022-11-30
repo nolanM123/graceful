@@ -1,113 +1,108 @@
 import os
-import sqlite3
-from graceful import Graceful
+import graceful
+import aiosqlite
 
 
-app = Graceful()
+app = graceful.Graceful()
 
 
 @app.route("get", "/ailments/")
-def ailments():
+async def ailments():
 
     result = []
 
-    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
-        cursor = db.cursor()
+    db = await aiosqlite.connect("backend/models/db.sqlite3")
+    cursor = await db.cursor()
 
-        for aid, name, disclaimer in cursor.execute(
-            "SELECT aid, name, disclaimer FROM ailments;"
-        ):
-            result.append(
-                {
-                    "aid": aid,
-                    "name": name,
-                    "disclaimer": disclaimer,
-                }
-            )
+    await cursor.execute("SELECT aid, name, disclaimer FROM ailments;")
+    for aid, name, disclaimer in await cursor.fetchall():
+        result.append(
+            {
+                "aid": aid,
+                "name": name,
+                "disclaimer": disclaimer,
+            }
+        )
 
-        cursor.close()
+    await cursor.close()
+    await db.close()
 
     return result
 
 
 @app.route("get", "/questions/{aid}/")
-def questions(aid):
+async def questions(aid):
 
     result = list()
 
-    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
-        cursor = db.cursor()
+    db = await aiosqlite.connect(os.path.abspath("backend/models/db.sqlite3"))
+    cursor = await db.cursor()
 
-        for qid, sid, question, description in cursor.execute(
-            "SELECT qid, sid, question, description FROM questions WHERE aid == ?;",
-            (aid,),
-        ):
-            result.append(
-                {
-                    "qid": qid,
-                    "sid": sid,
-                    "question": question,
-                    "description": description,
-                }
-            )
+    await cursor.execute(
+        "SELECT qid, sid, question, description FROM questions WHERE aid == ?;",
+        (aid,),
+    )
+    for qid, sid, question, description in await cursor.fetchall():
+        result.append(
+            {
+                "qid": qid,
+                "sid": sid,
+                "question": question,
+                "description": description,
+            }
+        )
 
-        cursor.close()
+    await cursor.close()
+    await db.close()
 
     return result
 
 
 @app.route("get", "/products/{aid}/")
-def products(aid, request):
+async def products(aid, request):
 
     result = list()
 
-    with sqlite3.connect(os.path.abspath("backend/models/db.sqlite3")) as db:
-        cursor1 = db.cursor()
-        cursor2 = db.cursor()
+    db = await aiosqlite.connect(os.path.abspath("backend/models/db.sqlite3"))
+    cursor1 = await db.cursor()
 
-        criteria_formulas = {
-            f"cid{cid}": eval(formula.format(**request.query), dict())
-            for cid, formula in cursor1.execute(
-                "SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,)
+    criteria = dict()
+    await cursor1.execute("SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,))
+    for cid, formula in await cursor1.fetchall():
+        criteria[f"cid{cid}"] = eval(formula.format(**request.query), dict())
+
+    await cursor1.execute(
+        "SELECT name, url, description, image, formula FROM products WHERE aid == ?;",
+        (aid,),
+    )
+    for name, url, description, image, formula in await cursor1.fetchall():
+        if eval(formula.format(**criteria), dict()):
+            result.append(
+                {
+                    "name": name,
+                    "url": url,
+                    "description": description,
+                    "image": image,
+                }
             )
-        }
 
-        for pid, name, link, description, url in cursor1.execute(
-            "SELECT pid, name, link, description, url FROM products WHERE aid == ?;",
-            (aid,),
-        ):
-            for product_formulas in cursor2.execute(
-                "SELECT formula FROM productCriteria WHERE aid == ? AND pid == ?;",
-                (aid, pid),
-            ):
-                if eval(product_formulas[0].format(**criteria_formulas), dict()):
-                    result.append(
-                        {
-                            "name": name,
-                            "link": link,
-                            "description": description,
-                            "url": url,
-                        }
-                    )
-
-        cursor1.close()
-        cursor2.close()
+    await cursor1.close()
+    await db.close()
 
     return result
 
 
-@app.route("get", "")
-def index_view(response):
-    return response.render(os.path.abspath("frontend/views/index.html"))
+@app.route("get", "/frontend/{:}")
+def recource(request, response):
+    return response.render(os.path.abspath(request.url))
 
-@app.route("get", "/login/")
-def login_view(response):
-    return response.render(os.path.abspath("frontend/views/login.html"))
 
-@app.route("get", "/admin/")
-def admin_view():
-    return
+@app.route("get", "/{:path}")
+def view(path, response):
+    if not path:
+        path = "index"
 
-@app.route("get", "/frontend/{:path}")
-def filepath(request, response):
-    return response.render(os.path.abspath(request.url.lstrip("/")))
+    return response.render(os.path.abspath(os.path.join("frontend/views/", path + ".html")))
+
+
+app.run()

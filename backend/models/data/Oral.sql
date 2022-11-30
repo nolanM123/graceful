@@ -92,53 +92,219 @@ INSERT INTO criteria VALUES
 	(24, 12, 'Lysine', 'not {qid10}');
 
 INSERT INTO products VALUES 
-	(24, 1, 'Orajel™ Natural Source Homeopathic Nighttime Teething Gel', '', '', ''), 
-	(24, 2, 'Orajel™ Natural Source Homeopathic Teething Gel', '', '', ''), 
-	(24, 3, 'Orajel™ Touch-Free Cold Sore Treatment', '', '', ''), 
-	(24, 4, 'Orajel™ 3X Medicated Severe Toothache & Gum Relief Plus', '', '', ''), 
-	(24, 5, 'Orajel™ Double Action Toothache And Gum Relief', '', '', ''), 
-	(24, 6, 'Orajel™ Maximum Strength Toothache Pain Relief Gel', '', '', ''), 
-	(24, 7, 'Orajel™ Maximum Toothache Relief Liquid', '', '', ''), 
-	(24, 8, 'Orajel™ Maximum Strength Pm Toothache & Gum Relief Paste', '', '', ''), 
-	(24, 9, 'Orajel™ Regular Strength Toothache Pain Relief Gel', '', '', ''), 
-	(24, 10, 'Orajel™ Canker Sore Gel', '', '', ''), 
-	(24, 11, 'Anbesol® Regular Strength Cool Mint Gel', '', '', ''), 
-	(24, 12, 'Anbesol® Regular Strength Cool Mint Liquid', '', '', ''), 
-	(24, 13, 'Anbesol® Cold Sore Therapy', '', '', ''), 
-	(24, 14, 'Anbesol® Maximum Strength Gel', '', '', ''), 
-	(24, 15, 'Anbesol® Maximum Strength Liquid', '', '', ''), 
-	(24, 16, 'Kank-A® Softbrush®', '', '', ''), 
-	(24, 17, 'Kank-A® Mouth Pain Liquid', '', '', ''), 
-	(24, 18, 'Abreva Cream', '', '', ''), 
-	(24, 19, 'Lip Clear® Lysine+® Ointment', '', '', ''), 
-	(24, 20, 'Superlysine+® Ointment', '', '', ''), 
-	(24, 21, 'Gum® Canker-X® Pain Relief Gel', '', '', ''), 
-	(24, 22, 'Canker Sores Begone Stick™', '', '', ''), 
-	(24, 23, 'Cold Sores Begone Stick™', '', '', ''), 
-	(24, 24, 'Blistex Lip Ointment', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-    (24, 1, '{cid1} and {cid4} and not {cid6} and {cid12} and {cid8} and {cid10} and {cid11}'), 
-    (24, 2, '{cid1} and {cid4} and not {cid6} and {cid12} and {cid8} and {cid10} and {cid11}'), 
-    (24, 3, '{cid2} and {cid3} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'), 
-    (24, 4, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9}'), 
-    (24, 5, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid11}'), 
-    (24, 6, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid10}'), 
-    (24, 7, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid10}'), 
-    (24, 8, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9}'), 
-    (24, 9, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid10} and {cid11}'), 
-    (24, 10, '{cid2} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid11}'), 
-    (24, 11, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'), 
-    (24, 12, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'), 
-    (24, 13, '{cid1} and {cid3} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid11}'),
-    (24, 14, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'),
-    (24, 15, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'),
-    (24, 16, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid10}'),
-    (24, 17, '{cid1} and {cid4} and {cid5} and not {cid6} and {cid12} and not {cid8} and {cid10} and {cid11}'),
-    (24, 18, '{cid2} and {cid3} and {cid6} and {cid12} and not {cid8} and {cid10} and {cid11}'),
-    (24, 19, '{cid1} and {cid3} and {cid6} and {cid7} and not {cid8}'),
-    (24, 20, '{cid1} and {cid3} and {cid6} and {cid7} and not {cid8}'),
-    (24, 21, '{cid2} and {cid4} and not {cid6} and {cid12} and not {cid8} and {cid9} and {cid10} and {cid11}'),
-    (24, 22, '{cid1} and {cid4} and {cid6} and {cid7} and not {cid8} and {cid11}'),
-    (24, 23, '{cid1} and {cid3} and {cid6} and {cid7} and not {cid8} and {cid10} and {cid11}'),
-    (24, 24, '{cid1} and {cid3} and not {cid6} and {cid12} and not {cid8} and {cid11}');
+	(
+		25,
+		1,
+		'Orajel Natural Source Homeopathic Nighttime Teething Gel',
+		'https://www.orajel.com/en-ca/products/child-oral-care/orajel-natural-source-homeopathic-nighttime-teething-gel',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		2,
+		'Orajel Natural Source Homeopathic Teething Gel',
+		'https://www.orajel.com/en-ca/products/child-oral-care/orajel-natural-source-homeopathic-teething-gel',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		3,
+		'Orajel Touch-Free Cold Sore Treatment',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-touch-free-cold-sore-treatment',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		4,
+		'Orajel 3X Medicated Severe Toothache & Gum Relief Plus',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-severe-toothache-and-gum-relief-plus-triple-medicated-cream',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9}'
+	),
+	(
+		25,
+		5,
+		'Orajel Double Action Toothache And Gum Relief',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-double-action-toothache-and-gum-relief',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid11}'
+	),
+	(
+		25,
+		6,
+		'Orajel Maximum Strength Toothache Pain Relief Gel',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-maximum-strength-toothache-pain-relief-double-medicated-gel',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10}'
+	),
+	(
+		25,
+		7,
+		'Orajel Maximum Toothache Relief Liquid',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-maximum-toothache-relief-liquid',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10}'
+	),
+	(
+		25,
+		8,
+		'Orajel Maximum Strength Pm Toothache & Gum Relief Paste',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-maximum-strength-pm-toothache-and-gum-relief-paste',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9}'
+	),
+	(
+		25,
+		9,
+		'Orajel Regular Strength Toothache Pain Relief Gel',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-regular-strength-toothache-pain-relief-gel',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		10,
+		'Orajel Canker Sore Gel',
+		'https://www.orajel.com/en-ca/products/adult-oral-care/orajel-film-forming-canker-sore-gel',
+		'',
+		'https://www.orajel.com/-/media/orajel/layout/orajel-logo.png',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid11}'
+	),
+	(
+		25,
+		11,
+		'Anbesol Regular Strength Cool Mint Gel',
+		'https://www.anbesol.com/products/',
+		'',
+		'https://d2kemwmzy87i2a.cloudfront.net/logos/anbesol-gel-baby-teething-medicine.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		12,
+		'Anbesol Regular Strength Cool Mint Liquid',
+		'https://www.anbesol.com/products/',
+		'',
+		'https://d2kemwmzy87i2a.cloudfront.net/logos/anbesol-gel-baby-teething-medicine.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		13,
+		'Anbesol Cold Sore Therapy',
+		'https://www.anbesol.com/products/',
+		'',
+		'https://d2kemwmzy87i2a.cloudfront.net/logos/anbesol-gel-baby-teething-medicine.png',
+		'{cid1} and {cid3} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid11}'
+	),
+	(
+		25,
+		14,
+		'Anbesol Maximum Strength Gel',
+		'https://www.anbesol.com/products/',
+		'',
+		'https://d2kemwmzy87i2a.cloudfront.net/logos/anbesol-gel-baby-teething-medicine.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		15,
+		'Anbesol Maximum Strength Liquid',
+		'https://www.anbesol.com/products/',
+		'',
+		'https://d2kemwmzy87i2a.cloudfront.net/logos/anbesol-gel-baby-teething-medicine.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		16,
+		'Kank-A  Softbrush ',
+		'https://www.kank-a.com/products/kank-a-softbrush/',
+		'',
+		'https://www.kank-a.com/wp-content/uploads/logo-kanka.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10}'
+	),
+	(
+		25,
+		17,
+		'Kank-A  Mouth Pain Liquid',
+		'https://www.kank-a.com/products/kank-a-mouth-pain-liquid/',
+		'',
+		'https://www.kank-a.com/wp-content/uploads/logo-kanka.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		18,
+		'Abreva Cream',
+		'https://www.abreva.ca/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/skin-abreva/en_CA/logo/abreva-logo.jpg?auto=format',
+		'{cid2} and {cid3} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		19,
+		'Lip Clear  Lysine+  Ointment',
+		'https://quantumhealth.com/shop/product/lipclear-lysine-ointment-7g',
+		'',
+		'https://quantumhealth.com/themes/quantumhealth/assets/images/logos/quantum-logo-header.png',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		25,
+		20,
+		'Superlysine+  Ointment',
+		'https://quantumhealth.com/shop/product/super-lysine-ointment-7g-cold-sore-treatment',
+		'',
+		'https://quantumhealth.com/themes/quantumhealth/assets/images/logos/quantum-logo-header.png',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		25,
+		21,
+		'Gum  Canker-X  Pain Relief Gel',
+		'https://www.gumbrand.com/gum-canker-x-gel.html',
+		'',
+		'https://www.gumbrand.com/static/frontend/Sunstar/default/en_US/images/sunstar-logo.png',
+		'{cid2} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		22,
+		'Canker Sores Begone Stick ',
+		'https://www.soresbegone.com/products/canker-sores-begone-stick%E2%84%A2',
+		'',
+		'',
+		'{cid1} and {cid4} and {cid6} and {cid7} and {cid8} and {cid11}'
+	),
+	(
+		25,
+		23,
+		'Cold Sores Begone Stick ',
+		'https://www.soresbegone.com/products/cold-sores-begone-stick',
+		'',
+		'',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		25,
+		24,
+		'Blistex Lip Ointment',
+		'https://www.blistex.com/products/medicated-lip-ointment/',
+		'',
+		'https://blistex.com/wp-content/themes/blistex/dist/assets/images/logo.jpg',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid11}'
+	);

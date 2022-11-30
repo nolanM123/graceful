@@ -104,41 +104,165 @@ INSERT INTO criteria VALUES
 	(18, 10, 'Flavor', '{qid12}');
 
 INSERT INTO products VALUES 
-	(18, 1, 'Nicorette® Quickmist® 1Mg', '', '', ''), 
-	(18, 2, 'Nicorette® Gum 2Mg', '', '', ''), 
-	(18, 3, 'Nicorette® Gum 4Mg', '', '', ''), 
-	(18, 4, 'Nicorette® Lozenge 2Mg', '', '', ''), 
-	(18, 5, 'Nicorette® Lozenge 4Mg', '', '', ''), 
-	(18, 6, 'Nicorette® Inhaler', '', '', ''), 
-	(18, 7, 'Nicoderm® Step 1 - 21Mg Patch', '', '', ''), 
-	(18, 8, 'Nicoderm® Step 2- 14Mg Patch', '', '', ''), 
-	(18, 9, 'Nicoderm® Step 3- 7Mg Patch', '', '', ''), 
-	(18, 10, 'Thrive® Complete™ Gum 2Mg', '', '', ''), 
-	(18, 11, 'Thrive® Complete™ Gum 4Mg', '', '', ''), 
-	(18, 12, 'Thrive® Lozenges 1Mg', '', '', ''), 
-	(18, 13, 'Thrive® Lozenges 2Mg', '', '', ''), 
-	(18, 14, 'Thrive® Gum 2Mg', '', '', ''), 
-	(18, 15, 'Thrive® Gum 4Mg', '', '', ''), 
-	(18, 16, 'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 1 (21 Mg)', '', '', ''), 
-	(18, 17, 'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 2 (14 Mg)', '', '', ''), 
-	(18, 18, 'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 3 (7 Mg)', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(18, 1, '{cid1} and {cid2} and {cid3} and {cid8} and {cid9} and {cid10}'), 
-	(18, 2, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'), 
-	(18, 3, '{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'), 
-	(18, 4, '{cid1} and {cid2} and {cid6} and {cid9}'), 
-	(18, 5, '{cid1} and {cid3} and {cid6} and {cid9}'), 
-	(18, 6, '{cid1} and {cid5}'), 
-	(18, 7, '{cid1} and {cid3} and {cid4}'), 
-	(18, 8, '{cid1} and {cid2} and {cid4}'), 
-	(18, 9, '{cid1} and {cid2} and {cid4}'), 
-	(18, 10, '{cid1} and {cid2} and {cid7} and {cid9}'), 
-	(18, 11, '{cid1} and {cid3} and {cid7} and {cid9}'), 
-	(18, 12, '{cid1} and {cid2} and {cid6} and {cid9}'), 
-	(18, 13, '{cid1} and {cid3} and {cid6} and {cid9}'), 
-	(18, 14, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'), 
-	(18, 15, '{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'), 
-	(18, 16, '{cid1} and {cid3} and {cid4}'), 
-	(18, 17, '{cid1} and {cid2} and {cid4}'), 
-	(18, 18, '{cid1} and {cid2} and {cid4}');
+	(
+		18,
+		1,
+		'Nicorette  Quickmist  1Mg',
+		'https://www.nicorette.ca/products/quickmist',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid2} and {cid3} and {cid8} and {cid9} and {cid10}'
+	),
+	(
+		18,
+		2,
+		'Nicorette  Gum 2Mg',
+		'https://www.nicorette.ca/products/gum',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'
+	),
+	(
+		18,
+		3,
+		'Nicorette  Gum 4Mg',
+		'https://www.nicorette.ca/products/gum',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'
+	),
+	(
+		18,
+		4,
+		'Nicorette  Lozenge 2Mg',
+		'https://www.nicorette.ca/products/minilozenge',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid2} and {cid6} and {cid9}'
+	),
+	(
+		18,
+		5,
+		'Nicorette  Lozenge 4Mg',
+		'https://www.nicorette.ca/products/minilozenge',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid3} and {cid6} and {cid9}'
+	),
+	(
+		18,
+		6,
+		'Nicorette  Inhaler',
+		'https://www.nicorette.ca/products/inhaler',
+		'',
+		'https://www.nicorette.ca/sites/nicorette_ca/files/logo_0.png',
+		'{cid1} and {cid5}'
+	),
+	(
+		18,
+		7,
+		'Nicoderm  Step 1 - 21Mg Patch',
+		'https://www.nicoderm.ca/products/step-1',
+		'',
+		'https://www.nicoderm.ca/sites/nicoderm_ca/files/logo.png',
+		'{cid1} and {cid3} and {cid4}'
+	),
+	(
+		18,
+		8,
+		'Nicoderm  Step 2- 14Mg Patch',
+		'https://www.nicoderm.ca/products/step-2',
+		'',
+		'https://www.nicoderm.ca/sites/nicoderm_ca/files/logo.png',
+		'{cid1} and {cid2} and {cid4}'
+	),
+	(
+		18,
+		9,
+		'Nicoderm  Step 3- 7Mg Patch',
+		'https://www.nicoderm.ca/products/step-3',
+		'',
+		'https://www.nicoderm.ca/sites/nicoderm_ca/files/logo.png',
+		'{cid1} and {cid2} and {cid4}'
+	),
+	(
+		18,
+		10,
+		'Thrive  Complete  Gum 2Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid2} and {cid7} and {cid9}'
+	),
+	(
+		18,
+		11,
+		'Thrive  Complete  Gum 4Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid3} and {cid7} and {cid9}'
+	),
+	(
+		18,
+		12,
+		'Thrive  Lozenges 1Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid2} and {cid6} and {cid9}'
+	),
+	(
+		18,
+		13,
+		'Thrive  Lozenges 2Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid3} and {cid6} and {cid9}'
+	),
+	(
+		18,
+		14,
+		'Thrive  Gum 2Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid2} and {cid7} and {cid9} and {cid10}'
+	),
+	(
+		18,
+		15,
+		'Thrive  Gum 4Mg',
+		'http://thrive2quit.ca/products',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/respiratory-thrive2quit/en_CA/pages/homepage/optimized/Thrive_Logo_WHITE_EN.png?auto=format',
+		'{cid1} and {cid3} and {cid7} and {cid9} and {cid10}'
+	),
+	(
+		18,
+		16,
+		'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 1 (21 Mg)',
+		'https://habitrol.com/shop/',
+		'',
+		'https://habitrol.com/wp-content/themes/habitrol/imgs/icons/logo.svg',
+		'{cid1} and {cid3} and {cid4}'
+	),
+	(
+		18,
+		17,
+		'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 2 (14 Mg)',
+		'https://habitrol.com/shop/',
+		'',
+		'https://habitrol.com/wp-content/themes/habitrol/imgs/icons/logo.svg',
+		'{cid1} and {cid2} and {cid4}'
+	),
+	(
+		18,
+		18,
+		'Habitrol Nicotine Transdermal System Stop Smoking Aid, Step 3 (7 Mg)',
+		'https://habitrol.com/shop/',
+		'',
+		'https://habitrol.com/wp-content/themes/habitrol/imgs/icons/logo.svg',
+		'{cid1} and {cid2} and {cid4}'
+	);

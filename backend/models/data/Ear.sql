@@ -71,19 +71,66 @@ INSERT INTO criteria VALUES
 	(15, 5, 'Solvent', '{qid3} and {qid5} and not ({qid2} or {qid4})');
 
 INSERT INTO products VALUES 
-	(15, 1, 'Polysporin® Plus Pain Relief Ear Drops (6+Yrs)', '', '', ''), 
-	(15, 2, 'Polysporin® Eye & Ear Drops (6+Yrs)', '', '', ''), 
-	(15, 3, 'Auralgan Ear Drops', '', '', ''), 
-	(15, 4, 'Optimyxin® Ear Drops ', '', '', ''), 
-	(15, 5, 'Cerumol Ear Wax Removal Drops (12+Yrs)', '', '', ''), 
-	(15, 6, 'Murine® Ear Earwax Removal System', '', '', ''), 
-	(15, 7, 'Auro-Dri Swimmer''s Ears Water Drying Aid', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(15, 1, '{cid1} and {cid2}'), 
-	(15, 2, '{cid1}'), 
-	(15, 3, '{cid2}'), 
-	(15, 4, '{cid1}'), 
-	(15, 5, '{cid3} and {cid5}'), 
-	(15, 6, '{cid5}'), 
-	(15, 7, '{cid4}');
+	(
+		15,
+		1,
+		'Polysporin  Plus Pain Relief Ear Drops (6+Yrs)',
+		'https://www.polysporin.ca/products/pain-relief-ear-drops',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid1} and {cid2}'
+	),
+	(
+		15,
+		2,
+		'Polysporin  Eye & Ear Drops (6+Yrs)',
+		'https://www.polysporin.ca/products/antibiotic-eye-drops',
+		'',
+		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
+		'{cid1}'
+	),
+	(
+		15,
+		3,
+		'Auralgan Ear Drops',
+		'https://auralgan.ca/',
+		'',
+		'',
+		'{cid2}'
+	),
+	(
+		15,
+		4,
+		'Optimyxin Ear Drops',
+		'https://www.sandoz.ca/en/optimyxinr-ear-drops-antibiotic-10-ml',
+		'',
+		'https://www.sandoz.ca/sites/all/themes/novartis_sandoz/novartis-sandoz-logo.svg',
+		'{cid1}'
+	),
+	(
+		15,
+		5,
+		'Cerumol Ear Wax Removal Drops (12+Yrs)',
+		'https://www.paladin-labs.com/our_products/Cerumol_Insert_En.pdf',
+		'',
+		'https://d1nib7xqjluwtk.cloudfront.net/media/1005/logo.png',
+		'{cid3} and {cid5}'
+	),
+	(
+		15,
+		6,
+		'Murine  Ear Earwax Removal System',
+		'https://www.prestigebrands.com/products/eye-ear-nose-throat/murine-ear-wax-removal/',
+		'',
+		'',
+		'{cid5}'
+	),
+	(
+		15,
+		7,
+		'Auro-Dri Swimmer''s Ears Water Drying Aid',
+		'https://www.mountainside-medical.com/products/auro-dri-ear-water-drying-aid-1-oz#:~:text=Auro-Dri%20Ear%20Water%20Drying%20Aid%2C%201%20oz.%20By,are%20safe%20to%20use%20with%20the%20whole%20family.',
+		'',
+		'https://www.prestigebrands.com/sites/prestigebrands/files/styles/thumbnail/public/2020-11/logo-auro.png?itok=dcHYElbQ',
+		'{cid4}'
+	);

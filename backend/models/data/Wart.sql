@@ -67,35 +67,138 @@ INSERT INTO criteria VALUES
 	(12, 8, 'Plantar', '{qid7}');
 
 INSERT INTO products VALUES 
-	(12, 1, 'Compound W® Nitrofreeze™ (4+Yrs)', '', '', ''), 
-	(12, 2, 'Compound W Freeze Off® Wart Removal (4+Yrs)', '', '', ''), 
-	(12, 3, 'Compound W® Complete Wart Kit', '', '', ''), 
-	(12, 4, 'Compound W® 2-In-1 Treatment Kit', '', '', ''), 
-	(12, 5, 'Compound W Freeze Off® Plantar Wart Removal Kit', '', '', ''), 
-	(12, 6, 'Compound W Freeze Off® Advanced Wart Remover', '', '', ''), 
-	(12, 7, 'Compound W® One Step Strips For Kids (3+Yrs)', '', '', ''), 
-	(12, 8, 'Compound W® One Step Invisible Strips', '', '', ''), 
-	(12, 9, 'Compound W® One Step Plantar Foot Pads', '', '', ''), 
-	(12, 10, 'Compound W® One Step Pads', '', '', ''), 
-	(12, 11, 'Compound W® Fast Acting Wart Removal Gel', '', '', ''), 
-	(12, 12, 'Compound W® Fast Acting Wart Removal Liquid', '', '', ''), 
-	(12, 13, 'Dr. Scholl''s® Dual Action Freeze Away® Wart Remover', '', '', ''), 
-	(12, 14, 'Dr. Scholl''s® Clear Away® Wart Remover', '', '', ''), 
-	(12, 15, 'Dr. Scholl''s® Clear Away® Wart Remover Fast Acting Liquid', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(12, 1, '{cid2} and {cid7} and {cid8}'), 
-	(12, 2, '{cid2} and {cid7} and {cid8}'), 
-	(12, 3, '{cid2} and {cid7} and {cid8}'), 
-	(12, 4, '{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'), 
-	(12, 5, '{cid2} and {cid8}'), 
-	(12, 6, '{cid2} and {cid7} and {cid8}'), 
-	(12, 7, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
-	(12, 8, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
-	(12, 9, '{cid1} and {cid3} and {cid4} and {cid5} and {cid8}'), 
-	(12, 10, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'), 
-	(12, 11, '{cid1} and {cid6} and {cid7} and {cid8}'), 
-	(12, 12, '{cid1} and {cid6} and {cid7} and {cid8}'), 
-	(12, 13, '{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'), 
-	(12, 14, '{cid1} and {cid5} and {cid8}'), 
-	(12, 15, '{cid1} and {cid6} and {cid7} and {cid8}');
+	(
+		12,
+		1,
+		'Compound W  Nitrofreeze  (4+Yrs)',
+		'https://www.compoundw.com/wart-removal-products/nitrous-oxide-wart-removal/compound-w-nitrofreeze',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid2} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		2,
+		'Compound W Freeze Off  Wart Removal (4+Yrs)',
+		'https://www.compoundw.com/wart-removal-products/cryogenic-wart-removal/compound-w-freeze-off-wart-removal',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid2} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		3,
+		'Compound W  Complete Wart Kit',
+		'https://www.compoundw.com/wart-removal-products/cryogenic-wart-removal/compound-w-complete-wart-kit',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid2} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		4,
+		'Compound W  2-In-1 Treatment Kit',
+		'https://www.compoundw.com/wart-removal-products/cryogenic-wart-removal/compound-w-2-in-1-treatment-kit',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		5,
+		'Compound W Freeze Off  Plantar Wart Removal Kit',
+		'https://www.compoundw.com/wart-removal-products/cryogenic-wart-removal/compound-w-freeze-off-plantar-wart-removal-kit',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid2} and {cid8}'
+	),
+	(
+		12,
+		6,
+		'Compound W Freeze Off  Advanced Wart Remover',
+		'https://www.compoundw.com/wart-removal-products/cryogenic-wart-removal/compound-w-freeze-off-advanced-wart-remover',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid2} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		7,
+		'Compound W  One Step Strips For Kids (3+Yrs)',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-one-step-strip-kids',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		8,
+		'Compound W  One Step Invisible Strips',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-one-step-invisible-strips',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		9,
+		'Compound W  One Step Plantar Foot Pads',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-one-step-pads-plantar-warts',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid8}'
+	),
+	(
+		12,
+		10,
+		'Compound W  One Step Pads',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-one-step-pads',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		11,
+		'Compound W  Fast Acting Wart Removal Gel',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-fast-acting-wart-removal-gel',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		12,
+		'Compound W  Fast Acting Wart Removal Liquid',
+		'https://www.compoundw.com/wart-removal-products/salicylic-acid-wart-removal/compound-w-fast-acting-wart-removal-liquid',
+		'',
+		'https://www.compoundw.com/sites/compoundw/themes/custom/compoundw_theme/images/logo.svg',
+		'{cid1} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		13,
+		'Dr. Scholl S  Dual Action Freeze Away  Wart Remover',
+		'https://www.drscholls.ca/en/products/warts/dual-action-freeze-away-wart-remover/',
+		'',
+		'https://www.drscholls.ca/en/wp-content/uploads/sites/3/logo-scholls-ko.png',
+		'{cid1} and {cid2} and {cid6} and {cid7} and {cid8}'
+	),
+	(
+		12,
+		14,
+		'Dr. Scholl''s  Clear Away  Wart Remover',
+		'https://www.drscholls.ca/en/products/warts/clear-away-wart-remover/',
+		'',
+		'https://www.drscholls.ca/en/wp-content/uploads/sites/3/logo-scholls-ko.png',
+		'{cid1} and {cid5} and {cid8}'
+	),
+	(
+		12,
+		15,
+		'Dr. Scholl''S  Clear Away  Wart Remover Fast Acting Liquid',
+		'https://www.drscholls.ca/en/products/warts/clear-away-wart-remover-fast-acting-liquid/',
+		'',
+		'https://www.drscholls.ca/en/wp-content/uploads/sites/3/logo-scholls-ko.png',
+		'{cid1} and {cid6} and {cid7} and {cid8}'
+	);

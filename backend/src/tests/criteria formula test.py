@@ -1,6 +1,7 @@
+import os
 import sqlite3
 
-db = sqlite3.connect("backend/models/db.sqlite3")
+db = sqlite3.connect(os.path.abspath("backend/models/db.sqlite3"))
 
 cursor = db.cursor()
 

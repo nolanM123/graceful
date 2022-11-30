@@ -113,38 +113,147 @@ INSERT INTO criteria VALUES
 	(17, 12, 'Fastest', 'not {qid6}');
 
 INSERT INTO products VALUES 
-	(17, 1, 'Clearblue Pregnancy Test With Weeks Indicator', '', '', ''), 
-	(17, 2, 'Clearblue Ultra Early Pregnancy Test', '', '', ''), 
-	(17, 3, 'Clearblue Rapid Detection Pregnancy Test', '', '', ''), 
-	(17, 4, 'Clearblue Pregancy Test Combo Pack', '', '', ''), 
-	(17, 5, 'Clearblue Advanced Digital Ovulation Test', '', '', ''), 
-	(17, 6, 'Clearblue Digital Ovulation Test', '', '', ''), 
-	(17, 7, 'First Response™ Early Result Pregnancy Test', '', '', ''), 
-	(17, 8, 'First Response™ Triple Check Pregnancy Test Kit', '', '', ''), 
-	(17, 9, 'First Response™ Rapid Result Pregnancy Test', '', '', ''), 
-	(17, 10, 'First Response™ Test And Confirm Pregnancy Test', '', '', ''), 
-	(17, 11, 'First Response™ Digital Pregnancy Test', '', '', ''), 
-	(17, 12, 'First Response™ Ovulation Plus Pregnancy Test', '', '', ''), 
-	(17, 13, 'First Response™ Advanced Digital Ovulation Test', '', '', ''), 
-	(17, 14, 'First Response™ Easy Read Ovulation Test', '', '', ''), 
-	(17, 15, 'First Response', '', '', ''), 
-	(17, 16, 'Pregmate Pregnancy Test Strips', '', '', ''), 
-	(17, 17, 'Pregmate Pregnancy Midstream Tests', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(17, 1, '{cid1} and {cid4} and {cid7} and {cid12}'), 
-	(17, 2, '{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'), 
-	(17, 3, '{cid1} and {cid4} and {cid8} and {cid11}'), 
-	(17, 4, '{cid1} and {cid4} and {cid9} and {cid10}'), 
-	(17, 5, '{cid2} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12}'), 
-	(17, 6, '{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'), 
-	(17, 7, '{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'), 
-	(17, 8, '{cid1} and {cid4} and {cid9} and {cid10}'), 
-	(17, 9, '{cid1} and {cid4} and {cid8} and {cid10} and {cid11}'), 
-	(17, 10, '{cid1} and {cid4} and {cid9} and {cid10} and {cid12}'), 
-	(17, 11, '{cid1} and {cid4} and {cid7} and {cid10} and {cid12}'), 
-	(17, 12, '{cid3} and {cid5} and {cid8} and {cid10} and {cid12}'), 
-	(17, 13, '{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'), 
-	(17, 14, '{cid2} and {cid5} and {cid8} and {cid10} and {cid11} and {cid12}'), 
-	(17, 15, '{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'), 
-	(17, 16, '{cid1} and {cid4} and {cid8} and {cid10} and {cid12}');
+	(
+		17,
+		1,
+		'Clearblue Pregnancy Test With Weeks Indicator',
+		'https://ca-en.clearblue.com/pregnancy-tests/digital-with-weeks-indicator',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid1} and {cid4} and {cid7} and {cid12}'
+	),
+	(
+		17,
+		2,
+		'Clearblue Ultra Early Pregnancy Test',
+		'https://ca-en.clearblue.com/pregnancy-tests/early-detection',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		3,
+		'Clearblue Rapid Detection Pregnancy Test',
+		'https://ca-en.clearblue.com/pregnancy-tests/rapid-detection',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		17,
+		4,
+		'Clearblue Pregancy Test Combo Pack',
+		'https://ca-en.clearblue.com/pregnancy-tests/combo-pack',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid1} and {cid4} and {cid9}'
+	),
+	(
+		17,
+		5,
+		'Clearblue Advanced Digital Ovulation Test',
+		'https://ca-en.clearblue.com/clearblue-ovulation-test-range/clearblue-digital-ovulation-with-dual-hormone-indicator',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid2} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		17,
+		6,
+		'Clearblue Digital Ovulation Test',
+		'https://ca-en.clearblue.com/clearblue-ovulation-test-range/digital',
+		'',
+		'https://ca-en.clearblue.com/themes/custom/cb_front/dist/img/clearblue-logo-registered.png',
+		'{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		17,
+		7,
+		'First Response  Early Result Pregnancy Test',
+		'https://www.firstresponse.com/en/product-listings/early-result-pregnancy-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		8,
+		'First Response  Triple Check Pregnancy Test Kit',
+		'https://www.firstresponse.com/en/product-listings/triple-check-pregnancy-test-kit',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid1} and {cid4} and {cid9} and {cid10}'
+	),
+	(
+		17,
+		9,
+		'First Response  Rapid Result Pregnancy Test',
+		'https://www.firstresponse.com/en/product-listings/rapid-result-pregnancy-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid11}'
+	),
+	(
+		17,
+		10,
+		'First Response  Test And Confirm Pregnancy Test',
+		'https://www.firstresponse.com/en/product-listings/test-and-confirm-pregnancy-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid1} and {cid4} and {cid9} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		11,
+		'First Response  Digital Pregnancy Test',
+		'https://www.firstresponse.com/en/product-listings/digital-pregnancy-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid1} and {cid4} and {cid7} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		12,
+		'First Response  Ovulation Plus Pregnancy Test',
+		'https://www.firstresponse.com/en/product-listings/ovulation-plus-pregnancy-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid3} and {cid5} and {cid8} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		13,
+		'First Response  Advanced Digital Ovulation Test',
+		'https://www.firstresponse.com/en-ca/products/ovulation/daily-digital-ovulation-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid2} and {cid5} and {cid7} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		17,
+		14,
+		'First Response  Easy Read Ovulation Test',
+		'https://www.firstresponse.com/en-ca/products/ovulation/easy-read-ovulation-test',
+		'',
+		'https://www.firstresponse.com/-/media/fr/feature/logo/firstresponse-2021.png?h=130&w=210&hash=647B58EA85D73A62A5005B0086945AEB',
+		'{cid2} and {cid5} and {cid8} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		17,
+		15,
+		'Pregmate Pregnancy Test Strips',
+		'https://pregmate.com/collections/pregnancy-tests/products/pregmate-pregnancy-test-strips-10-25-50-100',
+		'',
+		'https://cdn.shopify.com/s/files/1/0552/4809/t/4/assets/logo.png?v=162037467771563673281615415609',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'
+	),
+	(
+		17,
+		16,
+		'Pregmate Pregnancy Midstream Tests',
+		'https://pregmate.com/collections/pregnancy-tests/products/pregmate-pregnancy-midstream-tests-8-10-25',
+		'',
+		'https://cdn.shopify.com/s/files/1/0552/4809/t/4/assets/logo.png?v=162037467771563673281615415609',
+		'{cid1} and {cid4} and {cid8} and {cid10} and {cid12}'
+	);

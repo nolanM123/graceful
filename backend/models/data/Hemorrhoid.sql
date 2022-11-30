@@ -121,45 +121,183 @@ INSERT INTO criteria VALUES
 	(2, 12, 'Wipe', '{qid7} and not ({qid4} or {qid5} or {qid6} or {qid8})');
 
 INSERT INTO products VALUES 
-	(2, 1, 'Anusol Plus Ointment', '', '', ''), 
-	(2, 2, 'Anusol Multi-Symptom Ointment', '', '', ''), 
-	(2, 3, 'Anusol Cleansing Wipes', '', '', ''), 
-	(2, 4, 'Anusol Plus Suppository', '', '', ''), 
-	(2, 5, 'Anusol Multi-Symptom Suppository', '', '', ''), 
-	(2, 6, 'Preparationh Soothing Relief Cleansing & Cooling Wipes', '', '', ''), 
-	(2, 7, 'Preparationh Soothing Relief Anti-Itch Cream', '', '', ''), 
-	(2, 8, 'Preparationh Rapid Relief With Lidocaine Cream', '', '', ''), 
-	(2, 9, 'Preparartionh Rapid Relief Totables Wipes', '', '', ''), 
-	(2, 10, 'Preparationh Ointment', '', '', ''), 
-	(2, 11, 'Preparationh Multi-Symptom Pain Relief Cream', '', '', ''), 
-	(2, 12, 'Preparationh Cooling Gel', '', '', ''), 
-	(2, 13, 'Preparationh Anti-Itch Cream', '', '', ''), 
-	(2, 14, 'Preparationh Suppositories', '', '', ''), 
-	(2, 15, 'Preparationh Totables', '', '', ''), 
-	(2, 16, 'Preparationh Medicated Wipes', '', '', ''), 
-	(2, 17, 'Preparationh Medicated Wipes For Women', '', '', ''), 
-	(2, 18, 'Tucks® Medicated Cooling Pads', '', '', ''), 
-	(2, 19, 'Hemovel', '', '', ''), 
-	(2, 20, 'Venixxa', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(2, 1, '{cid1} and {cid2} and {cid5} and {cid6} and {cid10}'), 
-	(2, 2, '{cid2} and {cid5} and {cid6} and {cid10}'), 
-	(2, 3, '{cid2} and {cid12}'), 
-	(2, 4, '{cid1} and {cid2} and {cid5} and {cid6} and {cid9}'), 
-	(2, 5, '{cid2} and {cid5} and {cid6} and {cid9}'), 
-	(2, 6, '{cid2} and {cid12}'), 
-	(2, 7, '{cid3} and {cid5} and {cid6} and {cid11}'), 
-	(2, 8, '{cid1} and {cid4} and {cid5} and {cid6} and {cid11}'), 
-	(2, 9, '{cid1} and {cid4} and {cid12}'), 
-	(2, 10, '{cid4} and {cid5} and {cid6} and {cid7} and {cid10}'), 
-	(2, 11, '{cid1} and {cid4} and {cid5} and {cid6} and {cid11}'), 
-	(2, 12, '{cid2} and {cid4} and {cid5} and {cid6} and {cid11}'), 
-	(2, 13, '{cid3} and {cid5} and {cid6} and {cid7} and {cid11}'), 
-	(2, 14, '{cid4} and {cid5} and {cid6} and {cid9}'), 
-	(2, 15, '{cid2} and {cid12}'), 
-	(2, 16, '{cid2} and {cid12}'), 
-	(2, 17, '{cid2} and {cid12}'), 
-	(2, 18, '{cid2}'), 
-	(2, 19, '{cid8}'), 
-	(2, 20, '{cid8}');
+	(
+		2,
+		1,
+		'Anusol Plus Ointment',
+		'https://anusol.ca/en/product/anusol-plus-ointment',
+		'',
+		'https://anusol.ca/wp-content/themes/newcustom/images/anusol_logo.png',
+		'{cid1} and {cid2} and {cid5} and {cid6} and {cid10}'
+	),
+	(
+		2,
+		2,
+		'Anusol Multi-Symptom Ointment',
+		'https://anusol.ca/en/product/anusol-ointment',
+		'',
+		'https://anusol.ca/wp-content/themes/newcustom/images/anusol_logo.png',
+		'{cid2} and {cid5} and {cid6} and {cid10}'
+	),
+	(
+		2,
+		3,
+		'Anusol Cleansing Wipes',
+		'https://anusol.ca/en/product/anusol-cleansing-wipes',
+		'',
+		'https://anusol.ca/wp-content/themes/newcustom/images/anusol_logo.png',
+		'{cid2} and {cid12}'
+	),
+	(
+		2,
+		4,
+		'Anusol Plus Suppository',
+		'https://anusol.ca/en/product/anusol-plus-suppository',
+		'',
+		'https://anusol.ca/wp-content/themes/newcustom/images/anusol_logo.png',
+		'{cid1} and {cid2} and {cid5} and {cid6} and {cid9}'
+	),
+	(
+		2,
+		5,
+		'Anusol Multi-Symptom Suppository',
+		'https://anusol.ca/en/product/anusol-suppository',
+		'',
+		'https://anusol.ca/wp-content/themes/newcustom/images/anusol_logo.png',
+		'{cid2} and {cid5} and {cid6} and {cid9}'
+	),
+	(
+		2,
+		6,
+		'Preparationh Soothing Relief Cleansing & Cooling Wipes',
+		'https://www.preparationh.com/products/soothing-relief-cleansing-cooling-wipes/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=formathttps://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid2} and {cid12}'
+	),
+	(
+		2,
+		7,
+		'Preparationh Soothing Relief Anti-Itch Cream',
+		'https://www.preparationh.com/products/soothing-relief-anti-itch-cream/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid3} and {cid5} and {cid6} and {cid11}'
+	),
+	(
+		2,
+		8,
+		'Preparationh Rapid Relief With Lidocaine Cream',
+		'https://www.preparationh.com/products/rapid-relief-with-lidocaine-cream/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid11}'
+	),
+	(
+		2,
+		9,
+		'Preparartionh Rapid Relief Totables Wipes',
+		'https://www.preparationh.com/products/rapid-relief-wipes/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid1} and {cid4} and {cid6} and {cid12}'
+	),
+	(
+		2,
+		10,
+		'Preparationh Ointment',
+		'https://www.preparationh.com/products/ointment/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid4} and {cid5} and {cid6} and {cid7} and {cid10}'
+	),
+	(
+		2,
+		11,
+		'Preparationh Multi-Symptom Pain Relief Cream',
+		'https://www.preparationh.com/products/cream-with-maximum-strength-pain-relief/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid11}'
+	),
+	(
+		2,
+		12,
+		'Preparationh Cooling Gel',
+		'https://www.preparationh.com/products/cooling-gel/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid2} and {cid4} and {cid5} and {cid6} and {cid11}'
+	),
+	(
+		2,
+		13,
+		'Preparationh Anti-Itch Cream',
+		'https://www.preparationh.com/products/anti-itch-hydrocortisone/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid3} and {cid5} and {cid6} and {cid7} and {cid11}'
+	),
+	(
+		2,
+		14,
+		'Preparationh Suppositories',
+		'https://www.preparationh.com/products/suppositories/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid4} and {cid5} and {cid6} and {cid9}'
+	),
+	(
+		2,
+		15,
+		'Preparationh Totables',
+		'https://www.preparationh.com/products/totables/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid2} and {cid6} and {cid12}'
+	),
+	(
+		2,
+		16,
+		'Preparationh Medicated Wipes',
+		'https://www.preparationh.com/products/medicated-portable-wipes/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid2} and {cid6} and {cid12}'
+	),
+	(
+		2,
+		17,
+		'Preparationh Medicated Wipes For Women',
+		'https://www.preparationh.com/products/preparation-h-medicated-wipes-women/',
+		'',
+		'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-preparationh-v2/en_US/src/icons/Prep_H_Logo.png?auto=format',
+		'{cid2} and {cid6} and {cid12}'
+	),
+	(
+		2,
+		18,
+		'Tucks  Medicated Cooling Pads',
+		'https://www.tucksbrand.com/products/medicated-cooling-pads/',
+		'',
+		'https://tucks.com/wp-content/themes/tucks/dist/assets/images/logo.png',
+		'{cid2}'
+	),
+	(
+		2,
+		19,
+		'Hemovel',
+		'https://hemovel.com/',
+		'',
+		'https://www.hemovel.com/sites/hemovel/files/header/logo_hemovel_white_en.png',
+		'{cid8}'
+	),
+	(
+		2,
+		20,
+		'Venixxa',
+		'https://venixxa.ca/hemorrhoids/',
+		'',
+		'https://venixxa.ca/wp-content/uploads/2019/08/Venixxa-Logo.png',
+		'{cid8}'
+	);

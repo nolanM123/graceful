@@ -35,7 +35,7 @@ function requestJSON(method, url, body = "", async = false) {
 }
 
 function animateProgressBar() {
-    let id = setInterval(frame, 10);
+    let id = setInterval(frame, 4);
     let current = parseFloat(progressBar.style.width);
     let target = questionPointer / questions.length * 100;
     let delta = 0.4;
@@ -92,31 +92,61 @@ function setQuestion() {
             resultContainer.className = "result-container";
             resultsContainer.appendChild(resultContainer);
 
+            let resultSeperator = document.createElement("div");
+            resultSeperator.className = "result-seperator";
+            resultContainer.appendChild(resultSeperator);
+
             let resultIcon = document.createElement("div");
             resultIcon.className = "result-icon";
             resultContainer.appendChild(resultIcon);
 
             let resultImage = document.createElement("img");
             resultImage.className = "result-image";
-            resultImage.src = results[i]["url"];
+            resultImage.src = results[i]["image"];
             resultImage.onerror = function () {resultImage.style.display = "none";}
             resultIcon.appendChild(resultImage);
 
-            let link = document.createElement("a");
-            link.href = results[i]["link"];
-            link.target = "_blank";
-            let resultLink = document.createElement("button");
-            resultLink.id = "result-link"
-            resultLink.className = "result-button";
-            resultLink.innerHTML = "Vist Page";
-            link.appendChild(resultLink);
-            resultContainer.appendChild(link);
+            let url = document.createElement("a");
+            url.href = results[i]["url"];
+            url.target = "_blank";
+            let resultUrl = document.createElement("button");
+            resultUrl.className = "result-url";
+            resultUrl.innerHTML = "Vist Page";
+            url.appendChild(resultUrl);
+            resultContainer.appendChild(url);
 
-            let resultAddButton = document.createElement("button");
-            resultAddButton.id = "result-add";
-            resultAddButton.className = "result-button";
-            resultAddButton.innerHTML = "Add";
-            resultContainer.appendChild(resultAddButton);
+            let resultShare = document.createElement("button");
+            resultShare.className = "result-share";
+            resultShare.innerHTML = "Share";
+            shareContainer = document.createElement("div");
+            shareContainer.className = "share-container";
+
+            twitterUrl = document.createElement("a");
+            twitterUrl.href = `https://twitter.com/share?url=${results[i]["url"]}&text=medihelp suggestion - ${results[i]["name"]} @ `;
+            twitterUrl.target = "_blank";
+            twitterUrl.innerHTML = "Twitter";
+            shareContainer.appendChild(twitterUrl);
+
+            facebookUrl = document.createElement("a");
+            facebookUrl.href = `https://www.facebook.com/sharer/sharer.php?u=${results[i]["url"]}`;
+            facebookUrl.target = "_blank";
+            facebookUrl.innerHTML = "Facebook";
+            shareContainer.appendChild(facebookUrl);
+
+            redditUrl = document.createElement("a");
+            redditUrl.href = `https://reddit.com/submit?url=${results[i]["url"]}&title=medihelp suggestion - ${results[i]["name"]}`;
+            redditUrl.target = "_blank";
+            redditUrl.innerHTML = "Reddit";
+            shareContainer.appendChild(redditUrl);
+
+            emailUrl = document.createElement("a");
+            emailUrl.href = `mailto:?subject=medihelp suggestion - ${results[i]["name"]}&body=${results[i]["url"]}`;
+            emailUrl.target = "_blank";
+            emailUrl.innerHTML = "Email";
+            shareContainer.appendChild(emailUrl);
+
+            resultShare.appendChild(shareContainer);
+            resultContainer.appendChild(resultShare);
 
             let resultTitle = document.createElement("h2");
             resultTitle.className = "result-title";
@@ -127,15 +157,7 @@ function setQuestion() {
             resultDescription.className = "result-description";
             resultDescription.innerHTML = results[i]["description"];
             resultContainer.appendChild(resultDescription);
-
-            let resultSeperator = document.createElement("div");
-            resultSeperator.className = "result-seperator";
-            resultContainer.appendChild(resultSeperator);
         }
-
-        let resultOcclusion = document.createElement("div");
-        resultOcclusion.className = "result-occlusion";
-        resultsContainer.appendChild(resultOcclusion);
     } else {
         let tooltip = `*<span id="tooltip-text">${questions[questionPointer]["description"]}</span>`
         question.innerHTML = questions[questionPointer]["question"] + tooltip;

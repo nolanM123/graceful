@@ -234,67 +234,282 @@ INSERT INTO criteria VALUES
 	(22, 28, 'Soothe', 'not {qid27}');
 
 INSERT INTO products VALUES 
-	(22, 1, 'Boost® Original', '', '', ''), 
-	(22, 2, 'Boost® High Protein', '', '', ''), 
-	(22, 3, 'Boost Plus®', '', '', ''), 
-	(22, 4, 'Boost® Very High Calorie', '', '', ''), 
-	(22, 5, 'Boost Glucose Control®', '', '', ''), 
-	(22, 6, 'Boost Max™ Nutritional Shake', '', '', ''), 
-	(22, 7, 'Boost® Mobility', '', '', ''), 
-	(22, 8, 'Boost® Women', '', '', ''), 
-	(22, 9, 'Boost® Men', '', '', ''), 
-	(22, 10, 'Boost Breeze®', '', '', ''), 
-	(22, 11, 'Boost Glucose Control® High Protein', '', '', ''), 
-	(22, 12, 'Boost® High Protein Drink Mix', '', '', ''), 
-	(22, 13, 'Boost® Pudding', '', '', ''), 
-	(22, 14, 'Boost® Soothe', '', '', ''), 
-	(22, 15, 'Ensure® High Protein', '', '', ''), 
-	(22, 16, 'Ensure® Regular', '', '', ''), 
-	(22, 17, 'Ensure® High Protein [16 G Of Protein]', '', '', ''), 
-	(22, 18, 'Ensure® Protein Max', '', '', ''), 
-	(22, 19, 'Ensure® Plus Calories', '', '', ''), 
-	(22, 20, 'Ensure® Scfos Fibre', '', '', ''), 
-	(22, 21, 'Glucerna® Nutritional Drink', '', '', ''), 
-	(22, 22, 'Glucerna® Bar', '', '', ''), 
-	(22, 23, 'Slimfast Original Shakes', '', '', ''), 
-	(22, 24, 'Slimfast Original Shake Mix', '', '', ''), 
-	(22, 25, 'Slimfast Advanced Nutrition Shakes', '', '', ''), 
-	(22, 26, 'Slimfast Advanced Nutrition Shake Mix', '', '', ''), 
-	(22, 27, 'Slimfast Keto Shake Mix', '', '', ''), 
-	(22, 28, 'Slimfast Keto Shake Bars', '', '', ''), 
-	(22, 29, 'Slimfast Keto Shake Snacks', '', '', ''), 
-	(22, 30, 'Slimfast Bake Shop Bars', '', '', ''), 
-	(22, 31, 'Pediasure Complete®', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-    (22, 1, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 2, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 3, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 4, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid23} and {cid27} and {cid28}'), 
-    (22, 5, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid15} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 6, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 7, '{cid1} and {cid2} and {cid7} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 8, '{cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'), 
-    (22, 9, '{cid1} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 10, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid23} and {cid28}'),
-    (22, 11, '{cid2} and {cid7} and {cid8} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 12, '{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
-    (22, 13, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid26} and {cid27} and {cid28}'),
-    (22, 14, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23}'),
-    (22, 15, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 16, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 17, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 18, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 19, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 20, '{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 21, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 22, '{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
-    (22, 23, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 24, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
-    (22, 25, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'),
-    (22, 26, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
-    (22, 27, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'),
-    (22, 28, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
-    (22, 29, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
-    (22, 30, '{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'),
-    (22, 31, '{cid1} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}');
+	(
+		23,
+		1,
+		'Boost Original',
+		'https://www.boost.com/products/original',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		2,
+		'Boost High Protein',
+		'https://www.boost.com/products/high-protein',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		3,
+		'Boost Plus ',
+		'https://www.boost.com/products/plus',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		4,
+		'Boost Very High Calorie',
+		'https://www.boost.com/products/very-high-calorie',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		5,
+		'Boost Glucose Control ',
+		'https://www.boost.com/products/glucose-control',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid15} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		6,
+		'Boost Max Nutritional Shake',
+		'https://www.boost.com/products/max-protein-drink',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		7,
+		'Boost Mobility',
+		'https://www.boost.com/products/mobility',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid1} and {cid2} and {cid7} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		8,
+		'Boost Women',
+		'https://www.boost.com/products/women',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		9,
+		'Boost Men',
+		'https://www.boost.com/products/men',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid1} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		10,
+		'Boost Breeze ',
+		'https://www.boost.com/products/breeze',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid23} and {cid28}'
+	),
+	(
+		23,
+		11,
+		'Boost Glucose Control  High Protein',
+		'https://www.boost.com/products/glucose-control-high-protein',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		12,
+		'Boost High Protein Drink Mix',
+		'https://www.boost.com/products/high-protein-powder',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid1} and {cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		13,
+		'Boost Pudding',
+		'https://www.boost.com/products/boost-pudding',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid26} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		14,
+		'Boost Soothe',
+		'https://www.boost.com/products/boost-soothe',
+		'',
+		'https://www.boost.com/sites/g/files/lpfasj796/themes/site/boost_us_2022/assets/img/logo.png?var=1.2',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23}'
+	),
+	(
+		23,
+		15,
+		'Ensure High Protein',
+		'https://ensure.ca/en/ensure-high-protein',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		16,
+		'Ensure Regular',
+		'https://ensure.ca/en/ensure-regular',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		17,
+		'Ensure High Protein [16 G Of Protein]',
+		'https://ensure.ca/en/ensure-high-protein-16g',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		18,
+		'Ensure Protein Max',
+		'https://ensure.ca/en/ensure-protein-max',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		19,
+		'Ensure Plus Calories',
+		'https://ensure.ca/en/ensure-plus-calories',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		20,
+		'Ensure Scfos Fibre',
+		'https://ensure.ca/en/ensure-scfos-fibre',
+		'',
+		'https://ensure.ca/static/img/ensure-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		21,
+		'Glucerna Nutritional Drink',
+		'https://glucerna.ca/en/products',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca-glucerna.ca/img/glucerna-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		22,
+		'Glucerna Bar',
+		'https://glucerna.ca/en/products',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca-glucerna.ca/img/glucerna-logo.png',
+		'{cid2} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		23,
+		'Slimfast Original Shakes',
+		'https://slimfast.ca/products/original/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		24,
+		'Slimfast Original Shake Mix',
+		'https://slimfast.ca/products/original/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		25,
+		'Slimfast Advanced Nutrition Shakes',
+		'https://slimfast.ca/products/original/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		26,
+		'Slimfast Advanced Nutrition Shake Mix',
+		'https://slimfast.ca/products/original/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		27,
+		'Slimfast Keto Shake Mix',
+		'https://slimfast.ca/products/keto/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid24} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		28,
+		'Slimfast Keto Shake Bars',
+		'https://slimfast.ca/products/keto/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		29,
+		'Slimfast Keto Shake Snacks',
+		'https://slimfast.ca/products/keto/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid16} and {cid17} and {cid18} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		30,
+		'Slimfast Bake Shop Bars',
+		'https://slimfast.ca/products/bake-shop/',
+		'',
+		'https://slimfastcanada.wpenginepowered.com/wp-content/uploads/2018/03/SlimFast-Logo.png',
+		'{cid2} and {cid6} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid25} and {cid27} and {cid28}'
+	),
+	(
+		23,
+		31,
+		'Pediasure Complete',
+		'https://pediasure.ca/en/products',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/Pediasure.ca/img/PediaSure_Shadow_221x82_tcm135-116251.png',
+		'{cid1} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid18} and {cid19} and {cid20} and {cid21} and {cid22} and {cid23} and {cid27} and {cid28}'
+	);

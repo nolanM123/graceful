@@ -1,7 +1,6 @@
 import json
 import socket
 import asyncio
-import threading
 import mimetypes
 from typing import Any, Callable
 
@@ -20,6 +19,7 @@ class Request:
         # query
         self.query = dict()
         self.url, *queries = self.url.split("?")
+        self.url = self.url.strip("/")
 
         for query in queries:
             self.query = {
@@ -64,7 +64,7 @@ class Response:
         headers: dict[str, str] | None = None,
         cookies: list[dict[str, str | bool]] | None = None,
         content: Any = None,
-    ):
+    ) -> None:
 
         if scheme:
             self.scheme = scheme
@@ -88,18 +88,18 @@ class Response:
         self._cookies = cookies
         self._content = content
 
-    def get(self, header: str, default: Any = None):
+    def get(self, header: str, default: str = None) -> str:
 
-        self._headers.get(header.title(), default)
+        return self._headers.get(header.title(), default)
 
-    def set(self, header: str, value: str, default: bool = False):
+    def set(self, header: str, value: str, default: bool = False) -> None:
 
         header = header.title()
 
         if not default or header not in self._headers:
             self._headers[header] = value
 
-    def get_cookie(self, name: str):
+    def get_cookie(self, name: str) -> dict[str: str | bool] | None:
 
         for cookie in self._cookies:
             if name in cookie:
@@ -116,7 +116,7 @@ class Response:
         secure: str = "",
         httponly: bool = False,
         samesite: str = "",
-    ):
+    ) -> None:
 
         self._cookies.append(
             {
@@ -131,20 +131,20 @@ class Response:
             }
         )
 
-    def render(self, path: str):
+    def render(self, path: str) -> bool:
         try:
+            mimetype, charset = mimetypes.guess_type(path)
             with open(path, "rb") as document:
-                mimetype, charset = mimetypes.guess_type(path)
-                self.set(
-                    "content-type",
-                    "{}; charset={}".format(mimetype, charset) if charset else mimetype,
-                )
                 self.content = document.read()
+                self.set("content-type", "{}; charset={}".format(mimetype, charset))
+                self.set("content-length", len(self.content))
         
         except FileNotFoundError:
-            return
+            return False
+        
+        return True
 
-    def encode(self, encoding: str = "UTF-8", errors: str = "strict"):
+    def encode(self, encoding: str = "UTF-8", errors: str = "strict") -> bytes:
 
         # status line
         status_line = "{} {} {}\r\n".format(
@@ -161,12 +161,6 @@ class Response:
 
         # headers
         headers = ""
-
-        if "Content-Type" not in self._headers:
-            headers += "Content-Type: text/plain\r\n"
-
-        if "Content-Length" not in self._headers:
-            headers += "Content-Length: {}\r\n".format(len(content))
 
         for key, item in self._headers.items():
             headers += "{}: {}\r\n".format(
@@ -200,17 +194,16 @@ class Response:
         return status_line + headers + cookies + b"\r\n" + content
 
     @property
-    def content(self):
+    def content(self) -> str | bytes | tuple | list | dict:
 
         return self._content
 
     @content.setter
-    def content(self, content):
-
+    def content(self, content) -> None:
         if not isinstance(content, (str, bytes, tuple, list, dict)):
             return
 
-        if isinstance(content, (str, bytes)):
+        elif isinstance(content, (str, bytes)):
             self.set("content-type", "text/plain", True)
 
         elif isinstance(content, (tuple, list, dict)):
@@ -218,6 +211,7 @@ class Response:
             self.set("content-type", "application/json", True)
 
         self._content = content
+        self.set("content-length", len(self.content))
 
 
 class Graceful:
@@ -225,7 +219,7 @@ class Graceful:
     BUFSIZE = 2**10
     TIMEOUT = 120.0
 
-    def __init__(self, host: str = "localhost", port: int = 8080):
+    def __init__(self, host: str = "localhost", port: int = 8080) -> None:
 
         self.live = True
         self.host = host
@@ -237,9 +231,10 @@ class Graceful:
 
         self.apps = dict()
 
-        threading.Thread(target=asyncio.run, args=(self._server(),)).start()
+    def run(self) -> None:
+        asyncio.run(self._server())
 
-    async def _server(self):
+    async def _server(self) -> None:
 
         loop = asyncio.get_event_loop()
 
@@ -248,7 +243,7 @@ class Graceful:
 
         self.server.close()
 
-    async def _client(self, conn: socket.socket, addr: tuple[str, int]):
+    async def _client(self, conn: socket.socket, addr: tuple[str, int]) -> None:
 
         loop = asyncio.get_event_loop()
 
@@ -263,13 +258,15 @@ class Graceful:
                 if not request:
                     raise TimeoutError
 
-                await loop.sock_sendall(conn, self._handler(Request(request)).encode())
+                response = loop.create_task(self._handler(Request(request)))
+                await loop.sock_sendall(conn, (await response).encode())
 
         except TimeoutError:
             conn.close()
 
-    def _handler(self, request: Request):
+    async def _handler(self, request: Request) -> Response:
 
+        loop = asyncio.get_event_loop()
         response: Response = Response()
 
         for url, app in self.apps[request.method].items():
@@ -297,6 +294,8 @@ class Graceful:
                 elif app_dir != req_dir:
                     app_url.append("__failed__")
 
+                    break
+
             # run application
             if not app_url and not req_url:
                 pool = {
@@ -320,20 +319,24 @@ class Graceful:
                     pool.get(var)
                     for var in app.__code__.co_varnames[: app.__code__.co_argcount]
                 )
-                response.content = app(*params)
+                response.content = (
+                    await loop.create_task(app(*params))
+                    if asyncio.iscoroutinefunction(app)
+                    else app(*params)
+                )
 
                 break
 
         return response
 
-    def route(self, method: str, url: str):
+    def route(self, method: str, url: str) -> callable:
 
         method = method.upper()
 
         if method not in self.apps:
             self.apps[method] = dict()
 
-        def inner(app: Callable[..., Any]):
+        def application(app: Callable[..., Any]):
             self.apps[method][url] = app
 
-        return inner
+        return application

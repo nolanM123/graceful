@@ -202,73 +202,309 @@ INSERT INTO criteria VALUES
 	(21, 24, 'Organic', 'not {qid24}');
 
 INSERT INTO products VALUES 
-	(21, 1, 'Similac Pro-Advance® Step 1', '', '', ''), 
-	(21, 2, 'Similac® Simply Nurture', '', '', ''), 
-	(21, 3, 'Similac® Advance® Step 1', '', '', ''), 
-	(21, 4, 'Similac® Step 1', '', '', ''), 
-	(21, 5, 'Similac® Lower Iron', '', '', ''), 
-	(21, 6, 'Similac Total Comfort', '', '', ''), 
-	(21, 7, 'Similac® Sensitive® Lactose Sensitivity', '', '', ''), 
-	(21, 8, 'Similac® Alimentum®', '', '', ''), 
-	(21, 9, 'Similac® Isomil® With Dha', '', '', ''), 
-	(21, 10, 'Similac® Neosure®', '', '', ''), 
-	(21, 11, 'Similac Pro-Advance® Step 2', '', '', ''), 
-	(21, 12, 'Similac® Advance® Step 2', '', '', ''), 
-	(21, 13, 'Similac® Step 2', '', '', ''), 
-	(21, 14, 'Go & Grow By Similactm Step 3', '', '', ''), 
-	(21, 15, 'Enfamil A+® Infant Formula', '', '', ''), 
-	(21, 16, 'Enfamil A+ Gentlease', '', '', ''), 
-	(21, 17, 'Enfamil A+ 2 Infant Formula', '', '', ''), 
-	(21, 18, 'Enfagrow A+ Toddler Drink', '', '', ''), 
-	(21, 19, 'Enfamil A+ For Frequent Spit Up', '', '', ''), 
-	(21, 20, 'Enfamil A+ Soy', '', '', ''), 
-	(21, 21, 'Nutramigen® A+® With Lgg®', '', '', ''), 
-	(21, 22, 'Puramino A+ ®', '', '', ''), 
-	(21, 23, 'Puramino A+ Junior', '', '', ''), 
-	(21, 24, 'Pregestimil A+', '', '', ''), 
-	(21, 25, 'Enfamil A+ Enfacare', '', '', ''), 
-	(21, 26, 'Enfamil Infant Formula', '', '', ''), 
-	(21, 27, 'Enfamil Lower Iron Infant Formula', '', '', ''), 
-	(21, 28, 'Enfamil 2 Infant Formula', '', '', ''), 
-	(21, 29, 'Good Start Soothe Baby Formula', '', '', ''), 
-	(21, 30, 'Stage 1 Baby Formula | Nestlé® Good Start®', '', '', ''), 
-	(21, 31, 'Stage 2 Baby Formula | Nestle Good Start', '', '', ''), 
-	(21, 32, 'Nestle® Good Grow Stage 3 Nutritional Toddler Drink', '', '', ''), 
-	(21, 33, 'Organic Baby Formula | Good Start', '', '', ''), 
-	(21, 34, 'Lactose Free Formula | Good Start Alsoy Baby Formula', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-    (21, 1, '{cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'),
-    (21, 2, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 3, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'),    
-    (21, 4, '{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),     
-    (21, 5, '{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 6, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 7, '{cid1} and {cid2} and {cid3} and {cid5} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'),    
-    (21, 8, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'),    
-    (21, 9, '{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),     
-    (21, 10, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 11, '{cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid21} and {cid23} and {cid24}'),
-    (21, 12, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid22} and {cid23} and {cid24}'),
-    (21, 13, '{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid23} and {cid24}'),
-    (21, 14, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid14} and {cid15} and {cid19} and {cid20} and {cid21} and {cid23} and {cid24}'),
-    (21, 15, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'),
-    (21, 16, '{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'),
-    (21, 17, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid18} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'),
-    (21, 18, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid19} and {cid20} and {cid21} and {cid24}'),
-    (21, 19, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 20, '{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid22} and {cid23} and {cid24}'),
-    (21, 21, '{cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),    
-    (21, 22, '{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 23, '{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid19} and {cid20} and {cid23} and {cid24}'),
-    (21, 24, '{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),    
-    (21, 25, '{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'),
-    (21, 26, '{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'),
-    (21, 27, '{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'),
-    (21, 28, '{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid18} and {cid20} and {cid23} and {cid24}'),
-    (21, 29, '{cid3} and {cid5} and {cid6} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'),
-    (21, 30, '{cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'),
-    (21, 31, '{cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid15} and {cid18} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'),
-    (21, 32, '{cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid14} and {cid15} and {cid19} and {cid20} and {cid24}'),
-    (21, 33, '{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20}'),
-    (21, 34, '{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid24}');
+	(
+		22,
+		1,
+		'Similac Pro-Advance  Step 1',
+		'https://similac.ca/en/baby-formula/pro-advance-step-1',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		2,
+		'Similac  Simply Nurture',
+		'https://similac.ca/en/products/similac-simply-nurture',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		3,
+		'Similac  Advance  Step 1',
+		'https://similac.ca/en/products/similac-advance-step-1',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		4,
+		'Similac  Step 1',
+		'https://similac.ca/en/products/similac-iron-fortified',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		5,
+		'Similac  Lower Iron',
+		'https://similac.ca/en/products/similac-lower-iron',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		6,
+		'Similac Total Comfort',
+		'https://similac.ca/en/products/similac-total-comfort',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		7,
+		'Similac  Sensitive  Lactose Sensitivity',
+		'https://similac.ca/en/products/similac-sensitive',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		8,
+		'Similac  Alimentum ',
+		'https://similac.ca/en/products/similac-alimentum',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		9,
+		'Similac  Isomil  With Dha',
+		'https://similac.ca/en/products/similac-isomil-with-dha',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		10,
+		'Similac  Neosure ',
+		'https://similac.ca/en/products/similac-neosure',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		11,
+		'Similac Pro-Advance  Step 2',
+		'https://similac.ca/en/baby-formula/pro-advance-step-2',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		12,
+		'Similac  Advance  Step 2',
+		'https://similac.ca/en/products/similac-advance-step-2',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		13,
+		'Similac  Step 2',
+		'https://similac.ca/en/products/similac-step-2',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid2} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid18} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		14,
+		'Go & Grow By Similactm Step 3',
+		'https://similac.ca/en/products/similac-go-grow',
+		'',
+		'https://static.abbottnutrition.com/cms-prod/ca.similac.ca2017/img/similac-dt-logo.jpg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid12} and {cid14} and {cid15} and {cid19} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		15,
+		'Enfamil A+  Infant Formula',
+		'https://www.enfamil.ca/products/enfamil-a',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		16,
+		'Enfamil A+ Gentlease',
+		'https://www.enfamil.ca/products/enfamil-gentlease',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		17,
+		'Enfamil A+ 2 Infant Formula',
+		'https://www.enfamil.ca/products/enfamil-a-2',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid18} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		18,
+		'Enfagrow A+ Toddler Drink',
+		'https://www.enfamil.ca/products/enfagrow-a',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid19} and {cid20} and {cid21} and {cid24}'
+	),
+	(
+		22,
+		19,
+		'Enfamil A+ For Frequent Spit Up',
+		'https://www.enfamil.ca/products/enfamil-a-for-feeding-babies-who-frequently-spit-up',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		20,
+		'Enfamil A+ Soy',
+		'https://www.enfamil.ca/products/enfamil-a-soy',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		21,
+		'Nutramigen  A+  With Lgg ',
+		'https://www.enfamil.ca/products/nutramigen-a-with-lgg',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		22,
+		'Puramino A+',
+		'https://www.enfamil.ca/products/puramino-a',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		23,
+		'Puramino A+ Junior',
+		'https://www.enfamil.ca/products/puramino-a-junior',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid19} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		24,
+		'Pregestimil A+',
+		'https://www.enfamil.ca/products/pregestimil-a',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid10} and {cid11} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		25,
+		'Enfamil A+ Enfacare',
+		'https://www.enfamil.ca/products/enfamil-a-enfacare',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid13} and {cid14} and {cid16} and {cid17} and {cid20} and {cid21} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		26,
+		'Enfamil Infant Formula',
+		'https://www.enfamil.ca/products/enfamil',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		27,
+		'Enfamil Lower Iron Infant Formula',
+		'https://www.enfamil.ca/products/enfamil-lower-iron',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		28,
+		'Enfamil 2 Infant Formula',
+		'https://www.enfamil.ca/products/enfamil-2',
+		'',
+		'https://www.enfamil.ca/sites/canada/files/logo_v3.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid11} and {cid12} and {cid14} and {cid15} and {cid18} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		29,
+		'Good Start Soothe Baby Formula',
+		'https://www.nestlebaby.ca/en/good-start-soothe',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid3} and {cid5} and {cid6} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		30,
+		'Stage 1 Baby Formula | Nestl Good Start ',
+		'https://www.nestlebaby.ca/en/nestle-good-start-stage-1-baby-formula',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid15} and {cid16} and {cid17} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		31,
+		'Stage 2 Baby Formula | Nestle Good Start',
+		'https://www.nestlebaby.ca/en/good-start-stage-2-baby-formula',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid15} and {cid18} and {cid20} and {cid21} and {cid22} and {cid23} and {cid24}'
+	),
+	(
+		22,
+		32,
+		'Nestle  Good Grow Stage 3 Nutritional Toddler Drink',
+		'https://www.nestlebaby.ca/en/good-grow-toddler-powder-milk-flavour',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12} and {cid14} and {cid15} and {cid19} and {cid20} and {cid24}'
+	),
+	(
+		22,
+		33,
+		'Organic Baby Formula | Good Start',
+		'https://www.nestlebaby.ca/en/nestle-good-start-organic-baby-formula',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid1} and {cid3} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20}'
+	),
+	(
+		22,
+		34,
+		'Lactose Free Formula | Good Start Alsoy Baby Formula',
+		'https://www.nestlebaby.ca/en/good-start-alsoy',
+		'',
+		'https://www.nestlebaby.ca/themes/custom/babyme_canada/logo.svg',
+		'{cid1} and {cid3} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13} and {cid14} and {cid15} and {cid16} and {cid17} and {cid20} and {cid24}'
+	);

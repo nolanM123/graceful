@@ -120,15 +120,48 @@ INSERT INTO criteria VALUES
 	(19, 12, 'No Conditioner', '{qid14}');
 
 INSERT INTO products VALUES 
-	(19, 1, 'Nix® Crème Rinse', '', '', ''), 
-	(19, 2, 'Nix Ultra® Shampoo', '', '', ''), 
-	(19, 3, 'Resultz®', '', '', ''), 
-	(19, 4, 'Nyda ®', '', '', ''), 
-	(19, 5, 'R&C® 2In1 Shampoo + Conditioner', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-	(19, 1, '{cid2} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12}'), 
-	(19, 2, '{cid3} and {cid4} and {cid6} and {cid8} and {cid10}'), 
-	(19, 3, '{cid1} and {cid3} and {cid6} and {cid8} and {cid11}'), 
-	(19, 4, '{cid1} and {cid3} and {cid6} and {cid9} and {cid10}'), 
-	(19, 5, '{cid2} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12}');
+	(
+		20,
+		1,
+		'Nix  Cr me Rinse',
+		'https://www.nixlice.com/lice-products/nix-permethrin-cream-rinse',
+		'',
+		'https://www.nixlice.com/sites/nix/themes/custom/nix_theme/images/nix-logo.png',
+		'{cid2} and {cid5} and {cid7} and {cid8} and {cid10} and {cid12}'
+	),
+	(
+		20,
+		2,
+		'Nix Ultra  Shampoo',
+		'https://www.nixlice.com/lice-products/nix-ultra-shampoo',
+		'',
+		'https://www.nixlice.com/sites/nix/themes/custom/nix_theme/images/nix-logo.png',
+		'{cid3} and {cid4} and {cid6} and {cid8} and {cid10}'
+	),
+	(
+		20,
+		3,
+		'Resultz ',
+		'https://resultz.ca/what-is-resultz/',
+		'',
+		'',
+		'{cid1} and {cid3} and {cid6} and {cid8} and {cid11}'
+	),
+	(
+		20,
+		4,
+		'Nyda  ',
+		'https://www.nyda.ca/en/',
+		'',
+		'https://www.nyda.ca/wp-content/themes/reptile/static/img/logo_nyda-en.jpg',
+		'{cid1} and {cid3} and {cid6} and {cid9} and {cid10}'
+	),
+	(
+		20,
+		5,
+		'R&C  2In1 Shampoo + Conditioner',
+		'https://www.treatlice.ca/sites/lice/files/uploads/kaitlin%20obrien%20-%20R&C%20cream%20rinse.pdf',
+		'',
+		'https://www.treatlice.ca/sites/lice/themes/custom/lice_theme/images/lice-logo.png',
+		'{cid2} and {cid6} and {cid7} and {cid8} and {cid10} and {cid12}'
+	);

@@ -36,6 +36,27 @@ body {
   font-family: Tahoma;
 }
 
+button {
+  border: 1px solid white;
+  border-radius: 99em;
+  aspect-ratio: 5/2;
+
+  background-color: transparent;
+
+  font-size: var(--small);
+  font-family: var(--default-font);
+  font-weight: bold;
+  color: white;
+}
+
+button:hover {
+  background-color: var(--tertiary);
+}
+
+button:active {
+  background-color: var(--secondary);
+}
+
 #main-container {
   position: absolute;
   top: 50%;
@@ -223,15 +244,16 @@ body {
 }
 
 #question #tooltip-text {
-  visibility: hidden;
-
   position: absolute;
   top: 100%;
   left: 50%;
 
-  transform: translateX(-50%) translateY(0.6em);
+  visibility: hidden;
+
+  transform: translateX(-50%);
 
   border-radius: 0.2em;
+  box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.2);
   width: max-content;
   max-width: 60%;
   padding: 1em 2em;
@@ -256,25 +278,7 @@ body {
 
   transform: translateX(-125%);
 
-  border: 1px solid white;
-  border-radius: 99em;
-  aspect-ratio: 5/2;
   width: 16%;
-
-  background-color: transparent;
-
-  font-size: var(--small);
-  font-family: var(--default-font);
-  font-weight: bold;
-  color: white;
-}
-
-#true-button:hover {
-  background-color: var(--tertiary);
-}
-
-#true-button:active {
-  background-color: var(--secondary);
 }
 
 #false-button {
@@ -284,25 +288,7 @@ body {
 
   transform: translateX(25%);
 
-  border: 1px solid white;
-  border-radius: 99em;
-  aspect-ratio: 5/2;
   width: 16%;
-
-  background-color: transparent;
-
-  font-size: var(--small);
-  font-family: var(--default-font);
-  font-weight: bold;
-  color: white;
-}
-
-#false-button:hover {
-  background-color: var(--tertiary);
-}
-
-#false-button:active {
-  background-color: var(--secondary);
 }
 
 #results-container {
@@ -318,17 +304,6 @@ body {
   height: 84%;
 
   background: linear-gradient(320deg, var(--primary) 50%, var(--tertiary) 100%);
-}
-
-.result-occlusion {
-  position: fixed;
-  bottom: 0%;
-  left: 50%;
-
-  width: 50%;
-  height: 16%;
-
-  background-color: var(--primary);
 }
 
 .result-container {
@@ -366,40 +341,67 @@ body {
   height: auto;
 }
 
-.result-button {
+.result-url {
   position: absolute;
   left: 12%;
 
   transform: translateX(-50%);
 
-  border: 1px solid var(--flat);
-  border-radius: 99em;
-  aspect-ratio: 3;
+  margin-top: 24%;
+  aspect-ratio: 13/4;
   width: 16%;
 
-  background-color: transparent;
+  font-size: var(--tiny);
+}
+
+.result-share {
+  position: absolute;
+  left: 12%;
+
+  transform: translateX(-50%);
+
+  margin-top: 30%;
+  aspect-ratio: 13/4;
+  width: 16%;
+
+  font-size: var(--tiny);
+}
+
+.share-container {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+
+  transform: translateX(-50%);
+
+  border-radius: 0.2em;
+  box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.2);
+  padding: 0.5em 3em;
+
+  background-color: var(--flat);
+}
+
+.share-container a {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 
   text-decoration: none;
   font-size: var(--tiny);
   font-family: var(--default-font);
   font-weight: bold;
-  color: white;
+  color: var(--tertiary);
 }
 
-.result-button:hover {
-  background-color: var(--tertiary);
+.share-container a:hover {
+  color: var(--primary);
 }
 
-.result-button:active {
-  background-color: var(--secondary);
-}
-
-#result-link {
-  margin-top: 24%;
-}
-
-#result-add {
-  margin-top: 32%;
+.result-share:hover .share-container {
+  visibility: visible;
 }
 
 .result-title {
@@ -432,6 +434,17 @@ body {
   height: 0.1em;
 
   background-color: var(--tertiary);
+}
+
+#back-button-occlusion {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+
+  width: 50%;
+  height: 16%;
+
+  background-color: var(--primary);
 }
 
 #back-button {
@@ -502,6 +515,13 @@ body {
 
   .result-container {
     min-height: 34vw;
+  }
+
+  #back-button-occlusion {
+    left: 0%;
+
+    width: 100%;
+    height: 8%;
   }
 
   #back-button {

@@ -114,47 +114,192 @@ INSERT INTO criteria VALUES
 	(3, 13, 'Portable', 'not {qid13}');
 
 INSERT INTO products VALUES 
-	(3, 1, 'Contour Next', '', '', ''), 
-	(3, 2, 'Contour Next One', '', '', ''), 
-	(3, 3, 'Contour Next Link', '', '', ''), 
-	(3, 4, 'Contour Next Ez', '', '', ''), 
-	(3, 5, 'Ez Health Oracle', '', '', ''), 
-	(3, 6, 'Bg Star', '', '', ''), 
-	(3, 7, 'Accu-Chek Guide', '', '', ''), 
-	(3, 8, 'Accu-Chek Aviva', '', '', ''), 
-	(3, 9, 'Accu-Chek Aviva Connect', '', '', ''), 
-	(3, 10, 'Accu-Chek Aviva Nano', '', '', ''), 
-	(3, 11, 'Dexcom G6 Cgm', '', '', ''), 
-	(3, 12, 'Onetouch Verio Reflect™', '', '', ''), 
-	(3, 13, 'Onetouch Verio Flex®', '', '', ''), 
-	(3, 14, 'Onetouch Verio®', '', '', ''), 
-	(3, 15, 'Onetouch Verio® Iq', '', '', ''), 
-	(3, 16, 'Onetouch Ultramini®', '', '', ''), 
-	(3, 17, 'Onetouch Ultra®2', '', '', ''), 
-	(3, 18, 'Freestyle Libre', '', '', ''), 
-	(3, 19, 'Freestyle Precision Neo', '', '', ''), 
-	(3, 20, 'Freestyle Lite', '', '', ''), 
-	(3, 21, 'Freestyle Insulix', '', '', '');
-
-INSERT INTO productCriteria VALUES 
-    (3, 1, '{cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 2, '{cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 3, '{cid2} and {cid3} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 4, '{cid3} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 5, '{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid11} and {cid12} and {cid13}'), 
-    (3, 6, '{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 7, '{cid1} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 8, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 9, '{cid1} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 10, '{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 11, '{cid1} and {cid2} and {cid3} and {cid4} and {cid9} and {cid10} and {cid12} and {cid13}'), 
-    (3, 12, '{cid1} and {cid4} and {cid5} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'), 
-    (3, 13, '{cid1} and {cid4} and {cid5} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'),
-    (3, 14, '{cid1} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'),
-    (3, 15, '{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'),
-    (3, 16, '{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12}'),
-    (3, 17, '{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'),
-    (3, 18, '{cid1} and {cid2} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13}'),
-    (3, 19, '{cid1} and {cid2} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid11} and {cid12} and {cid13}'),
-    (3, 20, '{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12}'),
-    (3, 21, '{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid13}');
+	(
+		3,
+		1,
+		'Contour Next',
+		'https://www.ascensiadiabetes.ca/products/contour-next/',
+		'',
+		'https://www.ascensiadiabetes.ca/globalassets/refactored-navbar/contour_logo_blue.png',
+		'{cid3} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		2,
+		'Contour Next One',
+		'https://www.contournextone.ca/',
+		'',
+		'https://www.ascensiadiabetes.ca/globalassets/refactored-navbar/contour_logo_blue.png',
+		'{cid2} and {cid3} and {cid4} and {cid5} and {cid6} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		3,
+		'Contour Next Link',
+		'https://www.ascensiadiabetes.ca/products/contour-next-link/',
+		'',
+		'https://www.ascensiadiabetes.ca/globalassets/refactored-navbar/contour_logo_blue.png',
+		'{cid2} and {cid3} and {cid6} and {cid7} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		4,
+		'Contour Next Ez',
+		'https://www.ascensiadiabetes.ca/products/contour-next-ez/',
+		'',
+		'https://www.ascensiadiabetes.ca/globalassets/refactored-navbar/contour_logo_blue.png',
+		'{cid3} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		5,
+		'Ez Health Oracle',
+		'https://www.oraclediabetes.com/products.html',
+		'',
+		'https://www.oraclediabetes.com/images/logo.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		6,
+		'Bg Star',
+		'https://www.diabetes.co.uk/blood-glucose-meters/sanofi-aventis-bgstar.html',
+		'',
+		'',
+		'{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		7,
+		'Accu-Chek Guide',
+		'https://www.accu-chek.ca/en/meter-systems/guide',
+		'',
+		'https://www.accu-chek.ca/sites/g/files/iut106/f/accu-chek-logo-header_1.png',
+		'{cid1} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		8,
+		'Accu-Chek Aviva',
+		'https://www.accu-chek.ca/en/meter-systems/aviva',
+		'',
+		'https://www.accu-chek.ca/sites/g/files/iut106/f/accu-chek-logo-header_1.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		9,
+		'Accu-Chek Aviva Connect',
+		'https://www.accu-chek.ca/en/meter-systems/aviva-connect',
+		'',
+		'https://www.accu-chek.ca/sites/g/files/iut106/f/accu-chek-logo-header_1.png',
+		'{cid1} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		10,
+		'Accu-Chek Aviva Nano',
+		'https://www.accu-chek.ca/en/meter-systems/aviva-nano',
+		'',
+		'https://www.accu-chek.ca/sites/g/files/iut106/f/accu-chek-logo-header_1.png',
+		'{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		11,
+		'Dexcom G6 Cgm',
+		'https://www.dexcom.com/en-CA',
+		'',
+		'https://www.dexcom.com/sites/all/themes/dexcom/images/logo/dexcom-category-logo-green.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid9} and {cid10} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		12,
+		'Onetouch Verio Reflect ',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-verio-reflect',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid4} and {cid5} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		13,
+		'Onetouch Verio Flex ',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-verio-flex',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid4} and {cid5} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		14,
+		'Onetouch Verio ',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-verio',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		15,
+		'Onetouch Verio  Iq',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-verio-iq',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		16,
+		'Onetouch Ultramini ',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-ultramini',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		3,
+		17,
+		'Onetouch Ultra 2',
+		'https://www.onetouch.ca/products/glucose-meters/onetouch-ultra2',
+		'',
+		'https://www.onetouch.ca/sites/onetouch_ca/files/2021-05/onetouch-logo_0.png',
+		'{cid1} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		18,
+		'Freestyle Libre',
+		'https://www.freestyle.abbott/ca/en/products/libre.html',
+		'',
+		'https://www.freestyle.abbott/content/dam/adc/freestyle/countries/ca-en/images/logo-images/FreeStyle-logo.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid8} and {cid9} and {cid10} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		19,
+		'Freestyle Precision Neo',
+		'https://www.freestyle.abbott/ca/en/products/precision_neo.html',
+		'',
+		'https://www.freestyle.abbott/content/dam/adc/freestyle/countries/ca-en/images/logo-images/FreeStyle-logo.png',
+		'{cid1} and {cid2} and {cid3} and {cid4} and {cid7} and {cid8} and {cid9} and {cid11} and {cid12} and {cid13}'
+	),
+	(
+		3,
+		20,
+		'Freestyle Lite',
+		'https://www.freestyle.abbott/ca/en/products/lite.html',
+		'',
+		'https://www.freestyle.abbott/content/dam/adc/freestyle/countries/ca-en/images/logo-images/FreeStyle-logo.png',
+		'{cid1} and {cid3} and {cid4} and {cid6} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid12}'
+	),
+	(
+		3,
+		21,
+		'Freestyle Insulix',
+		'https://www.freestyle.abbott/ca/en/products/insulinx.html',
+		'',
+		'https://www.freestyle.abbott/content/dam/adc/freestyle/countries/ca-en/images/logo-images/FreeStyle-logo.png',
+		'{cid1} and {cid3} and {cid4} and {cid5} and {cid7} and {cid8} and {cid9} and {cid10} and {cid11} and {cid13}'
+	);
