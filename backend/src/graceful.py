@@ -1,4 +1,5 @@
 import os
+import json
 import socket
 import asyncio
 import mimetypes
@@ -201,7 +202,7 @@ class Response:
 
         # response
         return (
-            "{}{}{}\r\n{}".format(status_line, headers, cookies).encode(
+            "{}{}{}\r\n".format(status_line, headers, cookies).encode(
                 encoding, errors
             )
             + content
@@ -213,7 +214,7 @@ class Response:
         return self._content
 
     @content.setter
-    def content(self, content: str | bytes | list | dict) -> None:
+    def content(self, content: any) -> None:
         if not isinstance(content, (str, bytes, list, dict)):
             return
 
@@ -221,8 +222,7 @@ class Response:
             self.set("content-type", "text/plain", True)
 
         elif isinstance(content, (list, dict)):
-            content = str(content).replace('""')
-            print(content)
+            content = json.dumps(content)
             self.set("content-type", "application/json", True)
 
         self._content = content
@@ -351,7 +351,7 @@ class Graceful:
         if method not in self.apps:
             self.apps[method] = dict()
 
-        def application(app: callable[..., any]):
+        def application(app: callable):
             self.apps[method][url] = app
 
         return application
