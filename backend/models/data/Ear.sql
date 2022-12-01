@@ -76,7 +76,7 @@ INSERT INTO products VALUES
 		1,
 		'Polysporin  Plus Pain Relief Ear Drops (6+Yrs)',
 		'https://www.polysporin.ca/products/pain-relief-ear-drops',
-		'',
+		'Antibiotic ear drops plus pain reliever for treatment of infections of the external ear, such as swimmer''s ear, and relief of associated earaches.',
 		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
 		'{cid1} and {cid2}'
 	),
@@ -85,7 +85,7 @@ INSERT INTO products VALUES
 		2,
 		'Polysporin  Eye & Ear Drops (6+Yrs)',
 		'https://www.polysporin.ca/products/antibiotic-eye-drops',
-		'',
+		'Sterile antibiotic treatment for external infections of the eye/ear, such as conjunctivitis, or “pink eye”',
 		'https://www.polysporin.ca/sites/polysporin_ca/files/polysporin_logo_0.png',
 		'{cid1}'
 	),
@@ -130,7 +130,7 @@ INSERT INTO products VALUES
 		7,
 		'Auro-Dri Swimmer''s Ears Water Drying Aid',
 		'https://www.mountainside-medical.com/products/auro-dri-ear-water-drying-aid-1-oz#:~:text=Auro-Dri%20Ear%20Water%20Drying%20Aid%2C%201%20oz.%20By,are%20safe%20to%20use%20with%20the%20whole%20family.',
-		'',
+		'Auro-Dri Ear Drying Aid is a quick, easy, and effective method for drying out the ears and alleviating the pain and discomfort associated with water-clogged ears. By drying out excess moisture that has been trapped in the ears, these drops not only relieve pain and discomfort in the ear, but they also help prevent the development of swimmers ear infections. Featuring a safe and effective formula, these drops are safe to use with the whole family.',
 		'https://www.prestigebrands.com/sites/prestigebrands/files/styles/thumbnail/public/2020-11/logo-auro.png?itok=dcHYElbQ',
 		'{cid4}'
 	);

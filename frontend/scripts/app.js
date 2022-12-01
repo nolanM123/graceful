@@ -155,7 +155,8 @@ function setQuestion() {
 
             let resultDescription = document.createElement("p");
             resultDescription.className = "result-description";
-            resultDescription.innerHTML = results[i]["description"];
+            if (results[i]["description"]) resultDescription.innerHTML = results[i]["description"];
+            else resultDescription.innerHTML = "No Description.";
             resultContainer.appendChild(resultDescription);
         }
     } else {
