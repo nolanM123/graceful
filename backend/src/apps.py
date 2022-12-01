@@ -11,7 +11,7 @@ async def ailments():
 
     result = []
 
-    db = await aiosqlite.connect("backend/models/db.sqlite3")
+    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
     cursor = await db.cursor()
 
     await cursor.execute("SELECT aid, name, disclaimer FROM ailments;")
@@ -35,7 +35,7 @@ async def questions(aid):
 
     result = list()
 
-    db = await aiosqlite.connect(os.path.abspath("backend/models/db.sqlite3"))
+    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
     cursor = await db.cursor()
 
     await cursor.execute(
@@ -63,19 +63,19 @@ async def products(aid, request):
 
     result = list()
 
-    db = await aiosqlite.connect(os.path.abspath("backend/models/db.sqlite3"))
-    cursor1 = await db.cursor()
+    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
+    cursor = await db.cursor()
 
     criteria = dict()
-    await cursor1.execute("SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,))
-    for cid, formula in await cursor1.fetchall():
+    await cursor.execute("SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,))
+    for cid, formula in await cursor.fetchall():
         criteria[f"cid{cid}"] = eval(formula.format(**request.query), dict())
 
-    await cursor1.execute(
+    await cursor.execute(
         "SELECT name, url, description, image, formula FROM products WHERE aid == ?;",
         (aid,),
     )
-    for name, url, description, image, formula in await cursor1.fetchall():
+    for name, url, description, image, formula in await cursor.fetchall():
         if eval(formula.format(**criteria), dict()):
             result.append(
                 {
@@ -86,7 +86,7 @@ async def products(aid, request):
                 }
             )
 
-    await cursor1.close()
+    await cursor.close()
     await db.close()
 
     return result
@@ -94,15 +94,15 @@ async def products(aid, request):
 
 @app.route("get", "/frontend/{:}")
 def recource(request, response):
-    return response.render(os.path.abspath(request.url))
+    return response.render(os.path.join(os.getcwd(), *request.url.split("/")))
 
 
-@app.route("get", "/{:path}")
+@app.route("get", "/{:path}/")
 def view(path, response):
     if not path:
         path = "index"
-
-    return response.render(os.path.abspath(os.path.join("frontend/views/", path + ".html")))
+    
+    return response.render(os.path.join(os.getcwd(), "frontend", "views", path + ".html"))
 
 
 app.run()

@@ -11,7 +11,7 @@
   --large: min(2vw, 2.25rem);
   --extra-large: min(2.75vw, 3rem);
 
-  --default-font: 'Lato', sans-serif;
+  --default-font: "Lato", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +31,13 @@
 }
 
 body {
-  background: linear-gradient(250deg, var(--secondary) -20%, var(--tertiary) 20%, var(--tertiary) 80%, var(--secondary) 120%);
+  background: linear-gradient(
+    250deg,
+    var(--secondary) -20%,
+    var(--tertiary) 20%,
+    var(--tertiary) 80%,
+    var(--secondary) 120%
+  );
 
   font-family: Tahoma;
 }
@@ -173,7 +179,7 @@ button:active {
   position: absolute;
   top: 34%;
   left: 8%;
-  
+
   width: 86%;
 
   font-size: var(--medium);
@@ -472,11 +478,11 @@ button:active {
     --tiny: min(2vw, 0.8rem);
     --small: min(2.25vw, 1rem);
     --medium: 2.75vw;
-    --large: 3.50vw;
+    --large: 3.5vw;
     --extra-large: 6vw;
   }
 
-  #main-container {   
+  #main-container {
     width: 100%;
     max-width: none;
     height: 100%;
@@ -487,7 +493,7 @@ button:active {
     width: 100%;
     height: 50%;
   }
-  
+
   #questions-container {
     top: 50%;
     left: 0%;
@@ -508,7 +514,7 @@ button:active {
     position: fixed;
     bottom: 0%;
     left: 0%;
-  
+
     width: 100%;
     height: 8%;
   }
@@ -527,7 +533,7 @@ button:active {
   #back-button {
     left: 50%;
     bottom: 2%;
-  
+
     transform: translateX(-50%) translateY(-50%);
   }
 }

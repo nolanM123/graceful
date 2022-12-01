@@ -1,0 +1,48 @@
+:root {
+  --primary: #667999;
+  --secondary: #e0e4eb;
+  --tertiary: #9ca9bb;
+  --flat: #ffffff;
+  --mono: #d9d9d9;
+
+  --tiny: min(0.75vw, 0.8rem);
+  --small: min(1vw, 1.25rem);
+  --medium: min(1.75vw, 2rem);
+  --large: min(2vw, 2.25rem);
+  --extra-large: min(2.75vw, 3rem);
+
+  --default-font: "Lato", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    250deg,
+    var(--secondary) -20%,
+    var(--tertiary) 20%,
+    var(--tertiary) 80%,
+    var(--secondary) 120%
+  );
+
+  font-family: Tahoma;
+}
+
+button {
+  border: 1px solid white;
+  border-radius: 99em;
+  aspect-ratio: 5/2;
+
+  background-color: transparent;
+
+  font-size: var(--small);
+  font-family: var(--default-font);
+  font-weight: bold;
+  color: white;
+}
+
+button:hover {
+  background-color: var(--tertiary);
+}
+
+button:active {
+  background-color: var(--secondary);
+}

@@ -1,14 +1,23 @@
-import json
+import os
 import socket
 import asyncio
 import mimetypes
-from typing import Any, Callable
 
 
 class Request:
+
+    request: str
+    mehtod: str
+    url: str
+    scheme: str
+    query: dict[str:str]
+    headers: dict[str:str]
+    cookies: dict[str:str]
+    content: str
+
     def __init__(self, request: str) -> None:
 
-        feilds = request.split("\r\n")
+        feilds: list[str] = request.split("\r\n")
 
         # repr
         self.request = request
@@ -52,9 +61,12 @@ class Request:
 
 class Response:
 
-    scheme = "HTTP/1.1"
-    status = 200
-    reason = "OK"
+    scheme: str = "HTTP/1.1"
+    status: int = 200
+    reason: str = "OK"
+    _headers: dict[str:str]
+    _cookies: dict[str:str]
+    _content: str
 
     def __init__(
         self,
@@ -63,7 +75,7 @@ class Response:
         reason: str | None = None,
         headers: dict[str, str] | None = None,
         cookies: list[dict[str, str | bool]] | None = None,
-        content: Any = None,
+        content: str | None = None,
     ) -> None:
 
         if scheme:
@@ -99,7 +111,7 @@ class Response:
         if not default or header not in self._headers:
             self._headers[header] = value
 
-    def get_cookie(self, name: str) -> dict[str: str | bool] | None:
+    def get_cookie(self, name: str) -> dict[str : str | bool] | None:
 
         for cookie in self._cookies:
             if name in cookie:
@@ -114,7 +126,7 @@ class Response:
         domain: str = "",
         path: str = "",
         secure: str = "",
-        httponly: bool = False,
+        httponly: str = "",
         samesite: str = "",
     ) -> None:
 
@@ -131,44 +143,36 @@ class Response:
             }
         )
 
-    def render(self, path: str) -> bool:
-        try:
-            mimetype, charset = mimetypes.guess_type(path)
-            with open(path, "rb") as document:
-                self.content = document.read()
-                self.set("content-type", "{}; charset={}".format(mimetype, charset))
-                self.set("content-length", len(self.content))
-        
-        except FileNotFoundError:
-            return False
-        
-        return True
+    def render(self, path: str) -> None:
+        mimetype: str
+        charset: str
+
+        if not os.path.isfile(path):
+            return
+
+        mimetype, charset = mimetypes.guess_type(path)
+        with open(path, "rb") as document:
+            self.content = document.read()
+            self.set("content-type", "{}; charset={}".format(mimetype, charset))
+            self.set("content-length", len(self.content))
 
     def encode(self, encoding: str = "UTF-8", errors: str = "strict") -> bytes:
 
         # status line
-        status_line = "{} {} {}\r\n".format(
+        status_line: str = "{} {} {}\r\n".format(
             self.scheme,
             self.status,
             self.reason,
-        ).encode(encoding, errors)
-
-        # content
-        content = self.content
-
-        if not isinstance(content, bytes):
-            content = bytes(str(content), encoding, errors)
+        )
 
         # headers
-        headers = ""
+        headers: str = ""
 
         for key, item in self._headers.items():
             headers += "{}: {}\r\n".format(
                 key,
                 item,
             )
-
-        headers = headers.encode(encoding, errors)
 
         # cookies
         cookies = ""
@@ -188,26 +192,37 @@ class Response:
 
             cookies = cookies.rstrip("; ") + "\r\n"
 
-        cookies = cookies.encode(encoding, errors)
+        # content
+        content: bytes = (
+            self.content
+            if isinstance(self.content, bytes)
+            else str(self.content).encode(encoding, errors)
+        )
 
         # response
-        return status_line + headers + cookies + b"\r\n" + content
+        return (
+            "{}{}{}\r\n{}".format(status_line, headers, cookies).encode(
+                encoding, errors
+            )
+            + content
+        )
 
     @property
-    def content(self) -> str | bytes | tuple | list | dict:
+    def content(self) -> str | bytes:
 
         return self._content
 
     @content.setter
-    def content(self, content) -> None:
-        if not isinstance(content, (str, bytes, tuple, list, dict)):
+    def content(self, content: str | bytes | list | dict) -> None:
+        if not isinstance(content, (str, bytes, list, dict)):
             return
 
         elif isinstance(content, (str, bytes)):
             self.set("content-type", "text/plain", True)
 
-        elif isinstance(content, (tuple, list, dict)):
-            content = json.dumps(content)
+        elif isinstance(content, (list, dict)):
+            content = str(content).replace('""')
+            print(content)
             self.set("content-type", "application/json", True)
 
         self._content = content
@@ -336,7 +351,7 @@ class Graceful:
         if method not in self.apps:
             self.apps[method] = dict()
 
-        def application(app: Callable[..., Any]):
+        def application(app: callable[..., any]):
             self.apps[method][url] = app
 
         return application
