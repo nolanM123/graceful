@@ -5,18 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediHelp</title>
-    <link rel="icon" href="/frontend/images/favicon.ico" type="image/png">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,800' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="/frontend/images/favicon.ico" type="image/png" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:300,800"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link rel="stylesheet" href="/frontend/styles/index.css" />
-    <script src="/frontend/scripts/app.js"></script>
+    <script type="module" src="/frontend/scripts/index.js"></script>
   </head>
   <body>
     <div id="main-container">
       <div id="ailment-container">
-        <a id="title" href style="text-decoration: none;">MediHelp</a>
-        <a href="https://www.facebook.com/" target="_blank"><div id="facebook-icon" class="social-icon"><img class="social-image" src="/frontend/images/facebook-icon.png"></div></a>
-        <a href="https://twitter.com/" target="_blank"><div id="twitter-icon" class="social-icon"><img class="social-image" src="/frontend/images/twitter-icon.png"></div></a>
-        <div id="navbar" ></div>
+        <a id="title" href>MediHelp</a>
+        <a href="https://www.facebook.com/" target="_blank"
+          ><div id="facebook-icon" class="social-icon">
+            <img
+              class="social-image"
+              src="/frontend/images/facebook-icon.png"
+            /></div
+        ></a>
+        <a href="https://twitter.com/" target="_blank"
+          ><div id="twitter-icon" class="social-icon">
+            <img
+              class="social-image"
+              src="/frontend/images/twitter-icon.png"
+            /></div
+        ></a>
+        <div id="navbar"></div>
         <p id="ailment-description"></p>
         <p id="ailment-disclaimer"></p>
       </div>
@@ -27,6 +43,7 @@
           <div id="progress-bar"></div>
         </div>
         <h2 id="question"></h2>
+        <div id="tooltip"></div>
       </div>
       <div id="results-container"></div>
       <div id="back-button-occlusion"></div>

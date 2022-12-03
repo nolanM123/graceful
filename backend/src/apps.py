@@ -1,7 +1,11 @@
 import os
 import graceful
 import aiosqlite
+import hashlib
 
+
+if os.path.basename(os.getcwd()) != "graceful":
+    raise Exception("apps.py not called from project directory")
 
 app = graceful.Graceful()
 
@@ -11,7 +15,7 @@ async def ailments():
 
     result = []
 
-    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
+    db = await aiosqlite.connect("backend/models/db.sqlite3")
     cursor = await db.cursor()
 
     await cursor.execute("SELECT aid, name, disclaimer FROM ailments;")
@@ -35,7 +39,7 @@ async def questions(aid):
 
     result = list()
 
-    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
+    db = await aiosqlite.connect("backend/models/db.sqlite3")
     cursor = await db.cursor()
 
     await cursor.execute(
@@ -63,7 +67,7 @@ async def products(aid, request):
 
     result = list()
 
-    db = await aiosqlite.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
+    db = await aiosqlite.connect("backend/models/db.sqlite3")
     cursor = await db.cursor()
 
     criteria = dict()
@@ -92,17 +96,41 @@ async def products(aid, request):
     return result
 
 
+@app.route("get", "/auth/")
+async def authenticate(username, password, response):
+
+    db = await aiosqlite.connect("backend/models/db.sqlite3")
+    cursor = await db.cursor()
+
+    await cursor.execute("SELECT username, password FROM admin")
+    for db_username, db_password in await cursor.fetchall():
+        salt, db_password = db_password.split(":", 1)
+
+        if (
+            username == db_username
+            and hashlib.sha256((salt + password).encode()).hexdigest() == db_password
+        ):
+            response.set_cookie("sessionToken", "1")
+            
+            return 
+
+    response.status = 401
+    response.reason = "Unauthorized"
+
+
 @app.route("get", "/frontend/{:}")
 def recource(request, response):
-    return response.render(os.path.join(os.getcwd(), *request.url.split("/")))
+
+    return response.render(request.url)
 
 
 @app.route("get", "/{:path}/")
 def view(path, response):
+
     if not path:
         path = "index"
-    
-    return response.render(os.path.join(os.getcwd(), "frontend", "views", path + ".html"))
+
+    return response.render(f"frontend/views/{path}.html")
 
 
 app.run()

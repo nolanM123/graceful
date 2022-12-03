@@ -986,7 +986,7 @@ INSERT INTO products VALUES
 		91,
 		'Children''s Dimetapp  Cold & Allergy Liquid (6-12Yrs)',
 		'https://www.dimetapp.com/products/dimetapp-cold-allergy/',
-		'When allergy and cold symptoms hit, you can count on fast‑acting Dimetapp Cold & Allergy''s congestion and allergy fighting power. Stuffy and runny noses? Check. Itchy, watery eyes? You bet. Sneezing? Dimetapp is on it. Our goal? To help kids say hello to the great outdoors, muddy shoes and all.',
+		'When allergy and cold symptoms hit, you can count on fast-acting Dimetapp Cold & Allergy''s congestion and allergy fighting power. Stuffy and runny noses? Check. Itchy, watery eyes? You bet. Sneezing? Dimetapp is on it. Our goal? To help kids say hello to the great outdoors, muddy shoes and all.',
 		'https://www.youcanglobal.com/image/cache/catalog/Brand%20Logo/dimetapp-logo-600x315.png',
 		'{cid2} and {cid3} and {cid7} and {cid8}'
 	),
@@ -995,7 +995,7 @@ INSERT INTO products VALUES
 		92,
 		'Children''s Dimetapp  Cold & Cough Liquid (6-12Yrs)',
 		'https://www.dimetapp.com/products/dimetapp-cold-cough/',
-		'Our most popular product, Dimetapp Cold & Cough marries sweet grape flavor with safe, fast‑acting, powerful relief designed to soothe stuffy, runny noses and quiet coughs—helping make sick days as stress-free for you as possible.',
+		'Our most popular product, Dimetapp Cold & Cough marries sweet grape flavor with safe, fast-acting, powerful relief designed to soothe stuffy, runny noses and quiet coughs—helping make sick days as stress-free for you as possible.',
 		'https://www.youcanglobal.com/image/cache/catalog/Brand%20Logo/dimetapp-logo-600x315.png',
 		'{cid2} and {cid3} and {cid6} and {cid7} and {cid8}'
 	),
@@ -1022,7 +1022,7 @@ INSERT INTO products VALUES
 		95,
 		'Children''s Dimetapp  Multi-Symptom Cold Relief Dye-Free Liquid (6-12Yrs)',
 		'https://www.dimetapp.com/products/dimetapp-multi-symptom-cold-flu/',
-		'Dimetapp Multi‑Symptom Cold & Flu is the fast‑acting powerful cold relief you know and love with acetaminophen to help reduce fever and relieve headache and body aches while also soothing children''s cold and cough symptoms. And with Dimetapp''s great grape flavor, you''ll never have to hear, “Mom, this tastes gross!” again.',
+		'Dimetapp Multi-Symptom Cold & Flu is the fast-acting powerful cold relief you know and love with acetaminophen to help reduce fever and relieve headache and body aches while also soothing children''s cold and cough symptoms. And with Dimetapp''s great grape flavor, you''ll never have to hear, “Mom, this tastes gross!” again.',
 		'https://www.youcanglobal.com/image/cache/catalog/Brand%20Logo/dimetapp-logo-600x315.png',
 		'{cid2} and {cid3} and {cid6} and {cid7} and {cid8}'
 	),

@@ -6,10 +6,10 @@
   --mono: #d9d9d9;
 
   --tiny: min(0.75vw, 0.8rem);
-  --small: min(1vw, 1.25rem);
-  --medium: min(1.75vw, 2rem);
-  --large: min(2vw, 2.25rem);
-  --extra-large: min(2.75vw, 3rem);
+  --small: min(0.8vw, 1.15rem);
+  --medium: min(1.25vw, 1.5rem);
+  --large: min(1.75vw, 2rem);
+  --extra-large: min(2vw, 2.25rem);
 
   --default-font: "Lato", sans-serif;
 }
@@ -26,12 +26,146 @@ body {
   font-family: Tahoma;
 }
 
-button {
-  border: 1px solid white;
-  border-radius: 99em;
-  aspect-ratio: 5/2;
+#main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.2);
+  aspect-ratio: 16/9;
+  width: 50%;
+  max-width: 960px;
 
   background-color: transparent;
+}
+
+#login-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+  width: 50%;
+  height: 100%;
+
+  background-color: var(--flat);
+}
+
+#promt {
+  position: absolute;
+  top: 6%;
+  left: 8%;
+
+  font-size: var(--extra-large);
+  font-family: var(--default-font);
+  font-weight: lighter;
+  color: black;
+}
+
+.social-icon {
+  position: absolute;
+
+  border: 1px solid var(--mono);
+  border-radius: 99em;
+  aspect-ratio: 1;
+  width: 2em;
+}
+
+.social-icon:hover {
+  background-color: var(--secondary);
+}
+
+.social-icon:active {
+  background-color: var(--tertiary);
+}
+
+#facebook-icon {
+  top: 6%;
+  right: 10%;
+
+  transform: translateX(-150%) translateY(1.5em);
+}
+
+#twitter-icon {
+  top: 6%;
+  right: 10%;
+
+  transform: translateY(1.5em);
+}
+
+.social-image {
+  position: absolute;
+  top: 14%;
+  left: 14%;
+
+  width: 72%;
+  height: 72%;
+}
+
+.login-label {
+  position: absolute;
+  top: 26%;
+  left: 8%;
+
+  font-size: var(--small);
+  font-family: var(--default-font);
+  font-weight: bolder;
+  color: black;
+}
+
+.login-input {
+  position: absolute;
+  top: 26%;
+  left: 8%;
+
+  border-radius: 99em;
+  aspect-ratio: 10;
+  width: 82%;
+
+  border-color: transparent;
+  background-color: var(--secondary);
+
+  text-indent: 5%;
+  font-size: var(--small);
+  font-family: var(--default-font);
+  font-weight: normal;
+  color: var(--primary);
+}
+
+.login-input:focus {
+  outline-color: var(--tertiary);
+}
+
+#username-input {
+  transform: translateY(3em);
+}
+
+#password-label {
+  transform: translateY(6em);
+}
+
+#password-input {
+  transform: translateY(9em);
+}
+
+#signin-button {
+  position: absolute;
+  top: 26%;
+  left: 8%;
+
+  transform: translateY(14em);
+
+  border-radius: 99em;
+  aspect-ratio: 9;
+  width: 84%;
+
+  border-color: transparent;
+  background: linear-gradient(
+    90deg,
+    var(--tertiary) -20%,
+    var(--primary) 120%
+  );
 
   font-size: var(--small);
   font-family: var(--default-font);
@@ -39,10 +173,21 @@ button {
   color: white;
 }
 
-button:hover {
-  background-color: var(--tertiary);
+#signin-button:hover {
+  background: var(--tertiary);
 }
 
-button:active {
-  background-color: var(--secondary);
+#signin-button:active {
+  background: var(--secondary);
+}
+
+#content-container {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(320deg, var(--primary) 50%, var(--tertiary) 100%);
 }

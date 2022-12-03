@@ -100,6 +100,8 @@ class Response:
         self._headers = headers
         self._cookies = cookies
         self._content = content
+        self.set("content-type", "text/plain")
+        self.set("content-length", "0")
 
     def get(self, header: str, default: str = None) -> str:
 
@@ -149,6 +151,11 @@ class Response:
         charset: str
 
         if not os.path.isfile(path):
+            print(path + " : Not Found")
+
+            self.status = 404
+            self.reason = "Not Found"
+
             return
 
         mimetype, charset = mimetypes.guess_type(path)
@@ -355,3 +362,18 @@ class Graceful:
             self.apps[method][url] = app
 
         return application
+
+
+class Authentication:
+    
+    def __init__(self) -> None:
+        self.tokens = []
+
+    def encrypt():
+        pass
+
+    def get_token():
+        pass
+
+    def verify_token():
+        pass

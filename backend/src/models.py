@@ -2,7 +2,7 @@ import os
 import sqlite3
 
 
-db = sqlite3.connect(os.path.abspath("backend/models/db.sqlite3"))
+db = sqlite3.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
 
 with open(os.path.abspath("backend/models/tables.sql"), "r") as document:
 	db.executescript(document.read())

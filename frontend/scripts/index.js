@@ -1,9 +1,12 @@
+import { requestJSON } from "./request.js";
+
 let navbar;
 let ailmentDescription;
 let ailmentDisclaimer;
 
 let questionsContainer;
 let progressBar;
+let tooltip;
 let question;
 let trueButton;
 let falseButton;
@@ -21,18 +24,6 @@ let questionPointer = -1;
 let results = new Array();
 
 let products = new Array();
-
-function request(method, url, body = "", async = false) {
-    let request = new XMLHttpRequest()
-    request.open(method, url, async);
-    request.send(body);
-
-    return request;
-}
-
-function requestJSON(method, url, body = "", async = false) {
-    return JSON.parse(request(method, url, body, async).responseText);
-}
 
 function animateProgressBar() {
     let id = setInterval(frame, 4);
@@ -160,8 +151,8 @@ function setQuestion() {
             resultContainer.appendChild(resultDescription);
         }
     } else {
-        let tooltip = `*<span id="tooltip-text">${questions[questionPointer]["description"]}</span>`
-        question.innerHTML = questions[questionPointer]["question"] + tooltip;
+        question.innerHTML = questions[questionPointer]["question"] + "*";
+        tooltip.innerHTML = questions[questionPointer]["description"];
         animateProgressBar();
     }
 }
@@ -192,7 +183,14 @@ window.onload = function () {
     questionsContainer = document.getElementById("questions-container");
     progressBar = document.getElementById("progress-bar");
     progressBar.style.width = "0%";
+    tooltip = document.getElementById("tooltip");
     question = document.getElementById("question");
+    question.onmouseenter = function() {
+        tooltip.style.visibility = "visible";
+    }
+    question.onmouseleave = function() {
+        tooltip.style.visibility = "hidden";
+    }
     trueButton = document.getElementById("true-button");
     trueButton.onclick = function () {
         questions[questionPointer]["answer"] = "True";

@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS criteria;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS productCriteria;
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS sessionToken;
 
 CREATE TABLE ailments (
     aid int(100),
@@ -33,4 +35,14 @@ CREATE TABLE products (
     description text(500),
     image varchar(255),
     formula varchar(255)
+);
+
+CREATE TABLE admin (
+    username varchar(100),
+    password varchar(100)
+);
+
+CREATE TABLE sessionToken (
+    id varchar(100),
+    expiry datetime
 );
