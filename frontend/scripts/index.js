@@ -23,8 +23,6 @@ let questionPointer = -1;
 
 let results = new Array();
 
-let products = new Array();
-
 function animateProgressBar() {
     let id = setInterval(frame, 4);
     let current = parseFloat(progressBar.style.width);
@@ -54,10 +52,13 @@ function setNavbar() {
 
 function setQuestionaire(pointer) {
     if (pointer == null) pointer = -1;
+
     questionsContainer.style.display = "block";
     resultsContainer.style.display = "none";
+
     ailmentDescription.innerHTML = `A modern and minimalist solution to your pharmaceutical needs - Take this short ${questions.length} question survey to receive a comprehensive diagnosis of your ${ailments[ailmentSelected]["name"].toLowerCase()} needs.`
     ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
+
     questionPointer = pointer;
     setQuestion();
 }
@@ -74,6 +75,7 @@ function setQuestion() {
 
         questionsContainer.style.display = "none";
         resultsContainer.style.display = "block";
+
         resultsContainer.innerHTML = "";
         ailmentDescription.innerHTML = `There are ${results.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
         ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
@@ -94,7 +96,7 @@ function setQuestion() {
             let resultImage = document.createElement("img");
             resultImage.className = "result-image";
             resultImage.src = results[i]["image"];
-            resultImage.onerror = function () {resultImage.style.display = "none";}
+            resultImage.onerror = function () { resultImage.style.display = "none"; }
             resultIcon.appendChild(resultImage);
 
             let url = document.createElement("a");
@@ -109,35 +111,34 @@ function setQuestion() {
             let resultShare = document.createElement("button");
             resultShare.className = "result-share";
             resultShare.innerHTML = "Share";
-            shareContainer = document.createElement("div");
+            let shareContainer = document.createElement("div");
             shareContainer.className = "share-container";
+            resultShare.appendChild(shareContainer);
+            resultContainer.appendChild(resultShare);
 
-            twitterUrl = document.createElement("a");
+            let twitterUrl = document.createElement("a");
             twitterUrl.href = `https://twitter.com/share?url=${results[i]["url"]}&text=medihelp suggestion - ${results[i]["name"]} @ `;
             twitterUrl.target = "_blank";
             twitterUrl.innerHTML = "Twitter";
             shareContainer.appendChild(twitterUrl);
 
-            facebookUrl = document.createElement("a");
+            let facebookUrl = document.createElement("a");
             facebookUrl.href = `https://www.facebook.com/sharer/sharer.php?u=${results[i]["url"]}`;
             facebookUrl.target = "_blank";
             facebookUrl.innerHTML = "Facebook";
             shareContainer.appendChild(facebookUrl);
 
-            redditUrl = document.createElement("a");
+            let redditUrl = document.createElement("a");
             redditUrl.href = `https://reddit.com/submit?url=${results[i]["url"]}&title=medihelp suggestion - ${results[i]["name"]}`;
             redditUrl.target = "_blank";
             redditUrl.innerHTML = "Reddit";
             shareContainer.appendChild(redditUrl);
 
-            emailUrl = document.createElement("a");
+            let emailUrl = document.createElement("a");
             emailUrl.href = `mailto:?subject=medihelp suggestion - ${results[i]["name"]}&body=${results[i]["url"]}`;
             emailUrl.target = "_blank";
             emailUrl.innerHTML = "Email";
             shareContainer.appendChild(emailUrl);
-
-            resultShare.appendChild(shareContainer);
-            resultContainer.appendChild(resultShare);
 
             let resultTitle = document.createElement("h2");
             resultTitle.className = "result-title";
