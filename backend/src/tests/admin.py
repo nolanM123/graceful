@@ -11,6 +11,6 @@ password = hashlib.sha256((salt + password).encode()).hexdigest()
 
 
 db = sqlite3.connect(os.path.join(os.getcwd(), "backend", "models", "db.sqlite3"))
-db.execute("INSERT INTO admin VALUES (?, ?);", (username, f"{salt}:{password}"))
+db.execute("INSERT INTO admin VALUES (1, ?, ?, NULL, NULL);", (username, f"{salt}:{password}"))
 db.commit()
 db.close()

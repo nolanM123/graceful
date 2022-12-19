@@ -8,11 +8,16 @@ window.onload = function() {
     usernameInput = document.getElementById("username-input");
     passwordInput = document.getElementById("password-input");
     signinButton = document.getElementById("signin-button");
-    signinButton.onclick = function() {
+    signinButton.onclick = function() { 
         let response = request("get", `/auth/?username=${usernameInput.value}&password=${passwordInput.value}`);
-        
-        if (response.status == 200) {
-            location.href = "/admin/"
+        let url = response.getResponseHeader("Location");
+
+        if (url) {
+            window.location.href = url;
+
+            return;
         }
+
+        
     }
 }

@@ -38,11 +38,9 @@ CREATE TABLE products (
 );
 
 CREATE TABLE admin (
+    rank int(100),
     username varchar(100),
-    password varchar(100)
-);
-
-CREATE TABLE sessionToken (
-    id varchar(100),
+    password varchar(100),
+    sessionid varchar(100),
     expiry datetime
 );

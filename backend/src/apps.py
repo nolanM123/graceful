@@ -1,11 +1,9 @@
 import os
+import time
+import hashlib
 import graceful
 import aiosqlite
-import hashlib
 
-
-if os.path.basename(os.getcwd()) != "graceful":
-    raise Exception("apps.py not called from project directory")
 
 app = graceful.Graceful()
 
@@ -102,24 +100,31 @@ async def authenticate(username, password, response):
     db = await aiosqlite.connect("backend/models/db.sqlite3")
     cursor = await db.cursor()
 
-    await cursor.execute("SELECT username, password FROM admin")
-    for db_username, db_password in await cursor.fetchall():
-        salt, db_password = db_password.split(":", 1)
+    await cursor.execute("SELECT password FROM admin WHERE username == ?", (username,))
+    for (identity,) in await cursor.fetchall():
+        salt, identity = identity.split(":", 1)
+        password = hashlib.sha256((salt + password).encode()).hexdigest()
 
-        if (
-            username == db_username
-            and hashlib.sha256((salt + password).encode()).hexdigest() == db_password
+        if len(password) == len(identity) and all(
+            (x == y for x, y in zip(password, identity))
         ):
-            response.set_cookie("sessionToken", "1")
-            
-            return 
+            response.set("Location", "/admin/")
+            response.set_cookie(
+                "sessionId",
+                str(os.urandom(16)),
+                expires=time.strftime("%a, %d %b %Y %I:%M:%S GMT", time.gmtime(time.time() + 1800)),
+                domain="localhost:8080",
+                path="/admin",
+                secure=True,
+                httponly=False,
+                samesite="strict",
+            )
 
-    response.status = 401
-    response.reason = "Unauthorized"
+            break
 
 
 @app.route("get", "/frontend/{:}")
-def recource(request, response):
+def frontend(request, response):
 
     return response.render(request.url)
 

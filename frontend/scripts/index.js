@@ -1,5 +1,6 @@
 import { requestJSON } from "./request.js";
 
+// html elements
 let navbar;
 let ailmentDescription;
 let ailmentDisclaimer;
@@ -15,6 +16,7 @@ let resultsContainer;
 
 let backButton;
 
+// element attributes
 let ailments = new Array();
 let ailmentSelected = 0;
 
@@ -77,6 +79,7 @@ function setQuestion() {
         resultsContainer.style.display = "block";
 
         resultsContainer.innerHTML = "";
+        resultsContainer.scrollTop = 0;
         ailmentDescription.innerHTML = `There are ${results.length} results based on your answers from the ${ailments[ailmentSelected]["name"].toLowerCase()} questionaire.`;
         ailmentDisclaimer.innerHTML = ailments[ailmentSelected]["disclaimer"];
 
@@ -186,12 +189,8 @@ window.onload = function () {
     progressBar.style.width = "0%";
     tooltip = document.getElementById("tooltip");
     question = document.getElementById("question");
-    question.onmouseenter = function() {
-        tooltip.style.visibility = "visible";
-    }
-    question.onmouseleave = function() {
-        tooltip.style.visibility = "hidden";
-    }
+    question.onmouseenter = function() { tooltip.style.visibility = "visible"; }
+    question.onmouseleave = function() { tooltip.style.visibility = "hidden"; }
     trueButton = document.getElementById("true-button");
     trueButton.onclick = function () {
         questions[questionPointer]["answer"] = "True";
