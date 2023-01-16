@@ -9,15 +9,8 @@ window.onload = function() {
     passwordInput = document.getElementById("password-input");
     signinButton = document.getElementById("signin-button");
     signinButton.onclick = function() { 
-        let response = request("get", `/auth/?username=${usernameInput.value}&password=${passwordInput.value}`);
-        let url = response.getResponseHeader("Location");
+        let response = request("post", `/auth/?username=${usernameInput.value}&password=${passwordInput.value}`);
 
-        if (url) {
-            window.location.href = url;
-
-            return;
-        }
-
-        
+        if (response.status === 200) window.location.href = "/admin";
     }
 }

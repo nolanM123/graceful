@@ -8,7 +8,7 @@ import aiosqlite
 app = graceful.Graceful()
 
 
-@app.route("get", "/ailments/")
+@app.route("GET", "/ailments")
 async def ailments():
 
     result = []
@@ -28,11 +28,10 @@ async def ailments():
 
     await cursor.close()
     await db.close()
-
     return result
 
 
-@app.route("get", "/questions/{aid}/")
+@app.route("GET", "/questions/{aid}")
 async def questions(aid):
 
     result = list()
@@ -56,12 +55,11 @@ async def questions(aid):
 
     await cursor.close()
     await db.close()
-
     return result
 
 
-@app.route("get", "/products/{aid}/")
-async def products(aid, request):
+@app.route("GET", "/products/{aid}")
+async def products(request, aid):
 
     result = list()
 
@@ -71,7 +69,7 @@ async def products(aid, request):
     criteria = dict()
     await cursor.execute("SELECT cid, formula FROM criteria WHERE aid == ?;", (aid,))
     for cid, formula in await cursor.fetchall():
-        criteria[f"cid{cid}"] = eval(formula.format(**request.query), dict())
+        criteria[f"cid{cid}"] = eval(formula.format(**request.queries), dict())
 
     await cursor.execute(
         "SELECT name, url, description, image, formula FROM products WHERE aid == ?;",
@@ -90,12 +88,34 @@ async def products(aid, request):
 
     await cursor.close()
     await db.close()
-
     return result
 
 
-@app.route("get", "/auth/")
-async def authenticate(username, password, response):
+@app.route("POST", "/session")
+async def has_session(request, response):
+
+    if "session-id" in request.cookies:
+        db = await aiosqlite.connect("backend/models/db.sqlite3")
+        cursor = await db.cursor()
+
+        await cursor.execute(
+            "SELECT time FROM admin WHERE session_id == ?",
+            (request.cookies["session-id"],),
+        )
+        timestamp = await cursor.fetchone()
+
+        await cursor.close()
+        await db.close()
+
+        if timestamp and time.time() - timestamp[0] < 1800:
+            return
+
+    response.status = 401
+    response.reason = "Unauthorized"
+
+
+@app.route("POST", "/auth")
+async def authenticate(response, username, password):
 
     db = await aiosqlite.connect("backend/models/db.sqlite3")
     cursor = await db.cursor()
@@ -108,34 +128,33 @@ async def authenticate(username, password, response):
         if len(password) == len(identity) and all(
             (x == y for x, y in zip(password, identity))
         ):
-            response.set("Location", "/admin/")
-            response.set_cookie(
-                "sessionId",
-                str(os.urandom(16)),
-                expires=time.strftime("%a, %d %b %Y %I:%M:%S GMT", time.gmtime(time.time() + 1800)),
-                domain="localhost:8080",
-                path="/admin",
-                secure=True,
-                httponly=False,
-                samesite="strict",
+            session_id = hashlib.sha256(os.urandom(16) + password.encode()).hexdigest()
+            response.set_cookie("session-id", session_id, expires=0)
+            await cursor.execute(
+                "UPDATE admin SET session_id = ?, time = ? WHERE username == ?",
+                (session_id, time.time(), username),
             )
-
+            await db.commit()
             break
 
+    else:
+        response.status = 401
+        response.reason = "Unauthorized"
 
-@app.route("get", "/frontend/{:}")
-def frontend(request, response):
-
-    return response.render(request.url)
+    await cursor.close()
+    await db.close()
 
 
-@app.route("get", "/{:path}/")
-def view(path, response):
+@app.route("GET", "/frontend/{:}", headers={"Content-Type": "text/file"})
+def frontend(request):
 
-    if not path:
-        path = "index"
+    return request.url
 
-    return response.render(f"frontend/views/{path}.html")
+
+@app.route("GET", "/{:path}", headers={"Content-Type": "text/file"})
+def view(path):
+
+    return f"frontend/views/{path or 'index'}.html"
 
 
 app.run()

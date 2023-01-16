@@ -39,7 +39,7 @@ body {
   border: 4px solid transparent;
   border-radius: 99em;
 
-  background-color: var(--tertiary)
+  background-color: var(--tertiary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -380,7 +380,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   visibility: hidden;
 
   transform: translateX(-50%);

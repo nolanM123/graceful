@@ -2,317 +2,307 @@ import json
 import socket
 import asyncio
 import mimetypes
-from typing import Callable
 
 
 class Request:
-    def __init__(self, request: str) -> None:
 
-        # preprocessing
-        feilds: list[str] = request.split("\r\n")
+    method: str
+    url: str
+    version: str
+    queries: dict[str, str]
+    headers: dict[str, str]
+    cookies: dict[str, str]
+    pathvars: dict[str, str]
+    content: bytes
 
-        # status line
-        self.method: str
-        self.url: str
-        self.scheme: str
-        self.method, self.url, self.scheme = feilds[0].split(" ")
+    def __init__(self, byte_request: bytes) -> None:
 
-        # query
-        self.query: dict[str, str] = dict()
-        self.url, *queries = self.url.split("?")
+        byte_request, self.content = byte_request.rsplit(b"\r\n", 1)
+        request_lines = byte_request.decode().split("\r\n")
+
+        self.method, self.url, self.version = request_lines[0].split(" ")
+        self.queries = {}
+        self.headers = {}
+        self.cookies = {}
+        self.pathvars = {}
+
+        if "?" in self.url:
+            self.url, queries = self.url.split("?", 1)
+
+            for query in queries.split("&"):
+                name, value = query.split("=", 1)
+                self.queries[name.strip()] = value.strip()
+
         self.url = self.url.strip("/")
 
-        for query in queries:
-            self.query = {
-                key: item
-                for key, item in (kwargs.split("=") for kwargs in query.split("&"))
-            }
+        for line in request_lines[1:-1]:
+            name, value = line.split(":", 1)
+            self.headers[name.strip().title()] = value.strip()
 
-        # headers
-        self.headers: dict[str, str] = dict()
-
-        if len(feilds[:-2]) > 2:
-            self.headers = {
-                key: item for key, item in (kwarg.split(": ") for kwarg in feilds[1:-2])
-            }
-
-        # cookies
-        self.cookies: dict[str, str] = dict()
-
-        if self.headers.get("cookies"):
-            self.cookies = {
-                key: item
-                for key, item in (
-                    kwargs.split("=") for kwargs in self.headers["cookies"].split("; ")
-                )
-            }
-
-        # content
-        self.content: str = feilds[-1]
+        if "Cookie" in self.headers:
+            for cookie in self.headers["Cookie"].split(";"):
+                name, value = cookie.split("=", 1)
+                self.cookies[name.strip()] = value.strip()
 
 
 class Response:
+
+    closed: bool
+    version: str
+    status: int
+    reason: str
+    headers: dict[str, str]
+    cookies: dict[str, dict[str, object]]
+    content: bytes
+
     def __init__(
         self,
-        scheme: str = "HTTP/1.1",
         status: int = 200,
         reason: str = "OK",
-        headers: dict[str, object] | None = None,
-        cookies: dict[str, str] | None = None,
-        content: object = "",
+        headers: dict[str, str] = {},
+        content: bytes = b"",
     ) -> None:
 
-        if not headers:
-            headers = dict()
+        self.version = "HTTP/1.1"
+        self.status = status
+        self.reason = reason
+        self.headers = {name.title(): value for name, value in headers.items()}
+        self.cookies = {}
+        self.content = content
 
-        else:
-            headers = {key.title(): item for key, item in headers.items()}
+    def get_cookie(self, name: str) -> str:
 
-        if not cookies:
-            cookies = dict()
+        cookie = f"Set-Cookie: {name}={self.cookies[name]['value']}"
 
-        self.scheme: str = scheme
-        self.status: int = status
-        self.reason: str = reason
-        self._headers: dict[str, object] = headers
-        self._cookies: dict[str, str] = cookies
-        self._content: object = content
+        if "expires" in self.cookies[name]:
+            cookie += f"; Expires={self.cookies[name]['expires']}"
 
-    def get_header(self, header: str) -> object | None:
+        if "max-age" in self.cookies[name]:
+            cookie += f"; Max-Age={self.cookies[name]['max-age']}"
 
-        return self._headers.get(header)
+        if "domain" in self.cookies[name]:
+            cookie += f"; Domain={self.cookies[name]['domain']}"
 
-    def get_cookie(self, name: str) -> str | None:
+        if "path" in self.cookies[name]:
+            cookie += f"; Path={self.cookies[name]['path']}"
 
-        return self._cookies.get(name)
+        if "secure" in self.cookies[name]:
+            cookie += "; Secure"
 
-    def set_header(self, header: str, value: object, default: bool = False) -> None:
+        if "httponly" in self.cookies[name]:
+            cookie += "; HttpOnly"
 
-        if header not in self._headers and default or not default:
-            self._headers[header.title()] = value
+        if "samesite" in self.cookies[name]:
+            cookie += f"; SameSite={self.cookies[name]['samesite']}"
+
+        return cookie
 
     def set_cookie(
         self,
         name: str,
-        value: object,
+        value: str,
         expires: str = "",
-        max_age: str = "",
+        max_age: int = 0,
         domain: str = "",
-        path: str = "",
+        path: str = "/",
         secure: bool = False,
         httponly: bool = False,
         samesite: str = "",
-        default: bool = True,
     ) -> None:
 
-        if name not in self._cookies and default or not default:
-            self._cookies[name] = f"Set-Cookie: {name}={value}"
-            self._cookies[name] += f"; Expires={expires}" if expires else ""
-            self._cookies[name] += f"; Max-Age={max_age}" if max_age else ""
-            self._cookies[name] += f"; Domain={domain}" if domain else ""
-            self._cookies[name] += f"; Path={path}" if path else ""
-            self._cookies[name] += f"; Secure" if secure else ""
-            self._cookies[name] += f"; HttpOnly" if httponly else ""
-            self._cookies[name] += f"; SameSite={samesite}" if samesite else ""
+        self.cookies[name] = {"value": value}
 
-    def render(self, path: str) -> None:
-        try:
-            document = open(path, "rb")
-            self.set_header(
-                "content-type",
-                "{}; charset={}".format(*mimetypes.guess_type(path)),
-                True,
-            )
-            self._content = document.read()
-            document.close()
+        if expires:
+            self.cookies[name]["expires"] = expires
 
-        except FileNotFoundError:
-            self.status = 404
-            self.reason = "Not Found"
+        if max_age:
+            self.cookies[name]["max-age"] = max_age
 
-    def encode(self, encoding="UTF-8", errors="strict") -> bytes:
+        if domain:
+            self.cookies[name]["domain"] = domain
 
-        # content
-        fcontent: object = self._content
+        if path:
+            self.cookies[name]["path"] = path
 
-        if isinstance(fcontent, dict | tuple | list):
-            fcontent = json.dumps(fcontent)
+        if secure:
+            self.cookies[name]["secure"] = secure
 
-        if not isinstance(fcontent, bytes):
-            fcontent = str(fcontent).encode(encoding, errors)
+        if httponly:
+            self.cookies[name]["httponly"] = httponly
 
-        # cookies
-        fcookies: bytes = "".join(
-            "{}\r\n".format(cookie) for cookie in self._cookies.values()
-        ).encode(encoding, errors)
+        if samesite:
+            self.cookies[name]["samesite"] = samesite
 
-        # headers
-        fheaders: bytes = "".join(
-            "{}: {}\r\n".format(key, item) for key, item in self._headers.items()
-        ).encode(encoding, errors)
+    def del_cookie(self, name: str) -> None:
 
-        if not self.get_header("content-length"):
-            fheaders += f"Content-Length: {len(fcontent)}\r\n".encode(encoding, errors)
+        del self.cookies[name]
 
-        # status line
-        fstatus: bytes = f"{self.scheme} {self.status} {self.reason}\r\n".encode(
-            encoding, errors
+    def close(self) -> bytes:
+
+        status = f"{self.version} {self.status} {self.reason}\r\n"
+        headers = "".join(
+            f"{name.title()}: {value}\r\n" for name, value in self.headers.items()
         )
+        cookies = "".join(f"{self.get_cookie(name)}\r\n" for name in self.cookies)
 
-        return fstatus + fheaders + fcookies + b"\r\n" + fcontent
-
-    @property
-    def content(self) -> object:
-
-        return self._content
-
-    @content.setter
-    def content(self, content: object) -> None:
-
-        if not isinstance(content, bool | None):
-            self._content = content
+        return f"{status}{headers}{cookies}\r\n".encode() + self.content
 
 
 class Graceful:
 
-    TIMEOUT: int = 130
-    BUFSIZE: int = 2**10
+    Timeout: int = 130
+    Bufsize: int = 2**10
 
     def __init__(self, host: str = "localhost", port: int = 8080) -> None:
 
         self.live: bool = True
         self.host: str = host
         self.port: int = port
-        self.routes = dict()
+        self.apps: dict[str, object] = {}
 
-    def run(self) -> None:
+    async def _handler(self, app: callable, kwargs: dict[str, object]) -> bytes:
 
-        self._socket: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self._socket.bind((self.host, self.port))
-        self._socket.setblocking(False)
-        self._socket.listen()
+        for key, item in kwargs.items():
+            if key in app.__annotations__ and not isinstance(
+                item, app.__annotations__[key]
+            ):
+                kwargs[key] = app.__annotations__[key](item)
 
-        asyncio.run(self._server())
+        response = kwargs["response"]
+        result = app(
+            *(
+                kwargs.get(varname, None)
+                for varname in app.__code__.co_varnames[: app.__code__.co_argcount]
+            )
+        )
+
+        if asyncio.iscoroutine(result):
+            result = await result
+
+        if isinstance(result, Response):
+            response = result
+
+        if isinstance(result, (tuple, list, dict)):
+            response.headers.setdefault("Content-Type", "application/json")
+            result = json.dumps(result)
+
+        if isinstance(result, str):
+            if response.headers.get("Content-Type") == "text/file":
+                with open(result, "rb") as f:
+                    mimetype, charset = mimetypes.guess_type(result)
+                    response.headers["Content-Type"] = f"{mimetype}; charset={charset}"
+                    result = f.read()
+
+            else:
+                result = result.encode()
+
+        if isinstance(result, bytes):
+            response.headers.setdefault("Content-Type", "application/json")
+            response.headers.setdefault("Content-Length", len(result))
+            response.content = result
+
+        return response.close()
+
+    async def _manager(self, request: Request) -> Response:
+
+        for url, kwargs in self.apps[request.method].items():
+            pathvars = {}
+            app_url = url.split("/")
+            req_url = request.url.split("/")
+
+            if len(app_url) > len(req_url):
+                continue
+
+            for i in range(len(app_url)):
+                if app_url[i].startswith("{") and app_url[i].endswith("}"):
+                    varname, *varpaths = app_url[i].strip("{}").split(":")
+                    pathvars[varname] = req_url[i]
+
+                    for j, varpath in enumerate(varpaths, i):
+                        pathvars[varpath] = "/".join(req_url[j:])
+
+                    if i == len(app_url) and i < len(req_url) and not varpaths:
+                        break
+
+                elif app_url[i] != req_url[i]:
+                    break
+
+            else:
+                request.pathvars = pathvars
+                return kwargs
+
+    async def _client(self, conn: socket.socket) -> None:
+
+        loop = asyncio.get_event_loop()
+        data = await asyncio.wait_for(loop.sock_recv(conn, self.Bufsize), self.Timeout)
+
+        if data:
+            request = Request(data)
+            app, response, args, kwargs = (await self._manager(request)).values()
+            await loop.sock_sendall(
+                conn,
+                await self._handler(
+                    app,
+                    {
+                        "request": request,
+                        "response": response(*args, **kwargs),
+                        **{
+                            name.replace("-", "_"): value
+                            for name, value in request.queries.items()
+                        },
+                        **{
+                            name.replace("-", "_"): value
+                            for name, value in request.headers.items()
+                        },
+                        **{
+                            name.replace("-", "_"): value
+                            for name, value in request.cookies.items()
+                        },
+                        **{
+                            name.replace("-", "_"): value
+                            for name, value in request.pathvars.items()
+                        },
+                    },
+                ),
+            )
+
+        conn.close()
 
     async def _server(self) -> None:
 
-        loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()
+        loop = asyncio.get_event_loop()
 
         while self.live:
-            loop.create_task(self._client(*await loop.sock_accept(self._socket)))
+            conn, _ = await loop.sock_accept(self.server)
+            loop.create_task(self._client(conn))
 
-        self._socket.close()
+        self.server.close()
 
-    async def _client(self, conn: socket.socket, addr: str) -> None:
+    def run(self) -> None:
 
-        loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()
+        self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server.bind((self.host, self.port))
+        self.server.setblocking(False)
+        self.server.listen()
 
-        while True:
-            try:
-                # get request
-                request = (
-                    await asyncio.wait_for(
-                        loop.sock_recv(conn, self.BUFSIZE),
-                        self.TIMEOUT,
-                    )
-                ).decode("utf8", "strict")
-
-                # client disconnection test
-                if not request:
-                    raise TimeoutError
-
-                # get response
-                response = await loop.create_task(self._handler(Request(request)))
-
-                # send response
-                if response:
-                    await loop.sock_sendall(conn, response.encode("utf8", "strict"))
-
-            except TimeoutError:
-                conn.close()
-                break
-
-            except UnicodeDecodeError or UnicodeEncodeError:
-                pass
-
-    async def _handler(self, request: Request) -> Response | None:
-
-        loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()
-
-        global_params: dict[str, object] = {
-            "request": request,
-            **{key.replace("-", "_"): item for key, item in request.query.items()},
-            **{key.replace("-", "_"): item for key, item in request.headers.items()},
-            **{key.replace("-", "_"): item for key, item in request.cookies.items()},
-        }
-
-        # application path matching
-        for path, meta in self.routes.get(request.method, dict()).items():
-            path_vars = dict()
-            app_dirs = path.split("/")
-            req_dirs = request.url.split("/")
-
-            # path matching
-            while app_dirs and req_dirs:
-                app_dir = app_dirs.pop(0)
-                req_dir = req_dirs.pop(0)
-
-                if app_dir.startswith("{") and app_dir.endswith("}"):
-                    dir_var, *dir_path = app_dir[1:-1].split(":")
-
-                    if app_dir:
-                        path_vars[dir_var] = req_dir
-
-                    if dir_path:
-                        path_vars[dir_path[0]] = "/".join((req_dir, *req_dirs))
-
-                        if not app_dirs:
-                            req_dirs.clear()
-
-                elif app_dir != req_dir:
-                    app_dirs.append("__failed__")
-
-                    break
-
-            # application execution
-            if not (app_dirs or req_dirs):
-                # global / local variable initalization
-                global_params.update(
-                    {"response": Response(*meta["args"], **meta["kwargs"]), **path_vars}
-                )
-                local_params: tuple[object, ...] = tuple(
-                    global_params.get(var)
-                    for var in meta["app"].__code__.co_varnames[
-                        : meta["app"].__code__.co_argcount
-                    ]
-                )
-
-                # application async / non-async execution
-                global_params["response"].content = (
-                    await loop.create_task(meta["app"](*local_params))
-                    if asyncio.iscoroutinefunction(meta["app"])
-                    else meta["app"](*local_params)
-                )
-
-                # final response
-                return global_params["response"]
+        asyncio.run(self._server())
 
     def route(
         self,
         method: str,
-        path: str,
+        url: str,
+        response: Response = Response,
         *args: tuple[object, ...],
         **kwargs: dict[str, object],
-    ) -> Callable:
+    ) -> callable:
 
-        method = method.upper()
+        if method not in self.apps:
+            self.apps[method] = dict()
 
-        if method not in self.routes:
-            self.routes[method] = dict()
-
-        def routing(app: Callable) -> None:
-            self.routes[method][path.strip("/")] = {
+        def routing(app: callable) -> None:
+            self.apps[method][url.strip("/")] = {
                 "app": app,
+                "response": response,
                 "args": args,
                 "kwargs": kwargs,
             }

@@ -4,7 +4,6 @@ DROP TABLE IF EXISTS criteria;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS productCriteria;
 DROP TABLE IF EXISTS admin;
-DROP TABLE IF EXISTS sessionToken;
 
 CREATE TABLE ailments (
     aid int(100),
@@ -41,6 +40,6 @@ CREATE TABLE admin (
     rank int(100),
     username varchar(100),
     password varchar(100),
-    sessionid varchar(100),
-    expiry datetime
+    session_id varchar(100),
+    time timestamp
 );
