@@ -107,7 +107,7 @@ async def has_session(request, response):
         await cursor.close()
         await db.close()
 
-        if timestamp and time.time() - timestamp[0] < 1800:
+        if timestamp and time.time() - timestamp[0] < 10:
             return
 
     response.status = 401

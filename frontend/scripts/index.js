@@ -53,7 +53,7 @@ function setNavbar() {
 }
 
 function setQuestionaire(pointer) {
-    if (pointer == null) pointer = -1;
+    if (pointer === null) pointer = -1;
 
     questionsContainer.style.display = "block";
     resultsContainer.style.display = "none";
