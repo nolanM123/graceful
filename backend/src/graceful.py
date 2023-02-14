@@ -4,6 +4,20 @@ import asyncio
 import mimetypes
 
 
+class BaseModel:
+
+    default: str
+
+    def __init__(self, s) -> None:
+        temp = json.loads(s)
+
+        for name, value in temp.items():
+            if name in self.__annotations__:
+                value = self.__annotations__[name](value)
+
+            self.__setattr__(name, value)
+
+
 class Request:
 
     method: str
@@ -21,10 +35,8 @@ class Request:
         request_lines = byte_request.decode().split("\r\n")
 
         self.method, self.url, self.version = request_lines[0].split(" ")
-        self.queries = {}
-        self.headers = {}
-        self.cookies = {}
-        self.pathvars = {}
+
+        self.queries = {"item": self.content}
 
         if "?" in self.url:
             self.url, queries = self.url.split("?", 1)
@@ -35,14 +47,20 @@ class Request:
 
         self.url = self.url.strip("/")
 
+        self.headers = {}
+
         for line in request_lines[1:-1]:
             name, value = line.split(":", 1)
             self.headers[name.strip().title()] = value.strip()
+
+        self.cookies = {}
 
         if "Cookie" in self.headers:
             for cookie in self.headers["Cookie"].split(";"):
                 name, value = cookie.split("=", 1)
                 self.cookies[name.strip()] = value.strip()
+
+        self.pathvars = {}
 
 
 class Response:
@@ -160,27 +178,52 @@ class Graceful:
         self.port: int = port
         self.apps: dict[str, object] = {}
 
-    async def _handler(self, app: callable, kwargs: dict[str, object]) -> bytes:
+    async def _handler(
+        self, request: Request, response: Response, app: callable
+    ) -> bytes:
 
-        for key, item in kwargs.items():
-            if key in app.__annotations__ and not isinstance(
-                item, app.__annotations__[key]
-            ):
-                kwargs[key] = app.__annotations__[key](item)
+        kwargs = {
+            "request": request,
+            "response": response,
+            **{
+                name.replace("-", "_").lower(): value
+                for name, value in request.queries.items()
+            },
+            **{
+                name.replace("-", "_").lower(): value
+                for name, value in request.headers.items()
+            },
+            **{
+                name.replace("-", "_").lower(): value
+                for name, value in request.cookies.items()
+            },
+            **{
+                name.replace("-", "_").lower(): value
+                for name, value in request.pathvars.items()
+            },
+        }
 
-        response = kwargs["response"]
-        result = app(
-            *(
-                kwargs.get(varname, None)
-                for varname in app.__code__.co_varnames[: app.__code__.co_argcount]
-            )
+        for name, value in app.__annotations__.items():
+            if name in kwargs and not isinstance(kwargs[name], value):
+                for _type in value.__args__ if hasattr(value, "__args__") else (value,):
+                    try:
+                        kwargs[name] = _type(kwargs[name])
+                        break
+
+                    except TypeError:
+                        kwargs[name] = _type()
+
+        kwargs = {
+            name: value
+            for name, value in kwargs.items()
+            if name in app.__code__.co_varnames[: app.__code__.co_argcount]
+        }
+        result = (
+            await app(**kwargs) if asyncio.iscoroutinefunction(app) else app(**kwargs)
         )
 
-        if asyncio.iscoroutine(result):
-            result = await result
-
         if isinstance(result, Response):
-            response = result
+            return result.close()
 
         if isinstance(result, (tuple, list, dict)):
             response.headers.setdefault("Content-Type", "application/json")
@@ -203,7 +246,7 @@ class Graceful:
 
         return response.close()
 
-    async def _manager(self, request: Request) -> Response:
+    async def _manager(self, request: Request) -> bytes:
 
         for url, kwargs in self.apps[request.method].items():
             pathvars = {}
@@ -229,7 +272,9 @@ class Graceful:
 
             else:
                 request.pathvars = pathvars
-                return kwargs
+                app, response, args, kwargs = kwargs.values()
+
+                return await self._handler(request, response(*args, **kwargs), app)
 
     async def _client(self, conn: socket.socket) -> None:
 
@@ -237,34 +282,7 @@ class Graceful:
         data = await asyncio.wait_for(loop.sock_recv(conn, self.Bufsize), self.Timeout)
 
         if data:
-            request = Request(data)
-            app, response, args, kwargs = (await self._manager(request)).values()
-            await loop.sock_sendall(
-                conn,
-                await self._handler(
-                    app,
-                    {
-                        "request": request,
-                        "response": response(*args, **kwargs),
-                        **{
-                            name.replace("-", "_"): value
-                            for name, value in request.queries.items()
-                        },
-                        **{
-                            name.replace("-", "_"): value
-                            for name, value in request.headers.items()
-                        },
-                        **{
-                            name.replace("-", "_"): value
-                            for name, value in request.cookies.items()
-                        },
-                        **{
-                            name.replace("-", "_"): value
-                            for name, value in request.pathvars.items()
-                        },
-                    },
-                ),
-            )
+            await loop.sock_sendall(conn, await self._manager(Request(data)))
 
         conn.close()
 

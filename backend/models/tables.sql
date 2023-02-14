@@ -40,6 +40,8 @@ CREATE TABLE admin (
     rank int(100),
     username varchar(100),
     password varchar(100),
+    fname varchar(100),
+    lname varchar(100),
     session_id varchar(100),
     time timestamp
 );
