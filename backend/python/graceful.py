@@ -30,8 +30,7 @@ class HTTPRequest:
         byte_request, self.content = byte_request.rsplit(b"\r\n", 1)
         request_lines = byte_request.decode().split("\r\n")
 
-        self.method, self.url, self.version = request_lines[0].split(" ", 2)
-        self.method = self.method.lower()
+        self.method, self.url, self.version = request_lines[0].split(" ")
 
         self.queries = {}
 
