@@ -3,3 +3,8 @@
 
 # __pycache__
 backend/src/__pycache__
+
+# Frontend node modules
+/src/frontend/node_modules
+/.pnp
+.pnp.js
