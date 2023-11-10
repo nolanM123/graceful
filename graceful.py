@@ -3,6 +3,8 @@ import json
 import socket
 import asyncio
 import mimetypes
+from typing import Union
+
 from model import BaseModel
 from request import HTTPRequest
 from response import HTTPResponse, HTTPException
@@ -10,6 +12,7 @@ from response import HTTPResponse, HTTPException
 
 class Graceful:
     VERSION: str = "0.0.1"
+    DEFAULT_PATH: str = os.getcwd()
     DEFAULT_HOST: str = "localhost"
     DEFAULT_PORT: int = 8080
     BUFSIZE: int = 1024
@@ -23,12 +26,12 @@ class Graceful:
         self.live: bool = True
         self.host: str = host or self.DEFAULT_HOST
         self.port: int = port or self.DEFAULT_PORT
-        self.apps: dict[str, object] = {
+        self.apps: dict[str, Union[list, dict]] = {
             "EXCEPTION": {},
         }
 
+    @staticmethod
     async def _handle(
-        self,
         request: HTTPRequest,
         response: HTTPResponse,
         action: callable,
@@ -138,58 +141,58 @@ class Graceful:
                             loop.sock_recv(conn, self.BUFSIZE), self.TIMEOUT
                         )
 
-                path = os.path.join(os.getcwd(), request.url)
+                req_directories = request.url.split("/")
 
-                if os.path.isdir(path):
-                    raise NotImplementedError("Unable to process")
+                for app in self.apps.get(request.method, []):
+                    app_directories = app["directories"]
 
-                elif os.path.isfile(path):
-                    response = await self._handle(
-                        request,
-                        HTTPResponse(headers={"Content-Type": "text/x-file"}),
-                        lambda: path,
-                    )
+                    if len(req_directories) < len(app_directories):
+                        continue
 
-                else:
-                    req_directories = request.url.split("/")
+                    for i in range(len(app_directories)):
+                        if app_directories[i].startswith("{") and app_directories[
+                            i
+                        ].endswith("}"):
+                            name, *extensions = (
+                                app_directories[i].strip("{}").split(":")
+                            )
 
-                    for app in self.apps.get(request.method, []):
-                        app_directories = app["directories"]
+                            if name:
+                                request.urlkeys[name] = req_directories[i]
 
-                        if len(req_directories) < len(app_directories):
-                            continue
-
-                        for i in range(len(app_directories)):
-                            if app_directories[i].startswith("{") and app_directories[
-                                i
-                            ].endswith("}"):
-                                name, *extentions = (
-                                    app_directories[i].strip("{}").split(":")
-                                )
-
-                                if name:
-                                    request.urlkeys[name] = req_directories[i]
-
-                                if len(req_directories[i:]) < len(extention):
-                                    break
-
-                                for j, extention in enumerate(extentions, i):
-                                    request.urlkeys[extention] = "/".join(
-                                        req_directories[j:]
-                                    )
-
-                            elif app_directories[i] != req_directories[i]:
+                            if len(req_directories[i:]) < len(extension):
                                 break
 
-                        else:
-                            response = await self._handle(
-                                request,
-                                app["response"](*app["args"], **app["kwargs"]),
-                                app["action"],
-                            )
+                            for j, extension in enumerate(extensions, i):
+                                request.urlkeys[extension] = "/".join(
+                                    req_directories[j:]
+                                )
+
+                        elif app_directories[i] != req_directories[i]:
                             break
 
-                        request.urlkeys = {}
+                    else:
+                        response = await self._handle(
+                            request,
+                            app["response"](*app["args"], **app["kwargs"]),
+                            app["action"],
+                        )
+                        break
+
+                    request.urlkeys = {}
+
+                else:
+                    path = os.path.join(self.DEFAULT_PATH, request.url)
+
+                    if os.path.isdir(path):
+                        raise NotImplementedError("Unable to process - need to create template")
+
+                    elif os.path.isfile(path):
+                        response = await self._handle(
+                            request,
+                            HTTPResponse(headers={"Content-Type": "text/x-file"}),
+                            lambda: path,
+                        )
 
                     else:
                         raise HTTPException(status=404, reason="Not Found")
@@ -353,6 +356,3 @@ class Graceful:
             self.apps["EXCEPTION"][status] = action
 
         return routing
-
-
-Graceful().run()
