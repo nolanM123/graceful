@@ -1,20 +1,23 @@
+from typing import Dict, Optional
+
+
 class HTTPResponse:
     def __init__(
         self,
         version: str = "HTTP/1.1",
         status: int = 200,
         reason: str = "OK",
-        headers: dict[str, object] = None,
+        headers: Optional[Dict[str, object]] = None,
         body: bytes = b"",
     ) -> None:
         self.version: str = version
         self.status: int = status
         self.reason: str = reason
-        self.headers: dict[str, object] = headers or {}
-        self.cookies: dict[str, object] = {}
+        self.headers: Dict[str, object] = headers or {}
+        self.cookies: Dict[str, dict] = {}
         self.body: bytes = body
 
-    def get_cookie(self, name: str) -> None:
+    def get_cookie(self, name: str) -> str:
         cookie = f"Set-Cookie: {name}={self.cookies[name]['value']}"
 
         if "expires" in self.cookies[name]:
@@ -80,9 +83,7 @@ class HTTPResponse:
 
     def encode(self) -> bytes:
         status = f"{self.version} {self.status} {self.reason}\r\n"
-        headers = "".join(
-            f"{name.title()}: {value}\r\n" for name, value in self.headers.items()
-        )
+        headers = "".join(f"{name.title()}: {value}\r\n" for name, value in self.headers.items())
         cookies = "".join(f"{self.get_cookie(name)}\r\n" for name in self.cookies)
 
         return f"{status}{headers}{cookies}\r\n".encode() + self.body

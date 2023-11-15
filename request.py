@@ -1,14 +1,20 @@
-class HTTPRequest:
-    method: str = ""
-    url: str = ""
-    version: str = ""
-    queries: dict[str, str] = {}
-    urlkeys: dict[str, str] = {}
-    headers: dict[str, str] = {}
-    cookies: dict[str, str] = {}
-    body: bytes = b""
+from typing import Dict
 
+
+class HTTPRequest:
     def __init__(self, data: bytes) -> None:
+        self.method: str = ""
+        self.url: str = ""
+        self.version: str = ""
+        self.queries: Dict[str, str] = {}
+        self.urlkeys: Dict[str, str] = {}
+        self.headers: Dict[str, str] = {}
+        self.cookies: Dict[str, str] = {}
+        self.body: bytes = b""
+
+        self._parse_request(data)
+
+    def _parse_request(self, data: bytes) -> None:
         data, self.content = data.rsplit(b"\r\n", 1)
         headers = data.decode().split("\r\n")
         self.method, self.url, self.version = headers[0].split(" ")

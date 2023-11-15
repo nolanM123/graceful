@@ -1,15 +1,14 @@
 import json
+from typing import Dict, Type
 
 
 class BaseModel:
-    default: str
-
     @staticmethod
     def convert(
-        data: dict[str, object],
-        annotations: dict[str, type],
+        data: Dict[str, object],
+        annotations: Dict[str, Type],
         strict: bool = False,
-    ) -> dict:
+    ) -> Dict[str, object]:
         new_data = {}
 
         if strict:
