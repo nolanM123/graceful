@@ -2,7 +2,7 @@ import json
 from typing import Dict, Type
 
 
-class BaseModel:
+class Template:
     @staticmethod
     def convert(
         data: Dict[str, object],
@@ -30,4 +30,6 @@ class BaseModel:
         data: str | bytes | bytearray,
         strict: bool = False,
     ) -> None:
-        self.__dict__ = self.convert(json.loads(data), self.__annotations__, strict)
+        self.__dict__.update(
+            self.convert(json.loads(data), self.__annotations__, strict)
+        )

@@ -2,7 +2,7 @@ from typing import Dict
 
 
 class HTTPRequest:
-    def __init__(self, data: bytes) -> None:
+    def __init__(self, data: bytes = b"") -> None:
         self.method: str = ""
         self.url: str = ""
         self.version: str = ""
@@ -12,11 +12,14 @@ class HTTPRequest:
         self.cookies: Dict[str, str] = {}
         self.body: bytes = b""
 
-        self._parse_request(data)
+        if data:
+            self.decode(data)
 
-    def _parse_request(self, data: bytes) -> None:
+    def decode(
+        self, data: bytes, encoding: str = "utf-8", errors: str = "strict"
+    ) -> None:
         data, self.content = data.rsplit(b"\r\n", 1)
-        headers = data.decode().split("\r\n")
+        headers = data.decode(encoding, errors).split("\r\n")
         self.method, self.url, self.version = headers[0].split(" ")
 
         if "?" in self.url:

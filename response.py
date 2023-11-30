@@ -81,12 +81,12 @@ class HTTPResponse:
     def del_cookie(self, name: str) -> None:
         del self.cookies[name]
 
-    def encode(self) -> bytes:
+    def encode(self, encoding: str = "utf-8", errors: str = "strict") -> bytes:
         status = f"{self.version} {self.status} {self.reason}\r\n"
         headers = "".join(f"{name.title()}: {value}\r\n" for name, value in self.headers.items())
         cookies = "".join(f"{self.get_cookie(name)}\r\n" for name in self.cookies)
 
-        return f"{status}{headers}{cookies}\r\n".encode() + self.body
+        return f"{status}{headers}{cookies}\r\n".encode(encoding, errors) + self.body
 
 
 class HTTPException(HTTPResponse, Exception):
