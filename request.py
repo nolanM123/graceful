@@ -18,23 +18,29 @@ class HTTPRequest:
     def decode(
         self, data: bytes, encoding: str = "utf-8", errors: str = "strict"
     ) -> None:
-        data, self.content = data.rsplit(b"\r\n", 1)
+        data, self.body = data.rsplit(b"\r\n", 1)
         headers = data.decode(encoding, errors).split("\r\n")
-        self.method, self.url, self.version = headers[0].split(" ")
+        self.parse_request_line(headers[0])
+        self.parse_url_queries()
+        self.parse_headers(headers[1:-1])
+        self.parse_cookies()
 
+    def parse_request_line(self, request_line: str) -> None:
+        self.method, self.url, self.version = request_line.split(" ")
+
+    def parse_url_queries(self) -> None:
         if "?" in self.url:
             self.url, queries = self.url.split("?", 1)
-
             for query in queries.split("&"):
                 name, value = query.split("=", 1)
                 self.queries[name.strip()] = value.strip()
 
-        self.url = self.url.strip("/")
-
-        for line in headers[1:-1]:
+    def parse_headers(self, headers: list) -> None:
+        for line in headers:
             name, value = line.split(":", 1)
             self.headers[name.strip().title()] = value.strip()
 
+    def parse_cookies(self) -> None:
         if "Cookie" in self.headers:
             for cookie in self.headers["Cookie"].split(";"):
                 name, value = cookie.split("=", 1)

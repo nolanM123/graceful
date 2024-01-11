@@ -12,12 +12,9 @@ from response import HTTPResponse, HTTPException
 
 class Graceful:
     VERSION: str = "1.0"
-
     DEFAULT_PATH: str = os.getcwd()
     DEFAULT_HOST: str = "localhost"
     DEFAULT_PORT: int = 8080
-    DEFAULT_EXCEPTION: HTTPException = HTTPException(status=500, reason="Server Internal Error")
-
     BUFSIZE: int = 1024
     TIMEOUT: float = 180
 
@@ -32,25 +29,25 @@ class Graceful:
         request: HTTPRequest, response: HTTPResponse, action: callable
     ) -> HTTPResponse:
         try:
-            args = Template.convert(
-                {
-                    "request": request,
-                    "response": response,
-                    "body": request.body,
-                }
+            kwargs = Template.convert(
+                {"request": request, "response": response, "body": request.body}
                 | request.queries
                 | request.headers
                 | request.cookies
                 | request.urlkeys,
                 action.__annotations__,
-                True,
+                False,
             )
-
-            if asyncio.iscoroutinefunction(action):
-                result = await action(**args)
-
-            else:
-                result = action(**args)
+            kwargs = {
+                key: item
+                for key, item in kwargs.items()
+                if key in action.__code__.co_varnames[: action.__code__.co_argcount]
+            }
+            result = (
+                await action(**kwargs)
+                if asyncio.iscoroutinefunction(action)
+                else action(**kwargs)
+            )
 
             return result
 
@@ -77,7 +74,8 @@ class Graceful:
                     loop = asyncio.get_event_loop()
 
                     with open(result, "rb") as file:
-                        response.headers["Content-Type"] = "{}; {}".format(*mimetypes.guess_type(result))
+                        content_type = "{}; {}".format(*mimetypes.guess_type(result))
+                        response.headers["Content-Type"] = content_type
                         result = await loop.run_in_executor(None, file.read)
 
                 except FileNotFoundError:
@@ -111,14 +109,18 @@ class Graceful:
             length = int(request.headers.get("Content-Length", 0))
 
             while length > 0:
-                chunk = await asyncio.wait_for(loop.sock_recv(conn, min(self.BUFSIZE, length)), self.TIMEOUT)
+                chunk = await asyncio.wait_for(
+                    loop.sock_recv(conn, min(self.BUFSIZE, length)), self.TIMEOUT
+                )
 
                 if chunk:
                     request.body += chunk
                     length -= len(chunk)
 
                 else:
-                    raise HTTPException(status=400, reason="Bad Request - Incomplete Data")
+                    raise HTTPException(
+                        status=400, reason="Bad Request - Incomplete Data"
+                    )
 
             return request
 
@@ -135,7 +137,9 @@ class Graceful:
                 continue
 
             for i in range(len(app_directories)):
-                if app_directories[i].startswith("{") and app_directories[i].endswith("}"):
+                if app_directories[i].startswith("{") and app_directories[i].endswith(
+                    "}"
+                ):
                     name, *extensions = app_directories[i].strip("{}").split(":")
 
                     if name:
@@ -158,34 +162,48 @@ class Graceful:
 
             request.urlkeys = {}
 
-        path = os.path.join(self.DEFAULT_PATH, request.url)
+        path = os.path.join(self.DEFAULT_PATH, request.url.lstrip("/"))
 
         if os.path.isfile(path):
             response = HTTPResponse(headers={"Content-Type": "text/x-file"})
 
             return response, lambda: path
 
-        elif os.path.isfile(os.path.join(path, "index")):
+        elif os.path.isfile(os.path.join(path, "index.html")):
             response = HTTPResponse(headers={"Content-Type": "text/x-file"})
 
-            return response, lambda: os.path.join(path, "index")
+            return response, lambda: os.path.join(path, "index.html")
 
         elif os.path.isdir(path):
-            raise NotImplementedError("Unable to process - template not found")
+            raise HTTPException(status=404, reason="Not Found")
 
         else:
             raise HTTPException(status=404, reason="Not Found")
 
     def fetch_exception(self, error: Exception) -> Tuple[HTTPException, Callable]:
         if not isinstance(error, HTTPException):
-            error = self.DEFAULT_EXCEPTION
+            error = HTTPException(status=500, reason="Server Internal Error")
 
         response = error
         action = self.apps["EXCEPTION"].get(response.status, lambda: None)
 
         return response, action
 
-    async def serve_request(self, conn: socket.socket, addr: Tuple[str, int]) -> None:
+    async def serve_request(self) -> None:
+        loop = asyncio.get_event_loop()
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server.setblocking(False)
+        server.bind((self.host, self.port))
+        server.listen()
+
+        while self.live:
+            await loop.create_task(
+                self.serve_response(*(await loop.sock_accept(server)))
+            )
+
+        server.close()
+
+    async def serve_response(self, conn: socket.socket, addr: Tuple[str, int]) -> None:
         with conn:
             try:
                 request = await self.fetch_request(conn)
@@ -195,6 +213,14 @@ class Graceful:
 
             except Exception as error:
                 if locals().get("request") is None:
+                    print(
+                        '[graceful {}] - [{}] "connection closed" {}'.format(
+                            self.VERSION,
+                            addr[0],
+                            addr[1],
+                        )
+                    )
+
                     return
 
                 response, action = self.fetch_exception(error)
@@ -202,7 +228,7 @@ class Graceful:
                 response = await self.handle_response(response, result)
 
             print(
-                '[Graceful {}] - [{}] "{} /{} {}" {} {}'.format(
+                '[graceful {}] - [{}] "{} {} {}" {} {}'.format(
                     self.VERSION,
                     addr[0],
                     request.method,
@@ -212,23 +238,20 @@ class Graceful:
                     addr[1],
                 )
             )
+
             loop = asyncio.get_event_loop()
             await loop.sock_sendall(conn, response.encode())
 
     def run(self) -> None:
-        async def serve() -> None:
-            loop = asyncio.get_event_loop()
-            server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            server.setblocking(False)
-            server.bind((self.host, self.port))
-            server.listen()
+        print(
+            "[graceful {}] - Hello from the graceful community. http://{}:{}/".format(
+                self.VERSION,
+                self.host,
+                self.port,
+            )
+        )
 
-            while self.live:
-                loop.create_task(self.serve_request(*(await loop.sock_accept(server))))
-
-            server.close()
-
-        asyncio.run(serve())
+        asyncio.run(self.serve_request())
 
     def route(
         self,
@@ -266,15 +289,6 @@ class Graceful:
     ) -> Callable:
         return self.route("GET", url, response, *args, **kwargs)
 
-    def head(
-        self,
-        url: str,
-        response: Optional[HTTPResponse] = None,
-        *args: Tuple[object],
-        **kwargs: Dict[str, object],
-    ) -> Callable:
-        return self.route("HEAD", url, response, *args, **kwargs)
-
     def post(
         self,
         url: str,
@@ -301,6 +315,15 @@ class Graceful:
         **kwargs: Dict[str, object],
     ) -> Callable:
         return self.route("DELETE", url, response, *args, **kwargs)
+
+    def head(
+        self,
+        url: str,
+        response: Optional[HTTPResponse] = None,
+        *args: Tuple[object],
+        **kwargs: Dict[str, object],
+    ) -> Callable:
+        return self.route("HEAD", url, response, *args, **kwargs)
 
     def connect(
         self,
