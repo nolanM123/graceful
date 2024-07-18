@@ -1,94 +1,148 @@
 # Graceful Web Framework
 
-Graceful is a lightweight asynchronous web framework for building HTTP server applications in Python. It emphasizes simplicity, flexibility, and performance, making it suitable for a wide range of web development tasks.
+Graceful is a lightweight, asynchronous web framework designed for Python, allowing you to build and manage web applications with ease. It handles HTTP requests and responses, supports various HTTP methods, and includes middleware support.
 
 ## Features
 
-- **Asynchronous Processing**: Utilizes asyncio for handling concurrent requests efficiently.
-- **Routing and Middleware**: Supports routing HTTP requests to appropriate handler functions and middleware for custom request/response processing.
-- **Template Conversion**: Simplifies data handling with automatic conversion based on type annotations.
-- **Error Handling**: Provides robust error handling and response generation for various HTTP status codes.
-- **Cookie Management**: Includes support for setting, getting, and deleting cookies.
-- **Extensible**: Easily extend functionality by mounting additional applications.
-
-## Requirements
-
-- Python 3.7+
-- Dependencies listed in `requirements.txt`
+- **Asynchronous Processing**: Utilizes `asyncio` for handling requests and responses asynchronously.
+- **Flexible Routing**: Define routes for different HTTP methods (GET, POST, PUT, DELETE, etc.).
+- **Automatic Data Casting**: Uses Python built-in types for automatic data casting in request handlers.
+- **Template Handling**: Convert data to and from Python types with a simple template casting mechanism.
+- **Exception Handling**: Customizable exception handling with status codes.
 
 ## Installation
 
-1. Clone the repository:
-
-   ```
-   git clone https://github.com/yourusername/graceful.git
-   cd graceful
-   ```
-
-2. Install dependencies:
-
-   ```
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-### Running the Server
+To use Graceful, you need Python 3.7 or higher. You can clone the repository and install the dependencies:
 
 ```bash
-python main.py
+git clone https://github.com/nolanM123/graceful
+cd graceful
+pip install -r requirements.txt
 ```
 
-By default, the server runs on `http://localhost:8080`.
+## Basic Usage
 
-### Defining Routes
+### Creating a Simple Application
+
+Here's a basic example of how to set up a simple web application using Graceful:
 
 ```python
 from graceful import Graceful
 
+
 app = Graceful()
 
+
 @app.get("/")
-def index(request, response):
-    response.body = "Hello, World!"
-    return response
+def index(request):
+    return "Hello, world!"
+
 
 if __name__ == "__main__":
     app.run()
 ```
 
-### Handling Requests
+### Routing
 
-- Define routes using decorators (`@app.get`, `@app.post`, etc.) to map URLs to handler functions.
-- Access request parameters, headers, cookies, and body through `request` object.
-- Manipulate response data and set headers using `response` object.
+Graceful supports various HTTP methods:
 
-### Adding Middleware
+- `app.get("/url")` - Handles GET requests.
+- `app.post("/url")` - Handles POST requests.
+- `app.put("/url")` - Handles PUT requests.
+- `app.delete("/url")` - Handles DELETE requests.
+- `app.head("/url")` - Handles HEAD requests.
+- `app.connect("/url")` - Handles CONNECT requests.
+- `app.options("/url")` - Handles OPTIONS requests.
+- `app.trace("/url")` - Handles TRACE requests.
+- `app.patch("/url")` - Handles PATCH requests.
+
+### Parameters and Data Casting
+
+In Graceful, the parameters of a handler function determine how data from the request is accessed and passed to the handler. The framework uses Python's built-in types to automatically cast incoming data to the appropriate types based on the annotations of the handler function parameters.
+
+#### Example
+
+Suppose you have a route that expects certain parameters in the request:
 
 ```python
-@app.middleware
-async def custom_middleware(request, response):
-    # Perform actions before passing request to handler
-    ...
+from graceful import Graceful
+from typing import Optional
 
-@app.exception(404)
-def handle_not_found(request, response):
-    response.body = "404 Not Found"
-    return response
+
+app = Graceful()
+
+
+@app.get("/greet/{name}")
+def greet(name: str, age: Optional[int] = None):
+    if age:
+        return f"Hello, {name}. You are {age} years old."
+    
+    return f"Hello, {name}."
+
+
+if __name__ == "__main__":
+    app.run()
 ```
 
-### Error Handling
+In this example:
+- `name` is extracted from the URL path and is automatically cast to a `str`.
+- `age` is an optional query parameter and is cast to an `int` if provided.
 
-Customize error handling with `@app.exception(status_code)` decorator to handle specific HTTP status codes.
+The casting mechanism ensures that:
+- Data is automatically converted to the specified types (`str`, `int`, etc.).
+- If the data cannot be converted, an appropriate error or default value is used.
+
+**Note**: While asynchronous processing is supported, it is optional for handler functions. You can define handlers as either synchronous or asynchronous functions. The framework will handle them accordingly. For example, the `greet` function above is synchronous but can be defined as asynchronous if needed:
+
+```python
+@app.get("/greet/{name}")
+async def greet(name: str, age: Optional[int] = None):
+    # Asynchronous code here
+    ...
+```
+
+### Middleware
+
+You can define custom middleware to process requests and responses:
+
+```python
+async def custom_middleware(request, fetch):
+    # Modify request or perform actions before handling
+    response = await fetch(request)
+
+    # Modify response or perform actions after handling
+    return response
+
+
+app = graceful.Graceful(middleware=custom_middleware)
+```
+
+### Exception Handling
+
+Handle exceptions and customize responses for specific HTTP status codes:
+
+```python
+@app.exception(404)
+def not_found():
+    # Handle response for 404 Not Found errors.
+    ...
+
+@app.exception(500)
+def internal_error():
+    # Handle response for 500 Internal Server Error errors.
+    ...
+```
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit pull requests with improvements or additional features.
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Inspired by [FastAPI](https://fastapi.tiangolo.com/).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
