@@ -136,9 +136,9 @@ class HttpResponse:
     ) -> None:
         if name in self._cookies:
             cookie = self._cookies[name]
-
         else:
             cookie = Cookie(name)
+            self._cookies[name] = cookie
 
         if value:
             cookie.value = value
@@ -175,33 +175,34 @@ class HttpResponse:
         httponly: bool = False,
         samesite: bool = False,
     ) -> None:
-        if not any(expires, max_age, domain, path, secure, httponly, samesite):
-            del self._cookies[name]
-
+        if not any([expires, max_age, domain, path, secure, httponly, samesite]):
+            if name in self._cookies:
+                del self._cookies[name]
             return
 
-        cookie = self._cookies[name]
+        if name in self._cookies:
+            cookie = self._cookies[name]
 
-        if expires:
-            cookie.expires = None
+            if expires:
+                cookie.expires = None
 
-        if max_age:
-            cookie.max_age = None
+            if max_age:
+                cookie.max_age = None
 
-        if domain:
-            cookie.domain = None
+            if domain:
+                cookie.domain = None
 
-        if path:
-            cookie.path = "/"
+            if path:
+                cookie.path = "/"
 
-        if secure:
-            cookie.secure = False
+            if secure:
+                cookie.secure = False
 
-        if httponly:
-            cookie.httponly = False
+            if httponly:
+                cookie.httponly = False
 
-        if samesite:
-            cookie.samesite = None
+            if samesite:
+                cookie.samesite = None
 
     def encode(self) -> bytes:
         statusline = f"{self.ver} {self.status} {self.reason}\r\n"
@@ -209,7 +210,7 @@ class HttpResponse:
             f"{key.title()}: {item}\r\n" for key, item in self.headers.items()
         )
         cookies = "".join(
-            f"Set-Cookie: {value}\r\n" for value in self._cookies.values()
+            f"Set-Cookie: {cookie}\r\n" for cookie in self._cookies.values()
         )
 
         return (statusline + headers + cookies + "\r\n").encode() + self.body

@@ -20,7 +20,7 @@ class Cookie:
         expires: Union[datetime, str, int, None] = None,
         max_age: Optional[int] = None,
         domain: Optional[str] = None,
-        path: Optional[str] = "/",
+        path: Optional[str] = None,
         secure: bool = False,
         httponly: bool = False,
         samesite: Optional[Literal["lax", "strict", "None"]] = None,

@@ -34,6 +34,9 @@ class Template:
             return {Template._cast(type_args[0], item) for item in value}
 
         elif origin_type is Union:
+            if isinstance(value, type_args):
+                return value
+
             for union_type in type_args:
                 return Template._cast(union_type, value)
     
