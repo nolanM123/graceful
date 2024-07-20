@@ -54,16 +54,16 @@ class Template:
 
         results = {}
 
-        for key, value in data.items():
+        for key, item in data.items():
             expected_type = type_annotations.get(key)
             
             try:
-                results[key] = Template._cast(expected_type, value)
+                results[key] = Template._cast(expected_type, item)
 
             except (ValueError, TypeError) as e:
                 if strict:
                     raise e
-                results[key] = value
+                results[key] = item
 
         return results
 

@@ -1,4 +1,4 @@
-from typing import Any, Dict, Mapping, Optional
+from typing import Dict, Mapping, Optional
 
 
 class HttpRequest:
@@ -9,13 +9,13 @@ class HttpRequest:
     queries: Dict[str, str]
     headers: Dict[str, str]
     cookies: Dict[str, str]
-    body: Any = b""
+    body: bytes = b""
 
     def __init__(
         self,
         method: Optional[str] = None,
         url: Optional[str] = None,
-        body: Any = None,
+        body: Optional[bytes] = None,
         urlkeys: Optional[Mapping[str, str]] = None,
         queries: Optional[Mapping[str, str]] = None,
         headers: Optional[Mapping[str, str]] = None,
@@ -32,7 +32,23 @@ class HttpRequest:
         self.body = body or self.body
 
     def encode(self) -> bytes:
-        pass
+        url = self.url
+        queries = "&".join(f"{key}={value}" for key, value in self.queries.items())
+
+        if queries:
+            url += "?" + queries
+        
+        statusline = f"{self.method} {url} {self.ver}\r\n"
+        headers = "".join(f"{key}: {value}\r\n" for key, value in self.headers.items())
+
+        if self.cookies:
+            headers += (
+                "Cookie: "
+                + "; ".join(f"{key}={value}" for key, value in self.cookies.items())
+                + "\r\n"
+            )
+
+        return (statusline + headers + "\r\n").encode() + self.body
 
     @classmethod
     def from_bytes(cls, data: bytes) -> "HttpRequest":
@@ -58,7 +74,7 @@ class HttpRequest:
             for cookie in instance.headers["Cookie"].split(";"):
                 key, value = cookie.split("=", 1)
                 instance.cookies[key.strip()] = value.strip()
-            
+
             del instance.headers["Cookie"]
 
         return instance

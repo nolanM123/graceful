@@ -1,19 +1,17 @@
 from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
 from typing import Literal, Optional, Union
-
 
 class Cookie:
     _expires: Optional[datetime] = None
 
     name: str
     value: str = ""
-    max_age: Optional[int] = None
-    domain: Optional[str] = None
-    path: Optional[str] = None
-    secure: bool = False
-    httponly: bool = False
-    samesite: Optional[Literal["lax", "strict", "None"]] = None
+    max_age: Optional[int]
+    domain: Optional[str]
+    path: Optional[str]
+    secure: bool
+    httponly: bool
+    samesite: Optional[Literal["lax", "strict", "None"]]
 
     def __init__(
         self,
@@ -22,13 +20,13 @@ class Cookie:
         expires: Union[datetime, str, int, None] = None,
         max_age: Optional[int] = None,
         domain: Optional[str] = None,
-        path: Optional[str] = None,
+        path: Optional[str] = "/",
         secure: bool = False,
         httponly: bool = False,
         samesite: Optional[Literal["lax", "strict", "None"]] = None,
     ) -> None:
         self.name = name
-        self.value = value or self.value
+        self.value = value or ""
         self.expires = expires
         self.max_age = max_age
         self.domain = domain
@@ -60,8 +58,8 @@ class Cookie:
             cookie_str += "; HttpOnly"
 
         if self.samesite:
-            cookie_str += f"; SameSite={self.samesite}"
-        
+            cookie_str += f"; SameSite={self.samesite.capitalize()}"
+
         return cookie_str
 
     @property
@@ -72,15 +70,12 @@ class Cookie:
     def expires(self, value: Union[datetime, str, int, None]) -> None:
         if isinstance(value, datetime):
             self._expires = value
-        
+
         elif isinstance(value, str):
-            try:
-                self._expires = datetime.fromisoformat(value)
-            except ValueError:
-                self._expires = None
-        
+            self._expires = datetime.fromisoformat(value)
+
         elif isinstance(value, int):
             self._expires = datetime.now() + timedelta(seconds=value)
-        
+
         else:
             self._expires = None

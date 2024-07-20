@@ -206,7 +206,7 @@ class HttpResponse:
     def encode(self) -> bytes:
         statusline = f"{self.ver} {self.status} {self.reason}\r\n"
         headers = "".join(
-            f"{key.title()}: {value}\r\n" for key, value in self.headers.items()
+            f"{key.title()}: {item}\r\n" for key, item in self.headers.items()
         )
         cookies = "".join(
             f"Set-Cookie: {value}\r\n" for value in self._cookies.values()
