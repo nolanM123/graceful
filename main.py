@@ -5,11 +5,6 @@ from typing import Optional
 app = Graceful()
 
 
-@app.exception(500)
-def server_internal_error():
-    print("o'boy")
-
-
 @app.get("/greet/{name}")
 def greet(name: str, age: Optional[int] = None):
     if age:
