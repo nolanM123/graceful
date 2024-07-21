@@ -1,4 +1,4 @@
-from graceful.graceful import Graceful
-from graceful.request import HttpRequest
-from graceful.response import HttpResponse, HttpException
-from graceful.template import Template
+from .graceful import Graceful
+from .request import HttpRequest
+from .response import HttpResponse, HttpException
+from .template import Template
