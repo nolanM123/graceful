@@ -12,12 +12,18 @@ Graceful is a lightweight, asynchronous web framework designed for Python, allow
 
 ## Installation
 
-To use Graceful, you need Python 3.7 or higher. You can clone the repository and install the dependencies:
+To use Graceful, you need Python 3.4 or higher. You can clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/nolanM123/graceful
 cd graceful
 pip install -r requirements.txt
+```
+
+Alternatively, you can install Graceful directly from PyPI:
+
+```bash
+pip install graceful-web
 ```
 
 ## Basic Usage
