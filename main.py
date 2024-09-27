@@ -1,5 +1,6 @@
-from graceful import Graceful
 from typing import Optional
+
+from graceful import Graceful
 
 
 app = Graceful()
