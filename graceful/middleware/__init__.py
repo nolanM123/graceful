@@ -1,1 +1,1 @@
-from .static_files import static_files_middleware
+from .staticfiles import static_files_middleware
