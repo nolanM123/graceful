@@ -71,8 +71,9 @@ In Graceful, the parameters of a handler function determine how data from the re
 Suppose you have a route that expects certain parameters in the request:
 
 ```python
-from graceful import Graceful
 from typing import Optional
+
+from graceful import Graceful
 
 
 app = Graceful()
