@@ -41,7 +41,9 @@ class Graceful:
         self.applications = {}
         self.exceptions = {}
 
-    async def middleware(self, request: HttpRequest, fetch: Coroutine) -> None:
+    async def middleware(
+        self, request: HttpRequest, fetch: Coroutine
+    ) -> Tuple[HttpResponse, Callable]:
         return await fetch(request)
 
     async def handle_request(
@@ -68,33 +70,35 @@ class Graceful:
 
     async def handle_response(self, response: HttpResponse, result: Any) -> bytes:
         if result is None:
-            return response.encode()
+            pass
 
         elif isinstance(result, HttpResponse):
-            return result.encode()
+            response = result
 
-        if isinstance(result, (set, tuple, list, dict)):
+        elif isinstance(result, bytes):
+            response.body = result
+
+        elif isinstance(result, (set, tuple, list, dict)):
             response.headers.setdefault("Content-Type", "application/json")
-            result = json.dumps(self.body)
+            response.body = json.dumps(result).encode()
 
         elif "text/x-file" == response.headers.get("Content-Type", "").lower():
             try:
                 with open(result, "rb") as file:
                     mimetype, charset = mimetypes.guess_type(result)
                     response.headers["Content-Type"] = f"{mimetype}; {charset}"
-                    result = asyncio.get_event_loop().run_in_executor(None, file.read)
+                    response.body = await asyncio.get_event_loop().run_in_executor(
+                        None, file.read
+                    )
 
             except FileNotFoundError as e:
                 raise HttpException(status=404) from e
 
-        if hasattr(result, "__str__"):
-            result = str(result).encode()
+        elif hasattr(result, "__str__"):
+            response.body = str(result).encode()
 
         elif hasattr(result, "encode"):
-            result = result.encode()
-
-        if isinstance(result, bytes):
-            response.body = result
+            response.body = result.encode()
 
         return response.encode()
 

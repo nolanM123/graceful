@@ -91,7 +91,7 @@ class HttpResponse:
         self.body = body or self.body
 
         if headers:
-            self.headers = headers
+            self.headers = headers.copy()
 
         if status:
             self.status = status
