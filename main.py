@@ -9,7 +9,7 @@ app = Graceful()
 def greet(name: str, age: Optional[int] = None):
     if age:
         return f"Hello, {name}. You are {age} years old."
-    
+
     return f"Hello, {name}."
 
 

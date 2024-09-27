@@ -7,13 +7,13 @@ class Template:
     def _cast(expected_type: Type[Any], value: Any) -> Any:
         if expected_type is None and value is None:
             return value
-        
+
         if expected_type is Any:
             return value
-        
+
         if isinstance(expected_type, type):
             return expected_type(value)
-        
+
         origin_type = get_origin(expected_type)
         type_args = get_args(expected_type)
 
@@ -23,13 +23,15 @@ class Template:
                 Template._cast(key_type, k): Template._cast(value_type, v)
                 for k, v in value.items()
             }
-        
+
         elif origin_type is list:
             return [Template._cast(type_args[0], item) for item in value]
-        
+
         elif origin_type is tuple:
-            return tuple(Template._cast(type_args[i], item) for i, item in enumerate(value))
-        
+            return tuple(
+                Template._cast(type_args[i], item) for i, item in enumerate(value)
+            )
+
         elif origin_type is set:
             return {Template._cast(type_args[0], item) for item in value}
 
@@ -39,7 +41,7 @@ class Template:
 
             for union_type in type_args:
                 return Template._cast(union_type, value)
-    
+
         else:
             raise TypeError(f"Unsupported type {expected_type}.")
 
@@ -59,7 +61,7 @@ class Template:
 
         for key, item in data.items():
             expected_type = type_annotations.get(key)
-            
+
             try:
                 results[key] = Template._cast(expected_type, item)
 

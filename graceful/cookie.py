@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from typing import Literal, Optional, Union
 
+
 class Cookie:
     _expires: Optional[datetime] = None
 
@@ -65,7 +66,7 @@ class Cookie:
     @property
     def expires(self) -> Optional[datetime]:
         return self._expires
-    
+
     @expires.setter
     def expires(self, value: Union[datetime, str, int, None]) -> None:
         if isinstance(value, datetime):

@@ -37,7 +37,7 @@ class HttpRequest:
 
         if queries:
             url += "?" + queries
-        
+
         statusline = f"{self.method} {url} {self.ver}\r\n"
         headers = "".join(f"{key}: {value}\r\n" for key, value in self.headers.items())
 
