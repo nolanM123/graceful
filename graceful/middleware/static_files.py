@@ -16,7 +16,7 @@ async def static_files_middleware(request, fetch):
     elif os.path.isfile(os.path.join(path, "index.html")):
         return (
             HttpResponse(headers={"Content-Type": "text/x-file"}),
-            lambda: f"{url}/index.html".lstrip("/"),
+            lambda: os.path.join(url, "index.html"),
         )
 
     elif os.path.isdir(path):
