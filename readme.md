@@ -82,7 +82,7 @@ app = Graceful()
 def greet(name: str, age: Optional[int] = None):
     if age:
         return f"Hello, {name}. You are {age} years old."
-    
+
     return f"Hello, {name}."
 
 
@@ -91,10 +91,12 @@ if __name__ == "__main__":
 ```
 
 In this example:
+
 - `name` is extracted from the URL path and is automatically cast to a `str`.
 - `age` is an optional query parameter and is cast to an `int` if provided.
 
 The casting mechanism ensures that:
+
 - Data is automatically converted to the specified types (`str`, `int`, etc.).
 - If the data cannot be converted, an appropriate error or default value is used.
 
@@ -114,10 +116,10 @@ You can define custom middleware to process requests and responses:
 ```python
 async def custom_middleware(request, fetch):
     # Modify request or perform actions before handling
-    response = await fetch(request)
+    response, action = await fetch(request)
 
     # Modify response or perform actions after handling
-    return response
+    return response, action
 
 
 app = graceful.Graceful(middleware=custom_middleware)
