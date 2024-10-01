@@ -10,6 +10,9 @@ class Template:
 
         if expected_type is Any:
             return value
+        
+        if expected_type is bool:
+            return not (value.lower() in ("false", "0"))
 
         if isinstance(expected_type, type):
             return expected_type(value)
