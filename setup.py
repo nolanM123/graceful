@@ -7,7 +7,7 @@ with open("readme.md", "r") as file:
 
 setup(
     name="graceful-web",
-    version="1.0.0",
+    version="1.0.1",
     description="A lightweight and efficient web framework",
     long_description=description,
     long_description_content_type="text/markdown",
