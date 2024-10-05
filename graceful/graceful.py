@@ -116,7 +116,7 @@ class Graceful:
                     break
 
             request = HttpRequest.from_bytes(data)
-            length = int(request.headers.get("Content-Length", 0))
+            length = int(request.headers.get("Content-Length", 0)) - len(request.body)
 
             while length > 0:
                 chunk = await asyncio.wait_for(
