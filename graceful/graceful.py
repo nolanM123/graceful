@@ -116,24 +116,61 @@ class Graceful:
                     break
 
             request = HttpRequest.from_bytes(data)
-            length = int(request.headers.get("Content-Length", 0)) - len(request.body)
 
-            while length > 0:
-                chunk = await asyncio.wait_for(
-                    loop.sock_recv(conn, min(self.bufsize, length)), self.timeout
-                )
+            if request.headers.get("Transfer-Encoding", "").lower() == "chunked":
+                buffer = request.body
+                request.body = b""
 
-                if chunk:
-                    request.body += chunk
-                    length -= len(chunk)
+                while True:
+                    while True:
+                        chunk = await asyncio.wait_for(
+                            loop.sock_recv(conn, self.bufsize), self.timeout
+                        )
 
-                else:
-                    raise HttpException(status=400)
+                        if not chunk:
+                            raise HttpException(status=400)
+
+                        buffer += chunk
+
+                        if b"\r\n" in buffer:
+                            hex_size, buffer = buffer.split(b"\r\n", 1)
+                            length = int(hex_size, 16)
+                            break
+
+                    if length == 0:
+                        break
+
+                    while len(buffer) < length + 4:
+                        chunk = await asyncio.wait_for(
+                            loop.sock_recv(conn, self.bufsize), self.timeout
+                        )
+
+                        if not chunk:
+                            raise HttpException(status=400)
+
+                        buffer += chunk
+
+                    request.body += buffer[:length]
+                    buffer = buffer[length + 4:]
+
+            else:
+                length = int(request.headers.get("Content-Length", 0)) - len(request.body)
+
+                while length > 0:
+                    chunk = await asyncio.wait_for(
+                        loop.sock_recv(conn, min(self.bufsize, length)), self.timeout
+                    )
+
+                    if chunk:
+                        request.body += chunk
+                        length -= len(chunk)
+                    else:
+                        raise HttpException(status=400)
 
             return request
 
-        except TimeoutError as e:
-            raise HttpException(status=408) from e
+        except TimeoutError:
+            raise HttpException(status=408)
 
     async def fetch_response(
         self, request: HttpRequest
